@@ -357,13 +357,14 @@ section {
 }
 
 .card-img {
-    width: 150px;
+    width: 140px;
 
 }
 
 .card-text {
     margin-top: 1em;
-    width: 150px;
+    width: 140px;
+    text-align: center;
 }
 
 .action-btn {
