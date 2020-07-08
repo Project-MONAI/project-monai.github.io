@@ -170,8 +170,10 @@ h2 {
 }
 
 h3 {
-    font-size: 2em;
+    font-size: 2.2em;
+    margin-top: 2em;
     margin-bottom: 0em;
+    line-height: 1em;
 }
 
 p {
@@ -228,6 +230,11 @@ a:hover {
 
 .pure-g {
     letter-spacing: 0em;
+}
+
+.breakline {
+    width: 100%;
+    border-bottom: 1px solid #7cccc7;
 }
 
 /* nav */
@@ -358,13 +365,24 @@ section {
 
 .card-img {
     width: 140px;
-
 }
 
 .card-text {
     margin-top: 1em;
     width: 140px;
     text-align: center;
+}
+
+.card-inline-img {
+    width: 140px;
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 1em;
+}
+
+.card-left-text {
+    margin-top: 0em;
+    padding-left: 0.2em;
 }
 
 .action-btn {

@@ -67,6 +67,19 @@
         <h2 class="header-subtitle">Medical Open Network for AI</h2>
     </div>
 
+    <!-- Single Col Section Descriptions -->
+    <section>
+      <h2 class="section-title">About MONAI</h2>
+      <div class="pure-g">
+          <div class="pure-u-1">
+              <p class="section-desc">
+                  Project MONAI was originally started by NVIDIA & King’s College London to establish an inclusive community of AI researchers for the development and exchange of best practices for AI in healthcare imaging across academia and enterprise researchers. The MONAI framework is the open-source foundation being created by Project MONAI and it wouldn’t have been possible to accelerate this development without the development of existing toolkits such as Nvidia Clara Train, NiftyNet, DLTK, and DeepNeuro.
+              </p>
+          </div>
+      </div>
+    </section>
+
+
     <!-- Bios Section Content, add as many flex-items as needed -->
     <section>
         <h2 class="section-title">Advisory Board</h2>
@@ -149,150 +162,168 @@
         </div>
     </section>
     <section>
-        <h2 class="section-title">Working Groups</h2>
-
-        <div class="pure-menu custom-restricted-width">
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item">
-                  <button type="button" class="section-desc collapsible">Imaging I/O</button>
-                    <div class="pure-g content">
-                      <div>
-                          <div class="card-img"> <img src="img/SA.png" class="full-img" /> </div>
-                          <div class="card-text"> <strong>Group Lead:<br/> <a href="https://www.kitware.com/stephen-aylward/" target="_blank"> Stephen Aylward </a></strong></div>
-                      </div>
-                      <div>
-                        <p>The goal of this working group is to define how data is read into and written out from memory in MONAI.  Such input and output requires consideration of (a) the research and application workflows in which MONAI will operate, (b) the importance of effectively utilizing all available data for deep learning development and evaluation, and (c) the critical significance of understanding and preserving the physical space that is represented by a medical image so that its clinical validity is preserved. The working group has defined three broad sets of requirements for input and output for MONAI: research I/O requirements, reproducible I/O requirements, and clinical I/O requirements.</p>
-                      </div>
-                    </div>
-                </li>
-                <li class="pure-menu-item">
-                    <button type="button" class="section-desc collapsible">Data: Images, Biomarkers, Demographics, Outputs, and Outcomes</button>
-                    <div class="pure-g content">
-                      <div>
-                          <div class="card-img"> <img src="img/BG.png" class="full-img" /> </div>
-                          <div class="card-text"> <strong>Group Lead:<br/> <a href="https://www.linkedin.com/in/integratorbrad" target="_blank"> Brad Genereaux </a></strong></div>
-                      </div>
-                      <div>
-                      <p>A key part of Project MONAI is the ingestion of data. This working group will focus on defining support for bioinformatics (e.g., images), biomarkers, and metadata (e.g., patient demographics, outcomes). Part of the focus explores the use of ontologies, various representations of the data, and what is in-scope for MONAI and what is left to other projects to define.  Some of the image representations, for example, include data relating to dimensionality, spacing, components/channels, data orientation, and time (multiple studies/prior exams).</p>
-                      </div>
-                    </div>
-                </li>
-                <li class="pure-menu-item">
-                    <button type="button" class="section-desc collapsible">Transformations: Preprocessing, Augmentation, and Companion Algorithms</button>
-                    <div class="pure-g content">
-                      <div>
-                          <div class="card-img"> <img src="img/JC.png" class="full-img" /> </div>
-                          <div class="card-text"> <strong>Group Lead:<br/> <a href="https://www.kcl.ac.uk/people/jorge-cardoso" target="_blank"> Jorge Cardoso </a></strong></div>
-                      </div>
-                      <div>
-                      <p>This working group covers the topics related to data preprocessing and augmentation modules for MONAI.
-                      In terms of functionality, these include patient-level transforms, such as simulating body habitus variations, aging; spatial geometric transforms, intensity transforms and acquisition transforms
-                      such as simulating medical imaging modalities, artefacts. In terms of technical implementations, these include differentiability, multi-dimensional data representation,
-                      lazy evaluation, caching, reproducibility, etc.</p>
-                      </div>
-                    </div>
-                </li>
-                <li class="pure-menu-item">
-                    <button type="button" class="section-desc collapsible">Federated Learning & Applications</button>
-                    <div class="pure-g content">
-                      <div>
-                          <div class="card-img"> <img src="img/JK.png" class="full-img" /> </div>
-                          <div class="card-text"> <strong>Group Lead:<br/> <a href="https://www.nmr.mgh.harvard.edu/user/8165" target="_blank"> Jayashree Kalpathy-Cramer </a></strong></div>
-                      </div>
-                      <div>
-                          <div class="card-img"> <img src="img/DR.png" class="full-img" /> </div>
-                          <div class="card-text"> <strong>Group Lead:<br/> <a href="https://profiles.stanford.edu/daniel-rubin" target="_blank"> Daniel Rubin </a></strong></div>
-                      </div>
-                      <div>
-                      <p>Federated learning is emerging as a promising approach for training AI models without requiring sites to share data. This is particularly important in medical use cases, since there are privacy and regulatory restrictions to sharing data. A number of different methods are being developed for federated learning, and they are currently silo efforts with limited synergy. The goal of this effort is to unify the disparate methods of federated learning in a common MONAI framework. This will be pursued through implemented federated learning use cases in MONAI as well as generation of best practices and documentation to enable the community to more broadly participate and implement common and interoperable approaches.</p>
-                      </div>
-                    </div>
-                </li>
-                <li class="pure-menu-item">
-                    <button type="button" class="section-desc collapsible">Evaluation, Reproducibility & Benchmarking</button>
-                    <div class="pure-g content">
-                      <div>
-                          <div class="card-img"> <img src="img/LM.jpg" class="full-img" /> </div>
-                          <div class="card-text"> <strong>Group Lead:<br/> <a href="https://www.dkfz.de/en/cami/team/people/Lena_Maier-Hein.html" target="_blank"> Lena Maier-Hein </a></strong></div>
-                      </div>
-                      <div>
-                      <p>Every year, hundreds of new algorithms are published in the field of biomedical image analysis. While validation of new methods has long been based on private data, publically available data sets and international competitions (‘challenges’) meanwhile allow for benchmarking algorithms in a transparent and comparative manner. Recent research, however, has revealed several flaws related to common practice in validation. A core goal of this working group is, therefore, to provide the infrastructure and tools for quality-controlled validation and benchmarking of medical image analysis methods. In collaboration with the international biomedical image analysis challenges (BIAS) initiative, open technical challenges and research questions related to a variety of topics will be addressed, ranging from best practices to how to create incentives for sharing code and data to performance aspects and implementation efficiency.</p>
-                      </div>
-                    </div>
-                </li>
-                <li class="pure-menu-item">
-                    <button type="button" class="section-desc collapsible">Research</button>
-                    <div class="pure-g content">
-                      <div>
-                          <div class="card-img"> <img src="img/PJ.png" class="full-img" /> </div>
-                          <div class="card-text"> <strong>Group Lead:<br/> <a href="https://pfjaeger.github.io/" target="_blank"> Paul Jaeger </a></strong></div>
-                      </div>
-                      <div>
-                      <p>Establish MONAI as a Catalyst for Scientific Progress and Real Life Impact by means of the following actions:
-            (1) Identify Key Challenges currently hampering Scientific Progress and Real Life Impact.
-            (2) Formalize abstract solutions and determine concepts for implementation in MONAI.
-            (3) Communicate results in the form of recommendations, best practice guidelines or articles to the MONAI advisory board, fellow MONAI working groups, or the public.</p>
-                    </div>
-                </li>
-                <li class="pure-menu-item">
-                    <button type="button" class="section-desc collapsible">Community Development, Outreach & Adoption</button>
-                    <div class="pure-g content">
-                      <div>
-                          <div class="card-img"> <img src="img/PD.png" class="full-img" /> </div>
-                          <div class="card-text"> <strong>Group Lead:<br/> <a href="https://www.linkedin.com/in/prerna-dogra-2664a72a" target="_blank"> Prerna Dogra </a></strong></div>
-                      </div>
-                      <div>
-                      <p>This working group focuses on outreach, to establish MONAI as a common software foundation that the Medical Imaging research and development community can build upon. This working group is charged with developing technical training & onboarding content, including tutorials, technical blogs, bootcamps & hackathons to educate & engage with researchers and developers. Another area of focus for the working group is to define the infrastructure and processes needed to support and grow a transparent, honest & open community of MONAI contributors and adopters, including establishing best practices for giving appropriate recognition to those who are promoting and making significant contributions back to MONAI.</p>
-                      </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-    </section>
-
-    <!-- Single Col Section Descriptions -->
-    <section>
-        <h2 class="section-title">About MONAI</h2>
-        <div class="pure-g">
-            <div class="pure-u-1">
-                <p class="section-desc">
-                    Project MONAI was originally started by NVIDIA & King’s College London to establish an inclusive community of AI researchers for the development and exchange of best practices for AI in healthcare imaging across academia and enterprise researchers. The MONAI framework is the open-source foundation being created by Project MONAI and it wouldn’t have been possible to accelerate this development without the development of existing toolkits such as Nvidia Clara Train, NiftyNet, DLTK, and DeepNeuro.
-                </p>
+      <h2 class="section-title">Working Groups</h2>
+      
+      <h3>Imaging I/O</h3>
+      <div class="pure-g">
+        <div class="pure-u-md-1-5">
+            <div class="card-img">
+              <img src="img/SA.png" class="full-img" />
             </div>
         </div>
-    </section>
+        <div class="pure-u-md-4-5">
+          <div class="text-desc">
+            <div class="card-left-text">
+              <strong>Group Lead: <a href="https://www.kitware.com/stephen-aylward/" target="_blank"> Stephen Aylward </a></strong>
+              <br />
+              The goal of this working group is to define how data is read into and written out from memory in MONAI.  Such input and output requires consideration of (a) the research and application workflows in which MONAI will operate, (b) the importance of effectively utilizing all available data for deep learning development and evaluation, and (c) the critical significance of understanding and preserving the physical space that is represented by a medical image so that its clinical validity is preserved. The working group has defined three broad sets of requirements for input and output for MONAI: research I/O requirements, reproducible I/O requirements, and clinical I/O requirements.
+            </div>
+          </div>
+      </div>
 
+      <h3>Data: Images, Biomarkers, Demographics, Outputs, and Outcomes</h3>
+      <div class="pure-g">
+        <div class="pure-u-md-1-5">
+            <div class="card-img">
+              <img src="img/BG.png" class="full-img" />
+            </div>
+        </div>
+        <div class="pure-u-md-4-5">
+          <div class="text-desc">
+            <div class="card-left-text">
+              <strong>Group Lead: <a href="https://www.linkedin.com/in/integratorbrad" target="_blank"> Brad Genereaux </a></strong>
+              <br />
+              A key part of Project MONAI is the ingestion of data. This working group will focus on defining support for bioinformatics (e.g., images), biomarkers, and metadata (e.g., patient demographics, outcomes). Part of the focus explores the use of ontologies, various representations of the data, and what is in-scope for MONAI and what is left to other projects to define.  Some of the image representations, for example, include data relating to dimensionality, spacing, components/channels, data orientation, and time (multiple studies/prior exams).
+            </div>
+          </div>
+      </div>
 
-    <!-- Site footer, add to EVERY page -->
-    <div id="footer">
-        <!-- loaded from footer.html via jQuery -->
-    </div>
+      <h3>Transformations: Preprocessing, Augmentation, and Companion Algorithms</h3>
+      <div class="pure-g">
+        <div class="pure-u-md-1-5">
+            <div class="card-img">
+              <img src="img/JC.png" class="full-img" />
+            </div>
+        </div>
+        <div class="pure-u-md-4-5">
+          <div class="text-desc">
+            <div class="card-left-text">
+              <strong>Group Lead: <a href="https://www.kcl.ac.uk/people/jorge-cardoso" target="_blank"> Jorge Cardoso </a></strong>
+              <br />
+              This working group covers the topics related to data preprocessing and augmentation modules for MONAI. In terms of functionality, these include patient-level transforms, such as simulating body habitus variations, aging; spatial geometric transforms, intensity transforms and acquisition transforms such as simulating medical imaging modalities, artefacts. In terms of technical implementations, these include differentiability, multi-dimensional data representation, lazy evaluation, caching, reproducibility, etc
+            </div>
+          </div>
+      </div>
 
-    <!-- Scripts, add to EVERY page -->
-    <script>
-    // load nav and footer html via jQuery
-    $('#nav').load("nav.html")
-    $('#footer').load("footer.html")
-    </script>
-    <script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
+      <h3>Federated Learning & Applications</h3>
+      <div class="pure-g">
+        <div class="pure-u-md-1-5">
+            <div class="card-img">
+              <img src="img/JK.png" class="full-img" />
+            </div>
+            <br />
+            <div class="card-img">
+              <img src="img/DR.png" class="full-img" />
+            </div>
+        </div>
+        <div class="pure-u-md-4-5">
+          <div class="text-desc">
+            <div class="card-left-text">
+              <strong>Group Leads: <a href="https://www.nmr.mgh.harvard.edu/user/8165" target="_blank"> Jayashree Kalpathy-Cramer </a> & <a href="https://profiles.stanford.edu/daniel-rubin" target="_blank"> Daniel Rubin </a></strong>
+              <br />
+              Federated learning is emerging as a promising approach for training AI models without requiring sites to share data. This is particularly important in medical use cases, since there are privacy and regulatory restrictions to sharing data. A number of different methods are being developed for federated learning, and they are currently silo efforts with limited synergy. The goal of this effort is to unify the disparate methods of federated learning in a common MONAI framework. This will be pursued through implemented federated learning use cases in MONAI as well as generation of best practices and documentation to enable the community to more broadly participate and implement common and interoperable approaches.
+            </div>
+          </div>
+      </div>
 
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight){
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-      });
-    }
-    </script>
-    <script src="/js/particles.min.js"></script>
-    <script src="/js/main.js"></script>
+      <h3>Evaluation, Reproducibility & Benchmarking</h3>
+      <div class="pure-g">
+        <div class="pure-u-md-1-5">
+            <div class="card-img">
+              <img src="img/LM.jpg" class="full-img" />
+            </div>
+        </div>
+        <div class="pure-u-md-4-5">
+          <div class="text-desc">
+            <div class="card-left-text">
+              <strong>Group Lead: <a href="https://www.dkfz.de/en/cami/team/people/Lena_Maier-Hein.html" target="_blank"> Lena Maier-Hein </a></strong>
+              <br />
+              Every year, hundreds of new algorithms are published in the field of biomedical image analysis. While validation of new methods has long been based on private data, publically available data sets and international competitions (‘challenges’) meanwhile allow for benchmarking algorithms in a transparent and comparative manner. Recent research, however, has revealed several flaws related to common practice in validation. A core goal of this working group is, therefore, to provide the infrastructure and tools for quality-controlled validation and benchmarking of medical image analysis methods. In collaboration with the international biomedical image analysis challenges (BIAS) initiative, open technical challenges and research questions related to a variety of topics will be addressed, ranging from best practices to how to create incentives for sharing code and data to performance aspects and implementation efficiency.
+            </div>
+          </div>
+      </div>
+
+      <h3>Research</h3>
+      <div class="pure-g">
+        <div class="pure-u-md-1-5">
+            <div class="card-img">
+              <img src="img/PJ.png" class="full-img" />
+            </div>
+        </div>
+        <div class="pure-u-md-4-5">
+          <div class="text-desc">
+            <div class="card-left-text">
+              <strong>Group Lead: <a href="https://pfjaeger.github.io/" target="_blank"> Paul Jaeger </a></strong>
+              <br />
+              Establish MONAI as a Catalyst for Scientific Progress and Real Life Impact by means of the following actions:
+              <br />
+              (1) Identify Key Challenges currently hampering Scientific Progress and Real Life Impact.
+              <br />
+              (2) Formalize abstract solutions and determine concepts for implementation in MONAI.
+              <br />
+              (3) Communicate results in the form of recommendations, best practice guidelines or articles to the MONAI advisory board, fellow MONAI working groups, or the public
+            </div>
+          </div>
+      </div>
+
+      <h3>Community Development, Outreach & Adoption</h3>
+      <div class="pure-g">
+        <div class="pure-u-md-1-5">
+            <div class="card-img">
+              <img src="img/PD.png" class="full-img" />
+            </div>
+        </div>
+        <div class="pure-u-md-4-5">
+          <div class="text-desc">
+            <div class="card-left-text">
+              <strong>Group Lead: <a href="https://www.linkedin.com/in/prerna-dogra-2664a72a" target="_blank"> Prerna Dogra </a></strong>
+              <br />
+              This working group focuses on outreach, to establish MONAI as a common software foundation that the Medical Imaging research and development community can build upon. This working group is charged with developing technical training & onboarding content, including tutorials, technical blogs, bootcamps & hackathons to educate & engage with researchers and developers. Another area of focus for the working group is to define the infrastructure and processes needed to support and grow a transparent, honest & open community of MONAI contributors and adopters, including establishing best practices for giving appropriate recognition to those who are promoting and making significant contributions back to MONAI.
+            </div>
+          </div>
+      </div>
+
+  </section>
+
+  <!-- Site footer, add to EVERY page -->
+  <div id="footer">
+      <!-- loaded from footer.html via jQuery -->
+  </div>
+
+  <!-- Scripts, add to EVERY page -->
+  <script>
+  // load nav and footer html via jQuery
+  $('#nav').load("nav.html")
+  $('#footer').load("footer.html")
+  </script>
+  <script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  }
+  </script>
+  <script src="/js/particles.min.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 
 </html>
