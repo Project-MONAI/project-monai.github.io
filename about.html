@@ -23,35 +23,6 @@
     <!-- jQuery for content loading -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <meta name="theme-color" content="#fafafa">
-    <style>
-    .custom-restricted-width {
-        display: inline-block;
-    }
-
-    .collapsible {
-      background-color: #fbfbfb;
-      color: #0285b0;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-    }
-
-    .active, .collapsible:hover {
-      background-color: #0384B0;
-      color: white;
-    }
-
-    .content {
-      padding: 0 18px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.2s ease-out;
-      background-color: #f1f1f1;
-    }
-    </style>
 </head>
 
 <body>
@@ -163,7 +134,7 @@
     </section>
     <section>
       <h2 class="section-title">Working Groups</h2>
-      
+
       <h3>Imaging I/O</h3>
       <div class="pure-g">
         <div class="pure-u-md-1-5">
@@ -180,7 +151,7 @@
             </div>
           </div>
       </div>
-        
+
       <h3>Data: Images, Biomarkers, Demographics, Outputs, and Outcomes</h3>
       <div class="pure-g">
         <div class="pure-u-md-1-5">
@@ -305,22 +276,6 @@
   // load nav and footer html via jQuery
   $('#nav').load("nav.html")
   $('#footer').load("footer.html")
-  </script>
-  <script>
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
-
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.maxHeight){
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
-    });
-  }
   </script>
   <script src="/js/particles.min.js"></script>
   <script src="/js/main.js"></script>
