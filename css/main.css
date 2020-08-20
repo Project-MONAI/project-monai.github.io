@@ -162,11 +162,13 @@ h4 {
 
 h1 {
     font-size: 5em;
+    line-height: 1em;
 }
 
 h2 {
     font-size: 3em;
     margin-bottom: 0em;
+    line-height: 1em;
 }
 
 h3 {
@@ -304,7 +306,7 @@ nav ul li a:hover {
 
 .show-menu {
     /* alter if lots of menu items */
-    height: 6em;
+    height: 7em;
 }
 
 
