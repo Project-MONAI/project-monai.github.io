@@ -84,14 +84,15 @@
         <p><a href="https://colab.research.google.com/drive/1boqy7ENpKrqaJoxFlbHIBnIODAs1Ih1T" target="_blank">
            MONAI for PyTorch users <img src="https://colab.research.google.com/assets/colab-badge.svg" />
         </a></p>
-        <p>Abdominal CT segmentation with 3D UNet<br/> <a href="https://github.com/Project-MONAI/Tutorials/blob/master/spleen_segmentation_3d.ipynb" target="_blank">Medical image segmentation tutorial <i class="far fa-caret-square-right"></i></a> </p>
-        <p>Integrate 3rd party transforms<br/> <a href="https://github.com/Project-MONAI/Tutorials/blob/master/integrate_3rd_party_transforms.ipynb" target="_blank">Integrate BatchGenerator, TorchIO, Rising and ITK transforms <i class="far fa-caret-square-right"></i></a> </p>
+        <p>Abdominal CT segmentation with 3D UNet<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/3d_segmentation/spleen_segmentation_3d.ipynb" target="_blank">Medical image segmentation tutorial <i class="far fa-caret-square-right"></i></a> </p>
+        <p>Fast training with MONAI components<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/acceleration/fast_training_tutorial.ipynb" target="_blank">Approximate 12x speedup with CacheDataset, Novograd, and AMP <i class="far fa-caret-square-right"></i></a> </p>
       </div>
       <div class="pure-u-1 pure-u-md-1-2">
         <h3>Workflows</h3>
-        <p>Training and evaluation - classification<br/> <a href="https://github.com/Project-MONAI/MONAI/tree/master/examples/classification_3d" target="_blank">Brain MRI classification examples <i class="far fa-caret-square-right"></i></a> </p>
-        <p>Training and evaluation - segmentation<br/> <a href="https://github.com/Project-MONAI/MONAI/tree/master/examples/segmentation_3d" target="_blank">Volumetric image segmentation examples <i class="far fa-caret-square-right"></i></a> </p>
-        <p>Training and evaluation - MONAI workflows<br/> <a href="https://github.com/Project-MONAI/MONAI/tree/master/examples/workflows" target="_blank">Image segmentation examples with engine and event-handlers <i class="far fa-caret-square-right"></i></a> </p>
+        <p>Training and evaluation - classification<br/> <a href="https://github.com/Project-MONAI/tutorials/tree/master/3d_classification" target="_blank">Brain MRI classification examples <i class="far fa-caret-square-right"></i></a> </p>
+        <p>Training and evaluation - segmentation<br/> <a href="https://github.com/Project-MONAI/tutorials/tree/master/3d_segmentation" target="_blank">Volumetric image segmentation examples <i class="far fa-caret-square-right"></i></a> </p>
+        <p>Training and evaluation - MONAI workflows<br/> <a href="https://github.com/Project-MONAI/tutorials/tree/master/modules/workflows" target="_blank">Image segmentation examples with engine and event-handlers <i class="far fa-caret-square-right"></i></a> </p>
+        <p>Training and evaluation - distributed data parallel<br/> <a href="https://github.com/Project-MONAI/tutorials/tree/master/acceleration/distributed_training" target="_blank">Examples based on PyTorch, Horovod, and MONAI workflows <i class="far fa-caret-square-right"></i></a> </p>
         <h3>Learn more</h3>
         <p>View a list of all<br> <a href="start.html">MONAI tutorials and examples <i class="far fa-caret-square-right"></i></a></p>
     </div>
@@ -100,18 +101,18 @@
 
   <section>
     <div class="pure-g">
-      <h2 class="section-title">New Features in v0.2.0</h2>
+      <h2 class="section-title">New Features in v0.3.0</h2>
       <div class="pure-u-1 pure-u-md-1-3">
-        <h3><i class="fas fa-tools"></i> Customizable </h3>
-        <p>Customizable and Composable Image Transforms with Third-party Integration Support. </p>
+        <h3><i class="fas fa-tools"></i> More components </h3>
+        <p>More domain-optimized networks, loss functions, metrics, and optimizers. </p>
       </div>
       <div class="pure-u-1 pure-u-md-1-3">
-        <h3><i class="fas fa-mouse-pointer"></i> Ready-to-use </h3>
-        <p>Ready-to-use Dataset and Loader APIs for the Standard Public Datasets. </p>
+        <h3><i class="fas fa-mouse-pointer"></i> Distributed training </h3>
+        <p>Components fully support distributed data parallel with rich examples. </p>
       </div>
       <div class="pure-u-1 pure-u-md-1-3">
-        <h3><i class="fas fa-rocket"></i> Optimized </h3>
-        <p>Various Domain-optimized Implementations for Network, Losses, Validation Metrics. </p>
+        <h3><i class="fas fa-rocket"></i> Auto mixed precision </h3>
+        <p>Enabled PyTorch AMP in workflows, provided rich tutorials and examples. </p>
       </div>
     </div>
   </section>
@@ -119,16 +120,16 @@
   <section>
     <div class="pure-g">
       <div class="pure-u-1 pure-u-md-1-3">
-        <h3><i class="fas fa-shapes "></i> Modules </h3>
-        <p>MONAI Research modules. </p>
+        <h3><i class="fas fa-shapes "></i> IO factory </h3>
+        <p>New image readers and LoadImage transform for more medical image formats. </p>
       </div>
       <div class="pure-u-1 pure-u-md-1-3">
-        <h3><i class="fas fa-file-code"></i> New Examples </h3>
-        <p>Various New Tutorials and Examples. </p>
+        <h3><i class="fas fa-file-code"></i> C++/CUDA support </h3>
+        <p>C++/CUDA optimized components and enabled CI/CD for to build. </p>
       </div>
       <div class="pure-u-1 pure-u-md-1-3">
-        <h3><i class="fas fa-dice-d20"></i> New Workflow APIs </h3>
-        <p>Various Deep Learning Workflow APIs. </p>
+        <h3><i class="fas fa-dice-d20"></i> New examples </h3>
+        <p>Various tutorial notebooks and examples for new features. </p>
       </div>
     </div>
   </section>
@@ -153,6 +154,7 @@
       <div class="pure-u-1 pure-u-md-1-2">
         <h3><i class="fas fa-code-branch"></i> Project MONAI</h3>
         <p>GitHub Repository <br/> <a href="https://github.com/Project-MONAI/MONAI" target="_blank">Go to repository <i class="far fa-caret-square-right"></i></a> </p>
+        <p>Tutorials GitHub Repository <br/> <a href="https://github.com/Project-MONAI/MONAI" target="_blank">Go to examples and notebooks <i class="far fa-caret-square-right"></i></a> </p>
         <p>Contributing Guidelines <br/> <a href="https://github.com/Project-MONAI/MONAI/blob/master/CONTRIBUTING.md" target="_blank">Go to guide <i class="far fa-caret-square-right"></i></a> </p>
         <p>Licensing Guide <br/> <a href="https://github.com/Project-MONAI/MONAI/blob/master/LICENSE" target="_blank">Go to Apache 2.0 license <i class="far fa-caret-square-right"></i></a> </p>
         <p>Bug reports and feature requests <br/> <a href="https://github.com/Project-MONAI/MONAI/issues" target="_blank">Go to issues <i class="far fa-caret-square-right"></i></a> </p>
@@ -203,19 +205,21 @@
                 </style>
             </defs>
             <title>Release Roadmap</title>
-            <line class="cls-1" x1="37.36" y1="62.02" x2="320.24" y2="62.02"></line>
-            <line class="cls-1" x1="320.24" y1="62.02" x2="325.24" y2="62.02"></line>
-            <line class="cls-2" x1="335.35" y1="62.02" x2="593.08" y2="62.02"></line>
-            <line class="cls-1" x1="598.13" y1="62.02" x2="603.13" y2="62.02"></line>
+            <line class="cls-1" x1="37.36" y1="62.02" x2="225.95" y2="62.02"></line>
+            <line class="cls-1" x1="225.96" y1="62.02" x2="414.54" y2="62.02"></line>
+            <line class="cls-2" x1="414.55" y1="62.02" x2="603.13" y2="62.02"></line>
             <circle class="cls-3" cx="37.36" cy="62.02" r="16.61"></circle>
-            <circle class="cls-3" cx="320.24" cy="62.02" r="16.61"></circle>
+            <circle class="cls-3" cx="225.95" cy="62.02" r="16.61"></circle>
+            <circle class="cls-3" cx="414.54" cy="62.02" r="16.61"></circle>
             <circle class="cls-8" cx="603.13" cy="62.02" r="16.61"></circle>
             <text class="cls-4" transform="translate(5 100.00)"> APR 2020 </text>
-            <text class="cls-4" transform="translate(290.00 100.00)"> JUL 2020 </text>
-            <text class="cls-4" transform="translate(566.00 100.00)"> OCT 2020 </text>
+            <text class="cls-4" transform="translate(196.00 100.00)"> JUL 2020 </text>
+            <text class="cls-4" transform="translate(381.00 100.00)"> OCT 2020 </text>
+            <text class="cls-4" transform="translate(569.00 100.00)"> DEC 2020 </text>
             <text class="cls-7" transform="translate(10.00 38.00)"> 0.1.0 </text>
-            <text class="cls-7" transform="translate(292.00 38.00)"> 0.2.0 </text>
-            <text class="cls-7" transform="translate(573.00 38.00)"> 0.3.0 </text>
+            <text class="cls-7" transform="translate(198.00 38.00)"> 0.2.0 </text>
+            <text class="cls-7" transform="translate(386.00 38.00)"> 0.3.0 </text>
+            <text class="cls-7" transform="translate(573.00 38.00)"> 0.4.0 </text>
         </svg>
       </div>
     </div>
