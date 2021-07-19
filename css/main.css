@@ -433,8 +433,8 @@ footer {
     color: #bacad1;
 }
 
-/* smaller sizse */
-@media screen and (max-width: 35.5em) {
+/* smaller sizes */
+@media screen and (max-width: 44em) {
 
     .menu-btn {
         z-index: 999;
@@ -446,6 +446,7 @@ footer {
         right: 0;
         height: 0;
         overflow: hidden;
+        display: none;
 
     }
 
@@ -467,7 +468,7 @@ footer {
     .header-subtitle {
         font-size: 2em;
         color: white;
-        margin-top: 3.2em;
+        margin-top: 4em;
     }
 
     .section-title {
@@ -635,4 +636,63 @@ footer {
     h3 {
         page-break-after: avoid;
     }
+}
+
+/* Social Media */
+.socialMediaLinks {
+    margin: 10px 0 10px 0;
+}
+.socialMediaLinks a {
+    font-size: 26px;
+    margin: 0 10px 0 0;
+    color: #000000;
+    text-decoration: none;
+    border-bottom: none;
+}
+.socialMediaLinks a.fa-twitter {
+    color: #00aced;
+}
+.socialMediaLinks a.fa-youtube {
+    color: #d34836;
+}
+
+/* Code Block */
+pre {
+    font-family: Source Code Pro,monospace;
+    background-color: #f9f9f9;
+    border: 1px solid #d3d3d3;
+    font-size: .85rem;
+    color: #6c6c6c;
+    padding: 15px;
+    margin: 10px 0 0;
+}
+
+/* Ribbon */
+.ribbon {
+    background: #0385b0;
+    text-align: center;
+    border-bottom: solid white 1px;
+}
+
+.ribbon > div {
+  padding: 10px;
+}
+
+.ribbon p {
+  color: #eee;
+  font-size: 18px;
+  display: inline;
+}
+
+.ribbon a {
+  color: #d6b707;
+}
+
+.ribbon i {
+  display: inline;
+  color: #eee;
+  position: absolute;
+  right: 30px;
+  top: 14px;
+  cursor: pointer;
 }
