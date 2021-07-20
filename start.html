@@ -2,6 +2,14 @@
 <html class="no-js" lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QVGBCPFPJ6');
+    </script>
     <meta charset="utf-8">
     <title>Project MONAI</title>
     <meta name="description" content="Medical Open Network for AI - A Toolkit for Healthcare Imaging">
@@ -38,16 +46,35 @@
         <h2 class="header-subtitle">Medical Open Network for AI</h2>
     </div>
     <section>
-        <h2 class="section-title">Getting Started</h2>
         <div class="pure-g">
           <div class="pure-u-1">
-            <h3>Install monai</h3>
-            <p>You can quickly get started with
-            <a href="https://pypi.org/project/monai/" target="_blank">the Python Package Index (PyPI) </a> or via several <a href="https://docs.monai.io/en/latest/installation.html" target="_blank">alternative installation approaches</a></p>
-        </div>
+            <h2>Installation</h2>
+            <div class="pure-g">
+              <div class="pure-u-1 pure-u-md-1-2">
+                <h3>MONAI </h3>
+                <p>A PyTorch-based, open-source framework for deep learning in healthcare imaging used to create state-of-the-art, end-to-end training workflows.</p>
+                <p>To install the current release, run the following command:</p>
+                <pre class="code" style="margin-right: 50px;">pip install monai</pre>
+                <p>For more details, please refer to the <a href="https://docs.monai.io/en/latest/installation.html">installation guide</a>.  Find a full list of examples <a href="#MONAIExamples">below</a>.</p>
+              </div>
+              <div class="pure-u-1 pure-u-md-1-2">
+               <h3>MONAI Label</h3>
+               <p>An intelligent open-source medical image labeling and learning tool that enables you to create annotated datasets and build AI annotation models quickly</p>
+               <p>To install the current release, run the following command:</p>
+               <pre class="code" style="margin-right: 50px;">pip install monailabel</pre>
+               <p>For more details, please refer to the <a href="https://docs.monai.io/projects/label/en/latest/installation.html">installation guide</a>. Find a full list of examples <a href="#MONAILabelExamples">below</a>.</p>
+              </div>
+          </div>
+          </div>
+          <div class="pure-u-1">
+            <h2>MONAI Bootcamp</h2>
+            <p>
+                Check out all the videos from our first MONAI Bootcamp on <a href="https://www.youtube.com/c/Project-MONAI" target="_blank">YouTube</a>.  We cover the basics of MONAI, GANS using MedNIST, and Segmentation using the Sunnybrook Cardiac Dataset.  For an overview of everything that happened at the event, check out our <a href="https://medium.com/@monai/first-ever-monai-bootcamp-recap-8edc462e57cc" target="_blank">Medium story</a> covering the event.
+            </p>
+          </div>
     </section>
-
-    <section>
+    <section id="MONAIExamples">
+        <h2 style="margin-bottom: -40px;">MONAI Examples</h2>
         <div class="pure-g">
             <div class="pure-u-1 pure-u-md-1-2">
                 <h3>2D Classification Examples</h3>
@@ -101,6 +128,30 @@
                 <p>Training and evaluation code examples with MONAI engines<br/> <a href="https://github.com/Project-MONAI/tutorials/tree/master/modules/engines">GAN and Image segmentation workflow examples with MONAI engines <i class="far fa-caret-square-right"></i></a> </p>
             </div>
         </div>
+    </section>
+    <section id="MONAILabelExamples">
+     <h2 style="margin-bottom: -40px;">MONAI Label Examples</h2>
+     <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-1-2">
+          <h3>Sample Applications</h3>
+          <p>Left-atrium semantic segmentation in the heart
+          	<br/>
+          	<a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/deepedit_left_atrium">DeepEdit <i class="far fa-caret-square-right"></i></a>
+          	<br/>
+          	<a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/deepgrow_left_atrium">DeepGrow <i class="far fa-caret-square-right"></i></a>
+          	<br/>
+          	<a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/segmentation_left_atrium">Segmentation <i class="far fa-caret-square-right"></i></a>
+          </p>
+          <p>Spleen semantic segmentation
+          	<br/>
+          	<a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/deepedit_spleen">DeepEdit <i class="far fa-caret-square-right"></i></a>
+          	<br/>
+          	<a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/deepgrow_spleen">DeepGrow <i class="far fa-caret-square-right"></i></a>
+          	<br/>
+          	<a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/segmentation_spleen">Segmentation <i class="far fa-caret-square-right"></i></a>
+          </p>
+        </div>
+     </div>
     </section>
 
     <!-- Site footer, add to EVERY page -->
