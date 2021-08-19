@@ -365,6 +365,17 @@ section {
     line-height: 1.5em;
 }
 
+.card {
+  border: 1px solid #ddd;
+  margin: 1em;
+  padding: 1em;
+
+}
+
+.card h3 {
+  margin-top: 1em;
+}
+
 .card-img {
     width: 140px;
 }
