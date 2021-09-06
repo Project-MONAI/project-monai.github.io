@@ -1,8 +1,8 @@
 # Project MONAI Website
-This repo contains source code and content for the project MONAI website found at [monai.io](http://monai.io/). You can find out more on the [Project-MONAI github](https://github.com/Project-MONAI). 
+This repo contains source code and content for the project MONAI website found at [monai.io](https://monai.io/). You can find out more on the [Project-MONAI github](https://github.com/Project-MONAI). 
 
 ## Templates and Guides
-A full set of section templates and guides is available for reference on the [Templates Page](http://monai.io/templates.html) using `templates.html`. The site uses responsive css layouts provided by [Purecss](https://purecss.io/), [Google Fonts](https://fonts.google.com/), and font icons by [Font Aweomse](https://fontawesome.com/icons?d=gallery&m=free).
+A full set of section templates and guides is available for reference on the [Templates Page](https://monai.io/templates.html) using `templates.html`. The site uses responsive css layouts provided by [Purecss](https://purecss.io/), [Google Fonts](https://fonts.google.com/), and font icons by [Font Aweomse](https://fontawesome.com/icons?d=gallery&m=free).
 
 ### Local Development 
 Git clone this repo and open the .html pages with a browser. For the NAV and FOOTER sections to appear requires the files to be served via `python -m http.server` or similar. 
