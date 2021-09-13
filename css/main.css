@@ -306,7 +306,8 @@ nav ul li a:hover {
 
 .show-menu {
     /* alter if lots of menu items */
-    height: 7em;
+    height: 11em;
+    display: block;
 }
 
 
@@ -445,7 +446,7 @@ footer {
 }
 
 /* smaller sizes */
-@media screen and (max-width: 44em) {
+@media screen and (max-width: 50em) {
 
     .menu-btn {
         z-index: 999;
