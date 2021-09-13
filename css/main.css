@@ -306,7 +306,8 @@ nav ul li a:hover {
 
 .show-menu {
     /* alter if lots of menu items */
-    height: 7em;
+    height: 11em;
+    display: block;
 }
 
 
@@ -363,6 +364,17 @@ section {
     font-size: 1.3em;
     color: #0285b0;
     line-height: 1.5em;
+}
+
+.card {
+  border: 1px solid #ddd;
+  margin: 1em;
+  padding: 1em;
+
+}
+
+.card h3 {
+  margin-top: 1em;
 }
 
 .card-img {
@@ -434,7 +446,7 @@ footer {
 }
 
 /* smaller sizes */
-@media screen and (max-width: 44em) {
+@media screen and (max-width: 50em) {
 
     .menu-btn {
         z-index: 999;
