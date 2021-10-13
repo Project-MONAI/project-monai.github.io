@@ -11,7 +11,7 @@
         gtag('config', 'G-QVGBCPFPJ6');
     </script>
     <meta charset="utf-8">
-    <title>Project MONAI</title>
+    <title>Project MONAI - Get Started</title>
     <meta name="description" content="Medical Open Network for AI - A Toolkit for Healthcare Imaging">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="assets/logo/MONAI-logo_favicon.png">
@@ -48,23 +48,44 @@
     <section>
         <div class="pure-g">
           <div class="pure-u-1">
-            <h2>Installation</h2>
+            <h2>Getting Started</h2>
+            <div class="pure-g">
+              <div class="pure-u-1 pure-u-md-1-1">
+                <p>Are you looking to get started with Project MONAI? You can find installation and tutorial links below to help you quickly get started. If you're a more visual learner, you can find videos from our <a href="https://www.youtube.com/playlist?list=PLtoSVSQ2XzyBro_Xs12cyerrGz4pEPylv" target="_blank"> MONAI Bootcamp </a></p>
+                <p>For MONAI, You'll find Jupyter Notebooks available to help you through fundamental components and workflows, including 2D and 3D Classification and Segmentation, Image Registration, Digital Pathology, and Accelerated Training.</p>
+                <p>For MONAI Label, you'll find sample apps that utilize three different segmentation paradigms.  Use the existing app as-is or create your own using these as a starting point. </p>
+                <p>For MONAI App SDK, you'll find example deployment apps starting with a simple app to a MedNIST segmentation tutorial. These tutorials will give you the skill to create your own deployment application. </p>
+              </div>
+              <ul>
+                <li><a href="#Install">Installation </a></li>
+                <li><a href="#MONAITutorials">MONAI Tutorials </a></li>
+                <li><a href="#MONAILabelApps">MONAI Label Apps </a></li>
+                <li><a href="#MONAIDeployExamples">MONAI Deploy App SDK Apps </a></li>
+              </ul>
+
+          </div>
+          </div>
+    </section>
+    <section id="Install">
+        <div class="pure-g">
+          <div class="pure-u-1">
+            <h2 style="margin-top: -40px; margin-bottom: -40px">Installation</h2>
             <div class="pure-g">
               <div class="pure-u-1 pure-u-md-1-2">
                 <h3>MONAI </h3>
                 <p>A PyTorch-based, open-source framework for deep learning in healthcare imaging used to create state-of-the-art, end-to-end training workflows.</p>
                 <p>To install the current release, run the following command:</p>
                 <pre class="code" style="margin-right: 50px;">pip install monai</pre>
-                <p>For more details, please refer to the <a href="https://docs.monai.io/en/latest/installation.html">installation guide</a>.  Find a full list of examples <a href="#MONAIExamples">below</a>.</p>
+                <p>For more details, please refer to the <a href="https://docs.monai.io/en/latest/installation.html">installation guide</a>.</p>
               </div>
               <div class="pure-u-1 pure-u-md-1-2">
-                <h3>MONAI Label</h3>
-                <p>An intelligent open-source medical image labeling and learning tool that enables you to create annotated datasets and build AI annotation models quickly.</p>
-                <p>To install the current release, run the following command:</p>
-                <pre class="code" style="margin-right: 50px;">pip install monailabel</pre>
-                <p>For more details, please refer to the <a href="https://docs.monai.io/projects/label/en/latest/installation.html">installation guide</a>. Find a full list of examples <a href="#MONAILabelExamples">below</a>.</p>
-               </div>
-               <div class="pure-u-1 pure-u-md-1-2">
+               <h3>MONAI Label</h3>
+               <p>An intelligent open-source medical image labeling and learning tool that enables you to create annotated datasets and build AI annotation models quickly</p>
+               <p>To install the current release, run the following command:</p>
+               <pre class="code" style="margin-right: 50px;">pip install monailabel</pre>
+               <p>For more details, please refer to the <a href="https://docs.monai.io/projects/label/en/latest/installation.html">installation guide</a>.</p>
+              </div>
+              <div class="pure-u-1 pure-u-md-1-2">
                 <h3>MONAI Deploy App SDK</h3>
                 <p>A framework and associated tools to design, verify and analyze the performance of AI-driven applications in the healthcare domain.</p>
                 <p>To install the current release, run the following command:</p>
@@ -73,15 +94,12 @@
                </div>
           </div>
           </div>
-          <div class="pure-u-1">
-            <h2>MONAI Bootcamp</h2>
-            <p>
-                Check out all the videos from our first MONAI Bootcamp on <a href="https://www.youtube.com/c/Project-MONAI" target="_blank">YouTube</a>.  We cover the basics of MONAI, GANS using MedNIST, and Segmentation using the Sunnybrook Cardiac Dataset.  For an overview of everything that happened at the event, check out our <a href="https://medium.com/@monai/first-ever-monai-bootcamp-recap-8edc462e57cc" target="_blank">Medium story</a> covering the event.
-            </p>
-          </div>
     </section>
-    <section id="MONAIExamples">
-        <h2 style="margin-bottom: -40px;">MONAI Examples</h2>
+    <section id="MONAITutorials">
+        <h2 style="margin-top: -20px;">MONAI Tutorials</h2>
+        <div style="margin-bottom: -40px">
+            For a full list of tutorials, visit the <a href="https://github.com/Project-MONAI/tutorials" target="_blank"> MONAI tutorial repo</a>.
+        </div>
         <div class="pure-g">
             <div class="pure-u-1 pure-u-md-1-2">
                 <h3>2D Classification Examples</h3>
@@ -92,83 +110,63 @@
                 <p>Training and evaluation code examples for 2D medical image segmentation<br/> <a href="https://github.com/Project-MONAI/tutorials/tree/master/2d_segmentation/torch">2D image segmentation with Unet <i class="far fa-caret-square-right"></i></a> </p>
             </div>
             <div class="pure-u-1 pure-u-md-1-2">
-                <h3>3D Classification Examples</h3>
+                <h3 style="margin-top: 5px">3D Classification Examples</h3>
                 <p>Training and evaluation code examples for 3D medical image classification<br/> <a href="https://github.com/Project-MONAI/tutorials/tree/master/3d_classification/torch">Brain MRI classification examples <i class="far fa-caret-square-right"></i></a> </p>
                 <p>Training and evaluation code examples for 3D medical image classification (with PyTorch Ignite)<br/> <a href="https://github.com/Project-MONAI/tutorials/tree/master/3d_classification/ignite">Brain MRI classification examples with Ignite <i class="far fa-caret-square-right"></i></a> </p>
             </div>
             <div class="pure-u-1 pure-u-md-1-2">
-                <h3>3D Segmentation Examples</h3>
+                <h3 style="margin-top: 5px">3D Segmentation Examples</h3>
                 <p>Brain tumor 3D segmentation<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/3d_segmentation/brats_segmentation_3d.ipynb">Brats segmentation tutorial <i class="far fa-caret-square-right"></i></a> </p>
-                <p>Abdominal CT segmentation<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/3d_segmentation/spleen_segmentation_3d.ipynb">Spleen segmentation tutorial <i class="far fa-caret-square-right"></i></a> </p>
-                <p>Abdominal CT segmentation (with PyTorch Lightning)<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/3d_segmentation/spleen_segmentation_3d_lightning.ipynb">Spleen segmentation tutorial with Lightning <i class="far fa-caret-square-right"></i></a> </p>
                 <p>Training and evaluation code examples for 3D medical image segmentation<br/> <a href="https://github.com/Project-MONAI/tutorials/tree/master/3d_segmentation/torch">Volumetric image segmentation examples <i class="far fa-caret-square-right"></i></a> </p>
-                <p>Training and evaluation code examples for 3D medical image segmentation (with PyTorch Ignite)<br/> <a href="https://github.com/Project-MONAI/tutorials/tree/master/3d_segmentation/ignite">Volumetric image segmentation examples with Ignite <i class="far fa-caret-square-right"></i></a> </p>
                 <p>Build a segmentation workflow (with PyTorch Ignite)<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/3d_segmentation/unet_segmentation_3d_ignite.ipynb">Segmentation workflow demo with Ignite <i class="far fa-caret-square-right"></i></a> </p>
-                <p>Build a segmentation workflow (with Catalyst framework)<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/3d_segmentation/unet_segmentation_3d_catalyst.ipynb">Segmentation workflow demo with Catalyst <i class="far fa-caret-square-right"></i></a> </p>
             </div>
             <div class="pure-u-1 pure-u-md-1-2">
-                <h3>Performance Acceleration</h3>
-                <p>Training and evaluation code examples with Distributed Training supports<br/> <a href="https://github.com/Project-MONAI/tutorials/tree/master/acceleration/distributed_training">Distributed training examples <i class="far fa-caret-square-right"></i></a></p>
-                <p>3D segmentation with Automatic Mixed Precision supports<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/acceleration/automatic_mixed_precision.ipynb">Spleen segmentation tutorial with AMP supports <i class="far fa-caret-square-right"></i></a></p>
-                <p>Accelerate model training by caching methods<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/acceleration/dataset_type_performance.ipynb">Comparisons between different loading methods <i class="far fa-caret-square-right"></i></a> </p>
+                <h3 style="margin-top: 5px">Performance Acceleration</h3>
                 <p>Fast training under MONAI features<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/acceleration/fast_training_tutorial.ipynb">Fast training demo <i class="far fa-caret-square-right"></i></a> </p>
                 <p>Data-parallel training with multiple-GPUs<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/acceleration/multi_gpu_test.ipynb">Multi-GPU training demo <i class="far fa-caret-square-right"></i></a> </p>
                 <p>GPU-based preprocessing in native PyTorch<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/acceleration/transform_speed.ipynb">GPU-based pipeline demo <i class="far fa-caret-square-right"></i></a> </p>
             </div>
-            <div class="pure-u-1 pure-u-md-1-2">
-                <h3>Federated Learning Examples</h3>
-                <p>3D segmentation on a federated learning platform, <a href="https://github.com/substrafoundation/substra" target="_blank">Substra</a><br/> <a href="https://github.com/Project-MONAI/tutorials/tree/master/federated_learning/substra">Federated training with Substra <i class="far fa-caret-square-right"></i></a></p>
-            </div>
-            <div class="pure-u-1 pure-u-md-1-2">
-                <h3>Modules Demo</h3>
-                <p>Histology image transformation demo<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/modules/transforms_demo_2d.ipynb">2D transformation demo <i class="far fa-caret-square-right"></i></a> </p>
-                <p>Volumetric image transformation demo<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/modules/3d_image_transforms.ipynb">3D transformation tutorial <i class="far fa-caret-square-right"></i></a> </p>
-                <p>Integrate 3rd party transforms<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/modules/integrate_3rd_party_transforms.ipynb">Integrate BatchGenerator, TorchIO, Rising and ITK transforms <i class="far fa-caret-square-right"></i></a> </p>
-                <p>Load medical images in MONAI<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/modules/load_medical_images.ipynb">Tutorial for loading different formats of medical images in MONAI <i class="far fa-caret-square-right"></i></a> </p>
-                <p>GAN tutorial with MedNIST dataset<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/modules/mednist_GAN_tutorial.ipynb">Generate medical images with GAN <i class="far fa-caret-square-right"></i></a> </p>
-                <p>GAN workflow with MedNIST dataset<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/modules/mednist_GAN_workflow_array.ipynb">Train a GAN model to reconstruct images of Hand CT scans <i class="far fa-caret-square-right"></i></a> </p>
-                <p>Models ensemble with MONAI<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/modules/models_ensemble.ipynb">Models ensemble demo with MONAI <i class="far fa-caret-square-right"></i></a> </p>
-                <p>Read Nifti files with MONAI<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/modules/nifti_read_example.ipynb">Tutorial for loading Nifti files with MONAI <i class="far fa-caret-square-right"></i></a> </p>
-                <p>Post transforms tutorial<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/modules/post_transforms.ipynb">Post transforms demo for model output <i class="far fa-caret-square-right"></i></a> </p>
-                <p>Public Datasets tutorial<br/> <a href="https://github.com/Project-MONAI/tutorials/blob/master/modules/public_datasets.ipynb">Easily use and create public Datasets <i class="far fa-caret-square-right"></i></a> </p>
-                <p>Train on Decathlon datasets with DynUNet<br/> <a href="https://github.com/Project-MONAI/tutorials/tree/master/modules/dynunet_pipeline">Tutorial for training on all 10 decathlon datasets with DynUNet <i class="far fa-caret-square-right"></i></a> </p>
-                <p>Training and evaluation code examples with MONAI engines<br/> <a href="https://github.com/Project-MONAI/tutorials/tree/master/modules/engines">GAN and Image segmentation workflow examples with MONAI engines <i class="far fa-caret-square-right"></i></a> </p>
-            </div>
         </div>
     </section>
-    <section id="MONAILabelExamples">
-     <h2 style="margin-bottom: -40px;">MONAI Label Examples</h2>
+    <section id="MONAILabelApps">
+     <h2 style="margin-top: -20px;">MONAI Label Sample Applications</h2>
+     <div style="margin-bottom: -40px">
+         For a full list Applications, visit the <a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps" target="_blank"> MONAI Label Sample Apps Repo</a>.
+     </div>
      <div class="pure-g">
         <div class="pure-u-1 pure-u-md-1-2">
           <h3>Sample Applications</h3>
           <p>Left-atrium semantic segmentation in the heart
-          	<br/>
-          	<a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/deepedit_left_atrium">DeepEdit <i class="far fa-caret-square-right"></i></a>
-          	<br/>
-          	<a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/deepgrow_left_atrium">DeepGrow <i class="far fa-caret-square-right"></i></a>
-          	<br/>
-          	<a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/segmentation_left_atrium">Segmentation <i class="far fa-caret-square-right"></i></a>
-          </p>
+            <br/>
+            <a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/deepedit_left_atrium">DeepEdit <i class="far fa-caret-square-right"></i></a>
+            <br/>
+            <a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/deepgrow_left_atrium">DeepGrow <i class="far fa-caret-square-right"></i></a>
+        </p>
           <p>Spleen semantic segmentation
           	<br/>
           	<a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/deepedit_spleen">DeepEdit <i class="far fa-caret-square-right"></i></a>
           	<br/>
           	<a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/deepgrow_spleen">DeepGrow <i class="far fa-caret-square-right"></i></a>
-          	<br/>
-          	<a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/segmentation_spleen">Segmentation <i class="far fa-caret-square-right"></i></a>
           </p>
         </div>
      </div>
     </section>
     <section id="MONAIDeployExamples">
-        <h2 style="margin-bottom: -40px;">MONAI Deploy App SDK Examples</h2>
+        <h2>MONAI Deploy App SDK Tutorials</h2>
+        <div style="margin-bottom: -40px">
+            For a full list of tutorials, visit the <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/getting_started/tutorials/index.html" target="_blank"> MONAI Deploy App SDK Tutorials Page</a>.
+        </div>
         <div class="pure-g">
            <div class="pure-u-1 pure-u-md-1-2">
              <h3>Tutorials</h3>
-             <p>Creating a Sample Deployment App
-                 <br/>
-                 <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/getting_started/tutorials/02_mednist_app.html">MedNIST Classifier App <i class="far fa-caret-square-right"></i></a>
-             </p>
+             <p>Creating a simple Deployment App
+                <br/>
+                <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/getting_started/tutorials/01_simple_app.html">Simple Classifier App <i class="far fa-caret-square-right"></i></a>
+            </p>
+            <p>Creating a MedNIST Deployment App
+                <br/>
+                <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/getting_started/tutorials/02_mednist_app.html">MedNIST Classifier App <i class="far fa-caret-square-right"></i></a>
+            </p>
            </div>
         </div>
        </section>
