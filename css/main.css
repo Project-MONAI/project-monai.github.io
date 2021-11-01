@@ -420,6 +420,10 @@ section {
     text-align: center;
 }
 
+.logo-farm {
+    align-items: center;
+}
+
 /* footer */
 footer {
     background-color: #0384B0;
