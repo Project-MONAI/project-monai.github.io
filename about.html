@@ -1,383 +1,641 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QVGBCPFPJ6');
-    </script>
-    <meta charset="utf-8">
-    <title>Project MONAI</title>
-    <meta name="description" content="Medical Open Network for AI - A Toolkit for Healthcare Imaging">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="assets/logo/MONAI-logo_favicon.png">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
-    <!-- purecss responsive layout -->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lekton:700|Roboto&display=swap" rel="stylesheet">
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-QVGBCPFPJ6');
+  </script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Project MONAI was originally started by NVIDIA & King’s College London to establish an inclusive community of AI researchers for the development and exchange of best practices for AI in healthcare imaging across academia and enterprise researchers.">
+  <!--====== Favicon Icon ======-->
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
 
-    <!-- custom css styles -->
-    <link rel="stylesheet" href="css/main.css">
+  <title>MONAI - About Us</title>
 
-    <!-- font icons from fontawesome -->
-    <script src="https://kit.fontawesome.com/f88eadff8b.js" crossorigin="anonymous"></script>
-
-    <!-- jQuery for content loading -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <meta name="theme-color" content="#fafafa">
+  <!-- Animate -->
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+  <!-- Tailwind css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/tailwind.css">
 </head>
 
 <body>
 
-    <!-- Site Nav, add to EVERY page -->
-    <div id="nav">
-        <!-- loaded from nav.html via jQuery -->
+  <!-- Header Area wrapper Starts -->
+  <header id="header-wrap" class="relative border-b border-neutral-neutral_gray2">
+    <!-- Navbar Start -->
+    <div class="navigation top-0 left-0 w-full z-30 duration-300">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg flex justify-end items-center justify-between relative duration-300">
+          <a class="navbar-brand" href="index.html">
+            <img class="py-2" src="assets/img/MONAI-logo_color.png" alt="Logo">
+          </a>
+          <button class="navbar-toggler focus:outline-none block lg:hidden" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse hidden lg:block duration-300 shadow absolute top-100 left-0 mt-full bg-white z-20 px-5 w-full lg:static lg:bg-transparent lg:shadow-none" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto justify-end items-center lg:flex">
+              <li class="nav-item">
+                <a class="page-scroll" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll active" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="started.html">Get Started</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="community.html">Community</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" target="_blank" href="https://medium.com/@monai">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="docs.html">Docs</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" target="_blank" href="https://github.com/Project-MONAI">GitHub</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
+    <!-- Navbar End -->
+  </header>
+  <!-- Header Area wrapper End -->
 
-    <!-- Site Heading section, add to EVERY page -->
-    <div id="particles-js">
-        <img class="header-logo" src="img/MONAI-logo-white.png">
-        <h2 class="header-subtitle">Medical Open Network for AI</h2>
+
+  <!-- Contributors Section Start -->
+  <section id="contributors" class="py-16">
+    <div class="container">
+      <div class="flex flex-wrap items-center">
+        <div class="w-full lg:w-1/2">
+          <h2 class="mb-6 section-heading">About MONAI</h2>
+          <div class="w-full sm:3/5">
+            <p class="py-2">Project MONAI was originally started by NVIDIA & King’s College London to establish an inclusive community of AI researchers for the development and exchange of best practices for AI in healthcare imaging across academia and enterprise researchers.</p>
+            <p class="py-2">
+              The MONAI framework is the open-source foundation being created by Project MONAI and it wouldn’t have been possible to accelerate this development without the development of existing toolkits such as Nvidia Clara Train, NiftyNet, DLTK, and DeepNeuro.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-center w-full lg:w-1/2">
+          <img class="hidden lg:block lg:w-3/4 xl:auto" src="assets/img/about_us_header.png">
+        </div>
+      </div>
     </div>
+    </div>
+  </section>
+  <!-- Contributors Section End -->
 
-    <!-- Bios Section Content, add as many flex-items as needed -->
-    <section>
-        <h2 class="section-title">Advisory Board</h2>
-                <p class="section-desc">
-                    MONAI marks the bringing together of these existing efforts to build a common, open foundation and it is mission-critical for MONAI’s success to be guided by thought leaders in the domain.
-                </p>
-        <div class="flex-container">
-            <div class="flex-item">
-                <div class="card-img">
-                    <img src="img/SA.png" class="full-img" />
-                </div>
-                <div class="card-text">
-                  <strong><a href="https://www.kitware.com/stephen-aylward/" target="_blank"> Stephen Aylward </a></strong> <br/> <small>Chair of Advisory Board </small> <br/>
-                </div>
-            </div>
-            <div class="flex-item">
-                <div class="card-img">
-                    <img src="img/SO.png" class="full-img" />
-                </div>
-                <div class="card-text">
-                  <strong><a href="https://www.kcl.ac.uk/people/sebastien-ourselin" target="_blank"> Sebastien Ourselin </a></strong> <br/>
-                </div>
-            </div>
-            <div class="flex-item">
-                <div class="card-img">
-                    <img src="img/KMH.png" class="full-img"/>
-                </div>
-                <div class="card-text">
-                  <strong><a href="https://www.dkfz.de/en/mic/team/people/Klaus_Maier-Hein.html" target="_blank"> Klaus Maier-Hein </a></strong> <br/>
-                </div>
-            </div>
-            <div class="flex-item">
-                <div class="card-img">
-                    <img src="img/JK.png" class="full-img"/>
-                </div>
-                <div class="card-text">
-                  <strong><a href="https://www.nmr.mgh.harvard.edu/user/8165" target="_blank"> Jayashree Kalpathy-Cramer </a></strong> <br/>
-                </div>
-            </div>
-            <div class="flex-item">
-                <div class="card-img">
-                    <img src="img/JC.png" class="full-img"/>
-                </div>
-                <div class="card-text">
-                  <strong><a href="https://www.kcl.ac.uk/people/jorge-cardoso" target="_blank"> Jorge Cardoso </a></strong> <br/>
-                </div>
-            </div>
-            <div class="flex-item">
-                <div class="card-img">
-                    <img src="img/DR.png" class="full-img"/>
-                </div>
-                <div class="card-text">
-                  <strong><a href="https://profiles.stanford.edu/daniel-rubin" target="_blank"> Daniel Rubin </a></strong> <br/>
-                </div>
-            </div>
-            <div class="flex-item">
-                <div class="card-img">
-                    <img src="img/KZ.png" class="full-img"/>
-                </div>
-                <div class="card-text">
-                  <strong><a href="https://www.linkedin.com/in/s-kevin-zhou-231a094b" target="_blank"> Kevin Zhou </a></strong> <br/>
-                </div>
-            </div>
-            <div class="flex-item">
-                <div class="card-img">
-                    <img src="img/NN.png" class="full-img"/>
-                </div>
-                <div class="card-text">
-                  <strong><a href="https://www.cs.jhu.edu/faculty/nassir-navab/" target="_blank"> Nassir Navab </a></strong> <br/>
-                </div>
-            </div>
-            <div class="flex-item">
-                <div class="card-img">
-                    <img src="img/AF.jpeg" class="full-img"/>
-                </div>
-                <div class="card-text">
-                  <strong><a href="https://www.linkedin.com/in/afeng/" target="_blank"> Andrew Feng </a></strong> <br/>
-                </div>
-            </div>
-            <div class="flex-item">
-                <div class="card-img">
-                    <img src="img/NasirRajpoot.png" class="full-img"/>
-                </div>
-                <div class="card-text">
-                  <strong><a href="https://warwick.ac.uk/fac/sci/dcs/people/nasir_rajpoot/" target="_blank"> Nasir Rajpoot </a></strong> <br/>
-                </div>
-            </div>
-            <div class="flex-item">
-                <div class="card-img">
-                    <img src="img/JustinKirby.png" class="full-img"/>
-                </div>
-                <div class="card-text">
-                  <strong><a href="https://www.linkedin.com/in/justinkirby82/" target="_blank"> Justin Kirby </a></strong> <br/>
-                </div>
-            </div>
-            <div class="flex-item">
-                <div class="card-img">
-                    <img src="img/KeyvanFarahani.jpg" class="full-img"/>
-                </div>
-                <div class="card-text">
-                  <strong><a href="https://datascience.cancer.gov/about/staff-directory/keyvan-farahani" target="_blank"> Keyvan Farahani </a></strong> <br/>
-                </div>
-            </div>
+  <!-- Contributors Section Start -->
+  <section id="contributors" class="py-16 bg-neutral-lightgray">
+    <div class="container">
+      <h2 class="section-heading">Advisory Board</h2>
+      <p class="w-3/4">
+        MONAI marks the bringing together of these existing efforts to build a common, open foundation and it is mission-critical for MONAI’s success to be guided by thought leaders in the domain.
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-12 gap-y-6 justify-items-center pt-16">
+        <div class="col-span-1 w-full">
+          <div class="aspect-h-1 aspect-w-1">
+            <img class="object-cover shadow-lg rounded-lg" src="assets/img/SA.png">
+          </div>
+          <p class="font-bold my-2">Stephen Aylward</p>
+          <p class="my-2">Chair of Advisory Board</p>
+          <a href="https://www.kitware.com/stephen-aylward/" target="_blank">
+            <p class="my-2 external-link">Profile</p>
+          </a>
         </div>
-    </section>
-    <section>
-      <h2 class="section-title">Working Groups</h2>
+        <div class="col-span-1 w-full">
+          <div class="aspect-h-1 aspect-w-1">
+            <img class="object-cover shadow-lg rounded-lg" src="assets/img/SO.png">
+          </div>
+          <p class="font-bold my-2">Sebastien Ourselin</p>
+          <a href="https://www.kcl.ac.uk/people/sebastien-ourselin" target="_blank">
+            <p class="my-2 external-link">Profile</p>
+          </a>
+        </div>
+        <div class="col-span-1 w-full">
+          <div class="aspect-h-1 aspect-w-1">
+            <img class="object-cover shadow-lg rounded-lg" src="assets/img/KMH.jpg">
+          </div>
+          <p class="font-bold my-2">Klaus Maier-Hein</p>
+          <a href="https://www.dkfz.de/en/mic/team/people/Klaus_Maier-Hein.html" target="_blank">
+            <p class="my-2 external-link">Profile</p>
+          </a>
+        </div>
+        <div class="col-span-1 w-full">
+          <div class="aspect-h-1 aspect-w-1">
+            <img class="object-cover shadow-lg rounded-lg" src="assets/img/JK.jpg">
+          </div>
+          <p class="font-bold my-2">Jayashree Kalpathy-Cramer</p>
+          <a href="https://www.nmr.mgh.harvard.edu/user/8165" target="_blank">
+            <p class="my-2 external-link">Profile</p>
+          </a>
+        </div>
+        <div class="col-span-1 w-full">
+          <div class="aspect-h-1 aspect-w-1">
+            <img class="object-cover shadow-lg rounded-lg" src="assets/img/JC.png">
+          </div>
+          <p class="font-bold my-2">Jorge Cardoso</p>
+          <a href="https://www.kcl.ac.uk/people/jorge-cardoso" target="_blank">
+            <p class="my-2 external-link">Profile</p>
+          </a>
+        </div>
+        <div class="col-span-1 w-full">
+          <div class="aspect-h-1 aspect-w-1">
+            <img class="object-cover shadow-lg rounded-lg" src="assets/img/DR.png">
+          </div>
+          <p class="font-bold my-2">Daniel Rubin</p>
+          <a href="https://profiles.stanford.edu/daniel-rubin" target="_blank">
+            <p class="my-2 external-link">Profile</p>
+          </a>
+        </div>
+        <div class="col-span-1 w-full">
+          <div class="aspect-h-1 aspect-w-1">
+            <img class="object-cover shadow-lg rounded-lg" src="assets/img/KZ.png">
+          </div>
+          <p class="font-bold my-2">Kevin Zhou</p>
+          <a href="https://www.linkedin.com/in/s-kevin-zhou-231a094b" target="_blank">
+            <p class="my-2 external-link">Profile</p>
+          </a>
+        </div>
+        <div class="col-span-1 w-full">
+          <div class="aspect-h-1 aspect-w-1">
+            <img class="object-cover shadow-lg rounded-lg" src="assets/img/NN.png">
+          </div>
+          <p class="font-bold my-2">Nassir Navab</p>
+          <a href="https://www.cs.jhu.edu/faculty/nassir-navab/" target="_blank">
+            <p class="my-2 external-link">Profile</p>
+          </a>
+        </div>
+        <div class="col-span-1 w-full">
+          <div class="aspect-h-1 aspect-w-1">
+            <img class="object-cover shadow-lg rounded-lg" src="assets/img/AF.jpeg">
+          </div>
+          <p class="font-bold my-2">Andrew Feng</p>
+          <a href="https://www.linkedin.com/in/afeng/" target="_blank">
+            <p class="my-2 external-link">Profile</p>
+          </a>
+        </div>
+        <div class="col-span-1 w-full">
+          <div class="aspect-h-1 aspect-w-1">
+            <img class="object-cover shadow-lg rounded-lg" src="assets/img/NasirRajpoot.png">
+          </div>
+          <p class="font-bold my-2">Nasir Rajpoot</p>
+          <a href="https://warwick.ac.uk/fac/sci/dcs/people/nasir_rajpoot/" target="_blank">
+            <p class="my-2 external-link">Profile</p>
+          </a>
+        </div>
+        <div class="col-span-1 w-full">
+          <div class="aspect-h-1 aspect-w-1">
+            <img class="object-cover shadow-lg rounded-lg" src="assets/img/JustinKirby.png">
+          </div>
+          <p class="font-bold my-2">Justin Kirby</p>
+          <a href="https://www.linkedin.com/in/justinkirby82/" target="_blank">
+            <p class="my-2 external-link">Profile</p>
+          </a>
+        </div>
+        <div class="col-span-1 w-full">
+          <div class="aspect-h-1 aspect-w-1">
+            <img class="object-cover shadow-lg rounded-lg" src="assets/img/KeyvanFarahani.jpg">
+          </div>
+          <p class="font-bold my-2">Keyvan Farahani</p>
+          <a href="https://datascience.cancer.gov/about/staff-directory/keyvan-farahani" target="_blank">
+            <p class="my-2 external-link">Profile</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contributors Section End -->
 
-      <h3>Imaging I/O</h3>
-      <div class="pure-g">
-        <div class="pure-u-md-1-5">
-            <div class="card-img">
-              <img src="img/SA.png" class="full-img" />
-            </div>
+  <!-- Step-wise break Section Start -->
+  <section class='h-20 grid grid-cols-2'>
+    <div class='h-full bg-neutral-lightgray'></div>
+    <div class='h-full'></div>
+  </section>
+  <!-- Step-wise break Section End -->
+
+
+  <section>
+    <div class="container py-16">
+      <h2 class="section-heading py-8">Working Groups</h2>
+      <div class="grid grid-cols-5">
+        <div class="col-span-5 md:col-span-3 row-start-1">
+          <h2 class="font-bold text-2xl">Imaging I/O</h2>
+          <p class="py-4 md:pr-20">
+            The goal of this working group is to define how data is read into and written out from memory in MONAI. Such input and output requires consideration of (a) the research and application workflows in which MONAI will operate, (b) the importance of effectively
+            utilizing all available data for deep learning development and evaluation, and (c) the critical significance of understanding and preserving the physical space that is represented by a medical image so that its clinical validity is preserved.
+            The working group has defined three broad sets of requirements for input and output for MONAI: research I/O requirements, reproducible I/O requirements, and clinical I/O requirements.
+          </p>
         </div>
-        <div class="pure-u-md-4-5">
-          <div class="text-desc">
-            <div class="card-left-text">
-              <strong>Group Lead: <a href="https://www.kitware.com/stephen-aylward/" target="_blank"> Stephen Aylward </a></strong>
-              <p>
-              The goal of this working group is to define how data is read into and written out from memory in MONAI.  Such input and output requires consideration of (a) the research and application workflows in which MONAI will operate, (b) the importance of effectively utilizing all available data for deep learning development and evaluation, and (c) the critical significance of understanding and preserving the physical space that is represented by a medical image so that its clinical validity is preserved. The working group has defined three broad sets of requirements for input and output for MONAI: research I/O requirements, reproducible I/O requirements, and clinical I/O requirements.
-              </p>
+        <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
+          <p class="font-bold">Group Lead</p>
+          <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
+            <div>
+              <div class="aspect-h-1 aspect-w-1">
+                <img class="object-cover shadow-lg rounded-lg" src="assets/img/SA.png" />
+              </div>
+              <div>
+                <a href="https://www.kitware.com/stephen-aylward/" target="_blank">
+                  <p class="external-link mt-4"> Stephen Alyward </p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <h3>Data: Images, Biomarkers, Demographics, Outputs, and Outcomes</h3>
-      <div class="pure-g">
-        <div class="pure-u-md-1-5">
-            <div class="card-img">
-              <img src="img/BG.png" class="full-img" />
+  <section class="bg-neutral-lightgray">
+    <div class="container py-16">
+      <div class="grid grid-cols-5">
+
+        <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
+          <p class="font-bold">Group Lead</p>
+          <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
+            <div>
+              <div class="aspect-h-1 aspect-w-1">
+                <img class="object-cover shadow-lg rounded-lg" src="assets/img/BG.png" />
+              </div>
+              <div>
+                <a href="https://www.linkedin.com/in/integratorbrad" target="_blank">
+                  <p class="external-link mt-4"> Brad Genereaux </p>
+                </a>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="pure-u-md-4-5">
-          <div class="text-desc">
-            <div class="card-left-text">
-              <strong>Group Lead: <a href="https://www.linkedin.com/in/integratorbrad" target="_blank"> Brad Genereaux </a></strong>
-              <p>
-              A key part of Project MONAI is the ingestion of data. This working group will focus on defining support for bioinformatics (e.g., images), biomarkers, and metadata (e.g., patient demographics, outcomes). Part of the focus explores the use of ontologies, various representations of the data, and what is in-scope for MONAI and what is left to other projects to define.  Some of the image representations, for example, include data relating to dimensionality, spacing, components/channels, data orientation, and time (multiple studies/prior exams).
-              </p>
+        <div class="col-span-5 md:col-span-3 row-start-1 md:pl-8">
+          <h2 class="font-bold w-1/2 text-2xl">Data: Images, Biomarkers, Demographics, Outputs, and Outcomes</h2>
+          <p class="py-4">
+            A key part of Project MONAI is the ingestion of data. This working group will focus on defining support for bioinformatics (e.g., images), biomarkers, and metadata (e.g., patient demographics, outcomes). Part of the focus explores the use of ontologies,
+            various representations of the data, and what is in-scope for MONAI and what is left to other projects to define. Some of the image representations, for example, include data relating to dimensionality, spacing, components/channels, data orientation,
+            and time (multiple studies/prior exams).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container py-16">
+      <div class="grid grid-cols-5">
+        <div class="col-span-5 md:col-span-3 row-start-1">
+          <h2 class="font-bold text-2xl">Transformations: Preprocessing, Augmentation, and Companion Algorithms</h2>
+          <p class="py-4 md:pr-20">
+            This working group covers the topics related to data preprocessing and augmentation modules for MONAI. In terms of functionality, these include patient-level transforms, such as simulating body habitus variations, aging; spatial geometric transforms,
+            intensity transforms and acquisition transforms such as simulating medical imaging modalities, artefacts. In terms of technical implementations, these include differentiability, multi-dimensional data representation, lazy evaluation, caching,
+            reproducibility, etc
+          </p>
+        </div>
+        <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
+          <p class="font-bold">Group Lead</p>
+          <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
+            <div>
+              <div class="aspect-h-1 aspect-w-1">
+                <img class="object-cover shadow-lg rounded-lg" src="assets/img/JC.png" />
+              </div>
+              <div>
+                <a href="https://www.kcl.ac.uk/people/jorge-cardoso" target="_blank">
+                  <p class="external-link mt-4"> Jorge Cardoso </p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <h3>Transformations: Preprocessing, Augmentation, and Companion Algorithms</h3>
-      <div class="pure-g">
-        <div class="pure-u-md-1-5">
-            <div class="card-img">
-              <img src="img/JC.png" class="full-img" />
+  <section class="bg-neutral-lightgray">
+    <div class="container py-16">
+      <div class="grid grid-cols-5">
+
+        <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
+          <p class="font-bold">Group Lead</p>
+          <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
+            <div>
+              <div class="aspect-h-1 aspect-w-1">
+                <img class="object-cover shadow-lg rounded-lg" src="assets/img/JK.jpg" />
+              </div>
+              <div>
+                <a href="https://www.nmr.mgh.harvard.edu/user/8165" target="_blank">
+                  <p class="external-link mt-4"> Jayashree Kalpathy-Cramer</p>
+                </a>
+              </div>
             </div>
+            <div>
+              <div class="aspect-h-1 aspect-w-1">
+                <img class="object-cover shadow-lg rounded-lg" src="assets/img/DR.png" />
+              </div>
+              <div>
+                <a href="https://profiles.stanford.edu/daniel-rubin" target="_blank">
+                  <p class="external-link mt-4"> Daniel Rubin </p>
+                </a>
+              </div>
+            </div>
+            <div>
+              <div class="aspect-h-1 aspect-w-1">
+                <img class="object-cover shadow-lg rounded-lg" src="assets/img/HolgerRoth.jpg" />
+              </div>
+              <div>
+                <a href="https://research.nvidia.com/person/holger-roth" target="_blank">
+                  <p class="external-link mt-4"> Holger Roth </p>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="pure-u-md-4-5">
-          <div class="text-desc">
-            <div class="card-left-text">
-              <strong>Group Lead: <a href="https://www.kcl.ac.uk/people/jorge-cardoso" target="_blank"> Jorge Cardoso </a></strong>
-              <p>
-              This working group covers the topics related to data preprocessing and augmentation modules for MONAI. In terms of functionality, these include patient-level transforms, such as simulating body habitus variations, aging; spatial geometric transforms, intensity transforms and acquisition transforms such as simulating medical imaging modalities, artefacts. In terms of technical implementations, these include differentiability, multi-dimensional data representation, lazy evaluation, caching, reproducibility, etc
-              </p>
+        <div class="col-span-5 md:col-span-3 row-start-1 md:pl-8">
+          <h2 class="font-bold w-1/2 text-2xl">Federated Learning and Applications</h2>
+          <p class="py-4">
+            Federated learning is emerging as a promising approach for training AI models without requiring sites to share data. This is particularly important in medical use cases, since there are privacy and regulatory restrictions to sharing data. A number of
+            different methods are being developed for federated learning, and they are currently silo efforts with limited synergy. The goal of this effort is to unify the disparate methods of federated learning in a common MONAI framework. This will
+            be pursued through implemented federated learning use cases in MONAI as well as generation of best practices and documentation to enable the community to more broadly participate and implement common and interoperable approaches.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container py-16">
+      <div class="grid grid-cols-5">
+        <div class="col-span-5 md:col-span-3 row-start-1">
+          <h2 class="font-bold text-2xl">Evaluation, Reproducibility and Benchmarking</h2>
+          <p class="py-4 md:pr-20">
+            Every year, hundreds of new algorithms are published in the field of biomedical image analysis. While validation of new methods has long been based on private data, publically available data sets and international competitions (‘challenges’) meanwhile
+            allow for benchmarking algorithms in a transparent and comparative manner. Recent research, however, has revealed several flaws related to common practice in validation. A core goal of this working group is, therefore, to provide the infrastructure
+            and tools for quality-controlled validation and benchmarking of medical image analysis methods. In collaboration with the international biomedical image analysis challenges (BIAS) initiative, open technical challenges and research questions
+            related to a variety of topics will be addressed, ranging from best practices to how to create incentives for sharing code and data to performance aspects and implementation efficiency.
+          </p>
+        </div>
+        <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
+          <p class="font-bold">Group Lead</p>
+          <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
+            <div>
+              <div class="aspect-h-1 aspect-w-1">
+                <img class="object-cover shadow-lg rounded-lg" src="assets/img/LM.jpg" />
+              </div>
+              <div>
+                <a href="https://www.dkfz.de/en/cami/team/people/Lena_Maier-Hein.html" target="_blank">
+                  <p class="external-link mt-4"> Lena Maier-Hein </p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <h3>Federated Learning and Applications</h3>
-      <div class="pure-g">
-        <div class="pure-u-md-1-5">
-            <div class="card-img">
-              <img src="img/JK.png" class="full-img" />
+  <section class="bg-neutral-lightgray">
+    <div class="container py-16">
+      <div class="grid grid-cols-5">
+        <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
+          <p class="font-bold">Group Lead</p>
+          <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
+            <div>
+              <div class="aspect-h-1 aspect-w-1">
+                <img class="object-cover shadow-lg rounded-lg" src="assets/img/PJ.png" />
+              </div>
+              <div>
+                <a href="https://pfjaeger.github.io/" target="_blank">
+                  <p class="external-link mt-4"> Paul Jaeger </p>
+                </a>
+              </div>
             </div>
-            <br />
-            <div class="card-img">
-              <img src="img/DR.png" class="full-img" />
-            </div>
-            <br />
-            <div class="card-img">
-              <img src="img/HolgerRoth.jpg" class="full-img" />
-            </div>
+          </div>
         </div>
-        <div class="pure-u-md-4-5">
-          <div class="text-desc">
-            <div class="card-left-text">
-              <strong>Group Leads: <a href="https://www.nmr.mgh.harvard.edu/user/8165" target="_blank"> Jayashree Kalpathy-Cramer </a> & <a href="https://profiles.stanford.edu/daniel-rubin" target="_blank"> Daniel Rubin </a> & <a href="https://research.nvidia.com/person/holger-roth" target="_blank"> Holger Roth </a></strong>
-              <p>
-              Federated learning is emerging as a promising approach for training AI models without requiring sites to share data. This is particularly important in medical use cases, since there are privacy and regulatory restrictions to sharing data. A number of different methods are being developed for federated learning, and they are currently silo efforts with limited synergy. The goal of this effort is to unify the disparate methods of federated learning in a common MONAI framework. This will be pursued through implemented federated learning use cases in MONAI as well as generation of best practices and documentation to enable the community to more broadly participate and implement common and interoperable approaches.
-              </p>
+        <div class="col-span-5 md:col-span-3 row-start-1 md:pl-8">
+          <h2 class="font-bold w-1/2 text-2xl">Research</h2>
+          <p class="py-4">
+            Establish MONAI as a catalyst for scientific progress and real life impact through the following actions:
+          </p>
+          <ul class="list-inside list-disc">
+            <li>Identify key challenges currently hampering scientific progress and real life impact.</li>
+            <li>Formalize abstract solutions and determine concepts for implementation in MONAI.</li>
+            <li>Communicate results in the form of recommendations, best practice guidelines or articles to the MONAI advisory board, fellow MONAI working groups, or the public</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container py-16">
+      <div class="grid grid-cols-5">
+        <div class="col-span-5 md:col-span-3 row-start-1">
+          <h2 class="font-bold text-2xl">Community Development, Outreach and Adoption</h2>
+          <p class="py-4 md:pr-20">
+            This working group focuses on outreach, to establish MONAI as a common software foundation that the Medical Imaging research and development community can build upon. This working group is charged with developing technical training and onboarding content,
+            including tutorials, technical blogs, bootcamps, hackathons to educate and engage with researchers and developers. Another area of focus for the working group is to define the infrastructure and processes needed to support and grow a transparent,
+            honest, and open community of MONAI contributors and adopters, including establishing best practices for giving appropriate recognition to those who are promoting and making significant contributions back to MONAI.
+          </p>
+        </div>
+        <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
+          <p class="font-bold">Group Lead</p>
+          <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
+            <div>
+              <div class="aspect-h-1 aspect-w-1">
+                <img class="object-cover shadow-lg rounded-lg" src="assets/img/PD.png" />
+              </div>
+              <div>
+                <a href="https://www.linkedin.com/in/prerna-dogra-2664a72a" target="_blank">
+                  <p class="external-link mt-4"> Prerna Dogra </p>
+                </a>
+              </div>
+            </div>
+            <div>
+              <div class="aspect-h-1 aspect-w-1">
+                <img class="object-cover shadow-lg rounded-lg" src="assets/img/MZ.jpg" />
+              </div>
+              <div>
+                <a href="https://www.linkedin.com/in/michaeljzephyr/" target="_blank">
+                  <p class="external-link mt-4"> Michael Zephyr </p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <h3>Evaluation, Reproducibility and Benchmarking</h3>
-      <div class="pure-g">
-        <div class="pure-u-md-1-5">
-            <div class="card-img">
-              <img src="img/LM.jpg" class="full-img" />
+  <section class="bg-neutral-lightgray">
+    <div class="container py-16">
+      <div class="grid grid-cols-5">
+
+        <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
+          <p class="font-bold">Group Lead</p>
+          <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
+            <div>
+              <div class="aspect-h-1 aspect-w-1">
+                <img class="object-cover shadow-lg rounded-lg" src="assets/img/HarisShuaib.jpg" />
+              </div>
+              <div>
+                <a href="https://www.linkedin.com/in/haris-shuaib-91519b55/" target="_blank">
+                  <p class="external-link mt-4"> Haris Shuaib </p>
+                </a>
+              </div>
             </div>
+            <div>
+              <div class="aspect-h-1 aspect-w-1">
+                <img class="object-cover shadow-lg rounded-lg" src="assets/img/DavidBericat.jpg" />
+              </div>
+              <div>
+                <a href="https://www.linkedin.com/in/davidbericat/" target="_blank">
+                  <p class="external-link mt-4"> David Bericat</p>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="pure-u-md-4-5">
-          <div class="text-desc">
-            <div class="card-left-text">
-              <strong>Group Lead: <a href="https://www.dkfz.de/en/cami/team/people/Lena_Maier-Hein.html" target="_blank"> Lena Maier-Hein </a></strong>
-              <p>
-              Every year, hundreds of new algorithms are published in the field of biomedical image analysis. While validation of new methods has long been based on private data, publically available data sets and international competitions (‘challenges’) meanwhile allow for benchmarking algorithms in a transparent and comparative manner. Recent research, however, has revealed several flaws related to common practice in validation. A core goal of this working group is, therefore, to provide the infrastructure and tools for quality-controlled validation and benchmarking of medical image analysis methods. In collaboration with the international biomedical image analysis challenges (BIAS) initiative, open technical challenges and research questions related to a variety of topics will be addressed, ranging from best practices to how to create incentives for sharing code and data to performance aspects and implementation efficiency.
-              </p>
+        <div class="col-span-5 md:col-span-3 row-start-1 md:pl-8">
+          <h2 class="font-bold w-1/2 text-2xl">Deploy</h2>
+          <p class="py-4">
+            This working group aims to define how to close the existing gap from research and development to clinical production environments by bringing AI models into medical applications and clinical workflows with the end goal of helping improve patient care.
+            The focus will include defining the open high-level functional architecture and determining which components and standard APIs are required. By collaborating with the MONAI developers, the group will move from requirements to implemented solutions.
+          </p>
+          <p class="py-4">
+            Following a phased approach, the deploy working group will concentrate on what the end-to-end experience should look like first. Some of these challenges include:
+          </p>
+          <ul class="list-inside list-disc">
+            <li>Packaging trained AI models into medical executable applications</li>
+            <li>Lightweight inference for local validation</li>
+            <li>Model orchestration, deployment, serving and inference across multiple compute nodes.</li>
+            <li>Consume multi-modal data pipelines, starting with medical imaging, DICOM-based first, and patient data coming from EHR next.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container py-16">
+      <div class="grid grid-cols-5">
+        <div class="col-span-5 md:col-span-3 row-start-1">
+          <h2 class="font-bold text-2xl">Digital Pathology</h2>
+          <p class="py-4 md:pr-20">
+            Digital pathology as an imaging modality is a relatively new field compared to radiology imaging. Digital pathology focuses on Whole-Slide Images (WSIs), which are digital scans of tissue slides at the microscopic resolution, often at 250nm per pixel.
+            WSIs are different from standard medical images due to their sheer size - a typical pathology image can be of the order of 150K x 100K pixels.
+          </p>
+          <p class="py-4 md:pr-20">Recently, there have been significant advances in applying image analysis and machine learning to pathology images, also known as computational pathology. Despite those advances, there exists no standard pipeline for the preprocessing, analysis,
+            and visualization of pathology images. This lack of standardization leads to a high barrier to entry and a lack of reproducibility for existing methods. This working group will aim to address those challenges
+          </p>
+        </div>
+        <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
+          <p class="font-bold">Group Lead</p>
+          <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
+            <div>
+              <div class="aspect-h-1 aspect-w-1">
+                <img class="object-cover shadow-lg rounded-lg" src="assets/img/NasirRajpoot.png" />
+              </div>
+              <div>
+                <a href="https://warwick.ac.uk/fac/sci/dcs/people/nasir_rajpoot/" target="_blank">
+                  <p class="external-link mt-4"> Nasir Rajpoot </p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <h3>Research</h3>
-      <div class="pure-g">
-        <div class="pure-u-md-1-5">
-            <div class="card-img">
-              <img src="img/PJ.png" class="full-img" />
-            </div>
-        </div>
-        <div class="pure-u-md-4-5">
-          <div class="text-desc">
-            <div class="card-left-text">
-              <strong>Group Lead: <a href="https://pfjaeger.github.io/" target="_blank"> Paul Jaeger </a></strong>
-              <p>
-              Establish MONAI as a catalyst for scientific progress and real life impact through the following actions:
-              </p>
-              <ol>
-                <li>Identify key challenges currently hampering scientific progress and real life impact.</li>
-                <li>Formalize abstract solutions and determine concepts for implementation in MONAI.</li>
-                <li>Communicate results in the form of recommendations, best practice guidelines or articles to the MONAI advisory board, fellow MONAI working groups, or the public</li>
-              </ol>
+  <!-- Footer Section Start -->
+  <footer id="footer" class="bg-neutral-lightgray py-2 border-t border-neutral-light_gray">
+    <div class="container">
+      <div class="flex flex-wrap items-center justify-between">
+        <div class="w-auto">
+          <div class="mx-3">
+            <div class="footer-logo">
+              <a href="index.html"><img src="assets/img/MONAI-logo_color.png" alt=""></a>
             </div>
           </div>
         </div>
-      </div>
-
-      <h3>Community Development, Outreach and Adoption</h3>
-      <div class="pure-g">
-        <div class="pure-u-md-1-5">
-            <div class="card-img">
-              <img src="img/PD.png" class="full-img" />
-            </div>
+        <div class="hidden lg:block w-auto">
+          <div class="mx-3 text-black">
+            <ul class="flex justify-between">
+              <li class="px-4">
+                <a href="about.html" class="footer-links">About Us</a>
+              </li>
+              <li class="px-4">
+                <a href="started.html" class="footer-links">Get Started</a>
+              </li>
+              <li class="px-4">
+                <a href="community.html" class="footer-links">Community</a>
+              </li>
+              <li class="px-4">
+                <a href="https://medium.com/@monai" class="footer-links">Blog</a>
+              </li>
+              <li class="px-4">
+                <a href="docs.html" class="footer-links">Docs</a>
+              </li>
+              <li class="px-4">
+                <a href="https://github.com/Project-MONAI" class="footer-links">GitHub</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="pure-u-md-4-5">
-          <div class="text-desc">
-            <div class="card-left-text">
-              <strong>Group Lead: <a href="https://www.linkedin.com/in/prerna-dogra-2664a72a" target="_blank"> Prerna Dogra </a></strong>
-              <p>
-              This working group focuses on outreach, to establish MONAI as a common software foundation that the Medical Imaging research and development community can build upon. This working group is charged with developing technical training and onboarding content, including tutorials, technical blogs, bootcamps, hackathons to educate and engage with researchers and developers. Another area of focus for the working group is to define the infrastructure and processes needed to support and grow a transparent, honest, and open community of MONAI contributors and adopters, including establishing best practices for giving appropriate recognition to those who are promoting and making significant contributions back to MONAI.
-              </p>
-            </div>
+        <div class="w-auto">
+          <div class="mx-3">
+            <ul class="social-icons flex justify-end">
+              <li class="mx-2">
+                <a href="https://twitter.com/ProjectMONAI">
+                  <i>
+                <img src="assets/img/twitter_icon_square.png"/>
+              </i>
+                </a>
+              </li>
+              <li class="mx-2">
+                <a href="https://medium.com/@monai">
+                  <i>
+                <img src="assets/img/medium_icon_square.png"/>
+              </i>
+                </a>
+              </li>
+              <li class="mx-2">
+                <a href="https://www.youtube.com/c/Project-MONAI">
+                  <i>
+                <img src="assets/img/youtube_icon_square.png"/>
+              </i>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
+    </div>
+  </footer>
+  <!-- Footer Section End -->
 
-      <h3>Deploy</h3>
-      <div class="pure-g">
-        <div class="pure-u-md-1-5">
-            <div class="card-img">
-              <img src="img/DavidBericat.jpg" class="full-img" />
-            </div>
-            <br>
-            <div class="card-img">
-              <img src="img/HarisShuaib.jpg" class="full-img" />
-            </div>
-        </div>
-        <div class="pure-u-md-4-5">
-          <div class="text-desc">
-            <div class="card-left-text">
-              <strong>Group Lead: <a href="https://www.linkedin.com/in/davidbericat/" target="_blank"> David Bericat</a> & <a href="https://www.linkedin.com/in/haris-shuaib-91519b55/" target="_blank"> Haris Shuaib</a></strong>
-              <p>This working group aims to define how to close the existing gap from research and development to clinical production environments by bringing AI models into medical applications and clinical workflows with the end goal of helping improve patient care. The focus will include defining the open high-level functional architecture and determining which components and standard APIs are required. By collaborating with the MONAI developers, the group will move from requirements to implemented solutions.</p>
-              <p>Following a phased approach, the deploy working group will concentrate on what the end-to-end experience should look like first. Some of these challenges include:</p>
-              <ol>
-                <li>Packaging trained AI models into medical executable applications</li>
-                <li>Lightweight inference for local validation</li>
-                <li>Model orchestration, deployment, serving and inference across multiple compute nodes.</li>
-                <li>Consume multi-modal data pipelines, starting with medical imaging, DICOM-based first, and patient data coming from EHR next.</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- Go to Top Link -->
+  <a href="#" class="back-to-top w-10 h-10 fixed bottom-0 right-0 mb-5 mr-5 flex items-center justify-center rounded-full border border-solid border-brand-dark text-white text-lg z-20">
+    <i class="transform -rotate-90">
+        <img src="assets/img/ic_arrow_right.png"/>
+      </i>
+  </a>
 
-
-      <h3>Digital Pathology</h3>
-      <div class="pure-g">
-        <div class="pure-u-md-1-5">
-            <div class="card-img">
-              <img src="img/NasirRajpoot.png" class="full-img" />
-            </div>
-        </div>
-        <div class="pure-u-md-4-5">
-          <div class="text-desc">
-            <div class="card-left-text">
-              <strong>Group Lead: <a href="https://warwick.ac.uk/fac/sci/dcs/people/nasir_rajpoot/" target="_blank"> Nasir Rajpoot </a></strong>
-              <p>
-              Digital pathology as an imaging modality is a relatively new field compared to radiology imaging. Digital pathology focuses on Whole-Slide Images (WSIs), which are digital scans of tissue slides at the microscopic resolution, often at 250nm per pixel. WSIs are different from standard medical images due to their sheer size - a typical pathology image can be of the order of 150K x 100K pixels.
-              </p>
-              <p>
-              Recently, there have been significant advances in applying image analysis and machine learning to pathology images, also known as computational pathology. Despite those advances, there exists no standard pipeline for the preprocessing, analysis, and visualization of pathology images.  This lack of standardization leads to a high barrier to entry and a lack of reproducibility for existing methods. This working group will aim to address those challenges.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Single Col Section Descriptions -->
-    <section>
-      <h2 class="section-title">About MONAI</h2>
-      <div class="pure-g">
-          <div class="pure-u-1">
-              <p class="section-desc">
-                  Project MONAI was originally started by NVIDIA & King’s College London to establish an inclusive community of AI researchers for the development and exchange of best practices for AI in healthcare imaging across academia and enterprise researchers. The MONAI framework is the open-source foundation being created by Project MONAI and it wouldn’t have been possible to accelerate this development without the development of existing toolkits such as Nvidia Clara Train, NiftyNet, DLTK, and DeepNeuro.
-              </p>
-          </div>
-      </div>
-    </section>
-
-
-  <!-- Site footer, add to EVERY page -->
-  <div id="footer">
-      <!-- loaded from footer.html via jQuery -->
-  </div>
-
-  <!-- Scripts, add to EVERY page -->
-  <script>
-  // load nav and footer html via jQuery
-  $('#nav').load("nav.html")
-  $('#footer').load("footer.html")
-  </script>
-  <script src="/js/particles.min.js"></script>
-  <script src="/js/main.js"></script>
+  <!-- All js Here -->
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/particles.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
