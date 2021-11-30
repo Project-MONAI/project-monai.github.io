@@ -1,0 +1,29 @@
+{
+    "name": "shine",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "tailwindcss build src/style.css -o assets/css/tailwind.css",
+        "watch": "npm-watch"
+    },
+    "watch": {
+        "build": {
+            "patterns": "*",
+            "extensions": "html,js"
+        }
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "autoprefixer": "^10.4.0",
+        "postcss": "^8.3.11",
+        "tailwindcss": "^2.2.19"
+    },
+    "dependencies": {
+        "@tailwindcss/aspect-ratio": "^0.3.0",
+        "@tailwindcss/line-clamp": "^0.2.2",
+        "npm-watch": "^0.11.0"
+    }
+}
