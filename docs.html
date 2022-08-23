@@ -34,52 +34,78 @@
 
 <body>
 
-  <!-- Header Area wrapper Starts -->
-  <header id="header-wrap" class="relative border-b border-neutral-neutral_gray2">
-    <!-- Navbar Start -->
-    <div class="navigation top-0 left-0 w-full z-30 duration-300">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg flex justify-end items-center justify-between relative duration-300">
-          <a class="navbar-brand" href="index.html">
-            <img class="py-2" src="assets/img/MONAI-logo_color.png" alt="Logo">
-          </a>
-          <button class="navbar-toggler focus:outline-none block lg:hidden" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-          </button>
+    <!-- Header Area wrapper Starts -->
+    <header id="header-wrap" class="relative border-b border-neutral-neutral_gray2">
+      <!-- Navbar Start -->
+      <div class="navigation top-0 left-0 w-full z-30 duration-300">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg flex justify-end items-center justify-between relative duration-300" x-data="{ one: false, two: false, three: false }">
+            <a class="navbar-brand" href="index.html">
+              <img class="py-2" src="assets/img/MONAI-logo_color.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler focus:outline-none block lg:hidden" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            </button>
 
-          <div class="collapse navbar-collapse hidden lg:block duration-300 shadow absolute top-100 left-0 mt-full bg-white z-20 px-5 w-full lg:static lg:bg-transparent lg:shadow-none" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto justify-end items-center lg:flex">
-              <li class="nav-item">
-                <a class="page-scroll" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="about.html">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="started.html">Get Started</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="community.html">Community</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" target="_blank" href="https://medium.com/@monai">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll active" href="docs.html">Docs</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" target="_blank" href="https://github.com/Project-MONAI">GitHub</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+            <div class="collapse navbar-collapse hidden lg:block duration-300 shadow absolute top-100 left-0 mt-full bg-white z-20 px-5 w-full lg:static lg:bg-transparent lg:shadow-none">
+              <ul class="navbar-nav mr-auto justify-end items-center lg:flex">
+                <li class="nav-item relative">
+                  <a class="page-scroll" href="index.html">Home</a>
+                </li>
+                <li class="nav-item relative">
+                  <button class="page-scroll" @click="one = true">Frameworks <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="one" @click.away="one = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="label.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Label </a>
+                      <a href="core.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core</a>
+                      <a href="deploy.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy  </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item relative">
+                  <button class="page-scroll active" @click="two = true">Docs <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="two" @click.away="two = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Label Docs</a>
+                      <a href="https://docs.monai.io/en/stable/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core Docs</a>
+                      <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy Docs </a>
+                    </div>
+                  </div>
+                </li>          
+                <li class="nav-item relative">
+                  <button class="page-scroll" @click="three = true">Resources <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="three" @click.away="three = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="about.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">About Us</a>
+                      <a href="started.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Getting Started</a>
+                      <a href="community.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Community</a>
+                      <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Blog</a>
+                    </div>
+                  </div>
+                </li>                                
+                <li class="nav-item relative">
+                  <a class="page-scroll" href="model-zoo.html">Model Zoo</a>
+                </li>
+                <li class="nav-item relative">
+                  <a class="page-scroll" target="_blank" href="https://github.com/Project-MONAI">GitHub</a>
+                </li>                
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
-    </div>
-    <!-- Navbar End -->
-  </header>
-  <!-- Header Area wrapper End -->
+      <!-- Navbar End -->
+
+    </header>
+    <!-- Header Area wrapper End -->
 
   <!-- Contributors Section Start -->
   <section id="contributors" class="py-16">
@@ -236,6 +262,7 @@
   <script src="assets/js/wow.js"></script>
   <script src="assets/js/particles.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 
 </html>

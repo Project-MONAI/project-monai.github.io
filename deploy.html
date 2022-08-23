@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-QVGBCPFPJ6');
+    </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="MONAI offers serveral frameworks, and we are adding to them all the time. Here, you’ll find the information you need to decide on what framework works best for your needs.">
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+
+    <title>MONAI Deploy - Product Page</title>
+
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="assets/css/LineIcons.2.0.css">
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- Tiny Slider  -->
+    <link rel="stylesheet" type="text/css" href="assets/css/tiny-slider.css">
+    <!-- Tailwind css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/tailwind.css">
+  </head>
+
+  <body>
+    <!-- Header Area wrapper Starts -->
+    <header id="header-wrap" class="relative border-b border-neutral-neutral_gray2">
+      <!-- Navbar Start -->
+      <div class="navigation top-0 left-0 w-full z-30 duration-300">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg flex justify-end items-center justify-between relative duration-300" x-data="{ one: false, two: false, three: false }">
+            <a class="navbar-brand" href="index.html">
+              <img class="py-2" src="assets/img/MONAI-logo_color.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler focus:outline-none block lg:hidden" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            </button>
+
+            <div class="collapse navbar-collapse hidden lg:block duration-300 shadow absolute top-100 left-0 mt-full bg-white z-20 px-5 w-full lg:static lg:bg-transparent lg:shadow-none">
+              <ul class="navbar-nav mr-auto justify-end items-center lg:flex">
+                <li class="nav-item relative">
+                  <a class="page-scroll" href="index.html">Home</a>
+                </li>
+                <li class="nav-item relative">
+                  <button class="page-scroll" @click="one = true">Frameworks <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="one" @click.away="one = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="label.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Label </a>
+                      <a href="core.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core</a>
+                      <a href="deploy.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary active"> MONAI Deploy  </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item relative">
+                  <button class="page-scroll" @click="two = true">Docs <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="two" @click.away="two = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Label Docs</a>
+                      <a href="https://docs.monai.io/en/stable/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core Docs</a>
+                      <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy Docs </a>
+                    </div>
+                  </div>
+                </li>          
+                <li class="nav-item relative">
+                  <button class="page-scroll" @click="three = true">Resources <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="three" @click.away="three = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="about.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">About Us</a>
+                      <a href="started.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Getting Started</a>
+                      <a href="community.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Community</a>
+                      <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Blog</a>
+                    </div>
+                  </div>
+                </li>                                
+                <li class="nav-item relative">
+                  <a class="page-scroll" href="model-zoo.html">Model Zoo</a>
+                </li>
+                <li class="nav-item relative">
+                  <a class="page-scroll" target="_blank" href="https://github.com/Project-MONAI">GitHub</a>
+                </li>                
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- Navbar End -->
+
+    </header>
+    <!-- Header Area wrapper End -->
+
+    <!-- Contributors Section Start -->
+    <section id="contributors" class="py-16">
+      <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 space-x-4 place-items-center">
+          <div>
+            <h2 class="mb-6 section-heading">MONAI Deploy</h2>
+            <div class="w-full sm:3/5 pb-4">
+              <p class="py-2">MONAI Deploy aims to become the de-facto standard for developing packaging, testing, deploying, and running medical AI applications in clinical production. MONAI Deploy creates a set of intermediate steps where researchers and physicians
+                can build confidence in the techniques and approaches used with AI — allowing for an iterative workflow until the overall AI inference infrastructure is ready to move to clinical environments.</p>
+            </div>
+            <div class="flex flex-wrap space-x-2 pb-8">
+              <a class="brand-btn" href="https://github.com/Project-MONAI/tutorials" target="_blank">Getting Started </a>
+              <a class="brand-btn" href="https://docs.monai.io/en/stable/" target="_blank">Documentation </a>
+            </div>
+            <div>
+              <h2 class="text-brand-primary font-semibold">Install:</h2>
+              <p class="code p-4 bg-neutral-lightgray w-96">$ pip install monai-deploy-app-sdk</p>
+            </div>
+          </div>
+          <div>
+            <img class="hidden lg:block " src="assets/img/documentation header.png">
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- Contributors Section End -->
+
+    <section class="py-8 bg-brand-light">
+      <div class="container py-4 lg:py-16">
+        <div class='text-center w-full lg:w-1/2 mx-auto'>
+          <h2 class="text-brand-primary text-4xl font-bold ">AI Deployment Workflow</h2>
+          <p class="py-4 ">
+            MONAI Deploy provides all the pieces for an enterprise-ready deployment pipeline. You can also use each piece that you need and integrate it in to your own workflow.
+          </p>
+        </div>
+        <div class="pb-16 hidden sm:block">
+          <img class="mx-auto" src="assets/img/MONAI Deploy Architecture.png" />
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8">
+          <div class="text-center p-4 border-2 border-brand-primary rounded-3xl">
+            <h2 class="text-xl font-bold pb-4"><span class="text-brand-primary font-bold text-xl">1. </span>App Development</h2>
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">Develop a MONAI Application Package</h3>
+            <p class="pb-6">A Pythonic SDK to build deploy-ready AI Apps in Healthcare</p>
+            <div class="text-brand-primary font-bold"><a href="" target="_blank"> Learn More > </a></div>
+
+          </div>
+          <div class="text-center p-4 border-2 border-brand-primary rounded-3xl">
+            <h2 class="text-xl font-bold pb-4"><span class="text-brand-primary font-bold text-xl">2. </span>Inference Service</h2>
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">Application Server to run your MAPs</h3>
+            <p class="pb-6">RESTful service which will allow other users to make inference requests with our MAP using HTTP</p>
+            <div class="text-brand-primary font-bold"><a href="" target="_blank"> Learn More > </a></div>
+          </div>
+          <div class="text-center p-4 border-2 border-brand-primary rounded-3xl">
+            <h2 class="text-xl font-bold pb-4"><span class="text-brand-primary font-bold text-xl">3. </span>Workflow Manager</h2>
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">Orchestrates based on the clinical workflow</h3>
+            <p class="pb-6">Central hub for the MONAI Deploy Platform</p>
+            <div class="text-brand-primary font-bold"><a href="" target="_blank"> Learn More > </a></div>
+          </div>
+          <div class="text-center p-4 border-2 border-brand-primary rounded-3xl">
+            <h2 class="text-xl font-bold pb-4"><span class="text-brand-primary font-bold text-xl">4. </span>Informatics Gateway</h2>
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">Facilitates I/O for DICOM and FHIR</h3>
+            <p class="pb-6">Connects AI Applications to Healthcare Information Systems</p>
+            <div class="text-brand-primary font-bold"><a href="" target="_blank"> Learn More > </a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-8 bg-neutral-lightgray">
+      <div class="container py-4 lg:py-16">
+        <div class='text-center w-full lg:w-1/2 mx-auto pb-12'>
+          <h2 class="text-brand-primary text-4xl font-bold ">Used Around the World</h2>
+          <p class="py-4 ">
+            MONAI Deploy is used throughout the world and at some of the largest and well-known Medical Research Centers. Learn more about how those companies are using MONAI Deploy in their workflow today.
+          </p>
+        </div>
+        <h2 class="font-bold text-2xl pb-8">Case Studies and Blogs:</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 sm:gap-x-8">
+          <div class="p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray bg-neutral-purewhite">
+            <div class="aspect-w-3 aspect-h-2">
+              <img class="object-contain" src="assets/img/mayo-logo.png" />
+            </div>
+            <h3 class="text-lg font-bold pt-4">Mayo Clinic</h3>
+            <p class="pb-4">Start contributing to the MONAI Core repo by submiting a bug, requesting a feature, or starting a discussion today!</p>
+            <a class="brand-btn" href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank">Read More</a>
+          </div>
+          <div class="p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray bg-neutral-purewhite">
+            <div class="aspect-w-3 aspect-h-2">
+              <img class="object-contain" src="assets/img/mayo-logo.png" />
+            </div>
+            <h3 class="text-lg font-bold pt-4">Mayo Clinic</h3>
+            <p class="pb-4">Start contributing to the MONAI Core repo by submiting a bug, requesting a feature, or starting a discussion today!</p>
+            <a class="brand-btn" href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank">Read More</a>
+          </div>
+          <div class="p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray bg-neutral-purewhite">
+            <div class="aspect-w-3 aspect-h-2">
+              <img class="object-contain" src="assets/img/mayo-logo.png" />
+            </div>
+            <h3 class="text-lg font-bold pt-4">Mayo Clinic</h3>
+            <p class="pb-4">Start contributing to the MONAI Core repo by submiting a bug, requesting a feature, or starting a discussion today!</p>
+            <a class="brand-btn" href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank">Read More</a>
+          </div>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold py-8">Trusted By:</h2>
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 place-items-center">
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/CAS-logo.jpg"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/dkfz-logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/kcl-logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/Stanford-Logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/Logo-NVIDIA.jpg"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/Kitware_Logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/MGH_BWH_logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/tum_logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/University_College_London_logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/Vanderbilt_Univ_square.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/Warwick_Logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/FNLCR.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/NIH-NCI.jpg"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/mayo-logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/GuysAndStThomasLogo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/answer_logo.png"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-8 bg-neutral-purewhite">
+      <div class="container py-4 lg:py-16">
+        <div class='text-center w-full lg:w-1/2 mx-auto pb-8'>
+          <h2 class="text-brand-primary text-4xl font-bold ">Get Involved in the Community</h2>
+          <p class="py-4 ">
+            Below are ways that you can start using, contributing, and interacting with other members of the MONAI Core community!
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4">
+          <div class="text-center p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray">
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">GitHub</h3>
+            <p class="pb-4">Start contributing to the MONAI Core repo by submiting a bug, requesting a feature, or starting a discussion today!</p>
+            <div class="flex flex-wrap justify-center"><a class="brand-btn" href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/introduction/contributing.html" target="_blank"> Contribute</a></div>
+
+          </div>
+          <div class="text-center p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray">
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">Tutorials</h3>
+            <p class="pb-4">We have Jupyter Notebooks on how to get started with MONAI Deploy App SDK, creating your first classifier, setting up and deplying on MONAI Inference Service, and creating a segmentation app that consumes a MONAI Bundle.</p>
+            <div class="flex flex-wrap justify-center"><a class="brand-btn" href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/getting_started/index.html" target="_blank"> Get Started</a></div>
+          </div>
+          <div class="text-center p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray">
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">Slack</h3>
+            <p class="pb-4">Having trouble? Trying to find out where to contribute? Wnat to share your cool project? Join our MONAI Slack and chat with the community.</p>
+            <div class="flex flex-wrap justify-center"><a class="brand-btn" href="https://forms.gle/QTxJq3hFictp31UM9" target="_blank"> Socialize</a></div>
+          </div>
+          <div class="text-center p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray">
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">Documentation</h3>
+            <p class="pb-4">Ready to get started using MONAI Core? You can find all of our documentation to help get you started or answer any of your questions!</p>
+            <div class="flex flex-wrap justify-center"><a class="brand-btn" href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/" target="_blank"> Deep Dive</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section Start -->
+    <footer id="footer" class="bg-neutral-lightgray py-2 border-t border-neutral-light_gray">
+      <div class="container">
+        <div class="flex flex-wrap items-center justify-between">
+          <div class="w-auto">
+            <div class="mx-3">
+              <div class="footer-logo">
+                <a href="index.html"><img src="assets/img/MONAI-logo_color.png" alt=""></a>
+              </div>
+            </div>
+          </div>
+          <div class="hidden lg:block w-auto">
+            <div class="mx-3 text-black">
+              <ul class="flex justify-between">
+                <li class="px-4">
+                  <a href="about.html" class="footer-links">About Us</a>
+                </li>
+                <li class="px-4">
+                  <a href="started.html" class="footer-links">Get Started</a>
+                </li>
+                <li class="px-4">
+                  <a href="community.html" class="footer-links">Community</a>
+                </li>
+                <li class="px-4">
+                  <a href="https://medium.com/@monai" class="footer-links">Blog</a>
+                </li>
+                <li class="px-4">
+                  <a href="docs.html" class="footer-links">Docs</a>
+                </li>
+                <li class="px-4">
+                  <a href="https://github.com/Project-MONAI" class="footer-links">GitHub</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-auto">
+            <div class="mx-3">
+              <ul class="social-icons flex justify-end">
+                <li class="mx-2">
+                  <a href="https://twitter.com/ProjectMONAI">
+                    <i>
+                <img src="assets/img/twitter_icon_square.png"/>
+              </i>
+                  </a>
+                </li>
+                <li class="mx-2">
+                  <a href="https://medium.com/@monai">
+                    <i>
+                <img src="assets/img/medium_icon_square.png"/>
+              </i>
+                  </a>
+                </li>
+                <li class="mx-2">
+                  <a href="https://www.youtube.com/c/Project-MONAI">
+                    <i>
+                <img src="assets/img/youtube_icon_square.png"/>
+              </i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Go to Top Link -->
+    <a href="#" class="back-to-top w-10 h-10 fixed bottom-0 right-0 mb-5 mr-5 flex items-center justify-center rounded-full border border-solid border-brand-dark text-white text-lg z-20">
+      <i class="transform -rotate-90">
+        <img src="assets/img/ic_arrow_right.png"/>
+      </i>
+    </a>
+
+    <!-- All js Here -->
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/particles.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </body>
+
+</html>

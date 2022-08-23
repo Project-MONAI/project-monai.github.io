@@ -32,7 +32,11 @@ module.exports = {
                     purewhite: '#FFFFFF'
                 }
             },
-            display: ['hover', 'group-hover']
+            display: ['hover', 'group-hover'],
+            gridTemplateColumns: {
+                '16': 'repeat(16, minmax(0, 1fr))',
+                '20': 'repeat(20, minmax(0, 1fr))'
+            }
         }
     },
     variants: {},

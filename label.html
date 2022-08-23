@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-QVGBCPFPJ6');
+    </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="MONAI offers serveral frameworks, and we are adding to them all the time. Here, you’ll find the information you need to decide on what framework works best for your needs.">
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+
+    <title>MONAI Label - Product Page</title>
+
+    <!-- Tailwind css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/tailwind.css">
+  </head>
+
+  <body>
+
+        <!-- Header Area wrapper Starts -->
+        <header id="header-wrap" class="relative border-b border-neutral-neutral_gray2">
+          <!-- Navbar Start -->
+          <div class="navigation top-0 left-0 w-full z-30 duration-300">
+            <div class="container">
+              <nav class="navbar navbar-expand-lg flex justify-end items-center justify-between relative duration-300" x-data="{ one: false, two: false, three: false }">
+                <a class="navbar-brand" href="index.html">
+                  <img class="py-2" src="assets/img/MONAI-logo_color.png" alt="Logo">
+                </a>
+                <button class="navbar-toggler focus:outline-none block lg:hidden" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"
+                >
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                </button>
+    
+                <div class="collapse navbar-collapse hidden lg:block duration-300 shadow absolute top-100 left-0 mt-full bg-white z-20 px-5 w-full lg:static lg:bg-transparent lg:shadow-none">
+                  <ul class="navbar-nav mr-auto justify-end items-center lg:flex">
+                    <li class="nav-item relative">
+                      <a class="page-scroll" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item relative">
+                      <button class="page-scroll" @click="one = true">Frameworks <span class="chevron"></span></button>
+                      <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="one" @click.away="one = false"
+                        x-cloak>
+                        <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                          <a href="label.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary active"> MONAI Label </a>
+                          <a href="core.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core</a>
+                          <a href="deploy.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy  </a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nav-item relative">
+                      <button class="page-scroll" @click="two = true">Docs <span class="chevron"></span></button>
+                      <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="two" @click.away="two = false"
+                        x-cloak>
+                        <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                          <a href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Label Docs</a>
+                          <a href="https://docs.monai.io/en/stable/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core Docs</a>
+                          <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy Docs </a>
+                        </div>
+                      </div>
+                    </li>          
+                    <li class="nav-item relative">
+                      <button class="page-scroll" @click="three = true">Resources <span class="chevron"></span></button>
+                      <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="three" @click.away="three = false"
+                        x-cloak>
+                        <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                          <a href="about.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">About Us</a>
+                          <a href="started.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Getting Started</a>
+                          <a href="community.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Community</a>
+                          <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Blog</a>
+                        </div>
+                      </div>
+                    </li>                                
+                    <li class="nav-item relative">
+                      <a class="page-scroll" href="model-zoo.html">Model Zoo</a>
+                    </li>
+                    <li class="nav-item relative">
+                      <a class="page-scroll" target="_blank" href="https://github.com/Project-MONAI">GitHub</a>
+                    </li>                
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <!-- Navbar End -->
+    
+        </header>
+        <!-- Header Area wrapper End -->
+
+    <!-- Contributors Section Start -->
+    <section id="contributors" class="py-16">
+      <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 space-x-4 place-items-center">
+          <div>
+            <h2 class="mb-6 section-heading">MONAI Label</h2>
+            <div class="w-full lg:3/5 pb-4">
+              <p class="py-2">MONAI Label is an intelligent image labeling and learning tool that uses AI assistance to reduce the time and effort of annotating new datasets. By utilizing user interactions, MONAI Label trains an AI model for a specific task and continuously
+                learns and updates that model as it receives additional annotated images.
+              </p>
+              <p>MONAI Label provides multiple sample applications that include state-of-the-art interactive segmentation approaches like DeepGrow and DeepEdit. These sample applications are ready to use out of the box and let you quickly get started on
+                annotating with minimal effort. Developers can also build their own MONAI Label applications with creative algorithms.</p>
+            </div>
+            <div class="flex flex-wrap space-x-2 py-8">
+              <a class="brand-btn" href="https://docs.monai.io/projects/label/en/latest/quickstart.html" target="_blank"> Quickstart Guide </a>
+              <a class="brand-btn" href="https://github.com/Project-MONAI/MONAILabel" target="_blank">Documentation </a>
+            </div>
+            <div>
+              <h2 class="text-brand-primary font-semibold">Install:</h2>
+              <p class="code p-4 bg-neutral-lightgray w-72">$ pip install monailabel</p>
+            </div>
+          </div>
+          <div>
+            <img class="hidden lg:block " src="assets/img/documentation header.png">
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- Contributors Section End -->
+
+    <section class="py-12 bg-brand-light">
+      <div class="container py-4 lg:py-16">
+        <div class='text-center w-full lg:w-1/2 mx-auto pb-8'>
+          <h2 class="text-brand-primary text-4xl font-bold ">Focuses on Researchers and Data Scientist</h2>
+          <p class="py-4 ">
+            MONAI Core is focused on bringing the state-of-the-art to the broader medical community. You can see some of these features below and start using them today through our tutorials.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+          <div class="text-center border-b-2 border-r-0 lg:border-b-0 lg:border-r-2 border-neutral-gray2 p-6">
+            <h2 class="text-2xl font-bold pb-4">Continuous Training Loop</h2>
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">Fine-tune your model while annotating</h3>
+            <p class="pb-4">Quickly start creating an annotation model by utilize the continous training loop with MONAI Label.</p>
+
+          </div>
+          <div class="text-center border-b-2 border-r-0 lg:border-b-0 lg:border-r-2 border-neutral-gray2 p-6">
+            <h2 class="text-2xl font-bold pb-4">Multiple Supported Viewers</h2>
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">3D Slicer, OHIF, DSA, and QuPath</h3>
+            <p class="pb-4">Whether you're annotating Radiology or Pathology images, MONAI Label has viewer integration to get you started quickly.</p>
+          </div>
+          <div class="text-center p-6">
+            <h2 class="text-2xl font-bold pb-4">Interactive and Non-interactive Annotation Methods</h2>
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">Multiple Algorithms to Choose</h3>
+            <p class="pb-4">Utilize interactive methods to get started quickly or choose an existing model that already works great.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-neutral-purewhite">
+      <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 place-items-center">
+          <div class='w-2/3'>
+            <h2 class="text-center text-brand-primary text-4xl font-bold pb-8">Which Use Case are you working on?</h2>
+          </div>
+          <div>
+            <p class="mx-auto pb-12 text-center lg:text-left">MONAI Label has integration for both Radiology and Pathology Images. By enabling a workflow that integrates directly into a Radiologist or Pathologist viewer and allowing for continuous learning, MONAI aims to accelerate the adoption of Deep
+              Learning in Medical Imaging.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-12 gap-x-0 lg:gap-y-0 lg:gap-x-24 p-8 sm:p-12 lg:p-24">
+          <div class="shadow-xl rounded-3xl">
+            <div class="aspect-w-3 aspect-h-2">
+              <img class="object-cover rounded-t-3xl" src="assets/img/mri_label.png">
+            </div>
+            <h2 class="text-2xl font-bold text-brand-primary text-center mt-8">Radiology</h2>
+            <p class="px-12 py-4 text-center">If you're working in Radiology, start using OHIF or 3D Slicer, which have extensions built to integrate with MONAI Label. You can bring your DICOM or Nifti images into the viewer and start annotating today. </p>
+            <div class="text-center my-8">
+              <a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/radiology" target="_blank">
+                <button class="text-brand-primary text-xl font-bold">Sample Applications ></button>
+              </a>
+            </div>
+          </div>
+          <div class="shadow-xl rounded-3xl">
+            <div class="aspect-w-3 aspect-h-2">
+              <img class="object-cover rounded-t-3xl" src="assets/img/path_label.png">
+            </div>
+            <h2 class="text-2xl font-bold text-brand-primary text-center mt-8">Pathology</h2>
+            <p class="px-12 py-4 text-center">If you're working in Pathology, we've integrated with Digital Slide Archive (DSA), QuPath, and CVAT viewers. MONAI Label is creating a starting point for Pathologists and Data scientists to work together and utilize the benefits of Deep Learning.</p>
+            <div class="text-center my-8">
+              <a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/pathology" target="_blank">
+                <button class="text-brand-primary text-xl font-bold">Sample Applications ></button>
+              </a>
+            </div>
+          </div>
+          </p>
+        </div>
+    </section>
+
+    <section class="py-12 bg-neutral-lightgray">
+      <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4">
+          <div>
+            <h2 class="text-center text-brand-primary text-4xl font-bold pb-8">Get started with only a few commands</h2>
+            <p class="w-2/3 mx-auto text-center pb-8">
+              MONAI Label makes it easy to get started. By following the commands on the right, you'll:
+            </p>
+            <div class="bg-neutral-purewhite p-4 rounded-xl border-2 border-brand-primary w-2/3 mx-auto text-center lg:text-left">
+              <ul class='lg:list-disc lg:list-inside'>
+                <li class="underline underline-offset-4">Install MONAI Label</li>
+                <li class="underline underline-offset-4">Download a Sample Radiology App</li>
+                <li class="underline underline-offset-4">Download a Sample Dataset</li>
+                <li class="underline underline-offset-4">Start the MONAI Label Server</li>
+              </ul>
+            </div>
+          </div>
+          <div class='text-center mt-8 lg:mt-0'>
+            <p class="font-bold text-xl mb-4 text-brand-primary hidden lg:show">Launch the MONAI Label Server in 4 steps</p>
+            <div class="shadow-2xl">
+              <img src="assets/img/monai_label_server_start.png" />
+            </div>
+          </div>
+    </section>
+
+    <section class="py-12 bg-brand-light">
+      <div class="container py-4 lg:py-16">
+        <div class='text-center w-full lg:w-1/2 mx-auto pb-8'>
+          <h2 class="text-brand-primary text-4xl font-bold ">Designed with Active Learning for Continuous Training</h2>
+          <p class="py-4 ">
+            To demonstrate the power of MONAI Label and the Continous Training Loop plus Active Learning, we'll walk through how you'll utilize these techniques as you begin to annotate your data.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 lg:px-24">
+          <div>
+            <img src="assets/img/Active Learning Framework.png" />
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-neutral-purewhite">
+      <div class="container py-4 lg:py-16">
+        <div class='text-center w-full lg:w-1/2 mx-auto pb-8'>
+          <h2 class="text-brand-primary text-4xl font-bold ">Get Involved in the Community</h2>
+          <p class="py-4 ">
+            Below are ways that you can start using, contributing, and interacting with other members of the MONAI Label community!
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4">
+          <div class="text-center p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray">
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">GitHub</h3>
+            <p class="pb-4">Start contributing to the MONAI Label repo by submiting a bug, requesting a feature, or starting a discussion today!</p>
+            <div class="flex flex-wrap justify-center"><a class="brand-btn" href="https://github.com/Project-MONAI/MONAILabel/blob/main/CONTRIBUTING.md" target="_blank"> Contribute</a></div>
+
+          </div>
+          <div class="text-center p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray">
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">Sample Applications</h3>
+            <p class="pb-4">We have sample applications for various domains to help you quickly get started. You can also use these sample applications as the basis for your own MONAI Label Applications.</p>
+            <div class="flex flex-wrap justify-center"><a class="brand-btn" href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps" target="_blank"> Get Started</a></div>
+          </div>
+          <div class="text-center p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray">
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">Slack</h3>
+            <p class="pb-4">Having trouble? Trying to find out where to contribute? Wnat to share your cool project? Join our MONAI Slack and chat with the community.</p>
+            <div class="flex flex-wrap justify-center"><a class="brand-btn" href="https://forms.gle/QTxJq3hFictp31UM9" target="_blank"> Socialize</a></div>
+          </div>
+          <div class="text-center p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray">
+            <h3 class="text-lg font-bold pb-4 text-brand-primary">Documentation</h3>
+            <p class="pb-4">Ready to get started using MONAI Core? You can find all of our documentation to help get you started or answer any of your questions!</p>
+            <div class="flex flex-wrap justify-center"><a class="brand-btn" href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank"> Deep Dive</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section Start -->
+    <footer id="footer" class="bg-neutral-lightgray py-2 border-t border-neutral-light_gray">
+      <div class="container">
+        <div class="flex flex-wrap items-center justify-between">
+          <div class="w-auto">
+            <div class="mx-3">
+              <div class="footer-logo">
+                <a href="index.html"><img src="assets/img/MONAI-logo_color.png" alt=""></a>
+              </div>
+            </div>
+          </div>
+          <div class="hidden lg:block w-auto">
+            <div class="mx-3 text-black">
+              <ul class="flex justify-between">
+                <li class="px-4">
+                  <a href="about.html" class="footer-links">About Us</a>
+                </li>
+                <li class="px-4">
+                  <a href="started.html" class="footer-links">Get Started</a>
+                </li>
+                <li class="px-4">
+                  <a href="community.html" class="footer-links">Community</a>
+                </li>
+                <li class="px-4">
+                  <a href="https://medium.com/@monai" class="footer-links">Blog</a>
+                </li>
+                <li class="px-4">
+                  <a href="docs.html" class="footer-links">Docs</a>
+                </li>
+                <li class="px-4">
+                  <a href="https://github.com/Project-MONAI" class="footer-links">GitHub</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-auto">
+            <div class="mx-3">
+              <ul class="social-icons flex justify-end">
+                <li class="mx-2">
+                  <a href="https://twitter.com/ProjectMONAI">
+                    <i>
+                <img src="assets/img/twitter_icon_square.png"/>
+              </i>
+                  </a>
+                </li>
+                <li class="mx-2">
+                  <a href="https://medium.com/@monai">
+                    <i>
+                <img src="assets/img/medium_icon_square.png"/>
+              </i>
+                  </a>
+                </li>
+                <li class="mx-2">
+                  <a href="https://www.youtube.com/c/Project-MONAI">
+                    <i>
+                <img src="assets/img/youtube_icon_square.png"/>
+              </i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Go to Top Link -->
+    <a href="#" class="back-to-top w-10 h-10 fixed bottom-0 right-0 mb-5 mr-5 flex items-center justify-center rounded-full border border-solid border-brand-dark text-white text-lg z-20">
+      <i class="transform -rotate-90">
+        <img src="assets/img/ic_arrow_right.png"/>
+      </i>
+    </a>
+
+    <!-- All js Here -->
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/particles.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </body>
+
+</html>

@@ -1,528 +1,500 @@
 <!DOCTYPE html>
 <html lang="en" style="scroll-behavior: smooth;">
 
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-QVGBCPFPJ6');
-  </script>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="MONAI is a freely available, community-supported, PyTorch-based framework for deep learning in healthcare imaging.">
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-QVGBCPFPJ6');
+    </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="MONAI is a freely available, community-supported, PyTorch-based framework for deep learning in healthcare imaging.">
 
-  <!--====== Favicon Icon ======-->
-  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
 
-  <title>MONAI - Home</title>
+    <title>MONAI - Home</title>
 
-  <!-- Animate -->
-  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
-  <!-- Tailwind css -->
-  <link rel="stylesheet" type="text/css" href="assets/css/tailwind.css">
-</head>
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- Tailwind css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/tailwind.css">
+  </head>
 
-<body>
+  <body>
 
-  <!-- Header Area wrapper Starts -->
-  <header id="header-wrap" class="relative border-b border-neutral-neutral_gray2">
-    <!-- Navbar Start -->
-    <div class="navigation top-0 left-0 w-full z-30 duration-300">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg flex justify-end items-center justify-between relative duration-300">
-          <a class="navbar-brand" href="index.html">
-            <img class="py-2" src="assets/img/MONAI-logo_color.png" alt="Logo">
-          </a>
-          <button class="navbar-toggler focus:outline-none block lg:hidden" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="toggler-icon"></span>
-              <span class="toggler-icon"></span>
-              <span class="toggler-icon"></span>
+    <!-- Header Area wrapper Starts -->
+    <header id="header-wrap" class="relative border-b border-neutral-neutral_gray2">
+      <!-- Navbar Start -->
+      <div class="navigation top-0 left-0 w-full z-30 duration-300">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg flex justify-end items-center justify-between relative duration-300" x-data="{ one: false, two: false, three: false }">
+            <a class="navbar-brand" href="index.html">
+              <img class="py-2" src="assets/img/MONAI-logo_color.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler focus:outline-none block lg:hidden" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
             </button>
 
-          <div class="collapse navbar-collapse hidden lg:block duration-300 shadow absolute top-100 left-0 mt-full bg-white z-20 px-5 w-full lg:static lg:bg-transparent lg:shadow-none" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto justify-end items-center lg:flex">
-              <li class="nav-item">
-                <a class="page-scroll active" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="about.html">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="started.html">Get Started</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="community.html">Community</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" target="_blank" href="https://medium.com/@monai">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="docs.html">Docs</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" target="_blank" href="https://github.com/Project-MONAI">GitHub</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <!-- Navbar End -->
-  </header>
-  <!-- Header Area wrapper End -->
-
-  <!-- Hero Area Start -->
-  <section id="hero-area" class="relative pb-10 bg-hero-ball bg-center bg-no-repeat">
-    <div class="container z-20">
-      <div class="flex justify-between">
-        <div class="w-full text-center">
-          <div class="mt-20 text-center wow fadeInUp" data-wow-delay=".4s">
-            <img class="img-fluid mx-auto h-28" src="assets/img/MONAI-logo_color_full.png" alt="">
-          </div>
-          <h2 class="text-3xl mb-32 font-bold leading-snug text-gray-700 mt-4 wow fadeInUp" data-wow-delay=".2s">Medical Open Network
-            <br> for Artificial Intelligence</h2>
-        </div>
-      </div>
-    </div>
-    <img class="hero-image h-96" src="assets/img/hero_illustration.png" />
-    <!-- <img class="scroll-down" src="assets/img/scroll_down.png" /> -->
-    <div class="absolute right-0 sm:right-5 bottom-1.5 text-center wow fadeInUp" data-wow-delay=".8s">
-      <div class="text-center sm:text-left pl-2 mb-2">New Releases: </div>
-      <a target="_blank" href="https://docs.monai.io/en/stable/whatsnew.html"><button class="rounded-full text-xs mt-2 px-4 py-2 text-white bg-brand-primary">Core v0.9</button></a>
-      <a target="_blank" href="https://docs.monai.io/projects/label/en/latest/whatsnew.html"><button class="rounded-full text-xs mt-2 px-4 py-2 text-white bg-brand-primary">Label v0.4</button></a>
-      <a target="_blank" href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/release_notes/index.html"><button class="rounded-full text-xs mt-2 px-4 py-2 text-white bg-brand-primary">Deploy App SDK v0.3</button></a>
-      <a target="_blank" href="https://github.com/Project-MONAI/monai-deploy-app-server/blob/main/components/inference-service/README.md"><button class="rounded-full text-xs mt-2 px-4 py-2 text-white bg-brand-primary">Deploy MIS v0.1</button></a>
-    </div>
-  </section>
-  <!-- Hero Area End -->
-
-  <!-- MONAI is Section Start -->
-  <section id="services" class="py-24 bg-brand-light">
-    <div class="container grid grid-cols-1 lg:grid-cols-2">
-      <div class=" wow fadeInDown lg:sticky lg:top-8 lg:h-2/5" data-wow-delay="0.1s">
-        <h2 class="section-heading">MONAI is</h2>
-        <p class="pr-5 lg:pr-20 xl:pr-40 pb-8">
-          The MONAI framework is the open-source foundation being created by Project MONAI. MONAI is a freely available, community-supported, PyTorch-based framework for deep learning in healthcare imaging. It provides domain-optimized foundational capabilities
-          for developing healthcare imaging training workflows in a native PyTorch paradigm.
-        </p>
-        <p class="pr-5 lg:pr-20 xl:pr-40 pb-8">
-          Project MONAI also includes MONAI Label, an intelligent open source image labeling and learning tool that helps researchers and clinicians collaborate, create annotated datasets, and build AI models in a standardized MONAI paradigm.
-        </p>
-      </div>
-      <div class="grid grid-cols-1 grid-rows-6 gap-y-4 items-stretch">
-        <!-- Services item -->
-        <div class="grid grid-cols-5 col-span-5 gap-x-2 items-center bg-white p-4 wow slideInRight" data-wow-delay="0.1s">
-          <div class="col-span-1 items-center justify-center justify-self-center w-20 h-20 bg-gray-200 rounded-full hidden sm:flex">
-            <img class="w-1/2" src="assets/img/open_source_icon.png">
-          </div>
-          <div class="col-span-5 sm:col-span-4">
-            <h3 class="text-brand code">Open Source Design</h3>
-            <p class="text-gray-600 code">MONAI is an open-source project. It is built on top of PyTorch and is released under the Apache 2.0 license.</p>
-          </div>
-        </div>
-        <!-- Services item -->
-        <div class="grid grid-cols-5 col-span-5 gap-x-2 items-center bg-white p-4 wow slideInRight" data-wow-delay="0.2s">
-          <div class="col-span-1 items-center justify-center justify-self-center w-20 h-20 bg-gray-200 rounded-full hidden sm:flex">
-            <img class="w-1/2" src="assets/img/standardized_icon.png">
-          </div>
-          <div class="col-span-5 sm:col-span-4">
-            <h3 class="text-brand code">Standardized</h3>
-            <p class="text-gray-600 code">Aiming to capture best practices of AI development for healthcare researchers, with an immediate focus on medical imaging.</p>
-          </div>
-        </div>
-        <!-- Services item -->
-        <div class="grid grid-cols-5 col-span-5 gap-x-2 items-center bg-white p-4 wow slideInRight" data-wow-delay="0.3s">
-          <div class="col-span-1 items-center justify-center justify-self-center w-20 h-20 bg-gray-200 rounded-full hidden sm:flex">
-            <img class="w-1/2" src="assets/img/user_friendly_icon.png">
-          </div>
-          <div class="col-span-5 sm:col-span-4">
-            <h3 class="text-brand code">User Friendly</h3>
-            <p class="text-gray-600 code">Providing user-comprehensible error messages and easy to program API interfaces.</p>
-          </div>
-        </div>
-        <!-- Services item -->
-        <div class="grid grid-cols-5 col-span-5 gap-x-2 items-center bg-white p-4 wow slideInRight" data-wow-delay="0.4s">
-          <div class="col-span-1 items-center justify-center justify-self-center w-20 h-20 bg-gray-200 rounded-full hidden sm:flex">
-            <img class="w-1/2" src="assets/img/reproducible_icon.png">
-          </div>
-          <div class="col-span-5 sm:col-span-4">
-            <h3 class="text-brand code">Reproducible</h3>
-            <p class="text-gray-600 code">Provides reproducibility of research experiments for comparisons against state-of-the-art implementations.</p>
-          </div>
-        </div>
-        <!-- Services item -->
-        <div class="grid grid-cols-5 col-span-5 gap-x-2 items-center bg-white p-4 wow slideInRight" data-wow-delay="0.5s">
-          <div class="col-span-1 items-center justify-center justify-self-center w-20 h-20 bg-gray-200 rounded-full hidden sm:flex">
-            <img class="w-1/2" src="assets/img/easy_integration_icon.png">
-          </div>
-          <div class="col-span-5 sm:col-span-4">
-            <h3 class="text-brand code">Easy Integration</h3>
-            <p class="text-gray-600 code">Designed to be compatible with existing efforts and ease of 3rd party integration for various components.</p>
-          </div>
-        </div>
-        <!-- Services item -->
-        <div class="grid grid-cols-5 col-span-5 gap-x-2 items-center bg-white p-4 wow slideInRight" data-wow-delay="0.6s">
-          <div class="col-span-1 items-center justify-center justify-self-center w-20 h-20 bg-gray-200 rounded-full hidden sm:flex">
-            <img class="w-1/2" src="assets/img/high_quality_icon.png">
-          </div>
-          <div class="col-span-5 sm:col-span-4">
-            <h3 class="text-brand code">High Quality</h3>
-            <p class="text-gray-600 code">Delivering high-quality software with enterprise-grade development, tutorials for getting started and robust validation & documentation.</p>
-          </div>
-        </div>
-      </div>
-  </section>
-  <!-- MONAI is Section End -->
-
-  <!-- Are you? Se4tion Start -->
-  <div id="feature" class="py-24">
-    <h2 class="mb-8 section-heading sm:section-heading-long text-center wow fadeInUp" data-wow-delay=".2s">Medical AI Workflow</h2>
-    <div class="container">
-      <p class="m-auto mt-8 mb-12 text-xl text-center wow fadeInUp" data-wow-delay=".2s">
-        When dealing with Medical AI, it's important to have tools that cover the end-to-end workflow. MONAI provides those tools for the entire Medical AI Model development workflow, from Research to Clinical Production.
-      </p>
-      <div class="grid grid-cols-12 lg:px-12 items-center wow slideInRight" data-wow-delay=".2s">
-        <div class="flex justify-center col-span-12 sm:col-span-5">
-          <img class="w-3/5 sm:w-3/5" src="assets/img/labeling.png" alt="">
-        </div>
-        <div class="col-span-12 sm:col-span-6 sm:col-start-7">
-          <h2 class="mb-6 text-2xl text-gray-700 font-bold tracking-wide">MONAI Label</h2>
-          <div>
-            <div>
-              <p>MONAI Label is an intelligent open source image labeling and learning tool that enables users to create annotated datasets and build AI annotation models for clinical evaluation.</p>
-              <a href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank"><button class="rounded-full my-4 px-6 text-md py-2 mt-4 text-white bg-brand-primary">Get Started</button></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="grid grid-cols-12 lg:px-12 items-center wow slideInLeft" data-wow-delay=".3s">
-        <div class="col-span-12 sm:col-span-6 row-start-2 sm:row-start-1">
-          <h2 class="mb-6 text-2xl text-gray-700 font-bold tracking-wide">MONAI Core</h2>
-          <div>
-            <div>
-              <p>MONAI Core is a PyTorch-based, open-source framework for deep learning in healthcare imaging, part of PyTorch Ecosystem.
-              </p>
-              <a href="https://docs.monai.io/en/stable/" target="_blank"><button class="rounded-full my-4 px-6 text-md py-2 mt-4 text-white bg-brand-primary">Get Started</button></a>
-            </div>
-          </div>
-        </div>
-        <div class="flex justify-center col-span-12 row-start-1 sm:col-span-5 sm:col-start-8 sm:row-start-1">
-          <img class="w-3/5 sm:w-3/5" src="assets/img/training.png" alt="">
-        </div>
-      </div>
-      <div class="grid grid-cols-12 lg:px-12 items-center wow slideInRight" data-wow-delay=".4s">
-        <div class="flex justify-center col-span-12 sm:col-span-5">
-          <img class="w-3/5 sm:w-3/5" src="assets/img/deployment.png" alt="">
-        </div>
-        <div class="col-span-12 sm:col-span-6 sm:col-start-7">
-          <h2 class="mb-6 text-2xl text-gray-700 font-bold tracking-wide">MONAI Deploy</h2>
-          <div>
-            <div>
-              <p>MONAI Deploy aims to become the de-facto standard for developing, packaging, testing, deploying and running medical AI applications in clinical production.</p>
-              <a href="https://github.com/Project-MONAI/monai-deploy" target="_blank"><button class="rounded-full my-4 px-6 text-md py-2 mt-4 text-white bg-brand-primary">Get Started</button></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <!-- Are you? Section End -->
-
-  <!-- Slant-up-top break Section Start -->
-  <section class='brand-angle-top'></section>
-  <!-- Slant-up-top break Section End -->
-
-  <!-- Road Section Start -->
-  <section id="roadmap" class="bg-brand-dark">
-    <div class="container relative">
-      <h2 class="text-5xl text-white font-bold tracking-wide text-center pb-16 wow fadeInUp" data-wow-delay=".5s">Roadmap</h2>
-      <div class="grid grid-cols-11 grid-rows-1">
-        <!-- Left Item -->
-        <div class="bg-white p-4 my-2 z-10 col-span-7 col-start-4 text-left sm:col-span-5 sm:col-start-1 lg:col-span-3 lg:col-start-3 rounded-md sm:text-right wow fadeInUp" data-wow-delay="0.2s">
-          <h1 class="text-2xl font-bold text-brand pb-2">April 2021</h1>
-          <ul>
-            <li class="py-1">MONAI Core v0.5.0</li>
-          </ul>
-        </div>
-        <div class="flex flex-col items-center justify-self-center h-full row-start-1 col-start-2 sm:col-start-6 lg:col-start-6">
-          <img src="assets/img/cross_item.png">
-          <span class="border border-white my-1.5 h-full"></span>
-        </div>
-      </div>
-      <div class="grid grid-cols-11 grid-rows-1">
-        <!-- Right Item -->
-        <div class="bg-white p-4 my-2 z-10 col-span-7 col-start-4 text-left sm:col-span-5 sm:col-start-7 lg:col-span-3 lg:col-start-7 rounded-md wow fadeInUp" data-wow-delay="0.3s">
-          <h1 class="text-2xl font-bold text-brand pb-2">July 2021</h1>
-          <ul>
-            <li class="py-1">MONAI Core v0.6.0</li>
-            <li class="py-1">MONAI Label v0.1.0</li>
-          </ul>
-        </div>
-        <div class="flex flex-col items-center justify-self-center h-full row-start-1 col-start-2 sm:col-start-6 lg:col-start-6">
-          <img src="assets/img/cross_item.png">
-          <span class="border border-white my-1.5 h-full"></span>
-        </div>
-      </div>
-      <div class="grid grid-cols-11 grid-rows-1">
-        <!-- Left Item -->
-        <div class="bg-white p-4 my-2 z-10 col-span-7 col-start-4 text-left sm:col-span-5 sm:col-start-1 lg:col-span-3 lg:col-start-3 rounded-md sm:text-right wow fadeInUp" data-wow-delay="0.4s">
-          <h1 class="text-2xl font-bold text-brand pb-2">September 2021</h1>
-          <ul>
-            <li class="py-1">MONAI Core v0.7.0</li>
-            <li class="py-1">MONAI Label v0.2.0</li>
-            <li class="py-1">MONAI Deploy App SDK v0.1.0</li>
-          </ul>
-        </div>
-        <div class="flex flex-col items-center justify-self-center h-full row-start-1 col-start-2 sm:col-start-6 lg:col-start-6">
-          <img src="assets/img/cross_item.png">
-          <span class="border border-white my-1.5 h-full"></span>
-        </div>
-      </div>
-      <div class="grid grid-cols-11 ">
-        <!-- Right Item -->
-        <div class="bg-white p-4 my-2 z-10 col-span-7 col-start-4 text-left sm:col-span-5 sm:col-start-7 lg:col-span-3 lg:col-start-7 rounded-md wow fadeInUp" data-wow-delay="0.5s">
-          <h1 class="text-2xl font-bold text-brand pb-2">November 2021</h1>
-          <ul>
-            <li class="py-1">MONAI Core v0.8.0</li>
-            <li class="py-1">MONAI Label v0.3.0</li>
-            <li class="py-1">MONAI Deploy App SDK v0.2.0</li>
-            <li class="py-1">MONAI Deploy MIS v0.1.0</li>
-          </ul>
-        </div>
-        <div class="flex flex-col items-center justify-self-center h-full row-start-1 col-start-2 sm:col-start-6 lg:col-start-6">
-          <img src="assets/img/octogon-line.png">
-          <span class="border border-white mt-1.5 h-1/2"></span>
-          <span class="border border-white border-dashed h-1/2"></span>
-        </div>
-      </div>
-      <img class="absolute w-1/3 -top-2 right-16 z-0 " src="assets/img/large_sphere.png" />
-      <img class="absolute w-1/3 bottom-2 z-0 " src="assets/img/medium_sphere.png" />
-    </div>
-  </section>
-  <!-- Road Section End -->
-
-  <!-- Slant-up-bottom break Section Start -->
-  <section class='brand-angle-bottom'></section>
-  <!-- Slant-up-bottom break Section End -->
-
-  <!-- Contributors Section Start -->
-  <section id="contributors" class="pt-16 pb-32">
-    <div class="container">
-      <div class="container">
-        <div class="flex flex-wrap items-center">
-          <div class="w-full lg:w-1/2">
-            <h2 class="section-heading wow fadeInUp" data-wow-delay=".3s">Contributors</h2>
-            <div class="flex flex-wrap wow fadeInUp" data-wow-delay=".3s">
-              <div class="w-full lg:3/5">
-                <div class="m-3">
-                  <div class="features-content">
-                    <p>Project MONAI is an initiative originally started by NVIDIA & King’s College London to establish an inclusive community of AI researchers for the development and exchange of best practices for AI in healthcare imaging across academia
-                      and enterprise researchers.
-                    </p>
-                    <a href="https://github.com/Project-MONAI" target="_blank"><button class="rounded-full px-6 py-2 my-4 text-white bg-brand-primary">Join Project MONAI</button></a>
-                    <a href="https://github.com/Project-MONAI/MONAI/blob/master/CONTRIBUTING.md" target="_blank">
-                      <p class="text-lg font-medium bold pb-4 external-link">Contributing Guidelines</p>
-                    </a>
+            <div class="collapse navbar-collapse hidden lg:block duration-300 shadow absolute top-100 left-0 mt-full bg-white z-20 px-5 w-full lg:static lg:bg-transparent lg:shadow-none">
+              <ul class="navbar-nav mr-auto justify-end items-center lg:flex">
+                <li class="nav-item relative">
+                  <a class="page-scroll active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item relative">
+                  <button class="page-scroll" @click="one = true">Frameworks <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="one" @click.away="one = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="label.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Label </a>
+                      <a href="core.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core</a>
+                      <a href="deploy.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy  </a>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </li>
+                <li class="nav-item relative">
+                  <button class="page-scroll" @click="two = true">Docs <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="two" @click.away="two = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Label Docs</a>
+                      <a href="https://docs.monai.io/en/stable/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core Docs</a>
+                      <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy Docs </a>
+                    </div>
+                  </div>
+                </li>          
+                <li class="nav-item relative">
+                  <button class="page-scroll" @click="three = true">Resources <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="three" @click.away="three = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="about.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">About Us</a>
+                      <a href="started.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Getting Started</a>
+                      <a href="community.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Community</a>
+                      <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Blog</a>
+                    </div>
+                  </div>
+                </li>                                
+                <li class="nav-item relative">
+                  <a class="page-scroll" href="model-zoo.html">Model Zoo</a>
+                </li>
+                <li class="nav-item relative">
+                  <a class="page-scroll" target="_blank" href="https://github.com/Project-MONAI">GitHub</a>
+                </li>                
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- Navbar End -->
+
+    </header>
+    <!-- Header Area wrapper End -->
+    <!-- Hero Area Start -->
+    <section id="hero-area" class="relative pb-10 bg-hero-ball bg-center bg-no-repeat">
+      <div class="container z-20">
+        <div class="flex justify-between">
+          <div class="w-full text-center">
+            <div class="mt-20 text-center wow fadeInUp" data-wow-delay=".4s">
+              <img class="img-fluid mx-auto h-28" src="assets/img/MONAI-logo_color_full.png" alt="">
+            </div>
+            <h2 class="text-3xl mb-32 font-bold leading-snug text-gray-700 mt-4 wow fadeInUp" data-wow-delay=".2s">Medical Open Network
+              <br> for Artificial Intelligence</h2>
+          </div>
+        </div>
+      </div>
+      <img class="hero-image h-96" src="assets/img/hero_illustration.png" />
+      <!-- <img class="scroll-down" src="assets/img/scroll_down.png" /> -->
+      <div class="absolute right-0 sm:right-5 bottom-1.5 text-center wow fadeInUp" data-wow-delay=".8s">
+        <div class="text-center sm:text-left pl-2 mb-2">New Releases: </div>
+        <a target="_blank" href="https://docs.monai.io/en/stable/whatsnew.html"><button class="rounded-full text-xs mt-2 px-4 py-2 text-white bg-brand-primary">Core v0.9</button></a>
+        <a target="_blank" href="https://docs.monai.io/projects/label/en/latest/whatsnew.html"><button class="rounded-full text-xs mt-2 px-4 py-2 text-white bg-brand-primary">Label v0.4</button></a>
+        <a target="_blank" href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/release_notes/index.html"><button class="rounded-full text-xs mt-2 px-4 py-2 text-white bg-brand-primary">Deploy App SDK v0.3</button></a>
+      </div>
+    </section>
+    <!-- Hero Area End -->
+
+    <!-- MONAI is Section Start -->
+    <section id="services" class="py-24 bg-brand-light">
+      <div class="container grid grid-cols-1 lg:grid-cols-2">
+        <div class=" wow fadeInDown lg:sticky lg:top-8 lg:h-2/5" data-wow-delay="0.1s">
+          <h2 class="section-heading">MONAI is</h2>
+          <p class="pr-5 lg:pr-20 xl:pr-40 pb-8">
+            a set of open-source, freely available collaborative frameworks built for accelerating research and clinical collaboration in Medical Imaging. The goal is to accelerate the pace of innovation and clinical translation by building a robust software framework
+            that benefits nearly every level of medical imaging, deep learning research, and deployment.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 grid-rows-6 gap-y-4 items-stretch">
+          <!-- Services item -->
+          <div class="grid grid-cols-5 col-span-5 gap-x-2 items-center bg-white p-4 wow slideInRight" data-wow-delay="0.1s">
+            <div class="col-span-1 items-center justify-center justify-self-center w-20 h-20 bg-gray-200 rounded-full hidden sm:flex">
+              <img class="w-1/2" src="assets/img/open_source_icon.png">
+            </div>
+            <div class="col-span-5 sm:col-span-4">
+              <h3 class="text-brand code">Open Source Design</h3>
+              <p class="text-gray-600 code">MONAI is an open-source project. It is built on top of PyTorch and is released under the Apache 2.0 license.</p>
             </div>
           </div>
-          <div class="flex w-full lg:w-1/2 wow fadeIn" data-wow-delay="0.6s">
-            <div class="m-auto inline-grid grid grid-cols-2 sm:hidden justify-items-center">
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain" src="assets/img/CAS-logo.jpg"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/dkfz-logo.png"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/kcl-logo.png"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/Stanford-Logo.png"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/Logo-NVIDIA.jpg"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/Kitware_Logo.png"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/MGH_BWH_logo.png"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/tum_logo.png"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/University_College_London_logo.png"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/Vanderbilt_Univ_square.png"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/Warwick_Logo.png"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/FNLCR.png"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/NIH-NCI.jpg"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/mayo-logo.png"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/GuysAndStThomasLogo.png"></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered"><img class="h-full object-contain" src="assets/img/answer_logo.png"></div>
+          <!-- Services item -->
+          <div class="grid grid-cols-5 col-span-5 gap-x-2 items-center bg-white p-4 wow slideInRight" data-wow-delay="0.2s">
+            <div class="col-span-1 items-center justify-center justify-self-center w-20 h-20 bg-gray-200 rounded-full hidden sm:flex">
+              <img class="w-1/2" src="assets/img/standardized_icon.png">
             </div>
-            <div class=" m-auto sm:inline-grid sm:grid hidden sm:block sm:grid-cols-4 justify-items-center ">
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/CAS-logo.jpg "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/dkfz-logo.png "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/kcl-logo.png "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/Stanford-Logo.png "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/Logo-NVIDIA.jpg "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/Kitware_Logo.png "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/MGH_BWH_logo.png "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/tum_logo.png "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/University_College_London_logo.png "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/Vanderbilt_Univ_square.png "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/Warwick_Logo.png "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/FNLCR.png "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/NIH-NCI.jpg "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/mayo-logo.png "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/GuysAndStThomasLogo.png "></div>
-              <div class="h-28 md:h-36 lg:h-28 xl:h-36 flex p-4 justify-center items-center square checkered "><img class="h-full object-contain " src="assets/img/answer_logo.png"></div>
+            <div class="col-span-5 sm:col-span-4">
+              <h3 class="text-brand code">Standardized</h3>
+              <p class="text-gray-600 code">Aiming to capture best practices of AI development for healthcare researchers, with an immediate focus on medical imaging.</p>
+            </div>
+          </div>
+          <!-- Services item -->
+          <div class="grid grid-cols-5 col-span-5 gap-x-2 items-center bg-white p-4 wow slideInRight" data-wow-delay="0.3s">
+            <div class="col-span-1 items-center justify-center justify-self-center w-20 h-20 bg-gray-200 rounded-full hidden sm:flex">
+              <img class="w-1/2" src="assets/img/user_friendly_icon.png">
+            </div>
+            <div class="col-span-5 sm:col-span-4">
+              <h3 class="text-brand code">User Friendly</h3>
+              <p class="text-gray-600 code">Providing user-comprehensible error messages and easy to program API interfaces.</p>
+            </div>
+          </div>
+          <!-- Services item -->
+          <div class="grid grid-cols-5 col-span-5 gap-x-2 items-center bg-white p-4 wow slideInRight" data-wow-delay="0.4s">
+            <div class="col-span-1 items-center justify-center justify-self-center w-20 h-20 bg-gray-200 rounded-full hidden sm:flex">
+              <img class="w-1/2" src="assets/img/reproducible_icon.png">
+            </div>
+            <div class="col-span-5 sm:col-span-4">
+              <h3 class="text-brand code">Reproducible</h3>
+              <p class="text-gray-600 code">Provides reproducibility of research experiments for comparisons against state-of-the-art implementations.</p>
+            </div>
+          </div>
+          <!-- Services item -->
+          <div class="grid grid-cols-5 col-span-5 gap-x-2 items-center bg-white p-4 wow slideInRight" data-wow-delay="0.5s">
+            <div class="col-span-1 items-center justify-center justify-self-center w-20 h-20 bg-gray-200 rounded-full hidden sm:flex">
+              <img class="w-1/2" src="assets/img/easy_integration_icon.png">
+            </div>
+            <div class="col-span-5 sm:col-span-4">
+              <h3 class="text-brand code">Easy Integration</h3>
+              <p class="text-gray-600 code">Designed to be compatible with existing efforts and ease of 3rd party integration for various components.</p>
+            </div>
+          </div>
+          <!-- Services item -->
+          <div class="grid grid-cols-5 col-span-5 gap-x-2 items-center bg-white p-4 wow slideInRight" data-wow-delay="0.6s">
+            <div class="col-span-1 items-center justify-center justify-self-center w-20 h-20 bg-gray-200 rounded-full hidden sm:flex">
+              <img class="w-1/2" src="assets/img/high_quality_icon.png">
+            </div>
+            <div class="col-span-5 sm:col-span-4">
+              <h3 class="text-brand code">High Quality</h3>
+              <p class="text-gray-600 code">Delivering high-quality software with enterprise-grade development, tutorials for getting started and robust validation & documentation.</p>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- MONAI is Section End -->
+
+    <!-- AI Lifecycle Section Start -->
+    <section id="feature" class="py-24">
+      <h2 class="mb-8 section-heading sm:section-heading-long text-center wow fadeInUp" data-wow-delay=".2s">Medical AI LifeCycle</h2>
+      <div class="container">
+        <p class="m-auto mt-8 mb-12 text-xl text-center wow fadeInUp" data-wow-delay=".2s">
+          When dealing with Medical AI, it's important to have tools that cover the end-to-end workflow. MONAI provides those tools for the entire Medical AI Model development workflow, from Research to Clinical Production.
+        </p>
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+          <div class="grid grid-rows-12 wow slideInRight p-12 border-neutral-gray2 lg:border-r-2" data-wow-delay=".2s">
+            <h2 class="text-3xl text-gray-700 font-bold"><span class='text-brand'>01. </span> MONAI Label</h2>
+            <div class="aspect-w-3 aspect-h-2">
+              <img class="object-contain" src="assets/img/labeling.png">
+            </div>
+            <div>
+              <p>MONAI Label is an intelligent image labeling and learning tool that uses AI assistance to reduce the time and effort of annotating new datasets. By utilizing user interactions, MONAI Label trains an AI model for a specific task and continuously
+                learns and updates that model as it receives additional annotated images.</p>
+            </div>
+            <div class='text-center sm:text-left lg:text-center pt-8'>
+              <a class="brand-btn " href="label.html" target="_blank">Learn More</a>
+            </div>
+          </div>
+          <div class="grid grid-rows-12 wow slideInRight p-12 border-neutral-gray2 lg:border-r-2" data-wow-delay=".3s">
+            <h2 class="text-3xl text-gray-700 font-bold"><span class='text-brand'>02. </span> MONAI Core</h2>
+            <div class="aspect-w-3 aspect-h-2">
+              <img class="object-contain" src="assets/img/training.png">
+            </div>
+            <div>
+              <p>MONAI Core is the flagship library of Project MONAI and provides domain-specific capabilities for training AI models for healthcare imaging. These capabilities include medical-specific image transforms, state-of-the-art transformer-based
+                3D Segmentation algorithms like UNETR, and an AutoML framework named DiNTS.
+              </p>
+            </div>
+            <div class='text-center sm:text-left lg:text-center pt-8'>
+              <a class="brand-btn " href="core.html" target="_blank">Learn More</a>
+            </div>
+          </div>
+          <div class="grid grid-rows-12 wow slideInRight p-12" data-wow-delay=".4s">
+            <h2 class="text-3xl text-gray-700 font-bold"><span class='text-brand'>03. </span> MONAI Deploy</h2>
+            <div class="aspect-w-3 aspect-h-2">
+              <img class="object-contain" src="assets/img/deployment.png">
+            </div>
+            <div>
+              <p>MONAI Deploy aims to become the de-facto standard for developing packaging, testing, deploying, and running medical AI applications in clinical production. MONAI Deploy creates a set of intermediate steps where researchers and physicians
+                can build confidence in the techniques and approaches used with AI — allowing for an iterative workflow.
+            </div>
+            <div class='text-center sm:text-left lg:text-center pt-8'>
+              <a class="brand-btn " href="deploy.html" target="_blank">Learn More</a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Contributors Section End -->
+    </section>
+    <!-- AI Lifecycle Section End -->
 
+    <!-- Contributors Section Start -->
+    <section id="contributors" class="py-24 bg-brand-light">
+      <div class="container">
+        <div class="grid space-y-4">
+          <div>
+            <h2 class="section-heading wow fadeInUp" data-wow-delay=".3s">Contributors</h2>
+            <div class="grid wow fadeInUp" data-wow-delay=".3s">
+              <p>Over the last three years our community has expanded rapidly! But it takes a community to build out the success of MONAI, which is why we want to highlight contributing organizations. Below, you’ll find contributors organizations who have
+                dedicated resources to actively contributing back to MONAI. </p>
+              <div class="pt-8">
+                <a class="brand-btn" href="https://github.com/Project-MONAI/MONAI/blob/master/CONTRIBUTING.md" target="_blank">Join Project MONAI</a>
+            </div>
 
-  <!-- Get Started Section Start -->
-  <section id="started" class="bg-gray-100 py-24">
-    <div class="container">
-      <h2 class="section-heading wow fadeInDown" data-wow-delay="0.3s">News</h2>
-      <div class="space-y-12 lg:grid lg:grid-cols-3 lg:items-start lg:gap-x-16 lg:space-y-0">
-        <li class='list-none'>
-          <div class="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:block " data-wow-delay="0.2s">
-            <div class="aspect-w-3 aspect-h-2 sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-3 lg:aspect-h-2">
-              <img class="object-cover shadow-lg rounded-lg" src="https://developer-blogs.nvidia.com/wp-content/uploads/2021/08/MONAI-Bootcamp.png" />
-            </div>
-            <div class="sm:col-span-2">
-              <div class="space-y-4 lg:mt-4">
-                <h2 class="text-xl font-medium">MONAI Bootcamp 2021</h2>
-                <p class="line-clamp-3">
-                  MONAI hosted a Bootcamp from September 22nd - September 24th, 2021. Find all of the material from the day and links to recordings for the first two days of the event.
-                </p>
-              </div>
-              <div class="mt-4">
-                <a href="https://github.com/Project-MONAI/MONAIBootcamp2021" target="_blank"><button class="row-span-1 rounded-full px-6 py-2 text-white bg-brand-primary">Read More</button></a>
-              </div>
             </div>
           </div>
-        </li>
-        <li class='list-none'>
-          <div class="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:block " data-wow-delay="0.6s">
-            <div class="aspect-w-3 aspect-h-2 sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-3 lg:aspect-h-2">
-              <img class="object-cover shadow-lg rounded-lg" src="assets/img/image_registration.png" />
-            </div>
-            <div class="sm:col-span-2">
-              <div class="space-y-4 lg:mt-4">
-                <h2 class="text-xl font-medium">Image Registration now in MONAI</h2>
-                <p class="line-clamp-3">
-                  MONAI has been working closely with DeepReg on learning-based medical image registration using PyTorch. We are delighted to provide a set of essential tools for developing registration pipelines.
-                </p>
-              </div>
-              <div class="mt-4">
-                <a href="https://medium.com/pytorch/monai-starts-to-explore-learning-based-medical-image-registration-ab6b143840b7" target="_blank"><button class="row-span-1 rounded-full px-6 py-2 text-white bg-brand-primary">Read More</button></a>
-              </div>
-            </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 place-items-center wow fadeIn" data-wow-delay="0.6s">
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/CAS-logo.jpg"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/dkfz-logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/kcl-logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/Stanford-Logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/Logo-NVIDIA.jpg"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/Kitware_Logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/MGH_BWH_logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/tum_logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/University_College_London_logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/Vanderbilt_Univ_square.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/Warwick_Logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/FNLCR.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/NIH-NCI.jpg"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/mayo-logo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/GuysAndStThomasLogo.png"></div>
+            <div class="p-8 lg:p-4 aspect-square"><img class="object-contain" src="assets/img/answer_logo.png"></div>
           </div>
-        </li>
-        <li class='list-none'>
-          <div class="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:block " data-wow-delay="0.6s">
-            <div class="aspect-w-3 aspect-h-2 sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-3 lg:aspect-h-2">
-              <img class="object-cover shadow-lg rounded-lg" src="https://miro.medium.com/max/702/0*1P1-UySWvCOpFaFq" />
-            </div>
-            <div class="sm:col-span-2">
-              <div class="space-y-4 lg:mt-4">
-                <h2 class="text-xl font-medium">MONAI Label v0.1</h2>
-                <p class="line-clamp-3">
-                  MONAI Label is an intelligent image labeling and learning tool that enables users to create annotated datasets and build AI annotation models quickly.
-                </p>
-              </div>
-              <div class="mt-4">
-                <a href="https://medium.com/pytorch/monai-v0-6-and-monai-label-v0-1-e738556b0a10" target="_blank"><button class="row-span-1 rounded-full px-6 py-2 text-white bg-brand-primary">Read More</button></a>
-              </div>
-            </div>
-          </div>
-        </li>
+        </div>
       </div>
-    </div>
-  </section>
-  <!-- Get Started Section End -->
+    </section>
+    <!-- Contributors Section End -->
 
-  <!-- Footer Section Start -->
-  <footer id="footer" class="bg-neutral-lightgray py-2 border-t border-neutral-light_gray">
-    <div class="container">
-      <div class="flex flex-wrap items-center justify-between">
-        <div class="w-auto">
-          <div class="mx-3">
-            <div class="footer-logo">
-              <a href="index.html"><img src="assets/img/MONAI-logo_color.png" alt=""></a>
+
+    <!-- Get Started Section Start -->
+    <section id="started" class="bg-neutral-lightgray py-24">
+      <div class="container">
+        <h2 class="mb-8 section-heading sm:section-heading-long text-center wow fadeInUp" data-wow-delay=".2s">Get Started with MONAI</h2>
+        <p class="m-auto mt-8 mb-12 text-xl text-center wow fadeInUp" data-wow-delay=".2s">
+          Here are a few different paths that you can get started with depending on your workload.
+        </p>
+        <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-12 gap-y-12 lg:gap-y-0">
+          <div class="p-8 bg-neutral-purewhite rounded-lg">
+            <h2 class="text-xl font-bold text-center pb-4">Annotating Images with DeepEdit and 3D Slicer</h2>
+            <div class="aspect-w-3 aspect-h-2">
+              <img class="object-contain" src="https://miro.medium.com/max/702/0*1P1-UySWvCOpFaFq" />
+            </div>
+            <p>Start by learning how to install and run the MONAI Label Server. Then utlizing 3D Slicer and the DeepEdit algorithm to annotate your images and create your AI Annotation Model.</p>
+            <div class="mt-4">
+              <a class="brand-btn" href="https://github.com/Project-MONAI/MONAIBootcamp2021" target="_blank">Read More</a>
+            </div>
+          </div>
+          <div class="p-8 bg-neutral-purewhite rounded-lg">
+            <h2 class="text-xl font-bold text-center pb-4">Transformer-Based Medical Architectures</h2>
+            <div class="aspect-w-3 aspect-h-2">
+              <img class="object-contain" src="assets/img/UNETR.png" />
+            </div>
+            <p>MONAI Core has two state-of-the-art transformer based architectures specific to Medical Imaging. Get hands-on experience with using these networks following our tutorials.</p>
+            <div class="mt-4">
+              <a href="https://medium.com/pytorch/monai-starts-to-explore-learning-based-medical-image-registration-ab6b143840b7" target class="brand-btn"="_blank">Read More</a>
+            </div>
+          </div>
+          <div class="p-8 bg-neutral-purewhite rounded-lg">
+            <h2 class="text-xl font-bold text-center pb-4">Package your First Medical AI Application</h2>
+            <div class="aspect-w-3 aspect-h-2">
+              <img class="object-contain" src="assets/img/m48-coding-256px-blk.png" />
+            </div>
+            <p>Utilize MONAI Deploy App SDK to package your first AI application. Walk through the steps of creating operators for specific functions, and then utilize docker to create your portable AI container.</p>
+            <div class="mt-4">
+              <a class="brand-btn" href="https://medium.com/pytorch/monai-v0-6-and-monai-label-v0-1-e738556b0a10" target="_blank">Read More</a>
             </div>
           </div>
         </div>
-        <div class="hidden lg:block w-auto">
-          <div class="mx-3 text-black">
-            <ul class="flex justify-between">
-              <li class="px-4">
-                <a href="about.html" class="footer-links">About Us</a>
+      </div>
+    </section>
+    <!-- Get Started Section End -->
+
+    <section id="news" class="py-24 bg-brand-light">
+      <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-12">
+          <div>
+            <h2 class="section-heading">MONAI News</h2>
+            <p class="pr-5 lg:pr-20 xl:pr-40 pb-8">
+              Learn more about what’s happening in the MONAI Community today!
+            </p>
+          </div>
+          <div>
+            <p class="font-bold text-xl mb-4">Blogs and Articles</p>
+            <ul class="space-y-4 underline underline-offset-4">
+              <li><a href="https://monai.medium.com/pathology-image-labeling-comes-to-monai-a033e200e587?source=friends_link&sk=01d75c9c3e7f4967db5a7b7e1ab1436a" target="_blank">Pathology Image Labeling Comes to MONAI</a></li>
+              <li><a href="https://monai.medium.com/from-automl-powered-development-to-cloud-native-deployment-monai-marches-forward-with-four-new-f6009a410e7f?source=friends_link&sk=c466bac1952c143211fd715a580b5584" target="_blank">From AutoML powered development to cloud-native deployment, MONAI marches forward with four new releases.</a></li>
+              <li><a href="https://medium.com/pytorch/monai-starts-to-explore-learning-based-medical-image-registration-ab6b143840b7?source=friends_link&sk=27bea85bbe1b8fa39cb3687f304ad5e4" target="_blank">MONAI Starts to Explore Learning-Based Medical Image Registration</a></li>
+              <li><a href="https://www.youtube.com/c/Project-MONAI" target="_blank">Project MONAI Starts a YouTube Channel</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-bold text-xl mb-4">Upcoming and Recent Events</p>
+            <ul class="space-y-4 underline underline-offset-4">
+              <li><a href="https://monai.io/monai-tutorial-miccai-2022/" target="_blank">MONAI Tutorial at MICCAI 2022</a></li>
+              <li><a href="https://zephyrie.github.io/monai-meetup/" target="_blank">MONAI Post-MIDL Meetup</a></li>
+            </ul>
+          </div>
+        </div>
+    </section>
+
+    <section class="bg-brand-dark py-24">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl text-white font-bold tracking-wide text-center py-8">Social Media, YouTube, and Slack</h2>
+        <div class='w-full lg:w-3/4 mx-auto'>
+          <p class="text-white text-lg tracking-wider py-4">
+            If you're looking to keep up with us on social media, we're active on Twitter at <a href="https://twitter.com/ProjectMONAI" target="_blank"><span class="text-brand">@ProjectMONAI</span></a>, Medium at
+            <a href="https://medium.com/@monai" target="_blank"><span class="text-brand">@monai</span></a>, and our YouTube Channel <a href="https://www.youtube.com/c/Project-MONAI" target="_blank"><span class="text-brand">Project-MONAI</span></a>.
+          </p>
+          <p class="text-white text-lg tracking-wider py-4">
+            You'll find our latest blog post and updates about the newest features in MONAI on both of those platforms. On our YouTube channel you'll find overview videos of the MONAI Frameworks, Bootcamp and Event recordings, and we're starting a hands-on walkthrough
+            series. It's a great if you're just getting started and want to learn more about MONAI.
+          </p>
+          <p class="text-white text-lg tracking-wider py-4">
+            If you're looking to get involved in the community directly, join our Slack! You can interact with the core development team and community members. For an invite to our Slack channel, please fill out our <a href="https://forms.gle/QTxJq3hFictp31UM9"
+              target="_blank"><span class="text-brand">Google Form</span></a>, and we'll send you an invite.
+          </p>
+          <div class="pt-12">
+            <ul class="flex justify-center">
+              <li class="mx-2">
+                <a href="https://twitter.com/ProjectMONAI" target="_blank">
+                  <i>
+                    <img src="assets/img/twitter_icon_circle.png"/>
+                  </i>
+                </a>
               </li>
-              <li class="px-4">
-                <a href="started.html" class="footer-links">Get Started</a>
+              <li class="mx-2">
+                <a href="https://medium.com/@monai" target="_blank">
+                  <i>
+                    <img src="assets/img/medium_icon_circle.png"/>
+                  </i>
+                </a>
               </li>
-              <li class="px-4">
-                <a href="community.html" class="footer-links">Community</a>
+              <li class="mx-2">
+                <a href="https://www.youtube.com/c/Project-MONAI" target="_blank">
+                  <i>
+                    <img src="assets/img/youtube_icon_circle.png"/>
+                  </i>
+                </a>
               </li>
-              <li class="px-4">
-                <a href="https://medium.com/@monai" class="footer-links">Blog</a>
-              </li>
-              <li class="px-4">
-                <a href="docs.html" class="footer-links">Docs</a>
-              </li>
-              <li class="px-4">
-                <a href="https://github.com/Project-MONAI" class="footer-links">GitHub</a>
+              <li class="mx-2">
+                <a href="https://forms.gle/QTxJq3hFictp31UM9" target="_blank">
+                  <i>
+                    <img src="assets/img/slack_icon_circle.png"/>
+                  </i>
+                </a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="w-auto">
-          <div class="mx-3">
-            <ul class="social-icons flex justify-end">
-              <li class="mx-2">
-                <a href="https://twitter.com/ProjectMONAI">
-                  <i>
+    </section>
+
+    <!-- Footer Section Start -->
+    <footer id="footer" class="bg-neutral-lightgray py-2 border-t border-neutral-light_gray">
+      <div class="container">
+        <div class="flex flex-wrap items-center justify-between">
+          <div class="w-auto">
+            <div class="mx-3">
+              <div class="footer-logo">
+                <a href="index.html"><img src="assets/img/MONAI-logo_color.png" alt=""></a>
+              </div>
+            </div>
+          </div>
+          <div class="hidden lg:block w-auto">
+            <div class="mx-3 text-black">
+              <ul class="flex justify-between">
+                <li class="px-4">
+                  <a href="about.html" class="footer-links">About Us</a>
+                </li>
+                <li class="px-4">
+                  <a href="started.html" class="footer-links">Get Started</a>
+                </li>
+                <li class="px-4">
+                  <a href="community.html" class="footer-links">Community</a>
+                </li>
+                <li class="px-4">
+                  <a href="https://medium.com/@monai" class="footer-links">Blog</a>
+                </li>
+                <li class="px-4">
+                  <a href="docs.html" class="footer-links">Docs</a>
+                </li>
+                <li class="px-4">
+                  <a href="https://github.com/Project-MONAI" class="footer-links">GitHub</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-auto">
+            <div class="mx-3">
+              <ul class="social-icons flex justify-end">
+                <li class="mx-2">
+                  <a href="https://twitter.com/ProjectMONAI">
+                    <i>
                 <img src="assets/img/twitter_icon_square.png"/>
               </i>
-                </a>
-              </li>
-              <li class="mx-2">
-                <a href="https://medium.com/@monai">
-                  <i>
+                  </a>
+                </li>
+                <li class="mx-2">
+                  <a href="https://medium.com/@monai">
+                    <i>
                 <img src="assets/img/medium_icon_square.png"/>
               </i>
-                </a>
-              </li>
-              <li class="mx-2">
-                <a href="https://www.youtube.com/c/Project-MONAI">
-                  <i>
+                  </a>
+                </li>
+                <li class="mx-2">
+                  <a href="https://www.youtube.com/c/Project-MONAI">
+                    <i>
                 <img src="assets/img/youtube_icon_square.png"/>
               </i>
-                </a>
-              </li>
-            </ul>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
-  <!-- Footer Section End -->
+    </footer>
+    <!-- Footer Section End -->
 
-  <!-- Go to Top Link -->
-  <a href="#" class="back-to-top w-10 h-10 fixed bottom-0 right-0 mb-5 mr-5 flex items-center justify-center rounded-full border border-solid border-brand-dark text-white text-lg z-20">
-    <i class="transform -rotate-90">
+    <!-- Go to Top Link -->
+    <a href="#" class="back-to-top w-10 h-10 fixed bottom-0 right-0 mb-5 mr-5 flex items-center justify-center rounded-full border border-solid border-brand-dark text-white text-lg z-20">
+      <i class="transform -rotate-90">
         <img src="assets/img/ic_arrow_right.png"/>
       </i>
-  </a>
+    </a>
 
-  <!-- All js Here -->
-  <script src="assets/js/wow.js"></script>
-  <script src="assets/js/particles.min.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
+    <!-- All js Here -->
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/particles.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </body>
 
 </html>
