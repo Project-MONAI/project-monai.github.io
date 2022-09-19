@@ -32,12 +32,18 @@ module.exports = {
                     purewhite: '#FFFFFF'
                 }
             },
-            display: ['hover', 'group-hover']
+            display: ['hover', 'group-hover'],
+            gridTemplateColumns: {
+                '16': 'repeat(16, minmax(0, 1fr))',
+                '20': 'repeat(20, minmax(0, 1fr))'
+            }
         }
     },
     variants: {},
     plugins: [
         require('@tailwindcss/line-clamp'),
-        require('@tailwindcss/aspect-ratio')
+        require('@tailwindcss/aspect-ratio'),
+        require('@tailwindcss/typography'),
+        require("kutty")
     ],
 }
