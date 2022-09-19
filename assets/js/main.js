@@ -28,6 +28,7 @@
     navbarCollapse.classList.toggle("show");
   });
 
+
   // Main.js
   /* ---- particles.js config ---- */
 

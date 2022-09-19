@@ -106,23 +106,24 @@
     <!-- Hero Area Start -->
     <section id="hero-area" class="relative pb-10 bg-hero-ball bg-center bg-no-repeat">
       <div class="container z-20">
-        <div class="flex justify-between">
+        <div class="flex justify-center relative">
           <div class="w-full text-center">
             <div class="mt-20 text-center wow fadeInUp" data-wow-delay=".4s">
               <img class="img-fluid mx-auto h-28" src="assets/img/MONAI-logo_color_full.png" alt="">
             </div>
-            <h2 class="text-3xl mb-32 font-bold leading-snug text-gray-700 mt-4 wow fadeInUp" data-wow-delay=".2s">Medical Open Network
+            <h2 class="text-3xl font-bold leading-snug text-gray-700 mt-4 wow fadeInUp" data-wow-delay=".2s">Medical Open Network
               <br> for Artificial Intelligence</h2>
           </div>
         </div>
+        <div class="flex flex-wrap justify-center wow fadeInUp mt-4 mb-4" data-wow-delay=".8s">
+          <a class="brand-btn-white" target="_blank" href="https://docs.monai.io/en/stable/whatsnew.html">Core v1.0</a>
+          <a class="brand-btn-white" target="_blank" href="https://docs.monai.io/projects/label/en/latest/whatsnew.html">Label v0.5</a>
+          <a class="brand-btn-white" target="_blank" href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/release_notes/index.html">Deploy App SDK v0.4</a>
+        </div>
       </div>
       <img class="hero-image h-96" src="assets/img/hero_illustration.png" />
-      <!-- <img class="scroll-down" src="assets/img/scroll_down.png" /> -->
-      <div class="absolute right-0 sm:right-5 bottom-1.5 text-center wow fadeInUp" data-wow-delay=".8s">
-        <div class="text-center sm:text-left pl-2 mb-2">New Releases: </div>
-        <a target="_blank" href="https://docs.monai.io/en/stable/whatsnew.html"><button class="rounded-full text-xs mt-2 px-4 py-2 text-white bg-brand-primary">Core v0.9</button></a>
-        <a target="_blank" href="https://docs.monai.io/projects/label/en/latest/whatsnew.html"><button class="rounded-full text-xs mt-2 px-4 py-2 text-white bg-brand-primary">Label v0.4</button></a>
-        <a target="_blank" href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/release_notes/index.html"><button class="rounded-full text-xs mt-2 px-4 py-2 text-white bg-brand-primary">Deploy App SDK v0.3</button></a>
+      <div class="flex justify-center">
+        <span id="myTargetElement" class="text-brand-primary text-2xl p-4 text-center mx-auto mb-8 rounded-md bg-neutral-purewhite/50"></span>
       </div>
     </section>
     <!-- Hero Area End -->
@@ -307,9 +308,9 @@
             <div class="aspect-w-3 aspect-h-2">
               <img class="object-contain" src="https://miro.medium.com/max/702/0*1P1-UySWvCOpFaFq" />
             </div>
-            <p>Start by learning how to install and run the MONAI Label Server. Then utlizing 3D Slicer and the DeepEdit algorithm to annotate your images and create your AI Annotation Model.</p>
+            <p class="pt-4">Start by learning how to install and run the MONAI Label Server. Then utlizing 3D Slicer and the DeepEdit algorithm to annotate your images and create your AI Annotation Model.</p>
             <div class="mt-4">
-              <a class="brand-btn" href="https://github.com/Project-MONAI/MONAIBootcamp2021" target="_blank">Read More</a>
+              <a class="brand-btn" href="https://docs.monai.io/projects/label/en/latest/quickstart.html#deepedit-annotation-with-3d-slicer" target="_blank">Read More</a>
             </div>
           </div>
           <div class="p-8 bg-neutral-purewhite rounded-lg">
@@ -317,19 +318,19 @@
             <div class="aspect-w-3 aspect-h-2">
               <img class="object-contain" src="assets/img/UNETR.png" />
             </div>
-            <p>MONAI Core has two state-of-the-art transformer based architectures specific to Medical Imaging. Get hands-on experience with using these networks following our tutorials.</p>
+            <p class="pt-4">MONAI Core has two state-of-the-art transformer based architectures specific to Medical Imaging. Get hands-on experience with using these networks following our tutorials.</p>
             <div class="mt-4">
-              <a href="https://medium.com/pytorch/monai-starts-to-explore-learning-based-medical-image-registration-ab6b143840b7" target class="brand-btn"="_blank">Read More</a>
+              <a href="https://github.com/Project-MONAI/tutorials/blob/main/3d_segmentation/unetr_btcv_segmentation_3d.ipynb" target class="brand-btn"="_blank">Read More</a>
             </div>
           </div>
           <div class="p-8 bg-neutral-purewhite rounded-lg">
-            <h2 class="text-xl font-bold text-center pb-4">Package your First Medical AI Application</h2>
+            <h2 class="text-xl font-bold text-center pb-4">Build your First Medical AI Application</h2>
             <div class="aspect-w-3 aspect-h-2">
-              <img class="object-contain" src="assets/img/m48-coding-256px-blk.png" />
+              <img class="object-contain" src="assets/img/App SDK Image.png" />
             </div>
-            <p>Utilize MONAI Deploy App SDK to package your first AI application. Walk through the steps of creating operators for specific functions, and then utilize docker to create your portable AI container.</p>
+            <p class="pt-4">Utilize MONAI Deploy App SDK to build your first AI application. Walk through the steps of creating operators for specific functions, and then utilize docker to create your portable AI container.</p>
             <div class="mt-4">
-              <a class="brand-btn" href="https://medium.com/pytorch/monai-v0-6-and-monai-label-v0-1-e738556b0a10" target="_blank">Read More</a>
+              <a class="brand-btn" href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/getting_started/tutorials/02_mednist_app.html" target="_blank">Read More</a>
             </div>
           </div>
         </div>
@@ -493,8 +494,18 @@
     <!-- All js Here -->
     <script src="assets/js/wow.js"></script>
     <script src="assets/js/particles.min.js"></script>
+    <script src="assets/js/countUp.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+      const options = {
+        suffix: '+',
+      };
+      let demo = new CountUp('myTargetElement', 0, 600000, 0, 5, {
+        suffix: "+ Researchers and counting"
+      });
+      demo.start();
+    </script>
   </body>
 
 </html>

@@ -7,12 +7,14 @@
         "build": "npx tailwindcss -i src/style.css -o assets/css/tailwind.css --content './**/*.html' -w "
     },
     "devDependencies": {
+        "@tailwindcss/typography": "^0.5.7",
         "autoprefixer": "^10.4.7",
         "postcss": "^8.4.14",
         "tailwindcss": "^3.1.4"
     },
     "dependencies": {
         "@tailwindcss/aspect-ratio": "^0.4.0",
-        "@tailwindcss/line-clamp": "^0.4.0"
+        "@tailwindcss/line-clamp": "^0.4.0",
+        "kutty": "^0.6.0"
     }
 }
