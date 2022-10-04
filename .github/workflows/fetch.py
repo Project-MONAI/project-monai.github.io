@@ -103,54 +103,54 @@ def main():
 
     for model in all_models:
         model_values = {}
-    try:
-        model_values["model_name"] = model.replace("_", " ").capitalize()
-    except KeyError:
-        model_values["model_name"] = ""
-        
-    try:
-        model_values["description"] = all_models[model]["metadata"]["description"]
-    except KeyError:
-        model_values["description"] = ""
-        
-    try:
-        model_values["authors"] = all_models[model]["metadata"]["authors"]
-    except KeyError:
-        model_values["authors"] = ""
-        
-    try:
-        model_values["papers"] = all_models[model]["metadata"]["references"]
-    except KeyError:
-        model_values["papers"] = []
-        
-    try:
-        model_values["download_url"] = all_models[model]["download_url"]
-    except KeyError:
-        model_values["download_url"] = ""
-        
-    try:
-        model_values["downloads"] = all_models[model]["downloads"]
-    except KeyError:
-        model_values["downloads"] = 0
-        
-    try:
-        model_values["last_updated"] = all_models[model]["last_updated"]
-    except KeyError:
-        model_values["last_updated"] = "" 
-        
-    try:
-        model_values["readme"] = all_models[model]["readme_html"]
-    except KeyError:
-        model_values["readme"] = "" 
-        
-    try:
-        file_size = all_models[model]["size"]
-        model_values["size"] = str(round(file_size / 1048576, 1)) + "MB"
-    except KeyError:
-        model_values["size"] = ""
-        
-    content = template.render(model_values)
-    template_string += str(content)
+        try:
+            model_values["model_name"] = model.replace("_", " ").capitalize()
+        except KeyError:
+            model_values["model_name"] = ""
+            
+        try:
+            model_values["description"] = all_models[model]["metadata"]["description"]
+        except KeyError:
+            model_values["description"] = ""
+            
+        try:
+            model_values["authors"] = all_models[model]["metadata"]["authors"]
+        except KeyError:
+            model_values["authors"] = ""
+            
+        try:
+            model_values["papers"] = all_models[model]["metadata"]["references"]
+        except KeyError:
+            model_values["papers"] = []
+            
+        try:
+            model_values["download_url"] = all_models[model]["download_url"]
+        except KeyError:
+            model_values["download_url"] = ""
+            
+        try:
+            model_values["downloads"] = all_models[model]["downloads"]
+        except KeyError:
+            model_values["downloads"] = 0
+            
+        try:
+            model_values["last_updated"] = all_models[model]["last_updated"]
+        except KeyError:
+            model_values["last_updated"] = "" 
+            
+        try:
+            model_values["readme"] = all_models[model]["readme_html"]
+        except KeyError:
+            model_values["readme"] = "" 
+            
+        try:
+            file_size = all_models[model]["size"]
+            model_values["size"] = str(round(file_size / 1048576, 1)) + "MB"
+        except KeyError:
+            model_values["size"] = ""
+            
+        content = template.render(model_values)
+        template_string += str(content)
 
     with open("model-zoo.html", "r", encoding="utf-8") as f:
         contents = f.read()
