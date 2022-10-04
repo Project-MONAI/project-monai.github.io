@@ -499,7 +499,7 @@ li::marker {
 }
 
 .markdown code {
-  @apply font-mono text-sm inline bg-gray-200 rounded px-1 py-05 whitespace-pre-wrap;
+  @apply font-mono text-sm inline bg-gray-200 rounded px-1 py-05;
 }
 
 .markdown pre {
@@ -507,7 +507,7 @@ li::marker {
 }
 
 .markdown pre code {
-  @apply block bg-transparent p-0 overflow-visible rounded-none;
+  @apply block bg-transparent p-0 overflow-visible rounded-none whitespace-pre-wrap;
 }
 
 .markdown ul {
