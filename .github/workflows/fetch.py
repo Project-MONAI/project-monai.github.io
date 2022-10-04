@@ -3,9 +3,11 @@ from monai.bundle.config_parser import ConfigParser
 from jinja2 import Environment, FileSystemLoader
 from bs4 import BeautifulSoup
 import markdown
+import requests
+import json
 import tempfile
 import os
-import requests
+import re
 
 def _get_all_bundles_info(repo: str = "Project-MONAI/model-zoo", tag: str = "hosting_storage_v1"):
     request_url = f"https://api.github.com/repos/{repo}/releases"
