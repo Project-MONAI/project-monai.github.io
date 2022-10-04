@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import markdown
 import tempfile
 import os
+import requests
 
 def _get_all_bundles_info(repo: str = "Project-MONAI/model-zoo", tag: str = "hosting_storage_v1"):
     request_url = f"https://api.github.com/repos/{repo}/releases"
