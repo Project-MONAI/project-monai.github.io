@@ -71,9 +71,14 @@ def get_bundle_web_data(bundle_name, download_dir, all_bundles_info):
             readme_soup = BeautifulSoup(readme_html, "html.parser")
             for img in readme_soup.find_all('img'):
                 img_urls = img['src']
-                if "https:" not in img_urls or "http:" not in img_urls:
+                if "https:" not in img_urls and "http:" not in img_urls:
                     img_urls="https://raw.githubusercontent.com/Project-MONAI/model-zoo/dev/models/{bundle_name}/docs/{img_name}".format(bundle_name=bundle_name, img_name=img_urls)
                     img['src'] = img_urls
+            for a in readme_soup.find_all('a'):
+                a_urls = a['href']
+                if "https:" not in a_urls and "http:" not in a_urls:
+                    a_urls="https://raw.githubusercontent.com/Project-MONAI/model-zoo/dev/models/{bundle_name}/docs/{a_name}".format(bundle_name=bundle_name, a_name=a_urls)
+                    a['href'] = a_urls
             
         web_data["readme_path"] = readme_path
         web_data["readme_html"] = readme_soup
