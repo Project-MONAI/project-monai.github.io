@@ -56,7 +56,14 @@ def get_bundle_web_data(bundle_name, download_dir, all_bundles_info):
     # download zip file and get readme, license, metadata path
     download(name=bundle_name, version=latest_version, bundle_dir=download_dir)
 
-    readme_path = os.path.join(download_dir, bundle_name, "docs", "README.md")
+    #determine readme filepath
+    readme_path = ""
+    docs_path = os.path.join(download_dir, bundle_name, "docs")
+    files = [f for f in os.listdir(docs_path) if os.path.isfile(os.path.join(docs_path, f))]
+    for name in files:
+        if "readme.md" in name.lower():
+            readme_path = os.path.join(download_dir, bundle_name, "docs", name)
+
     if os.path.exists(readme_path):
         with open(readme_path, 'r', encoding="utf-8") as f:
             text = f.read()
