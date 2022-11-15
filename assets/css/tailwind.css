@@ -2104,6 +2104,14 @@ li::marker{
   content: url("../img/title_decoration.png");
 }
 
+@variants responsive {
+  .section-heading-long:after{
+    margin-bottom: 1rem;
+    display: block;
+    content: url("../img/title_decoration_long.png");
+  }
+}
+
 .icon{
   margin-bottom: 1rem;
   --tw-text-opacity: 1;
