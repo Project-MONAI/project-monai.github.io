@@ -134,6 +134,11 @@ def main():
             model_values["papers"] = all_models[model]["metadata"]["references"]
         except KeyError:
             model_values["papers"] = []
+
+        try:
+            model_values["version"] = all_models[model]["metadata"]["version"]
+        except KeyError:
+            model_values["version"] = []
             
         try:
             model_values["download_url"] = all_models[model]["download_url"]
