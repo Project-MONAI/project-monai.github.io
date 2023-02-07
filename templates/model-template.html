@@ -35,6 +35,7 @@
           {% if size %}
           <p><strong class="text-neutral-darkestblack">File Size:</strong> {{ size | safe }}</p>
           {% endif %}
+          <p><strong class="text-neutral-darkestblack">Version:</strong> {{ version | safe }}</p>
           <h2 class="text-xl font-bold text-brand-primary pt-8">Model README:</h2>
           <div class="markdown">
             {{ readme | safe }}
