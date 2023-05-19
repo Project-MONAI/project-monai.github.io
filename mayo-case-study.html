@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-QVGBCPFPJ6');
+  </script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="We are happy to discuss your needs for MONAI and your ideas for contributing to the project. Below are ways to contribute to MONAI or options to engaging with the MONAI Team and community.">
+  <!--====== Favicon Icon ======-->
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+
+  <title>MONAI - Mayo Clinic Case Study</title>
+
+  <!-- Animate -->
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+  <!-- Tailwind css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/tailwind.css">
+</head>
+
+<body>
+
+    <!-- Header Area wrapper Starts -->
+    <header id="header-wrap" class="relative border-b border-neutral-neutral_gray2">
+      <!-- Navbar Start -->
+      <div class="navigation top-0 left-0 w-full z-30 duration-300">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg flex justify-end items-center justify-between relative duration-300" x-data="{ one: false, two: false, three: false }">
+            <a class="navbar-brand" href="index.html">
+              <img class="py-2" src="assets/img/MONAI-logo_color.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler focus:outline-none block lg:hidden" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            </button>
+
+            <div class="collapse navbar-collapse hidden lg:block duration-300 shadow absolute top-100 left-0 mt-full bg-white z-20 px-5 w-full lg:static lg:bg-transparent lg:shadow-none">
+              <ul class="navbar-nav mr-auto justify-end items-center lg:flex">
+                <li class="nav-item relative">
+                  <a class="page-scroll" href="index.html">Home</a>
+                </li>
+                <li class="nav-item relative">
+                  <button class="page-scroll" @click="one = true">Frameworks <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="one" @click.away="one = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="label.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Label </a>
+                      <a href="core.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core</a>
+                      <a href="deploy.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy  </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item relative">
+                  <button class="page-scroll" @click="two = true">Docs <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="two" @click.away="two = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Label Docs</a>
+                      <a href="https://docs.monai.io/en/stable/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core Docs</a>
+                      <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy Docs </a>
+                    </div>
+                  </div>
+                </li>          
+                <li class="nav-item relative">
+                  <button class="page-scroll" @click="three = true">Resources <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="three" @click.away="three = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="about.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">About Us</a>
+                      <a href="started.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Getting Started</a>
+                      <a href="community.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary active">Community</a>
+                      <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Blog</a>
+                    </div>
+                  </div>
+                </li>                                
+                <li class="nav-item relative">
+                  <a class="page-scroll" href="model-zoo.html">Model Zoo</a>
+                </li>
+                <li class="nav-item relative">
+                  <a class="page-scroll" target="_blank" href="https://github.com/Project-MONAI">GitHub</a>
+                </li>                
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- Navbar End -->
+
+    </header>
+    <!-- Header Area wrapper End -->
+
+
+  <section id="contributors" class="py-16 bg-brand-light">
+    <div class="container">
+      <div class="flex flex-wrap items-center">
+        <div class="w-full lg:w-1/2">
+            <h2 class="mb-6 section-heading">Center for Augmented Intelligence in Imaging Mayo Clinic Florida</h2>
+            <h3 class="text-neutral-darkestblack text-3xl font-bold ">Integrating and Deploying AI Models within Clinical-Imaging Workflows</h3>
+        </div>
+        <div class="flex justify-center w-full lg:w-1/2">
+            <img class="hidden lg:block lg:w-2/5 xl:w-1/4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Mayo_Clinic_logo.svg/800px-Mayo_Clinic_logo.svg.png">
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+   <section class="">
+    <div class="container pt-8 pb-20 lg:pt-16">
+      <div class="grid grid-cols-12">
+        <div class="col-span-12">
+            <p class="py-2">
+              Effective integrations of imaging-related (pixel- and nonpixel-based) Artificial Intelligence (AI) models into existing clinical Radiology workflows is critical since such additions can greatly impact (either positively or negatively) operational efficiencies or downstream decision making (e.g., surgery, pathology, interventions, and drug precautions) [1]. In order to facilitate seamless integrations of imaging-AI capabilities, with minimal negative influence on existing Radiology workflows (Figure 1), the Center for Augmented Intelligence in Imaging (CAII) in Mayo Clinic Florida has developed infrastructure and modular software packages functionally compatible with MONAI [2] software packages (e.g., “MONAI Core” and “MONAI Deploy”).             
+            </p>
+            <figure class="border-2 border-brand-dark p-8 my-8">
+                <a href="assets/img/mayo-case-study-figure-1A.png" target="_blank"><img class="m-auto" src="assets/img/mayo-case-study-figure-1A.png" /></a>
+                <figcaption class="text-sm mt-4 italic text-center">
+                  Figure 1: A representative workflow (modeled after IHE Scheduled Workflow) shows an examination order being generated, image data being acquired during patient scanning, produced images being evaluated by a radiologist, and a report being generated by the image interpreter and then forwarded to the referring clinician for review. Clinician reviews leading to ordered biopsies or surgical interventions, may result in associated digital pathology on excised tissue samples.
+                </figcaption>
+            </figure>
+            <p class="py-2">
+              AI-based infrastructure should be both indistinguishable from the existing IT environment and require, at most, minimal training of Radiology users (e.g., radiologists and technologists). Nevertheless, the introduction of such tools requires the fostering of trust among the users as well as beneficiaries (e.g., patients and referring clinicians).                     
+            </p>
+            <p class="py-2">
+                As the leading discipline in utilizing AI in medicine, Radiology has already recognized the need for greater efficiencies in all aspects of imaging-AI application, including AI-model: development, deployment, and adaptation to real-world encounters. Unfortunately, these processes remain prohibitively time-consuming, laborious, and costly, often resulting in significant limitations to meaningful imaging-AI use  (Figure 2).
+            </p>
+            <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+            <figure class="border-2 border-brand-dark p-8 my-8">
+                <a href="assets/img/mayo-case-study-figure-2.png" target="_blank"><img class="m-auto" src="assets/img/mayo-case-study-figure-2.png" /></a>
+                <figcaption class="text-sm mt-4 italic text-center">
+                  Figure 2: Typical AI project development and time commitments
+                </figcaption>
+            </figure>
+            <figure class="border-2 border-brand-dark p-8 my-8">
+                <a href="assets/img/mayo-case-study-figure-3.png" target="_blank"><img class="m-auto" src="assets/img/mayo-case-study-figure-3.png" /></a>
+                <figcaption class="text-sm mt-4 italic text-center">
+                  Figure 3: Example use-cases: (a) MRI-unsafe device detection on chest x-ray, (b) Breast-density classification on mammography, (c) White matter disease segmentation on MRI, (d) Segmental coronary artery stenosis detection vs. exclusion on coronary CTA
+                </figcaption>
+            </figure>   
+          </div>
+            <figure class="border-2 border-brand-dark p-8 my-8">
+                <a href="assets/img/mayo-case-study-figure-4.png" target="_blank"><img class="m-auto" src="assets/img/mayo-case-study-figure-4.png" /></a>
+                <figcaption class="text-sm mt-4 italic text-center">
+                  Figure 4: CAII infrastructure and software packages
+                </figcaption>
+            </figure>
+            <p class="py-2">
+              Engineers, imaging scientists, and physicians working in the CAII have developed infrastructure and containerized software packages, enabling imaging-AI models to be seamlessly integrated into the existing IT environment of a busy Department of Radiology [3-9].  The necessary interfaces and packages (Figure 3) can be deployed on-prem, in-cloud, or in hybrid settings (Figure 4).  The goal is to require minimal user training and IT support and foster confidence in users and beneficiaries.
+            </p>        
+            <p class="py-2">
+              CAII at Mayo Clinic Florida has developed various capabilities to streamline the integration of imaging AI models into Radiology workflows. These capabilities include:
+                <ul class="list-disc list-inside pl-8">
+                    <li>Critical-results alerting</li>
+                    <li>Expert-in-the-loop AI-model deployment</li>
+                    <li>On-demand model training in clinical settings</li>
+                    <li>Real-time user inference-results adjudication with feedback in clinical settings</li>
+                    <li>Monitoring of user satisfaction </li>
+                    <li>Data collection for FDA approvals</li>
+                    <li>Continuous Learning</li>
+                    <li>Federated Learning</li>
+                    <li>Standards-based communication (DICOM,  FHIR, HL7, IHE) between clinical systems</li>
+                    <li>Standards-based data collection regarding system and model performances</li>
+                </ul>
+            </p>
+            <div>
+                <h2 class="text-neutral-darkestblack text-2xl font-bold">References</h2>
+                <ol class="list-disc list-inside pl-8">
+                    <li>Gupta V, Erdal BS, Ramirez C, Floca R, Jackson L, Genereaux B, Bryson S et al. "Current State of Community-Driven Radiological AI Deployment in Medical Imaging." arXiv preprint arXiv:2212.14177 (2022).</li>
+                    <li>Cardoso J, Li W, Brown R, Ma N, Kerfoot E, Wang Y, Murrey B et al. "MONAI: An open-source framework for deep learning in healthcare." arXiv preprint arXiv:2211.02701 (2022).</li>
+                    <li>Testagrose C, Gupta V, Erdal BS, White RD, Maxwell RW, Liu X, Kahanda I, Elfayoumy S, Klostermeyer W, Demirer M. "Impact of Concatenation of Digital Craniocaudal Mammography Images on a Deep-Learning Breast-Density Classifier Using Inception-V3 and ViT." In 2022 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pp. 3399-3406. IEEE, 2022.</li>
+                    <li>White RD, Demirer M, Gupta V, Sebro RA, Kusumoto FM, Erdal BS. "Pre-deployment assessment of an AI model to assist radiologists in chest X-ray detection and identification of lead-less implanted electronic devices for pre-MRI safety screening: realized implementation needs and proposed operational solutions." Journal of Medical Imaging 9, no. 5 (2022): 054504.</li>
+                    <li>Gupta V, Demirer M, Maxwell RW, White RD, Erdal BS "A multi-reconstruction study of breast density estimation using Deep Learning." arXiv preprint arXiv:2202.08238 (2022).</li>
+                    <li>Demirer M, White RD, Gupta V, Sebro RA, Erdal BS. "Cascading neural network methodology for artificial intelligence-assisted radiographic detection and classification of lead-less implanted electronic devices within the chest." arXiv preprint arXiv:2108.11954 (2021).</li>
+                    <li>White RD, Erdal BS, Demirer M, Gupta V, Bigelow MT, Dikici E, Candemir S, Galizia MS, Carpenter JL, O'Donnell TP, Halabi AH, Prevedello LM. Artificial Intelligence to Assist in Exclusion of Coronary Atherosclerosis During CCTA Evaluation of Chest Pain in the Emergency Department: Preparing an Application for Real-world Use. J Digit Imaging. 2021 Jun;34(3):554-571. doi: 10.1007/s10278-021-00441-6. Epub 2021 Mar 31. PMID: 33791909; PMCID: PMC8329136.</li>
+                    <li>Rockenbach MABC, Buch V, Gupta V, Kotecha GK, Laur O, Erdal BS, Yang D, Xu D, Ghoshajra BB, Flores MG, Dayan I, Roth H, White RD. Automatic detection of decreased ejection fraction and left ventricular hypertrophy on 4D cardiac CTA: Use of artificial intelligence with transfer learning to facilitate multi-site operations. ntelligence-Based Medicine. 2022; 6.</li>
+                    <li>Gupta V, Taylor C, Bonnet S, Prevedello LM, Hawley J, White RD, Flores MG, Erdal BS. Deep Learning Based Automatic Detection of Adequately Positioned Mammograms. Lecture Notes in Computer Science: Domain Adaptation and Representation Transfer, and Affordable Healthcare and AI for Resource Diverse Global Health. 2021; 12968:239-250.</li>
+                </ol>
+            </div>
+            <div>
+              <h2 class="text-neutral-darkestblack text-2xl font-bold">Talks</h2>
+                <ul class="list-disc list-inside pl-8">
+                    <li class="text-brand"><a href="https://www.youtube.com/watch?v=mpVEiNW9qtw&t=1950s" target="_blank">MONAI Bootcamp 2023</a></li>
+                    <li class="text-brand"><a href="https://www.youtube.com/watch?v=pS68i8ShoOk" target="_blank">MONAI Bootcamp 2021</a></li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Footer Section Start -->
+  <footer id="footer" class="bg-neutral-lightgray py-2 border-t border-neutral-light_gray">
+    <div class="container">
+      <div class="flex flex-wrap items-center justify-between">
+        <div class="w-auto">
+          <div class="mx-3">
+            <div class="footer-logo">
+              <a href="index.html"><img src="assets/img/MONAI-logo_color.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="hidden lg:block w-auto">
+          <div class="mx-3 text-black">
+            <ul class="flex justify-between">
+              <li class="px-4">
+                <a href="about.html" class="footer-links">About Us</a>
+              </li>
+              <li class="px-4">
+                <a href="started.html" class="footer-links">Get Started</a>
+              </li>
+              <li class="px-4">
+                <a href="community.html" class="footer-links">Community</a>
+              </li>
+              <li class="px-4">
+                <a href="https://medium.com/@monai" class="footer-links">Blog</a>
+              </li>
+              <li class="px-4">
+                <a href="docs.html" class="footer-links">Docs</a>
+              </li>
+              <li class="px-4">
+                <a href="https://github.com/Project-MONAI" class="footer-links">GitHub</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-auto">
+          <div class="mx-3">
+            <ul class="social-icons flex justify-end">
+              <li class="mx-2">
+                <a href="https://twitter.com/ProjectMONAI">
+                  <i>
+                <img src="assets/img/twitter_icon_square.png"/>
+              </i>
+                </a>
+              </li>
+              <li class="mx-2">
+                <a href="https://medium.com/@monai">
+                  <i>
+                <img src="assets/img/medium_icon_square.png"/>
+              </i>
+                </a>
+              </li>
+              <li class="mx-2">
+                <a href="https://www.youtube.com/c/Project-MONAI">
+                  <i>
+                <img src="assets/img/youtube_icon_square.png"/>
+              </i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer Section End -->
+
+  <!-- Go to Top Link -->
+  <a href="#" class="back-to-top w-10 h-10 fixed bottom-0 right-0 mb-5 mr-5 flex items-center justify-center rounded-full border border-solid border-brand-dark text-white text-lg z-20">
+    <i class="transform -rotate-90">
+        <img src="assets/img/ic_arrow_right.png"/>
+      </i>
+  </a>
+
+  <!-- All js Here -->
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/particles.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>  
+</body>
+
+</html>
