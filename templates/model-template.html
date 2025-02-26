@@ -1,0 +1,51 @@
+<div class="p-6 shadow-lg rounded-lg border-2 border-neutral-lightgray relative">
+  <h3 class="text-lg font-bold text-brand-primary">{{ model_name | safe }}</h3>
+  <h5 class="text-brand-primary">{{ authors | safe }}</h5>
+  <p class="pt-2 pb-10 text-sm">{{ description | safe }}</p>
+  <div x-data="dialog()">
+    <a class="brand-btn absolute right-3 bottom-2" x-bind="trigger">Model Details</a>
+    <div class="dialog dialog-lg" x-bind="dialog" x-cloak>
+      <div class="dialog-content">
+        <div class="dialog-header text-brand-primary text-3xl justify-start">
+          <span class="mr-4">{{ model_name | safe }}</span>
+          <a href="{{ download_url | safe }}" class="brand-btn m-1" download>Download</a>
+          <button type="button" class="btn btn-light btn-sm btn-icon ml-auto" aria-label="Close" @click="close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+        </div>
+        <div class="dialog-body h-screen">
+          <h2 class="text-xl font-bold text-brand-primary">Model Metadata:</h2>
+          <p><strong>Overview:</strong> {{ description | safe }}</p>
+          <p><strong class="text-neutral-darkestblack">Author(s):</strong> {{ authors | safe }}</p>
+          {% if papers is defined and papers %}
+          <p><strong class="text-neutral-darkestblack">References:</strong> 
+            <ul>
+              {% for paper in papers %}
+              <li>
+                {{ paper | safe }}
+              </li>
+              {% endfor %}
+            </ul>
+          </p>
+          {% endif %}
+          {% if downloads %}
+          <p><strong class="text-neutral-darkestblack">Downloads:</strong> {{ downloads | safe }}</p>
+          {% endif %}
+          {% if last_updated %}
+          <p><strong class="text-neutral-darkestblack">Last Updated:</strong> {{ last_updated | safe }}</p>
+          {% endif %}
+          {% if size %}
+          <p><strong class="text-neutral-darkestblack">File Size:</strong> {{ size | safe }}</p>
+          {% endif %}
+          <p><strong class="text-neutral-darkestblack">Version:</strong> {{ version | safe }}</p>
+          <h2 class="text-xl font-bold text-brand-primary pt-8">Model README:</h2>
+          <div class="markdown">
+            {{ readme | safe }}
+          </div>
+        </div>
+        <div class="dialog-footer">
+          <a href="{{ download_url | safe }}" class="brand-btn" download>Download</a>
+          <button class="brand-btn" @click="close">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

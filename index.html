@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<!-- Include Head Component with SEO parameters -->
+<!-- Head Component -->
+<!-- Parameters: title, description, canonical_url -->
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QVGBCPFPJ6');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <title>${title} | MONAI - Medical Open Network for AI</title>
+    <meta name="description" content="${description}">
+    <meta name="keywords" content="MONAI, Medical Imaging, AI, Deep Learning, Healthcare, PyTorch, Open Source">
+    <meta name="author" content="Project MONAI">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="${title} | MONAI">
+    <meta property="og:description" content="${description}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="${canonical_url}">
+    <meta property="og:image" content="https://monai.io/assets/img/MONAI-logo_color.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ProjectMONAI">
+    <meta name="twitter:title" content="${title} | MONAI">
+    <meta name="twitter:description" content="${description}">
+    <meta name="twitter:image" content="https://monai.io/assets/img/MONAI-logo_color.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="${canonical_url}">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/img/favicon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/tailwind.css">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Alpine.js x-cloak -->
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MONAI",
+        "url": "https://monai.io",
+        "logo": "https://monai.io/assets/img/MONAI-logo_color.png",
+        "description": "MONAI is a freely available, community-supported, PyTorch-based framework for deep learning in healthcare imaging.",
+        "sameAs": [
+            "https://twitter.com/ProjectMONAI",
+            "https://medium.com/@monai",
+            "https://www.youtube.com/c/Project-MONAI",
+            "https://github.com/Project-MONAI"
+        ]
+    }
+    </script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head> 
+<!-- Replace with actual values -->
+<script>
+    document.head.innerHTML = document.head.innerHTML
+        .replace('${title}', 'MONAI - Medical Open Network for AI')
+        .replace('${description}', 'MONAI is the leading open-source framework for healthcare imaging AI, trusted by researchers and clinicians worldwide. Build, train, and deploy medical AI solutions with industry-standard tools.')
+        .replace('${canonical_url}', 'https://monai.io/');
+</script>
+
+<body class="flex flex-col min-h-screen">
+    <!-- Header Area wrapper Starts -->
+<header id="header-wrap" class="relative">
+  <!-- Navbar Start -->
+  <div class="navigation fixed top-0 left-0 w-full z-30 duration-300 bg-white border-b border-gray-100">
+    <div class="container">
+      <nav class="navbar flex justify-between items-center relative duration-300 h-16" x-data="{ isOpen: false, frameworksOpen: false, communityOpen: false }">
+        <a class="navbar-brand" href="index.html">
+          <img class="h-12 w-auto" src="assets/img/MONAI-logo_color.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler focus:outline-none block lg:hidden p-2" type="button" @click="isOpen = !isOpen">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path x-show="!isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path x-show="isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <div class="navbar-collapse lg:flex flex-grow items-center absolute lg:static top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent lg:shadow-none" 
+             :class="{'hidden': !isOpen, 'block shadow-lg': isOpen}">
+          <ul class="navbar-nav flex flex-col lg:flex-row lg:items-center lg:ml-auto py-4 lg:py-0 px-6 lg:px-0 space-y-2 lg:space-y-0 lg:space-x-8">
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="index.html">Home</a>
+            </li>
+            <li class="nav-item relative" @click.away="frameworksOpen = false">
+              <button class="page-scroll flex items-center justify-between w-full lg:inline-flex lg:w-auto py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" 
+                      @click="frameworksOpen = !frameworksOpen; communityOpen = false">
+                <span>Frameworks</span>
+                <span class="chevron ml-2 transform transition-transform duration-200" :class="{'rotate-180': frameworksOpen}"></span>
+              </button>
+              <div class="lg:absolute w-full lg:w-52 lg:top-[calc(100%+0.5rem)] left-0 lg:left-1/2 lg:-translate-x-1/2 z-50 p-2 text-gray-800 bg-white rounded-lg shadow-lg" 
+                   x-show="frameworksOpen" 
+                   x-transition:enter="transition ease-out duration-200"
+                   x-transition:enter-start="opacity-0 translate-y-1"
+                   x-transition:enter-end="opacity-100 translate-y-0"
+                   x-cloak>
+                <div class="flex flex-col space-y-1">
+                  <a href="core.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Core</a>
+                  <a href="label.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Label</a>
+                  <a href="deploy.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Deploy</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="model-zoo.html">Model Zoo</a>
+            </li>
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="working-groups.html">Working Groups</a>
+            </li>
+            <li class="nav-item relative" @click.away="communityOpen = false">
+              <button class="page-scroll flex items-center justify-between w-full lg:inline-flex lg:w-auto py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" 
+                      @click="communityOpen = !communityOpen; frameworksOpen = false">
+                <span>Community</span>
+                <span class="chevron ml-2 transform transition-transform duration-200" :class="{'rotate-180': communityOpen}"></span>
+              </button>
+              <div class="lg:absolute w-full lg:w-64 lg:top-[calc(100%+0.5rem)] left-0 lg:left-1/2 lg:-translate-x-1/2 z-50 p-2 text-gray-800 bg-white rounded-lg shadow-lg"
+                   x-show="communityOpen"
+                   x-transition:enter="transition ease-out duration-200"
+                   x-transition:enter-start="opacity-0 translate-y-1"
+                   x-transition:enter-end="opacity-100 translate-y-0"
+                   x-cloak>
+                <div class="flex flex-col space-y-2">
+                  <a href="https://github.com/Project-MONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">GitHub</a>
+                  <a href="https://join.slack.com/t/projectmonai/shared_invite/zt-2t7z8e9tu-xE5SPw0TC8LUxyPVpl2WVQ" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Join Slack</a>
+                  <a href="about.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">About Us</a>
+                  <div class="border-t border-gray-100 mt-2 pt-2">
+                    <div class="grid grid-cols-2 gap-1">
+                      <a href="https://twitter.com/ProjectMONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Twitter</a>
+                      <a href="https://linkedin.com/company/projectmonai" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">LinkedIn</a>
+                      <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Blog</a>
+                      <a href="https://www.youtube.com/c/Project-MONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">YouTube</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Navbar End -->
+</header>
+<!-- Header Area wrapper End --> 
+    <!-- Header Area wrapper Starts -->
+<header id="header-wrap" class="relative">
+  <!-- Navbar Start -->
+  <div class="navigation fixed top-0 left-0 w-full z-30 duration-300 bg-white border-b border-gray-100">
+    <div class="container">
+      <nav class="navbar flex justify-between items-center relative duration-300 h-16" x-data="{ isOpen: false, frameworksOpen: false, communityOpen: false }">
+        <a class="navbar-brand" href="index.html">
+          <img class="h-12 w-auto" src="assets/img/MONAI-logo_color.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler focus:outline-none block lg:hidden p-2" type="button" @click="isOpen = !isOpen">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path x-show="!isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path x-show="isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <div class="navbar-collapse lg:flex flex-grow items-center absolute lg:static top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent lg:shadow-none" 
+             :class="{'hidden': !isOpen, 'block shadow-lg': isOpen}">
+          <ul class="navbar-nav flex flex-col lg:flex-row lg:items-center lg:ml-auto py-4 lg:py-0 px-6 lg:px-0 space-y-2 lg:space-y-0 lg:space-x-8">
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="index.html">Home</a>
+            </li>
+            <li class="nav-item relative" @click.away="frameworksOpen = false">
+              <button class="page-scroll flex items-center justify-between w-full lg:inline-flex lg:w-auto py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" 
+                      @click="frameworksOpen = !frameworksOpen; communityOpen = false">
+                <span>Frameworks</span>
+                <span class="chevron ml-2 transform transition-transform duration-200" :class="{'rotate-180': frameworksOpen}"></span>
+              </button>
+              <div class="lg:absolute w-full lg:w-52 lg:top-[calc(100%+0.5rem)] left-0 lg:left-1/2 lg:-translate-x-1/2 z-50 p-2 text-gray-800 bg-white rounded-lg shadow-lg" 
+                   x-show="frameworksOpen" 
+                   x-transition:enter="transition ease-out duration-200"
+                   x-transition:enter-start="opacity-0 translate-y-1"
+                   x-transition:enter-end="opacity-100 translate-y-0"
+                   x-cloak>
+                <div class="flex flex-col space-y-1">
+                  <a href="core.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Core</a>
+                  <a href="label.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Label</a>
+                  <a href="deploy.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Deploy</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="model-zoo.html">Model Zoo</a>
+            </li>
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="working-groups.html">Working Groups</a>
+            </li>
+            <li class="nav-item relative" @click.away="communityOpen = false">
+              <button class="page-scroll flex items-center justify-between w-full lg:inline-flex lg:w-auto py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" 
+                      @click="communityOpen = !communityOpen; frameworksOpen = false">
+                <span>Community</span>
+                <span class="chevron ml-2 transform transition-transform duration-200" :class="{'rotate-180': communityOpen}"></span>
+              </button>
+              <div class="lg:absolute w-full lg:w-64 lg:top-[calc(100%+0.5rem)] left-0 lg:left-1/2 lg:-translate-x-1/2 z-50 p-2 text-gray-800 bg-white rounded-lg shadow-lg"
+                   x-show="communityOpen"
+                   x-transition:enter="transition ease-out duration-200"
+                   x-transition:enter-start="opacity-0 translate-y-1"
+                   x-transition:enter-end="opacity-100 translate-y-0"
+                   x-cloak>
+                <div class="flex flex-col space-y-2">
+                  <a href="https://github.com/Project-MONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">GitHub</a>
+                  <a href="https://join.slack.com/t/projectmonai/shared_invite/zt-2t7z8e9tu-xE5SPw0TC8LUxyPVpl2WVQ" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Join Slack</a>
+                  <a href="about.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">About Us</a>
+                  <div class="border-t border-gray-100 mt-2 pt-2">
+                    <div class="grid grid-cols-2 gap-1">
+                      <a href="https://twitter.com/ProjectMONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Twitter</a>
+                      <a href="https://linkedin.com/company/projectmonai" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">LinkedIn</a>
+                      <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Blog</a>
+                      <a href="https://www.youtube.com/c/Project-MONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">YouTube</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Navbar End -->
+</header>
+<!-- Header Area wrapper End --> 
+
+    <main class="flex-grow pt-20">
+        <!-- Hero Area Start -->
+        <section id="hero-area" class="relative pb-20 bg-white overflow-hidden">
+            <!-- Particles.js container -->
+            <div id="particles-js" class="absolute inset-0 z-0"></div>
+            
+            <!-- Hero background image -->
+            <!-- <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] z-10 opacity-70">
+                <img class="w-full h-full object-contain" src="assets/img/hero_illustration.png" alt="MONAI Hero Background" />
+            </div> -->
+            
+            <div class="container relative z-20">
+                <div class="flex justify-center relative">
+                    <div class="w-full text-center">
+                        <div class="mt-24 mb-8 text-center transform hover:scale-105 transition-transform duration-300">
+                            <img class="img-fluid mx-auto h-32" src="assets/img/MONAI-logo_color_full.png" alt="MONAI Logo">
+                        </div>
+                        <h2 class="text-5xl font-bold leading-tight text-gray-700 mb-6 wow fadeInUp" data-wow-delay=".2s">Medical Open Network
+                    <br> for Artificial Intelligence</h2>
+                        <p class="text-xl text-gray-600 max-w-2xl mx-auto wow fadeInUp" data-wow-delay=".4s">
+                            Empowering healthcare innovation through open-source AI frameworks that bridge research and clinical deployment
+                        </p>
+                        </div>
+                            </div>
+                <div class="flex flex-wrap justify-center gap-4 wow fadeInUp mt-8" data-wow-delay=".6s">
+                    <a class="px-8 py-3 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors flex items-center gap-2 group" target="_blank" href="core.html">
+                        Core
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                    <a class="px-8 py-3 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors flex items-center gap-2 group" target="_blank" href="label.html">
+                        Label
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                    <a class="px-8 py-3 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors flex items-center gap-2 group" target="_blank" href="deploy.html">
+                        Deploy
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Particles.js Configuration -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": {
+                            "value": 80,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#00C9B5"
+                        },
+                        "shape": {
+                            "type": "circle"
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": false,
+                            "anim": {
+                                "enable": false
+                            }
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true,
+                            "anim": {
+                                "enable": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#00C9B5",
+                            "opacity": 0.4,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 2,
+                            "direction": "none",
+                            "random": false,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        }
+                    },
+                    "retina_detect": true
+                });
+            });
+        </script>
+        <!-- Hero Area End -->
+
+        <!-- Vision Section Start -->
+        <section class="py-24 bg-brand-dark/15">
+            <div class="container">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="wow fadeInLeft" data-wow-delay="0.2s">
+                        <h2 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+                            Transforming Healthcare with AI
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+                        </h2>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                            Project MONAI is revolutionizing medical imaging through a comprehensive ecosystem of AI tools. Our mission is to bridge the gap between research innovation and clinical implementation, providing enterprise-grade solutions that accelerate the advancement of healthcare technology.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white p-4 border border-gray-100 shadow-sm">
+                                <div class="text-3xl font-bold text-brand-primary mb-1">4M+</div>
+                                <div class="text-gray-600">Downloads</div>
+                            </div>
+                            <div class="bg-white p-4 border border-gray-100 shadow-sm">
+                                <div class="text-3xl font-bold text-brand-primary mb-1">1.5K+</div>
+                                <div class="text-gray-600">Research Papers</div>
+                            </div>
+                            <div class="bg-white p-4 border border-gray-100 shadow-sm">
+                                <div class="text-3xl font-bold text-brand-primary mb-1">31</div>
+                                <div class="text-gray-600">Pre-trained Models</div>
+                            </div>
+                            <div class="bg-white p-4 border border-gray-100 shadow-sm">
+                                <div class="text-3xl font-bold text-brand-primary mb-1">17</div>
+                                <div class="text-gray-600">Challenge Wins</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="space-y-4">
+                            <div class="bg-white p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300">
+                                <svg class="w-8 h-8 text-brand-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+                                </svg>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">PyTorch Native</h3>
+                                <p class="text-gray-600">Built on PyTorch for seamless integration and flexibility</p>
+                            </div>
+                            <div class="bg-white p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300">
+                                <svg class="w-8 h-8 text-brand-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                                </svg>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Research Ready</h3>
+                                <p class="text-gray-600">Advanced tools for medical AI research</p>
+                            </div>
+                            <div class="bg-white p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300">
+                                <svg class="w-8 h-8 text-brand-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Standardized</h3>
+                                <p class="text-gray-600">Best practices for healthcare AI development and research</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4 mt-12">
+                            <div class="bg-white p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300">
+                                <svg class="w-8 h-8 text-brand-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Community Driven</h3>
+                                <p class="text-gray-600">Supported by global healthcare experts</p>
+                            </div>
+                            <div class="bg-white p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300">
+                                <svg class="w-8 h-8 text-brand-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                </svg>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Innovation Focused</h3>
+                                <p class="text-gray-600">Cutting-edge AI architectures and methods</p>
+                            </div>
+                            <div class="bg-white p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300">
+                                <svg class="w-8 h-8 text-brand-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Open Source Design</h3>
+                                <p class="text-gray-600">Apache 2.0 licensed for maximum flexibility and collaboration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Vision Section End -->
+
+        <!-- Medical AI Lifecycle Start -->
+        <section class="py-24 bg-brand-light/15">
+            <div class="container">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+                        End-to-End Medical AI Lifecycle
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+                    </h2>
+                    <p class="text-xl text-gray-600 wow fadeInUp" data-wow-delay=".4s">
+                        From data annotation to clinical deployment, MONAI provides a comprehensive toolkit that ensures quality and consistency at every stage of the medical AI development process.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- MONAI Label Card -->
+                    <div class="group wow fadeInUp" data-wow-delay=".2s">
+                        <div class="bg-white p-8 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                            <div class="text-brand-primary mb-6">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">MONAI Label</h3>
+                                <p class="text-gray-600 mb-4">Intelligent image annotation powered by AI assistance.</p>
+                                <ul class="space-y-3 text-gray-600">
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-6 h-6 rounded-sm bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Active learning for efficient data selection</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-6 h-6 rounded-sm bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Multiple viewer integrations</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-6 h-6 rounded-sm bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        <span>AI-Assisted annotation</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-6 h-6 rounded-sm bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Multi-user collaboration support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pt-8 flex flex-col gap-3">
+                                <a href="label.html" class="w-fit px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                    Explore Label
+                                    <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MONAI Core Card -->
+                    <div class="group wow fadeInUp" data-wow-delay=".4s">
+                        <div class="bg-white p-8 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                            <div class="text-brand-primary mb-6">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">MONAI Core</h3>
+                                <p class="text-gray-600 mb-4">Domain-specific framework for training state-of-the-art medical imaging AI models.</p>
+                                <ul class="space-y-3 text-gray-600">
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-6 h-6 rounded-sm bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Medical-specific transforms</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-6 h-6 rounded-sm bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        <span>UNETR architecture</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-6 h-6 rounded-sm bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Pre-trained model zoo</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-6 h-6 rounded-sm bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Automated ML pipelines</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pt-8 flex flex-col gap-3">
+                                <a href="core.html" class="w-fit px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                    Explore Core
+                                    <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MONAI Deploy Card -->
+                    <div class="group wow fadeInUp" data-wow-delay=".6s">
+                        <div class="bg-white p-8 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                            <div class="text-brand-primary mb-6">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">MONAI Deploy</h3>
+                                <p class="text-gray-600 mb-4">Robust framework for deploying AI models in clinical settings.</p>
+                                <ul class="space-y-3 text-gray-600">
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-6 h-6 rounded-sm bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Clinical workflow integration</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-6 h-6 rounded-sm bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        <span>DICOM & FHIR support</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-6 h-6 rounded-sm bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Containerized deployment with MAP</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-6 h-6 rounded-sm bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Inference optimization</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pt-8 flex flex-col gap-3">
+                                <a href="deploy.html" class="w-fit px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                    Explore Deploy
+                                    <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Medical AI Lifecycle End -->
+
+        <!-- Community & Support Section -->
+        <section class="py-24 bg-brand-dark/15">
+            <div class="container">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+                        Community & Support
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+                    </h2>
+                    <p class="text-xl text-gray-600 wow fadeInUp" data-wow-delay=".4s">
+                        Join our growing community of researchers, developers, and healthcare professionals.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Community Channels -->
+                    <div class="bg-white p-2 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="p-8">
+                            <div class="text-brand-primary mb-6">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Discussion Forums</h3>
+                            <div class="space-y-4">
+                                <a href="https://github.com/Project-MONAI/MONAI/discussions" target="_blank" class="flex items-center gap-3 p-4 bg-gray-50 hover:bg-gray-100 transition-colors group">
+                                    <div class="w-10 h-10 bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <h4 class="font-semibold text-gray-800 group-hover:text-brand-primary">GitHub Discussions</h4>
+                                        <p class="text-gray-600 text-sm">Technical discussions and community support</p>
+                                    </div>
+                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-primary transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://join.slack.com/t/projectmonai/shared_invite/zt-2t7z8e9tu-xE5SPw0TC8LUxyPVpl2WVQ" target="_blank" class="flex items-center gap-3 p-4 bg-gray-50 hover:bg-gray-100 transition-colors group">
+                                    <div class="w-10 h-10 bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <h4 class="font-semibold text-gray-800 group-hover:text-brand-primary">Slack Channel</h4>
+                                        <p class="text-gray-600 text-sm">Real-time chat and collaboration</p>
+                                    </div>
+                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-primary transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Events & Workshops -->
+                    <div class="bg-white p-2 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="p-8">
+                            <div class="text-brand-primary mb-6">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Events & Learning</h3>
+                            <div class="space-y-4">
+                                <a href="https://www.youtube.com/@projectmonai" target="_blank" class="flex items-center gap-3 p-4 bg-gray-50 hover:bg-gray-100 transition-colors group">
+                                    <div class="w-10 h-10 bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <h4 class="font-semibold text-gray-800 group-hover:text-brand-primary">YouTube Channel</h4>
+                                        <p class="text-gray-600 text-sm">Tutorials, demos, and presentations</p>
+                                    </div>
+                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-primary transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://github.com/Project-MONAI/tutorials" target="_blank" class="flex items-center gap-3 p-4 bg-gray-50 hover:bg-gray-100 transition-colors group">
+                                    <div class="w-10 h-10 bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <h4 class="font-semibold text-gray-800 group-hover:text-brand-primary">Tutorials Repository</h4>
+                                        <p class="text-gray-600 text-sm">Notebooks and learning materials</p>
+                                    </div>
+                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-primary transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contribution -->
+                    <div class="bg-white p-2 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="p-8">
+                            <div class="text-brand-primary mb-6">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Get Involved</h3>
+                            <div class="space-y-4">
+                                <a href="https://github.com/Project-MONAI/MONAI/blob/master/CONTRIBUTING.md" target="_blank" class="flex items-center gap-3 p-4 bg-gray-50 hover:bg-gray-100 transition-colors group">
+                                    <div class="w-10 h-10 bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <h4 class="font-semibold text-gray-800 group-hover:text-brand-primary">Contribution Guide</h4>
+                                        <p class="text-gray-600 text-sm">Learn how to contribute to MONAI</p>
+                                    </div>
+                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-primary transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://github.com/Project-MONAI/MONAI/issues" target="_blank" class="flex items-center gap-3 p-4 bg-gray-50 hover:bg-gray-100 transition-colors group">
+                                    <div class="w-10 h-10 bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <h4 class="font-semibold text-gray-800 group-hover:text-brand-primary">Issue Tracker</h4>
+                                        <p class="text-gray-600 text-sm">Report bugs and request features</p>
+                                    </div>
+                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-primary transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Community & Support Section End -->
+
+        <!-- Success Stories Section Start -->
+        <section class="py-24 bg-white">
+            <div class="container">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+                        Success Stories
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+                    </h2>
+                    <p class="text-xl text-gray-600 wow fadeInUp" data-wow-delay=".4s">
+                        Discover how leading healthcare institutions and industry partners are implementing MONAI to transform medical imaging workflows.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Mayo Clinic Case Study -->
+                    <div class="bg-white p-8 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col group">
+                        <div class="mb-6 flex items-center justify-between">
+                            <img src="assets/img/mayo_logo.png" alt="Mayo Clinic Logo" class="h-12 object-contain">
+                            <div class="text-brand-primary">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-brand-primary transition-colors">AI Integration in Clinical Imaging</h3>
+                            <p class="text-gray-600">The Center for Augmented Intelligence in Imaging at Mayo Clinic Florida demonstrates seamless integration of MONAI-compatible AI models into clinical Radiology workflows. Their implementation has enhanced operational efficiency, improved decision-making processes, and led to better patient outcomes through streamlined clinical workflows.</p>
+                        </div>
+                        <div class="pt-8">
+                            <a href="mayo-case-study.html" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                Read Case Study
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Mercure DICOM Case Study -->
+                    <div class="bg-white p-8 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col group">
+                        <div class="mb-6 flex items-center justify-between">
+                            <img src="assets/img/mercure_logo.png" alt="Mercure Logo" class="h-12 object-contain">
+                            <div class="text-brand-primary">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-brand-primary transition-colors">Rapid Deployment with Mercure DICOM</h3>
+                            <p class="text-gray-600">The integration of MONAI Application Packages (MAPs) with the Mercure DICOM Orchestrator has revolutionized AI deployment in clinical environments. This partnership delivers seamless DICOM integration, comprehensive monitoring capabilities, and a flexible routing system that adapts to various clinical workflows.</p>
+                        </div>
+                        <div class="pt-8">
+                            <a href="https://monai.medium.com/rapid-deployment-of-monai-application-packages-maps-in-radiology-workflows-using-the-mercure-fe7cfd77acce" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                Read Blog
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Siemens Healthineers Case Study -->
+                    <div class="bg-white p-8 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col group">
+                        <div class="mb-6 flex items-center justify-between">
+                            <img src="assets/img/siemens_logo.png" alt="Siemens Healthineers Logo" class="h-12 object-contain">
+                            <div class="text-brand-primary">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-brand-primary transition-colors">Digital Marketplace Integration</h3>
+                            <p class="text-gray-600">Siemens Healthineers has transformed healthcare delivery by adopting MONAI Deploy for their Digital Marketplace. This integration enables enterprise-scale deployment across their global healthcare network, providing standardized AI deployment solutions that benefit healthcare providers worldwide.</p>
+                        </div>
+                        <div class="pt-8">
+                            <a href="https://blogs.nvidia.com/blog/rsna-siemens-healthineers-monai-medical-imaging-ai/" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                Read Blog
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Success Stories Section End -->
+
+        <!-- Contributors Section Start -->
+        <section class="py-24 bg-brand-dark/15">
+            <div class="container">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+                        Contributors
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+                    </h2>
+                    <p class="text-xl text-gray-600 wow fadeInUp" data-wow-delay=".4s">
+                        Over the last three years our community has expanded rapidly! But it takes a community to build out the success of Project MONAI, which is why we want to highlight contributing organizations. Below, you'll find contributors organizations who have dedicated resources to actively contributing back to Project MONAI.
+                    </p>
+                    <div class="mt-8">
+                        <a href="https://github.com/Project-MONAI/MONAI/blob/master/CONTRIBUTING.md" target="_blank" 
+                           class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                            Join Project MONAI
+                            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-center wow fadeInUp max-w-6xl mx-auto" data-wow-delay=".6s">
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/answerdigital_logo.png" alt="Answer Digital">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/cas_logo.png" alt="CAS">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/dkfz_logo.png" alt="DKFZ">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/fnlcr_logo.png" alt="FNLCR">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/guysandstthomas_logo.png" alt="Guy's and St Thomas'">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/kcl_logo.png" alt="King's College London">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/kitware_logo.png" alt="Kitware">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/mayo_logo.png" alt="Mayo Clinic">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/mgh_bwh_logo.png" alt="MGH & BWH">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/mskcc_logo.png" alt="MSKCC">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/nih-nci_logo.png" alt="NIH NCI">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/nvidia_logo.png" alt="NVIDIA">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/stanford_logo.png" alt="Stanford">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/tum_logo.png" alt="TUM">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/ucl_logo.png" alt="UCL">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/vanderbilt_logo.png" alt="Vanderbilt">
+                    </div>
+                    <div class="p-4 hover:opacity-80 transition-opacity flex items-center justify-center h-20">
+                        <img class="max-h-14 w-auto object-contain" src="assets/img/warwick_logo.png" alt="Warwick">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contributors Section End -->
+
+        <!-- Footer Component -->
+<footer id="footer" class="py-2 border-t border-neutral-light_gray">
+  <div class="container">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <!-- Logo Section -->
+      <div class="w-auto flex-shrink-0">
+        <div class="mx-3">
+          <div class="footer-logo">
+            <a href="index.html"><img src="./assets/img/MONAI-logo_color.png" alt="MONAI Logo"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Links - Hidden on mobile, flex on larger screens -->
+      <div class="hidden lg:block flex-grow">
+        <div class="mx-3 text-black">
+          <ul class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+            <li>
+              <a href="core.html" class="footer-links whitespace-nowrap">MONAI Core</a>
+            </li>
+            <li>
+              <a href="label.html" class="footer-links whitespace-nowrap">MONAI Label</a>
+            </li>
+            <li>
+              <a href="deploy.html" class="footer-links whitespace-nowrap">MONAI Deploy</a>
+            </li>
+            <li>
+              <a href="model-zoo.html" class="footer-links whitespace-nowrap">Model Zoo</a>
+            </li>
+            <li>
+              <a href="working-groups.html" class="footer-links whitespace-nowrap">Working Groups</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Social Icons - Always visible, right-aligned -->
+      <div class="w-auto flex-shrink-0">
+        <div class="mx-3">
+          <ul class="social-icons flex items-center gap-4">
+            <li>
+              <a href="https://twitter.com/ProjectMONAI" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/company/projectmonai" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://medium.com/@monai" aria-label="Medium">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M9.025 8c0 2.485-2.02 4.5-4.513 4.5A4.506 4.506 0 0 1 0 8c0-2.486 2.02-4.5 4.512-4.5A4.506 4.506 0 0 1 9.025 8m4.95 0c0 2.34-1.01 4.236-2.256 4.236S9.463 10.339 9.463 8c0-2.34 1.01-4.236 2.256-4.236S13.975 5.661 13.975 8M16 8c0 2.096-.355 3.795-.794 3.795-.438 0-.793-1.7-.793-3.795 0-2.096.355-3.795.794-3.795.438 0 .793 1.699.793 3.795"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/c/Project-MONAI" aria-label="YouTube">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+    </body>
+</html>

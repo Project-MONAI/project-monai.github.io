@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-QVGBCPFPJ6');
+  </script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="We are happy to discuss your needs for MONAI and your ideas for contributing to the project. Below are ways to contribute to MONAI or options to engaging with the MONAI Team and community.">
+  <!--====== Favicon Icon ======-->
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+
+  <title>MONAI - Community</title>
+
+  <!-- Animate -->
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+  <!-- Tailwind css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/tailwind.css">
+</head>
+
+<body>
+
+    <!-- Header Area wrapper Starts -->
+    <header id="header-wrap" class="relative border-b border-neutral-neutral_gray2">
+      <!-- Navbar Start -->
+      <div class="navigation top-0 left-0 w-full z-30 duration-300">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg flex justify-end items-center justify-between relative duration-300" x-data="{ one: false, two: false, three: false }">
+            <a class="navbar-brand" href="index.html">
+              <img class="py-2" src="assets/img/MONAI-logo_color.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler focus:outline-none block lg:hidden" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            </button>
+
+            <div class="collapse navbar-collapse hidden lg:block duration-300 shadow absolute top-100 left-0 mt-full bg-white z-20 px-5 w-full lg:static lg:bg-transparent lg:shadow-none">
+              <ul class="navbar-nav mr-auto justify-end items-center lg:flex">
+                <li class="nav-item relative">
+                  <a class="page-scroll" href="index.html">Home</a>
+                </li>
+                <li class="nav-item relative">
+                  <button class="page-scroll" @click="one = true">Frameworks <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="one" @click.away="one = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="label.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Label </a>
+                      <a href="core.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core</a>
+                      <a href="deploy.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy  </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item relative">
+                  <button class="page-scroll" @click="two = true">Docs <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="two" @click.away="two = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Label Docs</a>
+                      <a href="https://docs.monai.io/en/stable/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core Docs</a>
+                      <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy Docs </a>
+                    </div>
+                  </div>
+                </li>          
+                <li class="nav-item relative">
+                  <button class="page-scroll" @click="three = true">Resources <span class="chevron"></span></button>
+                  <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="three" @click.away="three = false"
+                    x-cloak>
+                    <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                      <a href="about.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">About Us</a>
+                      <a href="started.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Getting Started</a>
+                      <a href="community.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary active">Community</a>
+                      <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Blog</a>
+                    </div>
+                  </div>
+                </li>                                
+                <li class="nav-item relative">
+                  <a class="page-scroll" href="model-zoo.html">Model Zoo</a>
+                </li>
+                <li class="nav-item relative">
+                  <a class="page-scroll" target="_blank" href="https://github.com/Project-MONAI">GitHub</a>
+                </li>                
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- Navbar End -->
+
+    </header>
+    <!-- Header Area wrapper End -->
+
+
+  <!-- Contributors Section Start -->
+  <section id="contributors" class="py-16">
+    <div class="container">
+      <div class="flex flex-wrap items-center">
+        <div class="w-full lg:w-1/2">
+          <h2 class="mb-6 section-heading">Community</h2>
+          <div class="w-full sm:3/5">
+            <p class="py-2">MONAI is an open-source project. As such, its success relies on its community of contributors willing to keep improving it. Your contribution will be a valued addition to the code base; we ask that you read this page and understand our contribution
+              process. Whether you are a seasoned open-source contributor or a first-time contributor, your contributions are greatly valued.
+            </p>
+            <p class="py-2">We are happy to discuss your needs for MONAI and your ideas for contributing to the project. Below are ways to contribute to MONAI or options to engaging with the MONAI Team and community.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-center w-full lg:w-1/2">
+          <img class="hidden lg:block lg:w-3/4 xl:auto" src="assets/img/community_header.png">
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- Contributors Section End -->
+
+  <section class="bg-neutral-lightgray">
+    <div class="container pt-8 pb-20 lg:pt-16">
+      <div class="grid grid-cols-12">
+        <div class="hidden lg:block col-span-4 justify-self-center self-center">
+          <div class="flex py-4 pr-4">
+            <img src="assets/img/contributing_guildlines.png" />
+          </div>
+        </div>
+        <div class="col-span-12 lg:col-span-6 lg:col-start-6">
+          <h2 class="section-heading py-8">Contributing Guidelines</h2>
+          <p class="py-4">
+            MONAI is based on the PyTorch and Numpy libraries. These libraries implement what we consider to be best practices for general scientific computing and deep learning functionality. MONAI builds on these with a strong focus on medical applications.
+          </p>
+          <p class="py-4">
+            As such, it is a good idea to consider whether your functionality is medical-application specific or not. General deep learning functionality may be better off in PyTorch; you can find the PyTorch contribution guidelines here. If you think it belongs
+            in MONAI, you can find our contribution guidelines here.
+          </p>
+          <a href="https://pytorch.org/docs/stable/community/contribution_guide.html" target="_blank">
+            <p class="external-link py-3 font-semibold">PyTorch Contribution Guidelines</p>
+          </a>
+          <a href="https://github.com/Project-MONAI/MONAI/blob/master/CONTRIBUTING.md" target="_blank">
+            <p class="external-link py-3 font-semibold">MONAI Contribution Guidelines</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container pt-8 pb-20 lg:pt-16">
+      <div class="grid grid-cols-12">
+        <div class="col-span-12 lg:col-span-6">
+          <h2 class="section-heading py-8">GitHub Issues</h2>
+          <p class="py-4">
+            If you are running into errors or invalid behaviors while using MONAI, create a GitHub Issue! Although please make sure to check out the existing issues to see if someone has already reported behavior.
+          </p>
+          <p class="py-4">
+            Good examples of things to report include:
+          </p>
+          <ul class="list-inside list-disc">
+            <li>AttributeError: 'list' object has no attribute 'keys'</li>
+            <li>RuntimeError: Module 'AHNet' has no attribute 'psp'</li>
+          </ul>
+          <p class="py-4">
+            Also, take a look at some of our existing tags like <a href="https://github.com/Project-MONAI/MONAI/labels/Contribution%20wanted" target="_blank"><span class="text-brand font-semibold external-link">"Contribution Wanted"</span></a> and
+            <a href="https://github.com/Project-MONAI/MONAI/labels/Feedback%20welcomed" target="_blank"><span class="text-brand font-semibold external-link">"Feedback Welcome"</span></a> if you're looking to engage on a current topic.
+          </p>
+          <p class="py-4">
+            If you're a beginner, take a look at the issues tagged <a href="https://github.com/Project-MONAI/MONAI/labels/good%20first%20issue" target="_blank"><span class="text-brand font-semibold external-link">"Good First Issue"</span></a> for some
+            easy ways to get started contributing to the project.
+          </p>
+        </div>
+        <div class="hidden lg:block col-span-4 col-start-8 justify-self-center self-center">
+          <div class="flex py-4 pr-4">
+            <img src="assets/img/github_issues.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-brand-light">
+    <div class="container pt-8 pb-20 lg:pt-16">
+      <div class="grid grid-cols-12">
+        <div class="hidden lg:block col-span-4 justify-self-center self-center">
+          <div class="flex py-4 pr-4">
+            <img src="assets/img/github_discussion.png" />
+          </div>
+        </div>
+        <div class="col-span-12 lg:col-span-6 lg:col-start-6">
+          <h2 class="section-heading py-8">Github Discussion</h2>
+          <p class="py-4">
+            If your are looking to get involved with the community with one of the following:
+          </p>
+          <ul>
+            <li class="list-inside list-disc">Have a question regarding MONAI</li>
+            <li class="list-inside list-disc">Looking to implement a new feature but unsure where to start</li>
+          </ul>
+          <p class="py-4">
+            Head over to the <a href="https://github.com/Project-MONAI/MONAI/discussions" target="_blank"><span class="text-brand font-semibold">MONAI GitHub Discussion page</span></a>. It might be that a very similar feature is under development or already
+            exists, or another community member has already asked the question. If not, here is the best place to get that conversation started.
+          </p>
+          <p class="py-4">
+            If you're already using MONAI, a great way to get involved in the community is to head over the Discussions Tab and answer community questions.
+          </p>
+          <p class="py-4">
+            We're taking advantage of this feature within GitHub to keep communication on a single platform. We previously used Google Groups, PyTorch Forums, and Stackoverflow, but we encourage you to migrate over to using GitHub Discussions.
+          </p>
+          <a href="https://github.com/Project-MONAI/MONAI/discussions" target="_blank">
+            <p class="external-link py-3 font-semibold">MONAI Github Discussion page</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step-wise break Section Start -->
+  <section class='h-20 grid grid-cols-2'>
+    <div class='h-full'></div>
+    <div class='h-full bg-brand-light'></div>
+  </section>
+  <!-- Step-wise break Section End -->
+
+  <section>
+    <div class="container pt-8 pb-20 lg:pt-16">
+      <div class="grid grid-cols-12">
+        <div class="hidden lg:block col-span-4 justify-self-center self-center">
+          <div class="flex py-4 pr-4">
+            <img src="assets/img/slack_logo.png" />
+          </div>
+        </div>
+        <div class="col-span-12 lg:col-span-6 lg:col-start-6">
+          <h2 class="lg:hidden section-heading py-8">Slack</h2>
+          <p class="py-4">
+            Join our Slack, and you can interact with the core development team and community members. Slack is meant for helping developers get started in our community and not intended as a how-to or Q/A discussion location. For an invite to our Slack channel,
+            please fill out our Google Form, and we'll send you an invite.
+          </p>
+          <a href="https://forms.gle/QTxJq3hFictp31UM9" target="_blank">
+            <p class="external-link py-3 font-semibold">Slack Invitation Form</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="bg-brand-dark">
+    <div class="container py-16 mx-auto text-center">
+      <h2 class="text-5xl text-white font-bold tracking-wide text-center py-8">Social Media</h2>
+      <div class='text-white w-full lg:w-1/2 mx-auto py-4'>
+        We're active on Twitter at <a href="https://twitter.com/ProjectMONAI" target="_blank"><span class="text-brand">@ProjectMONAI</span></a> and Medium <a href="https://medium.com/@monai" target="_blank"><span class="text-brand">@monai</span></a>.
+        You'll find our latest blog post and updates about the newest features in MONAI on both of those platforms. We also have a YouTube channel with videos from our first MONAI Bootcamp that is great if you're just getting started and want to learn
+        more about MONAI.
+        </p>
+        <div class="pt-12">
+          <ul class="flex justify-center">
+            <li class="mx-2">
+              <a href="https://twitter.com/ProjectMONAI" target="_blank">
+                <i>
+                  <img src="assets/img/twitter_icon_circle.png"/>
+                </i>
+              </a>
+            </li>
+            <li class="mx-2">
+              <a href="https://medium.com/@monai" target="_blank">
+                <i>
+                  <img src="assets/img/medium_icon_circle.png"/>
+                </i>
+              </a>
+            </li>
+            <li class="mx-2">
+              <a href="https://www.youtube.com/c/Project-MONAI" target="_blank">
+                <i>
+                  <img src="assets/img/youtube_icon_circle.png"/>
+                </i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </section>
+
+  <!-- Footer Section Start -->
+  <footer id="footer" class="bg-neutral-lightgray py-2 border-t border-neutral-light_gray">
+    <div class="container">
+      <div class="flex flex-wrap items-center justify-between">
+        <div class="w-auto">
+          <div class="mx-3">
+            <div class="footer-logo">
+              <a href="index.html"><img src="assets/img/MONAI-logo_color.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="hidden lg:block w-auto">
+          <div class="mx-3 text-black">
+            <ul class="flex justify-between">
+              <li class="px-4">
+                <a href="about.html" class="footer-links">About Us</a>
+              </li>
+              <li class="px-4">
+                <a href="started.html" class="footer-links">Get Started</a>
+              </li>
+              <li class="px-4">
+                <a href="community.html" class="footer-links">Community</a>
+              </li>
+              <li class="px-4">
+                <a href="https://medium.com/@monai" class="footer-links">Blog</a>
+              </li>
+              <li class="px-4">
+                <a href="docs.html" class="footer-links">Docs</a>
+              </li>
+              <li class="px-4">
+                <a href="https://github.com/Project-MONAI" class="footer-links">GitHub</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-auto">
+          <div class="mx-3">
+            <ul class="social-icons flex justify-end">
+              <li class="mx-2">
+                <a href="https://twitter.com/ProjectMONAI">
+                  <i>
+                <img src="assets/img/twitter_icon_square.png"/>
+              </i>
+                </a>
+              </li>
+              <li class="mx-2">
+                <a href="https://medium.com/@monai">
+                  <i>
+                <img src="assets/img/medium_icon_square.png"/>
+              </i>
+                </a>
+              </li>
+              <li class="mx-2">
+                <a href="https://www.youtube.com/c/Project-MONAI">
+                  <i>
+                <img src="assets/img/youtube_icon_square.png"/>
+              </i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer Section End -->
+
+  <!-- Go to Top Link -->
+  <a href="#" class="back-to-top w-10 h-10 fixed bottom-0 right-0 mb-5 mr-5 flex items-center justify-center rounded-full border border-solid border-brand-dark text-white text-lg z-20">
+    <i class="transform -rotate-90">
+        <img src="assets/img/ic_arrow_right.png"/>
+      </i>
+  </a>
+
+  <!-- All js Here -->
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/particles.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>  
+</body>
+
+</html>

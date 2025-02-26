@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<!-- Head Component -->
+<!-- Parameters: title, description, canonical_url -->
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QVGBCPFPJ6');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <title>${title} | MONAI - Medical Open Network for AI</title>
+    <meta name="description" content="${description}">
+    <meta name="keywords" content="MONAI, Medical Imaging, AI, Deep Learning, Healthcare, PyTorch, Open Source">
+    <meta name="author" content="Project MONAI">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="${title} | MONAI">
+    <meta property="og:description" content="${description}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="${canonical_url}">
+    <meta property="og:image" content="https://monai.io/assets/img/MONAI-logo_color.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ProjectMONAI">
+    <meta name="twitter:title" content="${title} | MONAI">
+    <meta name="twitter:description" content="${description}">
+    <meta name="twitter:image" content="https://monai.io/assets/img/MONAI-logo_color.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="${canonical_url}">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/img/favicon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/tailwind.css">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Alpine.js x-cloak -->
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MONAI",
+        "url": "https://monai.io",
+        "logo": "https://monai.io/assets/img/MONAI-logo_color.png",
+        "description": "MONAI is a freely available, community-supported, PyTorch-based framework for deep learning in healthcare imaging.",
+        "sameAs": [
+            "https://twitter.com/ProjectMONAI",
+            "https://medium.com/@monai",
+            "https://www.youtube.com/c/Project-MONAI",
+            "https://github.com/Project-MONAI"
+        ]
+    }
+    </script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head> 
+<script>
+    document.head.innerHTML = document.head.innerHTML
+        .replace('${title}', 'MONAI - Outreach and Adoption Working Group')
+        .replace('${description}', 'Establishing MONAI as a common software foundation for the Medical Imaging research and development community.')
+        .replace('${canonical_url}', 'https://monai.io/wg_outreach_adoption.html');
+</script>
+
+<body class="flex flex-col min-h-screen">
+
+  <!-- Header Area wrapper Starts -->
+<header id="header-wrap" class="relative">
+  <!-- Navbar Start -->
+  <div class="navigation fixed top-0 left-0 w-full z-30 duration-300 bg-white border-b border-gray-100">
+    <div class="container">
+      <nav class="navbar flex justify-between items-center relative duration-300 h-16" x-data="{ isOpen: false, frameworksOpen: false, communityOpen: false }">
+        <a class="navbar-brand" href="index.html">
+          <img class="h-12 w-auto" src="assets/img/MONAI-logo_color.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler focus:outline-none block lg:hidden p-2" type="button" @click="isOpen = !isOpen">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path x-show="!isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path x-show="isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <div class="navbar-collapse lg:flex flex-grow items-center absolute lg:static top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent lg:shadow-none" 
+             :class="{'hidden': !isOpen, 'block shadow-lg': isOpen}">
+          <ul class="navbar-nav flex flex-col lg:flex-row lg:items-center lg:ml-auto py-4 lg:py-0 px-6 lg:px-0 space-y-2 lg:space-y-0 lg:space-x-8">
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="index.html">Home</a>
+            </li>
+            <li class="nav-item relative" @click.away="frameworksOpen = false">
+              <button class="page-scroll flex items-center justify-between w-full lg:inline-flex lg:w-auto py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" 
+                      @click="frameworksOpen = !frameworksOpen; communityOpen = false">
+                <span>Frameworks</span>
+                <span class="chevron ml-2 transform transition-transform duration-200" :class="{'rotate-180': frameworksOpen}"></span>
+              </button>
+              <div class="lg:absolute w-full lg:w-52 lg:top-[calc(100%+0.5rem)] left-0 lg:left-1/2 lg:-translate-x-1/2 z-50 p-2 text-gray-800 bg-white rounded-lg shadow-lg" 
+                   x-show="frameworksOpen" 
+                   x-transition:enter="transition ease-out duration-200"
+                   x-transition:enter-start="opacity-0 translate-y-1"
+                   x-transition:enter-end="opacity-100 translate-y-0"
+                   x-cloak>
+                <div class="flex flex-col space-y-1">
+                  <a href="core.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Core</a>
+                  <a href="label.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Label</a>
+                  <a href="deploy.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Deploy</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="model-zoo.html">Model Zoo</a>
+            </li>
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="working-groups.html">Working Groups</a>
+            </li>
+            <li class="nav-item relative" @click.away="communityOpen = false">
+              <button class="page-scroll flex items-center justify-between w-full lg:inline-flex lg:w-auto py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" 
+                      @click="communityOpen = !communityOpen; frameworksOpen = false">
+                <span>Community</span>
+                <span class="chevron ml-2 transform transition-transform duration-200" :class="{'rotate-180': communityOpen}"></span>
+              </button>
+              <div class="lg:absolute w-full lg:w-64 lg:top-[calc(100%+0.5rem)] left-0 lg:left-1/2 lg:-translate-x-1/2 z-50 p-2 text-gray-800 bg-white rounded-lg shadow-lg"
+                   x-show="communityOpen"
+                   x-transition:enter="transition ease-out duration-200"
+                   x-transition:enter-start="opacity-0 translate-y-1"
+                   x-transition:enter-end="opacity-100 translate-y-0"
+                   x-cloak>
+                <div class="flex flex-col space-y-2">
+                  <a href="https://github.com/Project-MONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">GitHub</a>
+                  <a href="https://join.slack.com/t/projectmonai/shared_invite/zt-2t7z8e9tu-xE5SPw0TC8LUxyPVpl2WVQ" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Join Slack</a>
+                  <a href="about.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">About Us</a>
+                  <div class="border-t border-gray-100 mt-2 pt-2">
+                    <div class="grid grid-cols-2 gap-1">
+                      <a href="https://twitter.com/ProjectMONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Twitter</a>
+                      <a href="https://linkedin.com/company/projectmonai" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">LinkedIn</a>
+                      <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Blog</a>
+                      <a href="https://www.youtube.com/c/Project-MONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">YouTube</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Navbar End -->
+</header>
+<!-- Header Area wrapper End --> 
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section id="hero" class="py-24 bg-brand-light relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
+      <div class="container relative">
+        <div class="flex flex-wrap items-center">
+          <div class="w-full max-w-3xl">
+            <h1 class="mb-6 wg-main-heading">
+              Outreach and Adoption<br>
+              Working Group
+            </h1>
+            <h2 class="text-neutral-darkestblack text-2xl font-bold mb-4">Mission Statement</h2>
+            <p class="text-lg leading-relaxed text-gray-700">This working group aims to expand MONAI's reach and impact across the medical imaging community. The focus includes organizing technical training, fostering community engagement, and developing infrastructure with the end goal of establishing MONAI as the leading open-source platform for medical imaging AI. By building an inclusive and transparent community, the group ensures sustainable growth and adoption of MONAI.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Initiatives Section -->
+    <section class="py-24 relative overflow-hidden">
+      <div class="container relative">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Initiatives</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Community Building</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>MONAI Newsletter publication</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Community events organization</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Social media engagement</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Success stories showcase</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Education & Training</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Technical bootcamps and workshops</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Webinar series development</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Hackathon event coordination</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Training materials creation</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Group Leads Section -->
+    <section class="py-24 bg-neutral-lightgray relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
+      <div class="container relative">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Group Leads</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <div class="flex flex-col items-center text-center">
+              <img src="assets/img/MichaelZephyr.jpg" alt="Michael Zephyr" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-brand-light">
+              <div>
+                <p class="text-xl font-semibold text-gray-800 mb-2">Michael Zephyr</p>
+                <p class="text-base text-gray-600 mb-1">Technical Product Manager</p>
+                <p class="text-sm text-gray-600 mb-1">NVIDIA</p>
+                <p class="text-sm font-medium text-brand-primary">Outreach Working Group Chair</p>
+                <a href="https://www.linkedin.com/in/michael-zephyr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-brand-primary hover:text-brand-dark mt-2">
+                  <span>View Profile</span>
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meeting Notes and Recordings Section -->
+    <!-- <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Meeting Notes and Recordings</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Google Drive</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://drive.google.com/drive/folders/your-folder-id" class="link-hover">Access all meeting notes and recordings</a></span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Direct Links</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://link-to-meeting-1" class="link-hover">Meeting 1 - Date</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://link-to-meeting-2" class="link-hover">Meeting 2 - Date</a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Resources Section -->
+    <section class="py-24 bg-neutral-lightgray relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
+      <div class="container relative">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Resources</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Community Resources</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://monai.medium.com/" class="link-hover">MONAI Blog</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://github.com/Project-MONAI/MONAI/discussions" class="link-hover">MONAI Discussions</a></span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Development Resources</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://github.com/Project-MONAI/MONAI/blob/dev/CONTRIBUTING.md" class="link-hover">Contribution Guidelines</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://github.com/Project-MONAI/MONAI/wiki" class="link-hover">Development Wiki</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://docs.monai.io" class="link-hover">Documentation</a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaboration Opportunities Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Collaboration Opportunities</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Content Creation</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Write blog posts and tutorials</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Share success stories and case studies</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Develop training materials</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Community Engagement</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Join our regular working group meetings</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Organize local events and meetups</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Mentor new community members</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Component -->
+<footer id="footer" class="py-2 border-t border-neutral-light_gray">
+  <div class="container">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <!-- Logo Section -->
+      <div class="w-auto flex-shrink-0">
+        <div class="mx-3">
+          <div class="footer-logo">
+            <a href="index.html"><img src="./assets/img/MONAI-logo_color.png" alt="MONAI Logo"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Links - Hidden on mobile, flex on larger screens -->
+      <div class="hidden lg:block flex-grow">
+        <div class="mx-3 text-black">
+          <ul class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+            <li>
+              <a href="core.html" class="footer-links whitespace-nowrap">MONAI Core</a>
+            </li>
+            <li>
+              <a href="label.html" class="footer-links whitespace-nowrap">MONAI Label</a>
+            </li>
+            <li>
+              <a href="deploy.html" class="footer-links whitespace-nowrap">MONAI Deploy</a>
+            </li>
+            <li>
+              <a href="model-zoo.html" class="footer-links whitespace-nowrap">Model Zoo</a>
+            </li>
+            <li>
+              <a href="working-groups.html" class="footer-links whitespace-nowrap">Working Groups</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Social Icons - Always visible, right-aligned -->
+      <div class="w-auto flex-shrink-0">
+        <div class="mx-3">
+          <ul class="social-icons flex items-center gap-4">
+            <li>
+              <a href="https://twitter.com/ProjectMONAI" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/company/projectmonai" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://medium.com/@monai" aria-label="Medium">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M9.025 8c0 2.485-2.02 4.5-4.513 4.5A4.506 4.506 0 0 1 0 8c0-2.486 2.02-4.5 4.512-4.5A4.506 4.506 0 0 1 9.025 8m4.95 0c0 2.34-1.01 4.236-2.256 4.236S9.463 10.339 9.463 8c0-2.34 1.01-4.236 2.256-4.236S13.975 5.661 13.975 8M16 8c0 2.096-.355 3.795-.794 3.795-.438 0-.793-1.7-.793-3.795 0-2.096.355-3.795.794-3.795.438 0 .793 1.699.793 3.795"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/c/Project-MONAI" aria-label="YouTube">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- Scripts Component -->
+<!-- Common JavaScript Files -->
+<script src="./assets/js/wow.js"></script>
+<script src="./assets/js/particles.min.js"></script>
+<script src="./assets/js/countUp.min.js"></script>
+<script src="./assets/js/main.js"></script>
+
+<!-- Initialize WOW.js -->
+<script>
+    new WOW().init();
+</script>
+
+<!-- Performance Optimizations -->
+<script>
+    // Defer non-critical images
+    document.addEventListener('DOMContentLoaded', function() {
+        var lazyImages = [].slice.call(document.querySelectorAll('img[data-src]'));
+        
+        if ('IntersectionObserver' in window) {
+            let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        let lazyImage = entry.target;
+                        lazyImage.src = lazyImage.dataset.src;
+                        lazyImage.removeAttribute('data-src');
+                        lazyImageObserver.unobserve(lazyImage);
+                    }
+                });
+            });
+
+            lazyImages.forEach(function(lazyImage) {
+                lazyImageObserver.observe(lazyImage);
+            });
+        }
+    });
+
+    // Preload critical resources
+    const preloadLinks = [
+        './assets/css/tailwind.css',
+        './assets/css/animate.css',
+        './assets/img/MONAI-logo_color.png'
+    ];
+
+    preloadLinks.forEach(link => {
+        const preloadLink = document.createElement('link');
+        preloadLink.href = link;
+        preloadLink.rel = 'preload';
+        preloadLink.as = link.endsWith('.css') ? 'style' : 'image';
+        document.head.appendChild(preloadLink);
+    });
+</script>
+
+<!-- Common Scripts -->
+<script src="assets/js/copy-buttons.js"></script> 
+
+</body>
+</html> 
