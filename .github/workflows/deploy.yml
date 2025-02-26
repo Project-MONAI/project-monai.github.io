@@ -1,0 +1,71 @@
+name: Build and Deploy
+
+on:
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
+  push:
+    branches:
+      - main
+
+# Add permissions to allow deployment
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Website
+        uses: actions/checkout@v3
+
+      - name: Checkout Model Zoo
+        uses: actions/checkout@v3
+        with:
+          repository: Project-MONAI/model-zoo
+          path: scripts/model-zoo
+
+      - name: Setup Python and Node
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: |
+          pip install requests beautifulsoup4 markdown
+          npm install
+
+      - name: Build Site
+        run: |
+          # Clean dist directory
+          rm -rf dist
+          mkdir -p dist
+          mkdir -p dist/assets/css
+
+          # Process model data
+          python scripts/fetch.py
+
+          # Build files
+          npm run build
+          npx babel src/model-zoo.js --out-file dist/model-zoo.js --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-transform-react-jsx
+
+          # Build Tailwind CSS explicitly
+          npx tailwindcss -i ./assets/css/style.css -o ./dist/assets/css/tailwind.css --minify
+
+          # Copy necessary files
+          cp scripts/model_data.json dist/
+
+          # Debug Tailwind CSS
+          echo "Checking tailwind.css:"
+          ls -la dist/assets/css/tailwind.css || true
+          echo "Contents of dist/assets/css:"
+          ls -la dist/assets/css || true
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
+          clean: true # Automatically remove deleted files from the deployment 

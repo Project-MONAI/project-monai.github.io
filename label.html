@@ -1,373 +1,801 @@
 <!DOCTYPE html>
 <html lang="en" style="scroll-behavior: smooth;">
 
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+<!-- #include file="components/head.html" -->
+<script>
+    document.head.innerHTML = document.head.innerHTML
+        .replace('${title}', 'MONAI Label')
+        .replace('${description}', 'MONAI Label is an intelligent image labeling and learning tool that uses AI assistance to reduce the time and effort of annotating new datasets. By utilizing user interactions, MONAI Label trains an AI model for a specific task and continuously learns and updates that model as it receives additional annotated images.')
+        .replace('${canonical_url}', 'https://monai.io/label.html');
+</script>
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-QVGBCPFPJ6');
-    </script>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="MONAI offers serveral frameworks, and we are adding to them all the time. Here, you’ll find the information you need to decide on what framework works best for your needs.">
-    <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+<body>
+    <!-- #include file="components/header.html" -->
 
-    <title>MONAI Label - Product Page</title>
-
-    <!-- Tailwind css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/tailwind.css">
-  </head>
-
-  <body>
-
-        <!-- Header Area wrapper Starts -->
-        <header id="header-wrap" class="relative border-b border-neutral-neutral_gray2">
-          <!-- Navbar Start -->
-          <div class="navigation top-0 left-0 w-full z-30 duration-300">
+    <main class="flex-grow pt-20">
+        <!-- Overview Section -->
+        <section id="overview" class="py-24 bg-white">
             <div class="container">
-              <nav class="navbar navbar-expand-lg flex justify-end items-center justify-between relative duration-300" x-data="{ one: false, two: false, three: false }">
-                <a class="navbar-brand" href="index.html">
-                  <img class="py-2" src="assets/img/MONAI-logo_color.png" alt="Logo">
-                </a>
-                <button class="navbar-toggler focus:outline-none block lg:hidden" type="button">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"
-                >
-                  <line x1="3" y1="12" x2="21" y2="12"></line>
-                  <line x1="3" y1="6" x2="21" y2="6"></line>
-                  <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-                </button>
-    
-                <div class="collapse navbar-collapse hidden lg:block duration-300 shadow absolute top-100 left-0 mt-full bg-white z-20 px-5 w-full lg:static lg:bg-transparent lg:shadow-none">
-                  <ul class="navbar-nav mr-auto justify-end items-center lg:flex">
-                    <li class="nav-item relative">
-                      <a class="page-scroll" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item relative">
-                      <button class="page-scroll" @click="one = true">Frameworks <span class="chevron"></span></button>
-                      <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="one" @click.away="one = false"
-                        x-cloak>
-                        <div class="flex flex-col space-y-1 font-medium text-gray-800">
-                          <a href="label.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary active"> MONAI Label </a>
-                          <a href="core.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core</a>
-                          <a href="deploy.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy  </a>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <div class="max-w-xl">
+                        <h1 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+                            MONAI Label
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+                        </h1>
+                        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                            MONAI Label is an intelligent image labeling and learning tool that enables you to create training datasets and build AI annotation models to accelerate the development of AI applications in medical imaging.
+                        </p>
+                        <div class="flex flex-wrap gap-4 mb-8">
+                            <a href="#getting-started" class="px-6 py-2.5 rounded-lg bg-brand-primary text-white hover:bg-brand-dark transition-colors inline-flex items-center gap-2 group">
+                                Get Started
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                            <a href="https://docs.monai.io/projects/label/en/latest/" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                Documentation
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                            <a href="wg_human_ai_interaction.html" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                Get Involved
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
                         </div>
-                      </div>
-                    </li>
-                    <li class="nav-item relative">
-                      <button class="page-scroll" @click="two = true">Docs <span class="chevron"></span></button>
-                      <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="two" @click.away="two = false"
-                        x-cloak>
-                        <div class="flex flex-col space-y-1 font-medium text-gray-800">
-                          <a href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Label Docs</a>
-                          <a href="https://docs.monai.io/en/stable/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core Docs</a>
-                          <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy Docs </a>
-                        </div>
-                      </div>
-                    </li>          
-                    <li class="nav-item relative">
-                      <button class="page-scroll" @click="three = true">Resources <span class="chevron"></span></button>
-                      <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="three" @click.away="three = false"
-                        x-cloak>
-                        <div class="flex flex-col space-y-1 font-medium text-gray-800">
-                          <a href="about.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">About Us</a>
-                          <a href="started.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Getting Started</a>
-                          <a href="community.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Community</a>
-                          <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Blog</a>
-                        </div>
-                      </div>
-                    </li>                                
-                    <li class="nav-item relative">
-                      <a class="page-scroll" href="model-zoo.html">Model Zoo</a>
-                    </li>
-                    <li class="nav-item relative">
-                      <a class="page-scroll" target="_blank" href="https://github.com/Project-MONAI">GitHub</a>
-                    </li>                
-                  </ul>
+                    </div>
+                    <div class="hidden lg:flex lg:justify-center">
+                        <img src="assets/img/big_plane.png" alt="MONAI Label" class="w-full max-w-lg mx-auto">
+                    </div>
                 </div>
-              </nav>
             </div>
-          </div>
-          <!-- Navbar End -->
-    
-        </header>
-        <!-- Header Area wrapper End -->
+        </section>
 
-    <!-- Contributors Section Start -->
-    <section id="contributors" class="py-16">
-      <div class="container">
-        <div class="grid grid-cols-1 lg:grid-cols-2 space-x-4 place-items-center">
-          <div>
-            <h2 class="mb-6 section-heading">MONAI Label</h2>
-            <div class="w-full lg:3/5 pb-4">
-              <p class="py-2">MONAI Label is an intelligent image labeling and learning tool that uses AI assistance to reduce the time and effort of annotating new datasets. By utilizing user interactions, MONAI Label trains an AI model for a specific task and continuously
-                learns and updates that model as it receives additional annotated images.
-              </p>
-              <p>MONAI Label provides multiple sample applications that include state-of-the-art interactive segmentation approaches like DeepGrow and DeepEdit. These sample applications are ready to use out of the box and let you quickly get started on
-                annotating with minimal effort. Developers can also build their own MONAI Label applications with creative algorithms.</p>
-            </div>
-            <div class="flex flex-wrap space-x-2 py-8">
-              <a class="brand-btn" href="https://docs.monai.io/projects/label/en/latest/quickstart.html" target="_blank"> Quickstart Guide </a>
-              <a class="brand-btn" href="https://github.com/Project-MONAI/MONAILabel" target="_blank">Documentation </a>
-            </div>
-            <div>
-              <h2 class="text-brand-primary font-semibold">Install:</h2>
-              <p class="code p-4 bg-neutral-lightgray w-72">$ pip install monailabel</p>
-            </div>
-          </div>
-          <div>
-            <img class="hidden lg:block " src="assets/img/documentation header.png">
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-    <!-- Contributors Section End -->
+        <!-- Features Section -->
+        <section class="py-24 bg-brand-dark/15">
+            <div class="container px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+                        Annotation Tools for Clinical Workflows
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        MONAI Label combines AI assistance with clinical expertise to deliver fast, accurate, and consistent annotations. Our tools adapt to your workflow while continuously learning from your expertise.
+                    </p>
+                </div>
 
-    <section class="py-12 bg-brand-light">
-      <div class="container py-4 lg:py-16">
-        <div class='text-center w-full lg:w-1/2 mx-auto pb-8'>
-          <h2 class="text-brand-primary text-4xl font-bold ">Focuses on Researchers and Data Scientist</h2>
-          <p class="py-4 ">
-            MONAI Core is focused on bringing the state-of-the-art to the broader medical community. You can see some of these features below and start using them today through our tutorials.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-3">
-          <div class="text-center border-b-2 border-r-0 lg:border-b-0 lg:border-r-2 border-neutral-gray2 p-6">
-            <h2 class="text-2xl font-bold pb-4">Continuous Training Loop</h2>
-            <h3 class="text-lg font-bold pb-4 text-brand-primary">Fine-tune your model while annotating</h3>
-            <p class="pb-4">Quickly start creating an annotation model by utilize the continous training loop with MONAI Label.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- AI-Assisted Annotation Card -->
+                    <div class="bg-white p-8 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="text-brand-primary mb-6">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">AI-Assisted Annotation</h3>
+                        <div class="flex-grow space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-600">Interactive AI models for faster annotation</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-600">Active learning for model improvement</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-600">Real-time AI assistance</p>
+                            </div>
+                        </div>
+                    </div>
 
-          </div>
-          <div class="text-center border-b-2 border-r-0 lg:border-b-0 lg:border-r-2 border-neutral-gray2 p-6">
-            <h2 class="text-2xl font-bold pb-4">Multiple Supported Viewers</h2>
-            <h3 class="text-lg font-bold pb-4 text-brand-primary">3D Slicer, OHIF, MITK, DSA, and QuPath</h3>
-            <p class="pb-4">Whether you're annotating Radiology or Pathology images, MONAI Label has viewer integration to get you started quickly.</p>
-          </div>
-          <div class="text-center p-6">
-            <h2 class="text-2xl font-bold pb-4">Interactive and Non-interactive Annotation Methods</h2>
-            <h3 class="text-lg font-bold pb-4 text-brand-primary">Multiple Algorithms to Choose</h3>
-            <p class="pb-4">Utilize interactive methods to get started quickly or choose an existing model that already works great.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+                    <!-- Clinical Integration Card -->
+                    <div class="bg-white p-8 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="text-brand-primary mb-6">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Clinical Integration</h3>
+                        <div class="flex-grow space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-600">3D Slicer, MITK, OHIF viewer integration</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-600">DICOM and PACS integration</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-600">Multi-user collaboration support</p>
+                            </div>
+                        </div>
+                    </div>
 
-    <section class="py-12 bg-neutral-purewhite">
-      <div class="container">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 place-items-center">
-          <div class='w-2/3'>
-            <h2 class="text-center text-brand-primary text-4xl font-bold pb-8">Which Use Case are you working on?</h2>
-          </div>
-          <div>
-            <p class="mx-auto pb-12 text-center lg:text-left">MONAI Label has integration for both Radiology and Pathology Images. By enabling a workflow that integrates directly into a Radiologist or Pathologist viewer and allowing for continuous learning, MONAI aims to accelerate the adoption of Deep
-              Learning in Medical Imaging.</p>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-y-12 gap-x-0 lg:gap-y-24 lg:gap-x-24 p-8 sm:p-12 lg:p-24">
-          <div class="shadow-xl rounded-3xl">
-            <div class="aspect-w-3 aspect-h-2">
-              <img class="object-cover rounded-t-3xl" src="assets/img/mri_label.png">
+                    <!-- Extensible Platform Card -->
+                    <div class="bg-white p-8 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="text-brand-primary mb-6">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Extensible Platform</h3>
+                        <div class="flex-grow space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-600">Customizable annotation strategies</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-600">Plugin architecture for flexibility</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-600">Easy integration with existing tools</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h2 class="text-2xl font-bold text-brand-primary text-center mt-8">Radiology</h2>
-            <p class="px-12 py-4 text-center">If you're working in Radiology, start using OHIF or 3D Slicer, which have extensions built to integrate with MONAI Label. You can bring your DICOM or Nifti images into the viewer and start annotating today with models like DeepEdit. </p>
-            <div class="text-center my-8">
-              <a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/radiology" target="_blank">
-                <button class="text-brand-primary text-xl font-bold">Sample Applications ></button>
-              </a>
-            </div>
-          </div>
-          <div class="shadow-xl rounded-3xl">
-            <div class="aspect-w-3 aspect-h-2">
-              <img class="object-cover rounded-t-3xl" src="assets/img/path_label.png">
-            </div>
-            <h2 class="text-2xl font-bold text-brand-primary text-center mt-8">Pathology</h2>
-            <p class="px-12 py-4 text-center">If you're working in Pathology, we've integrated with Digital Slide Archive (DSA), QuPath, and CVAT viewers. MONAI Label is creating a starting point for Pathologists and Data scientists to work together and utilize the benefits of Deep Learning.</p>
-            <div class="text-center my-8">
-              <a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/pathology" target="_blank">
-                <button class="text-brand-primary text-xl font-bold">Sample Applications ></button>
-              </a>
-            </div>
-          </div>
-          <div class="shadow-xl rounded-3xl">
-            <div class="aspect-w-3 aspect-h-2">
-              <img class="object-cover rounded-t-3xl" src="assets/img/endoscopy.png">
-            </div>
-            <h2 class="text-2xl font-bold text-brand-primary text-center mt-8">Endoscopy</h2>
-            <p class="px-12 py-4 text-center">If you're working in Endoscopy, we've integrated with CVAT viewer and enabled a fully automated active learning workflow to train a model. MONAI Label enables users to use interactive, segmentation, and classification models over 2D images.</p>
-            <div class="text-center my-8">
-              <a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/endoscopy" target="_blank">
-                <button class="text-brand-primary text-xl font-bold">Sample Applications ></button>
-              </a>
-            </div>
-          </div>          
-          </p>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-12 bg-neutral-lightgray">
-      <div class="container">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4">
-          <div>
-            <h2 class="text-center text-brand-primary text-4xl font-bold pb-8">Get started with only a few commands</h2>
-            <p class="w-2/3 mx-auto text-center pb-8">
-              MONAI Label makes it easy to get started. By following the commands on the right, you'll:
-            </p>
-            <div class="bg-neutral-purewhite p-4 rounded-xl border-2 border-brand-primary w-2/3 mx-auto text-center lg:text-left">
-              <ul class='lg:list-disc lg:list-inside'>
-                <li class="underline underline-offset-4">Install MONAI Label</li>
-                <li class="underline underline-offset-4">Download a Sample Radiology App</li>
-                <li class="underline underline-offset-4">Download a Sample Dataset</li>
-                <li class="underline underline-offset-4">Start the MONAI Label Server</li>
-              </ul>
+        <!-- Use Cases Section -->
+        <section class="py-24 bg-white">
+            <div class="container">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+                        Domain-Specific Solutions
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        MONAI Label delivers specialized solutions optimized for each medical imaging domain. Our tools adapt to your specific needs, whether you're working with 3D volumes, microscopy slides, or video sequences.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Radiology Card -->
+                    <div class="bg-white p-6 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col rounded-lg overflow-hidden">
+                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-6">
+                            <img class="object-cover w-full h-full transform transition-transform duration-300 hover:scale-105" src="assets/img/mri_label.png" alt="Radiology Use Case">
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Radiology</h3>
+                            <p class="text-gray-600 mb-6">Perfect for organ segmentation, tumor detection, and anatomical measurements in CT and MRI scans. Seamlessly integrated with OHIF, MITK, and 3D Slicer, our tools accelerate volumetric analysis while maintaining high accuracy.</p>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/radiology" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                Sample Applications
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Pathology Card -->
+                    <div class="bg-white p-6 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col rounded-lg overflow-hidden">
+                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-6">
+                            <img class="object-cover w-full h-full transform transition-transform duration-300 hover:scale-105" src="assets/img/path_label.png" alt="Pathology Use Case">
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Pathology</h3>
+                            <p class="text-gray-600 mb-6">Specialized in cell detection and tissue classification for whole slide imaging. Integrated with QuPath, DSA, and CellProfiler for rapid analysis of microscopy data.</p>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/pathology" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                Sample Applications
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Endoscopy Card -->
+                    <div class="bg-white p-6 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col rounded-lg overflow-hidden">
+                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-6">
+                            <img class="object-cover w-full h-full transform transition-transform duration-300 hover:scale-105" src="assets/img/endoscopy.png" alt="Endoscopy Use Case">
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Endoscopy</h3>
+                            <p class="text-gray-600 mb-6">Optimized for polyp detection and tool tracking in video sequences. Integrated with CVAT for efficient frame-by-frame annotation with automated tracking.</p>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps/endoscopy" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                Sample Applications
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class='text-center mt-8 lg:mt-0'>
-            <p class="font-bold text-xl mb-4 text-brand-primary hidden lg:show">Launch the MONAI Label Server in 4 steps</p>
-            <div class="shadow-2xl">
-              <img src="assets/img/monai_label_server_start.png" />
+        </section>
+
+        <!-- Getting Started Section -->
+        <section id="getting-started" class="py-24 bg-brand-dark/15">
+            <div class="container">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+                        Getting Started with MONAI Label
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        Get started with MONAI Label in minutes. Our step-by-step guide will help you set up your environment and launch your first AI-assisted annotation server. After setup, you'll be ready to connect to your preferred viewer and start annotating with AI assistance.
+                    </p>
+                </div>
+
+                <div class="max-w-6xl mx-auto space-y-8">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 text-3xl font-bold text-brand-primary">1</div>
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Install MONAI Label</h3>
+                                <p class="text-gray-600 mb-6">Install via pip package manager</p>
+                                <div class="relative w-full">
+                                    <div class="bg-gray-50 rounded-lg p-4 font-mono text-sm text-gray-700 w-full border border-gray-200">
+                                        <span class="block">pip install monailabel</span>
+                                    </div>
+                                    <button class="copy-button absolute top-3 right-3 text-gray-400 hover:text-brand-primary transition-colors">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 text-3xl font-bold text-brand-primary">2</div>
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Download Sample App</h3>
+                                <p class="text-gray-600 mb-6">Get a pre-configured radiology application</p>
+                                <div class="relative w-full">
+                                    <div class="bg-gray-50 rounded-lg p-4 font-mono text-sm text-gray-700 w-full border border-gray-200">
+                                        <span class="block">monailabel apps --download \</span>
+                                        <span class="block pl-4">--name radiology \</span>
+                                        <span class="block pl-4">--output apps</span>
+                                    </div>
+                                    <button class="copy-button absolute top-3 right-3 text-gray-400 hover:text-brand-primary transition-colors">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 text-3xl font-bold text-brand-primary">3</div>
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Download Sample Dataset</h3>
+                                <p class="text-gray-600 mb-6">Get example medical imaging data</p>
+                                <div class="relative w-full">
+                                    <div class="bg-gray-50 rounded-lg p-4 font-mono text-sm text-gray-700 w-full border border-gray-200">
+                                        <span class="block">monailabel datasets --download \</span>
+                                        <span class="block pl-4">--name Task09_Spleen \</span>
+                                        <span class="block pl-4">--output datasets</span>
+                                    </div>
+                                    <button class="copy-button absolute top-3 right-3 text-gray-400 hover:text-brand-primary transition-colors">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 text-3xl font-bold text-brand-primary">4</div>
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Launch Server</h3>
+                                <p class="text-gray-600 mb-6">Start MONAI Label server with your configuration</p>
+                                <div class="relative w-full">
+                                    <div class="bg-gray-50 rounded-lg p-4 font-mono text-sm text-gray-700 w-full border border-gray-200">
+                                        <span class="block">monailabel start_server \</span>
+                                        <span class="block pl-4">--app apps/radiology \</span>
+                                        <span class="block pl-4">--studies datasets/Task09_Spleen/imagesTr \</span>
+                                        <span class="block pl-4">--conf models deepedit</span>
+                                    </div>
+                                    <button class="copy-button absolute top-3 right-3 text-gray-400 hover:text-brand-primary transition-colors">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Resources Section -->
+                <div class="mt-16">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Additional Resources</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps" target="_blank" rel="noopener noreferrer" class="block h-full">
+                            <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 h-full flex flex-col items-center text-center">
+                                <div class="text-brand-primary mb-6">
+                                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-4">Sample Applications</h4>
+                                <p class="text-gray-600">Explore example annotation apps for radiology, pathology, and endoscopy</p>
+                            </div>
+                        </a>
+                        <a href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank" rel="noopener noreferrer" class="block h-full">
+                            <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 h-full flex flex-col items-center text-center">
+                                <div class="text-brand-primary mb-6">
+                                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2zM9 9h6v6H9V9z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-4">Documentation</h4>
+                                <p class="text-gray-600">Comprehensive guides and API documentation for MONAI Label</p>
+                            </div>
+                        </a>
+                        <a href="https://github.com/Project-MONAI/MONAILabel/discussions" target="_blank" rel="noopener noreferrer" class="block h-full">
+                            <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 h-full flex flex-col items-center text-center">
+                                <div class="text-brand-primary mb-6">
+                                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-4">Community Support</h4>
+                                <p class="text-gray-600">Get help and share experiences with the MONAI Label community</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
-    </section>
+        </section>
 
-    <section class="py-12 bg-brand-light">
-      <div class="container py-4 lg:py-16">
-        <div class='text-center w-full lg:w-1/2 mx-auto pb-8'>
-          <h2 class="text-brand-primary text-4xl font-bold ">Designed with Active Learning for Continuous Training</h2>
-          <p class="py-4 ">
-            To demonstrate the power of MONAI Label and the Continous Training Loop plus Active Learning, we'll walk through how you'll utilize these techniques as you begin to annotate your data.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 lg:px-24">
-          <div class="mx-auto">
-            <img src="assets/img/Active Learning Framework.png" />
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
+        <!-- Active Learning Section -->
+        <section class="py-24 bg-white">
+            <div class="container">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+                        Intelligent Active Learning
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        MONAI Label's intelligent active learning system dramatically reduces annotation time while maintaining high accuracy. Our advanced algorithms identify the most informative samples and continuously improve model performance.
+                    </p>
+                </div>
 
-    <section class="py-12 bg-neutral-purewhite">
-      <div class="container py-4 lg:py-16">
-        <div class='text-center w-full lg:w-1/2 mx-auto pb-8'>
-          <h2 class="text-brand-primary text-4xl font-bold ">Get Involved in the Community</h2>
-          <p class="py-4 ">
-            Below are ways that you can start using, contributing, and interacting with other members of the MONAI Label community!
-          </p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4">
-          <div class="text-center p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray">
-            <h3 class="text-lg font-bold pb-4 text-brand-primary">GitHub</h3>
-            <p class="pb-4">Start contributing to the MONAI Label repo by submiting a bug, requesting a feature, or starting a discussion today!</p>
-            <div class="flex flex-wrap justify-center"><a class="brand-btn" href="https://github.com/Project-MONAI/MONAILabel/blob/main/CONTRIBUTING.md" target="_blank"> Contribute</a></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
+                    <div>
+                        <img src="assets/img/Active Learning Framework.png" alt="Active Learning Framework Diagram" class="w-full rounded-lg mb-8">
+                        
+                        <div class="bg-brand-dark/10 p-8 rounded-lg">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-12">
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-brand-primary mb-3">50-80%</div>
+                                    <p class="text-gray-600">Faster annotation time</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-brand-primary mb-3">2x</div>
+                                    <p class="text-gray-600">Faster model convergence</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-brand-primary mb-3">90%</div>
+                                    <p class="text-gray-600">Accuracy with fewer labels</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-          </div>
-          <div class="text-center p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray">
-            <h3 class="text-lg font-bold pb-4 text-brand-primary">Sample Applications</h3>
-            <p class="pb-4">We have sample applications for various domains to help you quickly get started. You can also use these sample applications as the basis for your own MONAI Label Applications.</p>
-            <div class="flex flex-wrap justify-center"><a class="brand-btn" href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps" target="_blank"> Get Started</a></div>
-          </div>
-          <div class="text-center p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray">
-            <h3 class="text-lg font-bold pb-4 text-brand-primary">Slack</h3>
-            <p class="pb-4">Having trouble? Trying to find out where to contribute? Wnat to share your cool project? Join our MONAI Slack and chat with the community.</p>
-            <div class="flex flex-wrap justify-center"><a class="brand-btn" href="https://forms.gle/QTxJq3hFictp31UM9" target="_blank"> Socialize</a></div>
-          </div>
-          <div class="text-center p-6 shadow-lg rounded-sm border-2 border-neutral-lightgray">
-            <h3 class="text-lg font-bold pb-4 text-brand-primary">Documentation</h3>
-            <p class="pb-4">Ready to get started using MONAI Core? You can find all of our documentation to help get you started or answer any of your questions!</p>
-            <div class="flex flex-wrap justify-center"><a class="brand-btn" href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank"> Deep Dive</a></div>
-          </div>
-        </div>
-      </div>
-    </section>
+                    <div class="space-y-6">
+                        <div class="bg-white p-8 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-brand-primary/10 text-brand-primary">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3">Smart Sample Selection</h3>
+                                    <ul class="space-y-2 text-gray-600">
+                                        <li class="flex items-start gap-3">
+                                            <span class="w-6 h-6 rounded-sm flex items-center justify-center flex-shrink-0">
+                                                <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </span>
+                                            <span>Uncertainty sampling identifies challenging cases</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="w-6 h-6 rounded-sm flex items-center justify-center flex-shrink-0">
+                                                <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </span>
+                                            <span>Diversity metrics ensure varied training data</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="w-6 h-6 rounded-sm flex items-center justify-center flex-shrink-0">
+                                                <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </span>
+                                            <span>Model ensemble disagreement detection</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-    <!-- Footer Section Start -->
-    <footer id="footer" class="bg-neutral-lightgray py-2 border-t border-neutral-light_gray">
-      <div class="container">
-        <div class="flex flex-wrap items-center justify-between">
-          <div class="w-auto">
-            <div class="mx-3">
-              <div class="footer-logo">
-                <a href="index.html"><img src="assets/img/MONAI-logo_color.png" alt=""></a>
-              </div>
+                        <div class="bg-white p-8 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-brand-primary/10 text-brand-primary">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3">Continuous Model Improvement</h3>
+                                    <ul class="space-y-2 text-gray-600">
+                                        <li class="flex items-start gap-3">
+                                            <span class="w-6 h-6 rounded-sm flex items-center justify-center flex-shrink-0">
+                                                <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </span>
+                                            <span>Real-time model updates during annotation</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="w-6 h-6 rounded-sm flex items-center justify-center flex-shrink-0">
+                                                <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </span>
+                                            <span>Transfer learning from pre-trained models</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="w-6 h-6 rounded-sm flex items-center justify-center flex-shrink-0">
+                                                <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </span>
+                                                <span>Support for UNet, UNETR, and SwinUNETR</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-8 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-brand-primary/10 text-brand-primary">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3">Quality Assurance</h3>
+                                    <ul class="space-y-2 text-gray-600">
+                                        <li class="flex items-start gap-3">
+                                            <span class="w-6 h-6 rounded-sm flex items-center justify-center flex-shrink-0">
+                                                <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </span>
+                                            <span>Real-time validation metrics</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="w-6 h-6 rounded-sm flex items-center justify-center flex-shrink-0">
+                                                <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </span>
+                                            <span>Uncertainty estimation for predictions</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="w-6 h-6 rounded-sm flex items-center justify-center flex-shrink-0">
+                                                <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </span>
+                                            <span>Automated annotation quality checks</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="hidden lg:block w-auto">
-            <div class="mx-3 text-black">
-              <ul class="flex justify-between">
-                <li class="px-4">
-                  <a href="about.html" class="footer-links">About Us</a>
-                </li>
-                <li class="px-4">
-                  <a href="started.html" class="footer-links">Get Started</a>
-                </li>
-                <li class="px-4">
-                  <a href="community.html" class="footer-links">Community</a>
-                </li>
-                <li class="px-4">
-                  <a href="https://medium.com/@monai" class="footer-links">Blog</a>
-                </li>
-                <li class="px-4">
-                  <a href="docs.html" class="footer-links">Docs</a>
-                </li>
-                <li class="px-4">
-                  <a href="https://github.com/Project-MONAI" class="footer-links">GitHub</a>
-                </li>
-              </ul>
+        </section>
+
+        <!-- Resources & Training Section -->
+        <section class="py-24 bg-brand-dark/15">
+            <div class="container">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+                        Resources & Training
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        Get started with MONAI Label through our comprehensive learning resources and training materials.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <!-- Video Tutorials -->
+                    <div class="space-y-8">
+                        <div class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm">
+                            <h3 class="text-xl font-bold text-gray-800 mb-6">Video Tutorials</h3>
+                            <div class="space-y-4">
+                                <a href="https://www.youtube.com/playlist?list=PLtoSVSQ2XzyD4lc-lAacFBzOdv5Ou-9IA" target="_blank" class="block p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800 group-hover:text-brand-primary">MONAI Label Deep Dive Series</h4>
+                                            <p class="text-sm text-gray-600 mt-1">Comprehensive tutorials covering all aspects of MONAI Label</p>
+                                        </div>
+                                        <svg class="w-4 h-4 text-gray-400 group-hover:text-brand-primary transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                </a>
+
+                                <a href="https://www.youtube.com/watch?v=-HAryYAO5J4" target="_blank" class="block p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800 group-hover:text-brand-primary">MONAI Bootcamp</h4>
+                                            <p class="text-sm text-gray-600 mt-1">Overview and hands-on training from our latest bootcamp</p>
+                                        </div>
+                                        <svg class="w-4 h-4 text-gray-400 group-hover:text-brand-primary transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Documentation & Guides -->
+                    <div class="space-y-8">
+                        <div class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm">
+                            <h3 class="text-xl font-bold text-gray-800 mb-6">Documentation & Guides</h3>
+                            <div class="space-y-4">
+                                <a href="https://docs.monai.io/projects/label/en/latest/quickstart.html" target="_blank" class="block p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800 group-hover:text-brand-primary">Quickstart Guide</h4>
+                                            <p class="text-sm text-gray-600 mt-1">Get up and running with MONAI Label in minutes</p>
+                                        </div>
+                                        <svg class="w-4 h-4 text-gray-400 group-hover:text-brand-primary transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                </a>
+
+                                <a href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank" class="block p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800 group-hover:text-brand-primary">API Documentation</h4>
+                                            <p class="text-sm text-gray-600 mt-1">Detailed technical documentation and API references</p>
+                                        </div>
+                                        <svg class="w-4 h-4 text-gray-400 group-hover:text-brand-primary transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                </a>
+
+                                <a href="https://github.com/Project-MONAI/MONAILabel/tree/main/sample-apps" target="_blank" class="block p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800 group-hover:text-brand-primary">Sample Applications</h4>
+                                            <p class="text-sm text-gray-600 mt-1">Example applications and best practices</p>
+                                        </div>
+                                        <svg class="w-4 h-4 text-gray-400 group-hover:text-brand-primary transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="w-auto">
-            <div class="mx-3">
-              <ul class="social-icons flex justify-end">
-                <li class="mx-2">
-                  <a href="https://twitter.com/ProjectMONAI">
-                    <i>
-                <img src="assets/img/twitter_icon_square.png"/>
-              </i>
-                  </a>
-                </li>
-                <li class="mx-2">
-                  <a href="https://medium.com/@monai">
-                    <i>
-                <img src="assets/img/medium_icon_square.png"/>
-              </i>
-                  </a>
-                </li>
-                <li class="mx-2">
-                  <a href="https://www.youtube.com/c/Project-MONAI">
-                    <i>
-                <img src="assets/img/youtube_icon_square.png"/>
-              </i>
-                  </a>
-                </li>
-              </ul>
+        </section>
+
+        <!-- Citation Section -->
+        <section class="py-24 bg-white">
+            <div class="container">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+                        How to Cite MONAI Label
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        If you use MONAI Label in your research, please cite our paper:
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white p-8 border border-gray-200 rounded-lg shadow-sm">
+                        <div class="relative">
+                            <pre class="bg-gray-50 rounded-lg p-4 font-mono text-sm text-gray-700 whitespace-pre-wrap">@article{monailabel2024,
+    title={MONAI Label: A framework for AI-assisted Interactive Labeling of 3D Medical Images},
+    author={Diaz-Pinto, Andres and Alle, Sachidanand and Nath, Vishwesh and Tang, Yucheng and Ihsani, Alvin and Asad, Muhammad and P{\'e}rez-Garc{\'i}a, Fernando and Mehta, Pritesh and Li, Wenqi and Flores, Mona and Roth, Holger R. and Vercauteren, Tom and Xu, Daguang and Dogra, Prerna and Ourselin, Sebastien and Feng, Andrew and Cardoso, M. Jorge},
+    journal={Medical Image Analysis},
+    year={2024},
+    doi={10.1016/j.media.2024.103207}
+}</pre>
+                            <button class="copy-button absolute top-3 right-3 text-gray-400 hover:text-brand-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4 mt-6">
+                            <a href="https://doi.org/10.1016/j.media.2024.103207" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                DOI
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Footer Section End -->
+        </section>        
 
-    <!-- Go to Top Link -->
-    <a href="#" class="back-to-top w-10 h-10 fixed bottom-0 right-0 mb-5 mr-5 flex items-center justify-center rounded-full border border-solid border-brand-dark text-white text-lg z-20">
-      <i class="transform -rotate-90">
-        <img src="assets/img/ic_arrow_right.png"/>
-      </i>
-    </a>
+        <!-- Community Section -->
+        <section class="py-24 bg-brand-dark/15">
+            <div class="container">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+                        Get Involved in the Community
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        Join our growing community of researchers, developers, and healthcare professionals. Get help, share your work, and contribute to advancing medical image annotation. Consider joining our Human-AI Interaction Working Group to help standardize and improve AI-assisted annotation workflows.
+                    </p>
+                </div>
 
-    <!-- All js Here -->
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/particles.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  </body>
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                    <!-- Documentation Card -->
+                    <div class="bg-white p-6 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 rounded-lg flex flex-col">
+                        <div class="text-brand-primary mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2zM9 9h6v6H9V9z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Documentation</h3>
+                            <p class="text-gray-600">Access comprehensive documentation covering everything from basic concepts to advanced annotation strategies.</p>
+                        </div>
+                        <div class="mt-6">
+                            <a href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                Deep Dive
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
 
+                    <!-- Working Group Card -->
+                    <div class="bg-white p-6 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 rounded-lg flex flex-col">
+                        <div class="text-brand-primary mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Human-AI Interaction Working Group</h3>
+                            <p class="text-gray-600">Join our working group focused on standardizing and supporting Human-AI interaction cycles through well-defined interfaces for AI-assisted annotation.</p>
+                        </div>
+                        <div class="mt-6">
+                            <a href="wg_human_ai_interaction.html" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                Join the Group
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- GitHub Card -->
+                    <div class="bg-white p-6 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 rounded-lg flex flex-col">
+                        <div class="text-brand-primary mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">GitHub Repository</h3>
+                            <p class="text-gray-600">Explore the source code, contribute to development, and access sample applications for radiology, pathology, and endoscopy to learn from real-world annotation scenarios.</p>
+                        </div>
+                        <div class="mt-6 flex flex-wrap gap-3">
+                            <a href="https://github.com/Project-MONAI/MONAILabel" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                View Code
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slack Community Card -->
+                    <div class="bg-white p-6 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 rounded-lg flex flex-col">
+                        <div class="text-brand-primary mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Join the Discussion</h3>
+                            <p class="text-gray-600">Connect with the MONAI community on Slack. Get help, share ideas, and collaborate with other developers.</p>
+                        </div>
+                        <div class="mt-6">
+                            <a href="https://join.slack.com/t/projectmonai/shared_invite/zt-2t7z8e9tu-xE5SPw0TC8LUxyPVpl2WVQ" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                                Join Slack
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- #include file="components/footer.html" -->
+    <!-- #include file="components/scripts.html" -->
+</body>
 </html>

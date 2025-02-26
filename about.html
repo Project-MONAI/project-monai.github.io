@@ -1,120 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth;">
+<html lang="en" class="scroll-smooth">
 
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+<!-- #include file="components/head.html" -->
+<script>
+  document.head.innerHTML = document.head.innerHTML
+    .replace('${title}', 'MONAI - About Us')
+    .replace('${description}', 'Project MONAI was originally started by NVIDIA & King\'s College London to establish an inclusive community of AI researchers for the development and exchange of best practices for AI in healthcare imaging.')
+    .replace('${canonical_url}', 'https://monai.io/about.html');
+</script>
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-QVGBCPFPJ6');
-    </script>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Project MONAI was originally started by NVIDIA & King’s College London to establish an inclusive community of AI researchers for the development and exchange of best practices for AI in healthcare imaging across academia and enterprise researchers.">
-    <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+<body class="flex flex-col min-h-screen">
+  <!-- #include file="components/header.html" -->
 
-    <title>MONAI - About Us</title>
-
-    <!-- Animate -->
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
-    <!-- Tailwind css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/tailwind.css">
-  </head>
-
-  <body>
-
-      <!-- Header Area wrapper Starts -->
-      <header id="header-wrap" class="relative border-b border-neutral-neutral_gray2">
-        <!-- Navbar Start -->
-        <div class="navigation top-0 left-0 w-full z-30 duration-300">
-          <div class="container">
-            <nav class="navbar navbar-expand-lg flex justify-end items-center justify-between relative duration-300" x-data="{ one: false, two: false, three: false }">
-              <a class="navbar-brand" href="index.html">
-                <img class="py-2" src="assets/img/MONAI-logo_color.png" alt="Logo">
-              </a>
-              <button class="navbar-toggler focus:outline-none block lg:hidden" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"
-              >
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-              </svg>
-              </button>
-  
-              <div class="collapse navbar-collapse hidden lg:block duration-300 shadow absolute top-100 left-0 mt-full bg-white z-20 px-5 w-full lg:static lg:bg-transparent lg:shadow-none">
-                <ul class="navbar-nav mr-auto justify-end items-center lg:flex">
-                  <li class="nav-item relative">
-                    <a class="page-scroll" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item relative">
-                    <button class="page-scroll" @click="one = true">Frameworks <span class="chevron"></span></button>
-                    <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="one" @click.away="one = false"
-                      x-cloak>
-                      <div class="flex flex-col space-y-1 font-medium text-gray-800">
-                        <a href="label.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Label </a>
-                        <a href="core.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core</a>
-                        <a href="deploy.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy  </a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="nav-item relative">
-                    <button class="page-scroll" @click="two = true">Docs <span class="chevron"></span></button>
-                    <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="two" @click.away="two = false"
-                      x-cloak>
-                      <div class="flex flex-col space-y-1 font-medium text-gray-800">
-                        <a href="https://docs.monai.io/projects/label/en/latest/index.html" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Label Docs</a>
-                        <a href="https://docs.monai.io/en/stable/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Core Docs</a>
-                        <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> MONAI Deploy Docs </a>
-                      </div>
-                    </div>
-                  </li>          
-                  <li class="nav-item relative">
-                    <button class="page-scroll" @click="three = true">Resources <span class="chevron"></span></button>
-                    <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="three" @click.away="three = false"
-                      x-cloak>
-                      <div class="flex flex-col space-y-1 font-medium text-gray-800">
-                        <a href="about.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary active">About Us</a>
-                        <a href="started.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Getting Started</a>
-                        <a href="community.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Community</a>
-                        <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Blog</a>
-                      </div>
-                    </div>
-                  </li>                                
-                  <li class="nav-item relative">
-                    <a class="page-scroll" href="model-zoo.html">Model Zoo</a>
-                  </li>
-                  <li class="nav-item relative">
-                    <a class="page-scroll" target="_blank" href="https://github.com/Project-MONAI">GitHub</a>
-                  </li>                
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-        <!-- Navbar End -->
-  
-      </header>
-      <!-- Header Area wrapper End -->
-
-
-    <!-- Contributors Section Start -->
-    <section id="contributors" class="py-16">
+  <main class="flex-grow pt-20">
+    <!-- About Section -->
+    <section id="about" class="py-24">
       <div class="container">
         <div class="flex flex-wrap items-center">
           <div class="w-full lg:w-1/2">
             <h2 class="mb-6 section-heading">About MONAI</h2>
             <div class="w-full sm:3/5">
-              <p class="py-2">Project MONAI was originally started by NVIDIA and King’s College London to establish an inclusive community of AI researchers for the development and exchange of best practices for AI in healthcare imaging across academia and enterprise
-                researchers.
+              <p class="py-2">
+                Project MONAI is a collaborative initiative that brings together leading researchers, clinicians, and industry experts 
+                to advance medical imaging AI. Originally started by NVIDIA and King's College London, MONAI has grown into a vibrant 
+                community focused on developing and sharing best practices, tools, and frameworks for healthcare imaging across academia 
+                and enterprise.
               </p>
-              <p class="py-2">MONAI Core is the flagship framework created by Project MONAI and it wouldn’t have been possible to accelerate this development without the development of existing toolkits such as NVIDIA Clara Train, NiftyNet, DLTK, and DeepNeuro.</p>
+              <p class="py-2">
+                Our mission is to accelerate the adoption of AI in healthcare imaging by providing robust, validated tools and fostering 
+                collaboration between researchers, clinicians, and industry partners. Building upon the foundations laid by toolkits like 
+                NVIDIA Clara Train, NiftyNet, DLTK, and DeepNeuro, MONAI Core has emerged as our flagship framework, embodying the 
+                community's collective expertise and innovation.
+              </p>
             </div>
           </div>
           <div class="flex justify-center w-full lg:w-1/2">
@@ -122,616 +39,311 @@
           </div>
         </div>
       </div>
-      </div>
     </section>
-    <!-- Contributors Section End -->
 
-    <!-- Contributors Section Start -->
-    <section id="contributors" class="py-16 bg-neutral-lightgray">
+    <!-- Advisory Board Section -->
+    <section id="advisory-board" class="py-12 bg-brand-dark/15">
       <div class="container">
-        <h2 class="section-heading">Advisory Board</h2>
-        <p class="w-3/4">
-          Helping guide MONAI's vision and mission, an Advisory Board and nine working groups, have been created and are led by thought leaders throughout the medical research community. These focused working groups allow leaders in those fields to concentrate
-          their efforts and bring the most impactful contributions to the community. These working groups are open for anyone to attend and contribute.</p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-12 gap-y-6 justify-items-center pt-16">
-          <div class="col-span-1 w-full">
-            <div class="aspect-h-1 aspect-w-1">
-              <img class="object-cover shadow-lg rounded-lg" src="assets/img/SA.png">
-            </div>
-            <p class="font-bold my-2">Stephen Aylward</p>
-            <p class="my-2">Chair of Advisory Board</p>
-            <a href="https://www.kitware.com/stephen-aylward/" target="_blank">
-              <p class="my-2 external-link">Profile</p>
-            </a>
+        <h2 class="section-heading text-3xl md:text-4xl font-bold mb-4">Advisory Board</h2>
+        <div class="max-w-4xl mb-12">
+          <p class="text-gray-700 mb-4">
+            The MONAI Advisory Board brings together distinguished leaders from academia, healthcare, and industry who guide our 
+            strategic direction and ensure alignment with the needs of the medical imaging community. Our board members contribute 
+            their diverse expertise to shape MONAI's development and impact in healthcare AI.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Board members play a crucial role in maintaining MONAI's technical excellence, clinical relevance, and ethical standards. 
+            They provide strategic oversight across various aspects including technical development, clinical validation, educational 
+            initiatives, and community engagement.
+          </p>
+          <p class="text-gray-700 mb-6">
+            Through regular collaboration with working groups and the broader community, the Advisory Board ensures that MONAI 
+            continues to meet the evolving needs of researchers, clinicians, and industry partners while advancing the field of 
+            medical imaging AI.
+          </p>
+        </div>
+
+        <!-- Active Members -->
+        <div id="active-members" class="bg-white rounded-xl shadow-md mb-12 scroll-mt-24">
+          <div class="border-b border-gray-200 bg-brand-dark">
+            <h3 class="text-2xl font-bold text-white p-6 text-center">Advisory Board Members</h3>
           </div>
-          <div class="col-span-1 w-full">
-            <div class="aspect-h-1 aspect-w-1">
-              <img class="object-cover shadow-lg rounded-lg" src="assets/img/SO.png">
+          <div class="p-6 md:p-8">
+            <div class="grid gap-6 md:gap-8">
+              <!-- All Other Members -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Member Card Template -->
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/LeeAaron.png" alt="Aaron Lee" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Aaron Lee</h5>
+                  <p class="text-sm text-brand-primary">Ophthalmology Working Group Chair</p>
+                </div>
+                
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/AnnikaReinke.jpg" alt="Annika Reinke" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Annika Reinke</h5>
+                  <p class="text-sm font-medium text-brand-primary leading-snug">Benchmark Working Group Chair</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/BenMurray.png" alt="Ben Murray" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Ben Murray</h5>
+                  <p class="text-sm text-brand-primary">Thought Leader</p>
+                </div>
+
+                <!-- Repeat for other members with same structure -->
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/BruceHashemian.jpeg" alt="Bruce Hashemian" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Bruce Hashemian</h5>
+                  <p class="text-sm text-brand-primary">AI-Human Interaction Chair & Thought Leader</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/CaroleSudre.jpg" alt="Carole Sudre" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Carole Sudre</h5>
+                  <p class="text-sm text-brand-primary">Benchmark Working Group Chair</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/DavidBericat.jpg" alt="David Bericat" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">David Bericat</h5>
+                  <p class="text-sm text-brand-primary">Deploy Working Group Chair</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/EricKerfoot.png" alt="Eric Kerfoot" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Eric Kerfoot</h5>
+                  <p class="text-sm text-brand-primary">Core Developers & Education Chair</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/HarisShuaib.jpg" alt="Haris Shuaib" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Haris Shuaib</h5>
+                  <p class="text-sm text-brand-primary">Deploy Working Group Chair</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/HolgerRoth.jpg" alt="Holger Roth" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Holger Roth</h5>
+                  <p class="text-sm text-brand-primary">Federated Learning Chair</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/JayashreeKalpathyCramer.jpg" alt="Jayashree Kalpathy-Cramer" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Jayashree Kalpathy-Cramer</h5>
+                  <p class="text-sm text-brand-primary">Ophthalmology Working Group Chair</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/JorgeCardoso.jpg" alt="Jorge Cardoso" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Jorge Cardoso</h5>
+                  <p class="text-sm text-brand-primary">Arbitration Board Chair & Thought Leader</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/JustinKirby.png" alt="Justin Kirby" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Justin Kirby</h5>
+                  <p class="text-sm text-brand-primary">Thought Leader</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/LenaMaierHein.jpg" alt="Lena Maier-Hein" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Lena Maier-Hein</h5>
+                  <p class="text-sm text-brand-primary">Thought Leader</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/MahdiAzizian.jpg" alt="Mahdi Azizian" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Mahdi Azizian</h5>
+                  <p class="text-sm text-brand-primary">Arbitration Board Chair & Thought Leader</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/MarcModat.jpg" alt="Marc Modat" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Marc Modat</h5>
+                  <p class="text-sm text-brand-primary">Education Working Group Chair</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/MichaelBaumgartner.jpg" alt="Michael Baumgartner" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Michael Baumgartner</h5>
+                  <p class="text-sm text-brand-primary">Thought Leader</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/MichaelZephyr.jpg" alt="Michael Zephyr" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Michael Zephyr</h5>
+                  <p class="text-sm text-brand-primary">Outreach Working Group Chair</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/NicMa.jpg" alt="Nic Ma" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Nic Ma</h5>
+                  <p class="text-sm text-brand-primary">Core Developers Chair</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/PrernaDogra.png" alt="Prerna Dogra" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Prerna Dogra</h5>
+                  <p class="text-sm text-brand-primary">Thought Leader</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/RalfFloca.png" alt="Ralf Floca" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Ralf Floca</h5>
+                  <p class="text-sm text-brand-primary">AI-Human Interaction Chair & Arbitration Board</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/SaadNadeem.png" alt="Saad Nadeem" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Saad Nadeem</h5>
+                  <p class="text-sm text-brand-primary">AI-Human Interaction Chair</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/SaiPraneethKarimireddy.jpg" alt="Sai Praneeth Karmireddy" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Sai Praneeth Karmireddy</h5>
+                  <p class="text-sm text-brand-primary">Federated Learning Chair</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/SebastienOurselin.png" alt="Sebastien Ourselin" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Sebastien Ourselin</h5>
+                  <p class="text-sm text-brand-primary">Thought Leader</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/BarbarosSelnurErdal.jpg" alt="Barbados Selnur Erdal" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Barbaros Selnur Erdal</h5>
+                  <p class="text-sm text-brand-primary">Deploy Working Group Chair</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/StephenAylward.png" alt="Stephen Aylward" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Stephen Aylward</h5>
+                  <p class="text-sm text-brand-primary">Chair of the Advisory Board</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-24 h-24 mb-2">
+                    <img src="assets/img/YunLiu.jpeg" alt="Yun Liu" class="w-full h-full rounded-full object-cover shadow-md">
+                  </div>
+                  <h5 class="font-medium text-gray-800">Yun Liu</h5>
+                  <p class="text-sm text-brand-primary">Core Developers Chair</p>
+                </div>
+              </div>
             </div>
-            <p class="font-bold my-2">Sebastien Ourselin</p>
-            <a href="https://www.kcl.ac.uk/people/sebastien-ourselin" target="_blank">
-              <p class="my-2 external-link">Profile</p>
-            </a>
-          </div>
-          <div class="col-span-1 w-full">
-            <div class="aspect-h-1 aspect-w-1">
-              <img class="object-cover shadow-lg rounded-lg" src="assets/img/KMH.jpg">
-            </div>
-            <p class="font-bold my-2">Klaus Maier-Hein</p>
-            <a href="https://www.dkfz.de/en/mic/team/people/Klaus_Maier-Hein.html" target="_blank">
-              <p class="my-2 external-link">Profile</p>
-            </a>
-          </div>
-          <div class="col-span-1 w-full">
-            <div class="aspect-h-1 aspect-w-1">
-              <img class="object-cover shadow-lg rounded-lg" src="assets/img/JK.jpg">
-            </div>
-            <p class="font-bold my-2">Jayashree Kalpathy-Cramer</p>
-            <a href="https://www.nmr.mgh.harvard.edu/user/8165" target="_blank">
-              <p class="my-2 external-link">Profile</p>
-            </a>
-          </div>
-          <div class="col-span-1 w-full">
-            <div class="aspect-h-1 aspect-w-1">
-              <img class="object-cover shadow-lg rounded-lg" src="assets/img/JC.png">
-            </div>
-            <p class="font-bold my-2">Jorge Cardoso</p>
-            <a href="https://www.kcl.ac.uk/people/jorge-cardoso" target="_blank">
-              <p class="my-2 external-link">Profile</p>
-            </a>
-          </div>
-          <div class="col-span-1 w-full">
-            <div class="aspect-h-1 aspect-w-1">
-              <img class="object-cover shadow-lg rounded-lg" src="assets/img/DR.png">
-            </div>
-            <p class="font-bold my-2">Daniel Rubin</p>
-            <a href="https://profiles.stanford.edu/daniel-rubin" target="_blank">
-              <p class="my-2 external-link">Profile</p>
-            </a>
-          </div>
-          <div class="col-span-1 w-full">
-            <div class="aspect-h-1 aspect-w-1">
-              <img class="object-cover shadow-lg rounded-lg" src="assets/img/KZ.png">
-            </div>
-            <p class="font-bold my-2">Kevin Zhou</p>
-            <a href="https://www.linkedin.com/in/s-kevin-zhou-231a094b" target="_blank">
-              <p class="my-2 external-link">Profile</p>
-            </a>
-          </div>
-          <div class="col-span-1 w-full">
-            <div class="aspect-h-1 aspect-w-1">
-              <img class="object-cover shadow-lg rounded-lg" src="assets/img/NN.png">
-            </div>
-            <p class="font-bold my-2">Nassir Navab</p>
-            <a href="https://www.cs.jhu.edu/faculty/nassir-navab/" target="_blank">
-              <p class="my-2 external-link">Profile</p>
-            </a>
-          </div>
-          <div class="col-span-1 w-full">
-            <div class="aspect-h-1 aspect-w-1">
-              <img class="object-cover shadow-lg rounded-lg" src="assets/img/AF.jpeg">
-            </div>
-            <p class="font-bold my-2">Andrew Feng</p>
-            <a href="https://www.linkedin.com/in/afeng/" target="_blank">
-              <p class="my-2 external-link">Profile</p>
-            </a>
-          </div>
-          <div class="col-span-1 w-full">
-            <div class="aspect-h-1 aspect-w-1">
-              <img class="object-cover shadow-lg rounded-lg" src="assets/img/NasirRajpoot.png">
-            </div>
-            <p class="font-bold my-2">Nasir Rajpoot</p>
-            <a href="https://warwick.ac.uk/fac/sci/dcs/people/nasir_rajpoot/" target="_blank">
-              <p class="my-2 external-link">Profile</p>
-            </a>
-          </div>
-          <div class="col-span-1 w-full">
-            <div class="aspect-h-1 aspect-w-1">
-              <img class="object-cover shadow-lg rounded-lg" src="assets/img/JustinKirby.png">
-            </div>
-            <p class="font-bold my-2">Justin Kirby</p>
-            <a href="https://www.linkedin.com/in/justinkirby82/" target="_blank">
-              <p class="my-2 external-link">Profile</p>
-            </a>
-          </div>
-          <div class="col-span-1 w-full">
-            <div class="aspect-h-1 aspect-w-1">
-              <img class="object-cover shadow-lg rounded-lg" src="assets/img/KeyvanFarahani.jpg">
-            </div>
-            <p class="font-bold my-2">Keyvan Farahani</p>
-            <a href="https://datascience.cancer.gov/about/staff-directory/keyvan-farahani" target="_blank">
-              <p class="my-2 external-link">Profile</p>
-            </a>
-          </div>
-          <div class="col-span-1 w-full">
-            <div class="aspect-h-1 aspect-w-1">
-              <img class="object-cover shadow-lg rounded-lg" src="assets/img/SN.png">
-            </div>
-            <p class="font-bold my-2">Saad Nadeem</p>
-            <a href="https://nadeemlab.org/" target="_blank">
-              <p class="my-2 external-link">Profile</p>
-            </a>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- Contributors Section End -->
 
-    <!-- Step-wise break Section Start -->
-    <section class='h-20 grid grid-cols-2'>
-      <div class='h-full bg-neutral-lightgray'></div>
-      <div class='h-full'></div>
-    </section>
-    <!-- Step-wise break Section End -->
-
-
-    <section>
-      <div class="container py-16">
-        <h2 class="section-heading py-8">Working Groups</h2>
-        <div class="grid grid-cols-5">
-          <div class="col-span-5 md:col-span-3 row-start-1">
-            <h2 class="font-bold text-2xl">Imaging I/O</h2>
-            <p class="py-4 md:pr-20">
-              The goal of this working group is to define how data is read into and written out from memory in MONAI. Such input and output requires consideration of (a) the research and application workflows in which MONAI will operate, (b) the importance of effectively
-              utilizing all available data for deep learning development and evaluation, and (c) the critical significance of understanding and preserving the physical space that is represented by a medical image so that its clinical validity is preserved.
-              The working group has defined three broad sets of requirements for input and output for MONAI: research I/O requirements, reproducible I/O requirements, and clinical I/O requirements.
-            </p>
+        <!-- Emeritus Members -->
+        <div id="emeritus" class="bg-white rounded-xl shadow-md scroll-mt-24">
+          <div class="border-b border-gray-200 bg-brand-dark">
+            <h3 class="text-2xl font-bold text-white p-6 text-center">Emeritus Founding Members</h3>
           </div>
-          <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
-            <p class="font-bold">Group Lead</p>
-            <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/SA.png" />
+          <div class="p-6 md:p-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <!-- Emeritus Member Card Template -->
+              <div class="flex flex-col items-center text-center">
+                <div class="w-24 h-24 mb-2">
+                  <img src="assets/img/DanielRubin.png" alt="Daniel Rubin" class="w-full h-full rounded-full object-cover shadow-md transition-transform duration-300 hover:scale-105">
                 </div>
-                <div>
-                  <a href="https://www.kitware.com/stephen-aylward/" target="_blank">
-                    <p class="external-link mt-4"> Stephen Alyward </p>
-                  </a>
-                </div>
+                <h5 class="font-medium text-gray-800">Daniel Rubin</h5>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="bg-neutral-lightgray">
-      <div class="container py-16">
-        <div class="grid grid-cols-5">
-
-          <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
-            <p class="font-bold">Group Lead</p>
-            <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/BG.png" />
+              <div class="flex flex-col items-center text-center">
+                <div class="w-24 h-24 mb-2">
+                  <img src="assets/img/KeyvanFarahani.jpg" alt="Keyvan Farahani" class="w-full h-full rounded-full object-cover shadow-md">
                 </div>
-                <div>
-                  <a href="https://www.linkedin.com/in/integratorbrad" target="_blank">
-                    <p class="external-link mt-4"> Brad Genereaux </p>
-                  </a>
-                </div>
+                <h5 class="font-medium text-gray-800">Keyvan Farahani</h5>
               </div>
-            </div>
-          </div>
-          <div class="col-span-5 md:col-span-3 row-start-1 md:pl-8">
-            <h2 class="font-bold w-1/2 text-2xl">Data: Images, Biomarkers, Demographics, Outputs, and Outcomes</h2>
-            <p class="py-4">
-              A key part of Project MONAI is the ingestion of data. This working group will focus on defining support for bioinformatics (e.g., images), biomarkers, and metadata (e.g., patient demographics, outcomes). Part of the focus explores the use of ontologies,
-              various representations of the data, and what is in-scope for MONAI and what is left to other projects to define. Some of the image representations, for example, include data relating to dimensionality, spacing, components/channels, data
-              orientation, and time (multiple studies/prior exams).
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section>
-      <div class="container py-16">
-        <div class="grid grid-cols-5">
-          <div class="col-span-5 md:col-span-3 row-start-1">
-            <h2 class="font-bold text-2xl">Transformations: Preprocessing, Augmentation, and Companion Algorithms</h2>
-            <p class="py-4 md:pr-20">
-              This working group covers the topics related to data preprocessing and augmentation modules for MONAI. In terms of functionality, these include patient-level transforms, such as simulating body habitus variations, aging; spatial geometric transforms,
-              intensity transforms and acquisition transforms such as simulating medical imaging modalities, artefacts. In terms of technical implementations, these include differentiability, multi-dimensional data representation, lazy evaluation, caching,
-              reproducibility, etc
-            </p>
-          </div>
-          <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
-            <p class="font-bold">Group Lead</p>
-            <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/JC.png" />
+              <div class="flex flex-col items-center text-center">
+                <div class="w-24 h-24 mb-2">
+                  <img src="assets/img/KlausMaierHein.jpg" alt="Klaus Maier-Hein" class="w-full h-full rounded-full object-cover shadow-md">
                 </div>
-                <div>
-                  <a href="https://www.kcl.ac.uk/people/jorge-cardoso" target="_blank">
-                    <p class="external-link mt-4"> Jorge Cardoso </p>
-                  </a>
-                </div>
+                <h5 class="font-medium text-gray-800">Klaus Maier-Hein</h5>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="bg-neutral-lightgray">
-      <div class="container py-16">
-        <div class="grid grid-cols-5">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-24 h-24 mb-2">
+                  <img src="assets/img/NassirNavab.png" alt="Nasir Navab" class="w-full h-full rounded-full object-cover shadow-md">
+                </div>
+                <h5 class="font-medium text-gray-800">Nasir Navab</h5>
+              </div>
 
-          <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
-            <p class="font-bold">Group Lead</p>
-            <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/JK.jpg" />
+              <div class="flex flex-col items-center text-center">
+                <div class="w-24 h-24 mb-2">
+                  <img src="assets/img/NasirRajpoot.png" alt="Nasir Rajpoot" class="w-full h-full rounded-full object-cover shadow-md">
                 </div>
-                <div>
-                  <a href="https://www.nmr.mgh.harvard.edu/user/8165" target="_blank">
-                    <p class="external-link mt-4"> Jayashree Kalpathy-Cramer</p>
-                  </a>
-                </div>
+                <h5 class="font-medium text-gray-800">Nasir Rajpoot</h5>
               </div>
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/DR.png" />
-                </div>
-                <div>
-                  <a href="https://profiles.stanford.edu/daniel-rubin" target="_blank">
-                    <p class="external-link mt-4"> Daniel Rubin </p>
-                  </a>
-                </div>
-              </div>
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/HolgerRoth.jpg" />
-                </div>
-                <div>
-                  <a href="https://research.nvidia.com/person/holger-roth" target="_blank">
-                    <p class="external-link mt-4"> Holger Roth </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-span-5 md:col-span-3 row-start-1 md:pl-8">
-            <h2 class="font-bold w-1/2 text-2xl">Federated Learning and Applications</h2>
-            <p class="py-4">
-              Federated learning is emerging as a promising approach for training AI models without requiring sites to share data. This is particularly important in medical use cases, since there are privacy and regulatory restrictions to sharing data. A number of
-              different methods are being developed for federated learning, and they are currently silo efforts with limited synergy. The goal of this effort is to unify the disparate methods of federated learning in a common MONAI framework. This will
-              be pursued through implemented federated learning use cases in MONAI as well as generation of best practices and documentation to enable the community to more broadly participate and implement common and interoperable approaches.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section>
-      <div class="container py-16">
-        <div class="grid grid-cols-5">
-          <div class="col-span-5 md:col-span-3 row-start-1">
-            <h2 class="font-bold text-2xl">Evaluation, Reproducibility and Benchmarking</h2>
-            <p class="py-4 md:pr-20">
-              Every year, hundreds of new algorithms are published in the field of biomedical image analysis. While validation of new methods has long been based on private data, publically available data sets and international competitions (‘challenges’) meanwhile
-              allow for benchmarking algorithms in a transparent and comparative manner. Recent research, however, has revealed several flaws related to common practice in validation. A core goal of this working group is, therefore, to provide the infrastructure
-              and tools for quality-controlled validation and benchmarking of medical image analysis methods. In collaboration with the international biomedical image analysis challenges (BIAS) initiative, open technical challenges and research questions
-              related to a variety of topics will be addressed, ranging from best practices to how to create incentives for sharing code and data to performance aspects and implementation efficiency.
-            </p>
-          </div>
-          <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
-            <p class="font-bold">Group Lead</p>
-            <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/LM.jpg" />
+              <div class="flex flex-col items-center text-center">
+                <div class="w-24 h-24 mb-2">
+                  <img src="assets/img/KevinZhou.png" alt="S. Kevin Zhou" class="w-full h-full rounded-full object-cover shadow-md">
                 </div>
-                <div>
-                  <a href="https://www.dkfz.de/en/cami/team/people/Lena_Maier-Hein.html" target="_blank">
-                    <p class="external-link mt-4"> Lena Maier-Hein </p>
-                  </a>
-                </div>
+                <h5 class="font-medium text-gray-800">S. Kevin Zhou</h5>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+  </main>
 
-    <section class="bg-neutral-lightgray">
-      <div class="container py-16">
-        <div class="grid grid-cols-5">
-          <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
-            <p class="font-bold">Group Lead</p>
-            <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/MB.jpg" />
-                </div>
-                <div>
-                  <a href="https://www.dkfz.de/en/mic/team/people/Michael_Baumgartner.html" target="_blank">
-                    <p class="external-link mt-4"> Michael Baumgartner </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-span-5 md:col-span-3 row-start-1 md:pl-8">
-            <h2 class="font-bold w-1/2 text-2xl">Research</h2>
-            <p class="py-4">
-              Establish MONAI as a catalyst for scientific progress and real life impact through the following actions:
-            </p>
-            <ul class="list-inside list-disc">
-              <li>Identify key challenges currently hampering scientific progress and real life impact.</li>
-              <li>Formalize abstract solutions and determine concepts for implementation in MONAI.</li>
-              <li>Communicate results in the form of recommendations, best practice guidelines or articles to the MONAI advisory board, fellow MONAI working groups, or the public</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container py-16">
-        <div class="grid grid-cols-5">
-          <div class="col-span-5 md:col-span-3 row-start-1">
-            <h2 class="font-bold text-2xl">Community Development, Outreach and Adoption</h2>
-            <p class="py-4 md:pr-20">
-              This working group focuses on outreach, to establish MONAI as a common software foundation that the Medical Imaging research and development community can build upon. This working group is charged with developing technical training and onboarding content,
-              including tutorials, technical blogs, bootcamps, hackathons to educate and engage with researchers and developers. Another area of focus for the working group is to define the infrastructure and processes needed to support and grow a transparent,
-              honest, and open community of MONAI contributors and adopters, including establishing best practices for giving appropriate recognition to those who are promoting and making significant contributions back to MONAI.
-            </p>
-          </div>
-          <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
-            <p class="font-bold">Group Lead</p>
-            <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/PD.png" />
-                </div>
-                <div>
-                  <a href="https://www.linkedin.com/in/prerna-dogra-2664a72a" target="_blank">
-                    <p class="external-link mt-4"> Prerna Dogra </p>
-                  </a>
-                </div>
-              </div>
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/MZ.jpg" />
-                </div>
-                <div>
-                  <a href="https://www.linkedin.com/in/michaeljzephyr/" target="_blank">
-                    <p class="external-link mt-4"> Michael Zephyr </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-neutral-lightgray">
-      <div class="container py-16">
-        <div class="grid grid-cols-5">
-
-          <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
-            <p class="font-bold">Group Lead</p>
-            <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/HarisShuaib.jpg" />
-                </div>
-                <div>
-                  <a href="https://www.linkedin.com/in/haris-shuaib-91519b55/" target="_blank">
-                    <p class="external-link mt-4"> Haris Shuaib </p>
-                  </a>
-                </div>
-              </div>
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/DavidBericat.jpg" />
-                </div>
-                <div>
-                  <a href="https://www.linkedin.com/in/davidbericat/" target="_blank">
-                    <p class="external-link mt-4"> David Bericat</p>
-                  </a>
-                </div>
-              </div>
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/SelnurErdal.jpg" />
-                </div>
-                <div>
-                  <a href="https://medicine.osu.edu/find-faculty/clinical/radiology/barbaros-selnur-erdal-phd" target="_blank">
-                    <p class="external-link mt-4"> Selnur Erdal</p>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-span-5 md:col-span-3 row-start-1 md:pl-8">
-            <h2 class="font-bold w-1/2 text-2xl">Deploy</h2>
-            <p class="py-4">
-              This working group aims to define how to close the existing gap from research and development to clinical production environments by bringing AI models into medical applications and clinical workflows with the end goal of helping improve patient care.
-              The focus will include defining the open high-level functional architecture and determining which components and standard APIs are required. By collaborating with the MONAI developers, the group will move from requirements to implemented
-              solutions.
-            </p>
-            <p class="py-4">
-              Following a phased approach, the deploy working group will concentrate on what the end-to-end experience should look like first. Some of these challenges include:
-            </p>
-            <ul class="list-inside list-disc">
-              <li>Packaging trained AI models into medical executable applications</li>
-              <li>Lightweight inference for local validation</li>
-              <li>Model orchestration, deployment, serving and inference across multiple compute nodes.</li>
-              <li>Consume multi-modal data pipelines, starting with medical imaging, DICOM-based first, and patient data coming from EHR next.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container py-16">
-        <div class="grid grid-cols-5">
-          <div class="col-span-5 md:col-span-3 row-start-1">
-            <h2 class="font-bold text-2xl">Digital Pathology</h2>
-            <p class="py-4 md:pr-20">
-              Digital pathology as an imaging modality is a relatively new field compared to radiology imaging. Digital pathology focuses on Whole-Slide Images (WSIs), which are digital scans of tissue slides at the microscopic resolution, often at 250nm per pixel.
-              WSIs are different from standard medical images due to their sheer size - a typical pathology image can be of the order of 150K x 100K pixels.
-            </p>
-            <p class="py-4 md:pr-20">Recently, there have been significant advances in applying image analysis and machine learning to pathology images, also known as computational pathology. Despite those advances, there exists no standard pipeline for the preprocessing, analysis,
-              and visualization of pathology images. This lack of standardization leads to a high barrier to entry and a lack of reproducibility for existing methods. This working group will aim to address those challenges around standardization and reproducibility.
-            </p>
-          </div>
-          <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
-            <p class="font-bold">Group Lead</p>
-            <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/NasirRajpoot.png" />
-                </div>
-                <div>
-                  <a href="https://warwick.ac.uk/fac/sci/dcs/people/nasir_rajpoot/" target="_blank">
-                    <p class="external-link mt-4"> Nasir Rajpoot </p>
-                  </a>
-                </div>
-              </div>
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/LC.jpg" />
-                </div>
-                <div>
-                  <a href="https://www.feinberg.northwestern.edu/faculty-profiles/az/profile.html?xid=44206" target="_blank">
-                    <p class="external-link mt-4"> Lee A Cooper </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-neutral-lightgray">
-      <div class="container py-16">
-        <div class="grid grid-cols-5">
-
-          <div class="w-full col-span-5 md:col-span-2 row-start-2 md:row-start-1 justify-self-start md:justify-self-center mt-8">
-            <p class="font-bold">Group Lead</p>
-            <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/NH.png" />
-                </div>
-                <div>
-                  <a href="https://ncigt.org/people/nobuhiko-hata" target="_blank">
-                    <p class="external-link mt-4"> Nobi Hata </p>
-                  </a>
-                </div>
-              </div>
-              <div>
-                <div class="aspect-h-1 aspect-w-1">
-                  <img class="object-cover shadow-lg rounded-lg" src="assets/img/SA.png" />
-                </div>
-                <div>
-                  <a href="https://www.kitware.com/stephen-aylward/" target="_blank">
-                    <p class="external-link mt-4"> Stephen Aylward </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-span-5 md:col-span-3 row-start-1 md:pl-8">
-            <h2 class="font-bold w-1/2 text-2xl">Stream</h2>
-            <p class="py-4">
-              The mission of the MONAI Stream working group is to advance MONAI as a platform for real-time AI research involving the multitude of interfaces, signals, analyses, simulations, and procedures associated with image-guided interventions and point-of-care applications. To fulfill that mission, we are investing in the integration of MONAI with robotic and surgical navigation systems such as ROS, DVRK, OpenIGTLink, and SlicerIGT, to meet the challenges associated with fusing AI with trackers, image acquisition systems, daVinci robots, AR/VR devices, and a multitude of other medical systems. Driving tasks include surgical event recognition, real-time 3D reconstruction from endoscopic video, collaborative camera control, and skill assessment. A major consideration is GPU resource management that supports multiple inference engines running in parallel as well as methods for streaming signals directly to GPU memory.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer Section Start -->
-    <footer id="footer" class="bg-neutral-lightgray py-2 border-t border-neutral-light_gray">
-      <div class="container">
-        <div class="flex flex-wrap items-center justify-between">
-          <div class="w-auto">
-            <div class="mx-3">
-              <div class="footer-logo">
-                <a href="index.html"><img src="assets/img/MONAI-logo_color.png" alt=""></a>
-              </div>
-            </div>
-          </div>
-          <div class="hidden lg:block w-auto">
-            <div class="mx-3 text-black">
-              <ul class="flex justify-between">
-                <li class="px-4">
-                  <a href="about.html" class="footer-links">About Us</a>
-                </li>
-                <li class="px-4">
-                  <a href="started.html" class="footer-links">Get Started</a>
-                </li>
-                <li class="px-4">
-                  <a href="community.html" class="footer-links">Community</a>
-                </li>
-                <li class="px-4">
-                  <a href="https://medium.com/@monai" class="footer-links">Blog</a>
-                </li>
-                <li class="px-4">
-                  <a href="docs.html" class="footer-links">Docs</a>
-                </li>
-                <li class="px-4">
-                  <a href="https://github.com/Project-MONAI" class="footer-links">GitHub</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="w-auto">
-            <div class="mx-3">
-              <ul class="social-icons flex justify-end">
-                <li class="mx-2">
-                  <a href="https://twitter.com/ProjectMONAI">
-                    <i>
-                <img src="assets/img/twitter_icon_square.png"/>
-              </i>
-                  </a>
-                </li>
-                <li class="mx-2">
-                  <a href="https://medium.com/@monai">
-                    <i>
-                <img src="assets/img/medium_icon_square.png"/>
-              </i>
-                  </a>
-                </li>
-                <li class="mx-2">
-                  <a href="https://www.youtube.com/c/Project-MONAI">
-                    <i>
-                <img src="assets/img/youtube_icon_square.png"/>
-              </i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Footer Section End -->
-
-    <!-- Go to Top Link -->
-    <a href="#" class="back-to-top w-10 h-10 fixed bottom-0 right-0 mb-5 mr-5 flex items-center justify-center rounded-full border border-solid border-brand-dark text-white text-lg z-20">
-      <i class="transform -rotate-90">
-        <img src="assets/img/ic_arrow_right.png"/>
-      </i>
-    </a>
-
-    <!-- All js Here -->
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/particles.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  </body>
+  <!-- #include file="components/footer.html" -->
+  <!-- #include file="components/scripts.html" -->
+</body>
 
 </html>

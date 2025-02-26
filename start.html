@@ -1,16 +1,34 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <title>MONAI - Get Started </title>
-    <meta http-equiv="refresh" content="0;URL='https://monai.io/started.html'" />
-  </head>
-  <body>
-  <p>
-    Get Started
-  </p>
-  <p>
-    <a href="https://monai.io/started.html">
-      https://monai.io/started.html
-    </a>
-  </p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head Component with SEO parameters -->
+<!-- #include file="components/head.html" -->
+<!-- Replace with actual values -->
+<script>
+    document.head.innerHTML = document.head.innerHTML
+        .replace('${title}', 'Get Started')
+        .replace('${description}', 'Get started with MONAI - the freely available, community-supported, PyTorch-based framework for deep learning in healthcare imaging.')
+        .replace('${canonical_url}', 'https://monai.io/started.html');
+</script>
+
+<body class="bg-neutral-lightgray">
+    <!-- Include Header Component -->
+    <!-- #include file="components/header.html" -->
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-6">Get Started with MONAI</h1>
+            <p class="text-gray-600 mb-6">You are being redirected to our Getting Started guide. If you are not redirected automatically, please click the link below.</p>
+            <a href="https://monai.io/started.html" class="brand-btn inline-block">
+                Go to Getting Started Guide
+            </a>
+            <meta http-equiv="refresh" content="0;URL='https://monai.io/started.html'">
+        </div>
+    </div>
+
+    <!-- Include Footer Component -->
+    <!-- #include file="components/footer.html" -->
+
+    <!-- Include Scripts Component -->
+    <!-- #include file="components/scripts.html" -->
+</body>
 </html>

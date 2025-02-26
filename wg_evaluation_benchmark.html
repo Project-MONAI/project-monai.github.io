@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<!-- #include file="components/head.html" -->
+<script>
+    document.head.innerHTML = document.head.innerHTML
+        .replace('${title}', 'MONAI - Evaluation and Benchmarking Working Group')
+        .replace('${description}', 'Providing guidelines, infrastructure, and practical tools for quality-controlled validation and benchmarking of medical image analysis methods.')
+        .replace('${canonical_url}', 'https://monai.io/wg_evaluation.html');
+</script>
+
+<body class="flex flex-col min-h-screen">
+
+  <!-- #include file="components/header.html" -->
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section id="hero" class="py-24 bg-brand-light relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
+      <div class="container relative">
+        <div class="flex flex-wrap items-center">
+          <div class="w-full max-w-3xl">
+            <h1 class="mb-6 wg-main-heading">
+              Evaluation and<br>
+              Benchmarking Working Group
+            </h1>
+            <h2 class="text-neutral-darkestblack text-2xl font-bold mb-4">Mission Statement</h2>
+            <p class="text-lg leading-relaxed text-gray-700">The Evaluation and Benchmarking MONAI working group aims at providing guidelines, infrastructure, and practical tools for evaluation and benchmarking of medical image analysis methods. It focuses on leading the community towards the identification and adoption of best practices for evaluation and benchmarking and on identifying practical solutions to improve reproducibility.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Initiatives Section -->
+    <section class="py-24 relative overflow-hidden">
+      <div class="container relative">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Initiatives</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Best Practices & Infrastructure</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Development of algorithm validation standards</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Implementation of automated evaluation systems</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Creation of benchmark frameworks and protocols</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Establishment of quality control guidelines</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Research & Community Standards</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Development of novel evaluation metrics</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Implementation of performance analysis tools</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Establishment of data sharing practices</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Creation of reproducibility guidelines</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Group Leads Section -->
+    <section class="py-24 bg-neutral-lightgray relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
+      <div class="container relative">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Group Leads</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <div class="flex flex-col items-center text-center">
+              <img src="assets/img/AnnikaReinke.jpg" alt="Dr. Annika Reinke" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-brand-light">
+              <div>
+                <p class="text-xl font-semibold text-gray-800 mb-2">Dr. Annika Reinke</p>
+                <p class="text-base text-gray-600 mb-1">Deputy Head and Group Lead Validation of Intelligent Systems</p>
+                <p class="text-sm text-gray-600 mb-1">German Cancer Research Center (DKFZ)</p>
+                <p class="text-sm font-medium text-brand-primary">Benchmark Working Group Chair</p>
+                <div class="flex justify-center text-sm text-brand-primary hover:text-brand-dark mt-2">
+                  <a href="https://www.dkfz.de/en/employees/annika-reinke" target="_blank" rel="noopener noreferrer">
+                    <span>View Profile</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <div class="flex flex-col items-center text-center">
+              <img src="assets/img/CaroleSudre.jpg" alt="Dr. Carole Sudre" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-brand-light">
+              <div>
+                <p class="text-xl font-semibold text-gray-800 mb-2">Dr. Carole Sudre</p>
+                <p class="text-base text-gray-600 mb-1">Associate Professor</p>
+                <p class="text-sm text-gray-600 mb-1">University College London</p>
+                <p class="text-sm font-medium text-brand-primary">Benchmark Working Group Chair</p>
+                <div class="flex justify-center text-sm text-brand-primary hover:text-brand-dark mt-2">
+                  <a href="https://profiles.ucl.ac.uk/39648-carole-sudre" target="_blank" rel="noopener noreferrer">
+                    <span>View Profile</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meeting Notes and Recordings Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Meeting Notes</h2>
+        <div class="grid grid-cols-1 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">GitHub Wiki</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <a href="https://github.com/Project-MONAI/MONAI/wiki/Evaluation-and-Benchmarks-Working-Group-Meeting-Notes" class="link-hover">
+                  <span>Access all meeting notes</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="py-24 bg-neutral-lightgray relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
+      <div class="container relative">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Resources</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Development Resources</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <a href="https://github.com/Project-MONAI/MetricsReloaded/" class="link-hover">
+                  <span>Metrics Reloaded</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Publications</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <a href="https://www.nature.com/articles/s41592-023-02151-z" class="link-hover">
+                  <span>Metrics Reloaded: Recommendations for image-analysis validation</span>
+                </a>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <a href="https://www.nature.com/articles/s41592-023-02150-0" class="link-hover">
+                  <span>Metrics Reloaded: Pitfalls and recommendations for image analysis validation</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaboration Opportunities Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Collaboration Opportunities</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Development Contributions</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Contribute to evaluation metrics development</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Help create benchmarking tools</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Develop validation frameworks</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Community Engagement</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Join our regular surveys</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Share your expertise in validation and benchmarking</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Participate in standards development</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- #include file="components/footer.html" -->
+  <!-- #include file="components/scripts.html" -->
+
+</body>
+</html> 

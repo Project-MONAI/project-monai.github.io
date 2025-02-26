@@ -1,0 +1,82 @@
+<!-- Header Area wrapper Starts -->
+<header id="header-wrap" class="relative">
+  <!-- Navbar Start -->
+  <div class="navigation fixed top-0 left-0 w-full z-30 duration-300 bg-white border-b border-gray-100">
+    <div class="container">
+      <nav class="navbar flex justify-between items-center relative duration-300 h-16" x-data="{ isOpen: false, frameworksOpen: false, communityOpen: false }">
+        <a class="navbar-brand" href="index.html">
+          <img class="h-12 w-auto" src="assets/img/MONAI-logo_color.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler focus:outline-none block lg:hidden p-2" type="button" @click="isOpen = !isOpen">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path x-show="!isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path x-show="isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <div class="navbar-collapse lg:flex flex-grow items-center absolute lg:static top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent lg:shadow-none" 
+             :class="{'hidden': !isOpen, 'block shadow-lg': isOpen}">
+          <ul class="navbar-nav flex flex-col lg:flex-row lg:items-center lg:ml-auto py-4 lg:py-0 px-6 lg:px-0 space-y-2 lg:space-y-0 lg:space-x-8">
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="index.html">Home</a>
+            </li>
+            <li class="nav-item relative" @click.away="frameworksOpen = false">
+              <button class="page-scroll flex items-center justify-between w-full lg:inline-flex lg:w-auto py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" 
+                      @click="frameworksOpen = !frameworksOpen; communityOpen = false">
+                <span>Frameworks</span>
+                <span class="chevron ml-2 transform transition-transform duration-200" :class="{'rotate-180': frameworksOpen}"></span>
+              </button>
+              <div class="lg:absolute w-full lg:w-52 lg:top-[calc(100%+0.5rem)] left-0 lg:left-1/2 lg:-translate-x-1/2 z-50 p-2 text-gray-800 bg-white rounded-lg shadow-lg" 
+                   x-show="frameworksOpen" 
+                   x-transition:enter="transition ease-out duration-200"
+                   x-transition:enter-start="opacity-0 translate-y-1"
+                   x-transition:enter-end="opacity-100 translate-y-0"
+                   x-cloak>
+                <div class="flex flex-col space-y-1">
+                  <a href="core.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Core</a>
+                  <a href="label.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Label</a>
+                  <a href="deploy.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Deploy</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="model-zoo.html">Model Zoo</a>
+            </li>
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="working-groups.html">Working Groups</a>
+            </li>
+            <li class="nav-item relative" @click.away="communityOpen = false">
+              <button class="page-scroll flex items-center justify-between w-full lg:inline-flex lg:w-auto py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" 
+                      @click="communityOpen = !communityOpen; frameworksOpen = false">
+                <span>Community</span>
+                <span class="chevron ml-2 transform transition-transform duration-200" :class="{'rotate-180': communityOpen}"></span>
+              </button>
+              <div class="lg:absolute w-full lg:w-64 lg:top-[calc(100%+0.5rem)] left-0 lg:left-1/2 lg:-translate-x-1/2 z-50 p-2 text-gray-800 bg-white rounded-lg shadow-lg"
+                   x-show="communityOpen"
+                   x-transition:enter="transition ease-out duration-200"
+                   x-transition:enter-start="opacity-0 translate-y-1"
+                   x-transition:enter-end="opacity-100 translate-y-0"
+                   x-cloak>
+                <div class="flex flex-col space-y-2">
+                  <a href="https://github.com/Project-MONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">GitHub</a>
+                  <a href="https://join.slack.com/t/projectmonai/shared_invite/zt-2t7z8e9tu-xE5SPw0TC8LUxyPVpl2WVQ" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Join Slack</a>
+                  <a href="about.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">About Us</a>
+                  <div class="border-t border-gray-100 mt-2 pt-2">
+                    <div class="grid grid-cols-2 gap-1">
+                      <a href="https://twitter.com/ProjectMONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Twitter</a>
+                      <a href="https://linkedin.com/company/projectmonai" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">LinkedIn</a>
+                      <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Blog</a>
+                      <a href="https://www.youtube.com/c/Project-MONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">YouTube</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Navbar End -->
+</header>
+<!-- Header Area wrapper End --> 

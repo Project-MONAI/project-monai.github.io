@@ -1,0 +1,54 @@
+<!-- Scripts Component -->
+<!-- Common JavaScript Files -->
+<script src="./assets/js/wow.js"></script>
+<script src="./assets/js/particles.min.js"></script>
+<script src="./assets/js/countUp.min.js"></script>
+<script src="./assets/js/main.js"></script>
+
+<!-- Initialize WOW.js -->
+<script>
+    new WOW().init();
+</script>
+
+<!-- Performance Optimizations -->
+<script>
+    // Defer non-critical images
+    document.addEventListener('DOMContentLoaded', function() {
+        var lazyImages = [].slice.call(document.querySelectorAll('img[data-src]'));
+        
+        if ('IntersectionObserver' in window) {
+            let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        let lazyImage = entry.target;
+                        lazyImage.src = lazyImage.dataset.src;
+                        lazyImage.removeAttribute('data-src');
+                        lazyImageObserver.unobserve(lazyImage);
+                    }
+                });
+            });
+
+            lazyImages.forEach(function(lazyImage) {
+                lazyImageObserver.observe(lazyImage);
+            });
+        }
+    });
+
+    // Preload critical resources
+    const preloadLinks = [
+        './assets/css/tailwind.css',
+        './assets/css/animate.css',
+        './assets/img/MONAI-logo_color.png'
+    ];
+
+    preloadLinks.forEach(link => {
+        const preloadLink = document.createElement('link');
+        preloadLink.href = link;
+        preloadLink.rel = 'preload';
+        preloadLink.as = link.endsWith('.css') ? 'style' : 'image';
+        document.head.appendChild(preloadLink);
+    });
+</script>
+
+<!-- Common Scripts -->
+<script src="assets/js/copy-buttons.js"></script> 

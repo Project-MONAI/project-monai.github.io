@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<!-- #include file="components/head.html" -->
+<script>
+    document.head.innerHTML = document.head.innerHTML
+        .replace('${title}', 'MONAI - Federated Learning Working Group')
+        .replace('${description}', 'Accelerating medical research and clinical translation through federated learning in medical imaging.')
+        .replace('${canonical_url}', 'https://monai.io/wg_federated_learning.html');
+</script>
+
+<body class="flex flex-col min-h-screen">
+
+  <!-- #include file="components/header.html" -->
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section id="hero" class="py-24 bg-brand-light relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
+      <div class="container relative">
+        <div class="flex flex-wrap items-center">
+          <div class="w-full max-w-3xl">
+            <h1 class="mb-6 wg-main-heading">
+              Data Quality and Federated Learning<br>
+              Working Group
+            </h1>
+            <h2 class="text-neutral-darkestblack text-2xl font-bold mb-4">Mission Statement</h2>
+            <p class="text-lg leading-relaxed text-gray-700">This working group aims to advance collaborative medical AI research through secure and efficient federated learning implementations. The focus includes developing standardized workflows, ensuring data compatibility, and creating modular components with the end goal of enabling distributed learning across institutions while preserving data privacy and reliability. By fostering a community of academic, clinical, and industry experts, the group establishes best practices and innovative solutions that enhance the accessibility and impact of federated learning in medical imaging.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Initiatives Section -->
+    <section class="py-24 relative overflow-hidden">
+      <div class="container relative">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Initiatives</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Deliverables Development</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Database integration with federated query capabilities (XNAT, Flywheel)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Modular FL components and standardized workflows</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Privacy-preserving validation methods and data quality metrics</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Benchmarking suites and performance evaluation</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Cohort creation and management tools</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Community & Research</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Best practices and guidelines for trustworthy FL</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Documentation and educational resources</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>FL challenges and workshops at major conferences</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Research publications in NeurIPS FL and MICCAI</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Cross-institutional collaboration and knowledge sharing</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Group Leads Section -->
+    <section class="py-24 bg-neutral-lightgray relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
+      <div class="container relative">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Group Leads</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <div class="flex flex-col items-center text-center">
+              <img src="assets/img/HolgerRoth.jpg" alt="Dr. Holger Roth" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-brand-light">
+              <div>
+                <p class="text-xl font-semibold text-gray-800 mb-2">Dr. Holger Roth</p>
+                <p class="text-base text-gray-600 mb-1">Principal Research Scientist</p>
+                <p class="text-sm text-gray-600 mb-1">NVIDIA</p>
+                <p class="text-sm font-medium text-brand-primary">Federated Learning Chair</p>
+                <a href="https://www.holgerroth.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-brand-primary hover:text-brand-dark mt-2">
+                  <span>View Profile</span>
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <div class="flex flex-col items-center text-center">
+              <img src="assets/img/SaiPraneethKarimireddy.jpg" alt="Dr. Sai Praneeth Karimireddy" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-brand-light">
+              <div>
+                <p class="text-xl font-semibold text-gray-800 mb-2">Dr. Sai Praneeth Karimireddy</p>
+                <p class="text-base text-gray-600 mb-1">Assistant Professor</p>
+                <p class="text-sm text-gray-600 mb-1">USC</p>
+                <p class="text-sm font-medium text-brand-primary">Federated Learning Chair</p>
+                <a href="https://spkreddy.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-brand-primary hover:text-brand-dark mt-2">
+                  <span>View Profile</span>
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meeting Notes and Recordings Section -->
+    <!-- <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Meeting Notes and Recordings</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Google Drive</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://drive.google.com/drive/folders/your-folder-id" class="link-hover">Access all meeting notes and recordings</a></span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Direct Links</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://link-to-meeting-1" class="link-hover">Meeting 1 - Date</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://link-to-meeting-2" class="link-hover">Meeting 2 - Date</a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Resources Section -->
+    <section class="py-24 bg-neutral-lightgray relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
+      <div class="container relative">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Resources</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Development Resources</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://docs.monai.io/en/latest/fl.html" class="link-hover">Federated Learning Documentation</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://github.com/Project-MONAI/tutorials/tree/main/federated_learning" class="link-hover">FL Tutorials</a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaboration Opportunities Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Collaboration Opportunities</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Development Contributions</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Contribute to MONAI FL through our <a href="https://github.com/Project-MONAI/" class="text-brand-primary hover:text-brand-dark transition-colors duration-300">GitHub repositories</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Develop new FL components and integrations</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Create example applications and use cases</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Improve documentation and tutorials</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Research & Standards</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Share expertise in federated learning</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Participate in benchmark development</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Join our regular working group meetings</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Contribute to best practice guidelines</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- #include file="components/footer.html" -->
+  <!-- #include file="components/scripts.html" -->
+
+</body>
+</html> 
