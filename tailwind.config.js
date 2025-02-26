@@ -1,49 +1,61 @@
-const plugin = require('tailwindcss/plugin')
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    purge: {
-        enabled: true,
-        content: [
-            '*.html',
-            './assets/js/main.js'
-        ]
-    },
+    content: [
+        './*.html',
+        './components/**/*.html',
+        './assets/css/**/*.css',
+        './assets/js/**/*.js',
+        './src/**/*.js'
+    ],
     theme: {
+        container: {
+            center: true,
+            padding: '1rem'
+        },
         extend: {
+            colors: {
+                brand: {
+                    DEFAULT: '#05789e',
+                    primary: '#00C0B5',
+                    secondary: '#3E5CAD',
+                    dark: '#046483',
+                    light: '#e6f3f7'
+                },
+                neutral: {
+                    purewhite: '#ffffff',
+                    darkestblack: '#1a1a1a',
+                    light_gray: '#E5E7EB'
+                }
+            },
+            spacing: {
+                '128': '32rem',
+            },
             zIndex: {
                 '-10': '-10',
+                '60': '60',
+                '70': '70',
             },
             inset: {
                 '100': '100%',
             },
-            colors: {
-                brand: {
-                    DEFAULT: '#5DC1B7',
-                    primary: '#02A3A3',
-                    secondary: '#98D9D5',
-                    light: '#E6F3F7',
-                    dark: '#05789E'
+            typography: {
+                DEFAULT: {
+                    css: {
+                        color: '#5D5D5D',
+                        a: {
+                            color: '#05789e',
+                            '&:hover': {
+                                color: '#046483',
+                            },
+                        },
+                    },
                 },
-                neutral: {
-                    darkestblack: '#272727',
-                    gray1: '#5D5D5D',
-                    gray2: '#BEBEBE',
-                    lightgray: '#F5F5F5',
-                    purewhite: '#FFFFFF'
-                }
-            },
-            display: ['hover', 'group-hover'],
-            gridTemplateColumns: {
-                '16': 'repeat(16, minmax(0, 1fr))',
-                '20': 'repeat(20, minmax(0, 1fr))'
             }
         }
     },
-    variants: {},
     plugins: [
-        require('@tailwindcss/line-clamp'),
-        require('@tailwindcss/aspect-ratio'),
         require('@tailwindcss/typography'),
-        require("kutty")
+        require('@tailwindcss/aspect-ratio'),
+        require('@tailwindcss/line-clamp'),
     ],
 }

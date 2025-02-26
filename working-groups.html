@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<!-- #include file="components/head.html" -->
+<script>
+    document.head.innerHTML = document.head.innerHTML
+        .replace('${title}', 'MONAI - Working Groups')
+        .replace('${description}', 'MONAI Working Groups are specialized teams that drive innovation and progress in specific areas of medical imaging AI.')
+        .replace('${canonical_url}', 'https://monai.io/working-group.html');
+</script>
+
+<body class="flex flex-col min-h-screen">
+
+  <!-- #include file="components/header.html" -->
+
+  <main class="flex-grow pt-20">
+    <!-- Hero Section -->
+    <section class="py-24 bg-white relative overflow-hidden">
+      <div class="container">
+        <div class="flex flex-wrap items-center">
+          <div class="w-full lg:w-1/2">
+            <h1 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+              Working Groups
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+            </h1>
+            <div class="prose max-w-none">
+              <p class="text-lg leading-relaxed text-gray-700">
+                MONAI Working Groups are specialized teams that drive innovation and progress in specific areas of medical imaging AI. 
+                Each group brings together experts from diverse backgrounds to address key challenges and opportunities in their respective domains.
+              </p>
+              <p class="text-lg leading-relaxed text-gray-700">
+                These groups focus on developing solutions, establishing standards, and creating resources that benefit the entire medical 
+                imaging AI community. From technical implementation to clinical applications, our working groups ensure that MONAI remains 
+                at the forefront of healthcare AI innovation.
+              </p>
+              <p class="text-lg leading-relaxed text-gray-700">
+                Working group members collaborate regularly through meetings, workshops, and joint projects, fostering knowledge exchange 
+                and driving continuous improvement in their specialized areas.
+              </p>
+            </div>
+          </div>
+          <div class="flex justify-center w-full lg:w-1/2">
+            <img class="hidden lg:block lg:w-3/4 xl:auto" src="assets/img/big_plane.png" alt="MONAI Working Groups">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-brand-light relative overflow-hidden">
+        <div class="container">
+            <!-- Quick Links -->
+            <div class="mb-12">
+                <h3 class="text-lg font-semibold mb-4">Quick Links:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <a href="#deploy" class="text-brand-primary hover:text-brand-dark transition-colors duration-300">Deploy</a>
+                  <a href="#developers" class="text-brand-primary hover:text-brand-dark transition-colors duration-300">Developers Committee</a>
+                  <a href="#education" class="text-brand-primary hover:text-brand-dark transition-colors duration-300">Education</a>
+                  <a href="#evaluation" class="text-brand-primary hover:text-brand-dark transition-colors duration-300">Evaluation and Benchmarking</a>
+                  <a href="#federated" class="text-brand-primary hover:text-brand-dark transition-colors duration-300">Federated Learning</a>
+                  <a href="#human-ai" class="text-brand-primary hover:text-brand-dark transition-colors duration-300">Human-AI Interaction</a>
+                  <a href="#ophthalmology" class="text-brand-primary hover:text-brand-dark transition-colors duration-300">Ophthalmology</a>
+                  <a href="#outreach" class="text-brand-primary hover:text-brand-dark transition-colors duration-300">Outreach and Adoption</a>
+                </div>
+              </div>
+    
+            <!-- Working Group Cards -->
+            <div class="grid gap-8 grid-cols-1">
+              <!-- Deploy Working Group Card -->
+              <div id="deploy" class="bg-white rounded-xl shadow-md scroll-mt-24">
+                <div class="border-b border-gray-200 bg-brand-dark">
+                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Deploy Working Group</h3>
+                </div>
+                <div class="p-8">
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
+                    <p class="text-gray-700">
+                      This working group aims to define how to close the existing gap from research and development to clinical production environments by bringing AI models into medical applications and clinical workflows with the end goal of helping improve patient care. The focus includes defining the open high-level functional architecture and determining which components and standard APIs are required. By collaborating with the MONAI developers, the group will move from requirements to implemented solutions.
+                    </p>
+                  </div>
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-4">GROUP LEADS</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/BarbarosSelnurErdal.jpg" alt="Barbaros Selnur Erdal" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Barbaros Selnur Erdal</p>
+                            <p class="text-sm text-gray-600">Mayo Clinic</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/DavidBericat.jpg" alt="David Bericat" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">David Bericat</p>
+                            <p class="text-sm text-gray-600">NVIDIA</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/HarisShuaib.jpg" alt="Haris Shuaib" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Haris Shuaib</p>
+                            <p class="text-sm text-gray-600">Guy's and St Thomas' NHS Foundation Trust</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <a href="wg_deploy.html" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Developers Committee Card -->
+              <div id="developers" class="bg-white rounded-xl shadow-md scroll-mt-24">
+                <div class="border-b border-gray-200 bg-brand-dark">
+                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Developers Committee Working Group</h3>
+                </div>
+                <div class="p-8">
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
+                    <p class="text-gray-700">
+                      This working group aims to establish and maintain technical excellence in MONAI Core by coordinating development efforts and ensuring high code quality standards. The focus includes overseeing architectural decisions, establishing development guidelines, and maintaining technical documentation with the end goal of creating a robust and sustainable framework for medical imaging AI research and development. By fostering collaboration between contributors, the group ensures consistent implementation of best practices across the codebase.
+                    </p>
+                  </div>
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-4">GROUP LEADS</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/NicMa.jpg" alt="Nic Ma" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Nic Ma</p>
+                            <p class="text-sm text-gray-600">NVIDIA</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/EricKerfoot.png" alt="Eric Kerfoot" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Eric Kerfoot</p>
+                            <p class="text-sm text-gray-600">King's College London</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/YunLiu.jpeg" alt="Yun Liu" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Yun Liu</p>
+                            <p class="text-sm text-gray-600">NVIDIA</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <a href="wg_developers.html" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Education Working Group Card -->
+              <div id="education" class="bg-white rounded-xl shadow-md scroll-mt-24">
+                <div class="border-b border-gray-200 bg-brand-dark">
+                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Education Working Group</h3>
+                </div>
+                <div class="p-8">
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
+                    <p class="text-gray-700">
+                      This working group aims to accelerate the adoption of AI in medical imaging through comprehensive educational resources and training materials. The focus includes developing structured learning paths, hands-on tutorials, and practical exercises with the end goal of enabling researchers and clinicians to effectively utilize MONAI in their work. By creating accessible content for various skill levels, the group helps bridge the knowledge gap in medical imaging AI.
+                    </p>
+                  </div>
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-4">GROUP LEADS</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/EricKerfoot.png" alt="Eric Kerfoot" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Eric Kerfoot</p>
+                            <p class="text-sm text-gray-600">King's College London</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/MarcModat.jpg" alt="Marc Modat" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Marc Modat</p>
+                            <p class="text-sm text-gray-600">King's College London</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <a href="wg_education.html" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Evaluation Working Group Card -->
+              <div id="evaluation" class="bg-white rounded-xl shadow-md scroll-mt-24">
+                <div class="border-b border-gray-200 bg-brand-dark">
+                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Evaluation and Benchmarking Working Group</h3>
+                </div>
+                <div class="p-8">
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
+                    <p class="text-gray-700">The Evaluation and Benchmarking MONAI working group aims at providing guidelines, infrastructure, and practical tools for evaluation and benchmarking of medical image analysis methods. It focuses on leading the community towards the identification and adoption of best practices for evaluation and benchmarking and on identifying practical solutions to improve reproducibility.
+                    </p>
+                  </div>
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-4">GROUP LEADS</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/AnnikaReinke.jpg" alt="Annika Reinke" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Annika Reinke</p>
+                            <p class="text-sm text-gray-600">DKFZ</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/CaroleSudre.jpg" alt="Carole Sudre" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Carole Sudre</p>
+                            <p class="text-sm text-gray-600">UCL</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <a href="wg_evaluation_benchmark.html" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Federated Learning Card -->
+              <div id="federated" class="bg-white rounded-xl shadow-md scroll-mt-24">
+                <div class="border-b border-gray-200 bg-brand-dark">
+                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Data Quality and Federated Learning Working Group</h3>
+                </div>
+                <div class="p-8">
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
+                    <p class="text-gray-700">
+                      This working group aims to advance collaborative medical AI research through secure and efficient federated learning implementations. The focus includes developing standardized workflows, ensuring data compatibility, and creating modular components with the end goal of enabling distributed learning across institutions while preserving data privacy. By establishing best practices for federated learning, the group facilitates multi-institutional collaboration in medical AI research.
+                    </p>
+                  </div>
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-4">GROUP LEADS</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/HolgerRoth.jpg" alt="Holger Roth" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Holger Roth</p>
+                            <p class="text-sm text-gray-600">NVIDIA</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/SaiPraneethKarimireddy.jpg" alt="Sai Praneeth Karimireddy" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Sai Praneeth Karimireddy</p>
+                            <p class="text-sm text-gray-600">USC</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <a href="wg_federated_learning.html" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Human-AI Interaction Card -->
+              <div id="human-ai" class="bg-white rounded-xl shadow-md scroll-mt-24">
+                <div class="border-b border-gray-200 bg-brand-dark">
+                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Human-AI Interaction Working Group</h3>
+                </div>
+                <div class="p-8">
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
+                    <p class="text-gray-700">
+                      This working group aims to advance, standardize, and support human-AI interaction cycles through well-defined interfaces and community-driven development. The focus includes developing standardized APIs for AI prompting, uncertainty communication, and annotation feedback processes with the end goal of creating robust, reusable interactive AI workflows. By fostering community-driven specification and implementation across diverse domains including radiology, pathology, and surgery, the group enables efficient AI deployment across cloud, local, and HPC environments.
+                    </p>
+                  </div>
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-4">GROUP LEADS</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/RalfFloca.png" alt="Ralf Floca" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Dr. Ralf Floca</p>
+                            <p class="text-sm text-gray-600">DKFZ</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/SaadNadeem.png" alt="Saad Nadeem" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Dr. Saad Nadeem</p>
+                            <p class="text-sm text-gray-600">Memorial Sloan Kettering Cancer Center</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/BruceHashemian.jpeg" alt="Bruce Hashemian" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Bruce Hashemian</p>
+                            <p class="text-sm text-gray-600">NVIDIA</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <a href="wg_human_ai_interaction.html" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Ophthalmology Card -->
+              <div id="ophthalmology" class="bg-white rounded-xl shadow-md scroll-mt-24">
+                <div class="border-b border-gray-200 bg-brand-dark">
+                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Ophthalmology Working Group</h3>
+                </div>
+                <div class="p-8">
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
+                    <p class="text-gray-700">
+                      This working group aims to advance the application of AI in ophthalmology through specialized tools and algorithms. The focus includes developing analysis methods for various ophthalmic imaging modalities, creating annotation tools, and building predictive models with the end goal of improving diagnosis and treatment of eye diseases. By leveraging MONAI's capabilities, the group accelerates innovation in ophthalmic image analysis.
+                    </p>
+                  </div>
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-4">GROUP LEADS</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/JayashreeKalpathyCramer.jpg" alt="Jayashree Kalpathy-Cramer" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Jayashree Kalpathy-Cramer</p>
+                            <p class="text-sm text-gray-600">University of Colorado</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/LeeAaron.png" alt="Aaron Lee" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Aaron Lee</p>
+                            <p class="text-sm text-gray-600">University of Washington</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <a href="wg_ophthalmology.html" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Outreach Card -->
+              <div id="outreach" class="bg-white rounded-xl shadow-md scroll-mt-24">
+                <div class="border-b border-gray-200 bg-brand-dark">
+                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Outreach and Adoption Working Group</h3>
+                </div>
+                <div class="p-8">
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
+                    <p class="text-gray-700">
+                      This working group aims to expand MONAI's reach and impact across the medical imaging community. The focus includes organizing technical training, fostering community engagement, and developing infrastructure with the end goal of establishing MONAI as the leading open-source platform for medical imaging AI. By building an inclusive and transparent community, the group ensures sustainable growth and adoption of MONAI.
+                    </p>
+                  </div>
+                  <div class="mb-8">
+                    <h4 class="uppercase text-sm font-medium text-gray-600 mb-4">GROUP LEADS</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <li class="group">
+                        <div class="flex">
+                          <div class="flex-shrink-0 w-24 mr-4">
+                            <img src="assets/img/MichaelZephyr.jpg" alt="Michael Zephyr" class="w-24 h-24 rounded-full object-cover">
+                          </div>
+                          <div class="flex-grow pt-1">
+                            <p class="font-medium text-gray-800 mb-1">Michael Zephyr</p>
+                            <p class="text-sm text-gray-600">NVIDIA</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <a href="wg_outreach_adoption.html" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+  
+    </main>
+
+    <!-- #include file="components/footer.html" -->
+    <!-- #include file="components/scripts.html" -->
+
+</body>
+</html> 

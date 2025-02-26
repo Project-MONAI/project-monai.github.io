@@ -1,40 +1,28 @@
 (function () {
   "use strict";
 
-  //WOW Scroll Spy
-  var wow = new WOW({
-    //disabled for mobile
-    mobile: false,
-  });
-  wow.init();
-  window.onscroll = function () {
-    // show or hide the back-top-top button
-    var backToTop = document.querySelector(".back-to-top");
-    if (
-      document.body.scrollTop > 200 ||
-      document.documentElement.scrollTop > 200
-    ) {
-      backToTop.style.display = "flex";
-    } else {
-      backToTop.style.display = "none";
+  // Performance optimization: Defer non-critical operations
+  function deferNonCriticalOperations() {
+    // Initialize WOW.js after initial paint
+    requestIdleCallback(() => {
+      const wow = new WOW({
+        mobile: false,
+        offset: 50
+      });
+      wow.init();
+    });
+
+    // Initialize particles.js after initial paint
+    const heroArea = document.getElementById("hero-area");
+    if (heroArea) {
+      requestIdleCallback(() => {
+        initParticles();
+      });
     }
-  };
+  }
 
-  // //===== close navbar-collapse when a  clicked
-  let navbarToggler = document.querySelector(".navbar-toggler");
-  var navbarCollapse = document.querySelector(".navbar-collapse");
-  navbarToggler.addEventListener("click", function () {
-    navbarToggler.classList.toggle("active");
-    navbarCollapse.classList.toggle("show");
-  });
-
-
-  // Main.js
-  /* ---- particles.js config ---- */
-
-  var element = document.getElementById("hero-area");
-  if (typeof element != "undefined" && element != null) {
-    // Exists.
+  // Initialize particles.js with optimized config
+  function initParticles() {
     particlesJS("hero-area", {
       particles: {
         number: {
@@ -91,5 +79,48 @@
       },
       retina_detect: true,
     });
+  }
+
+  // Throttled scroll handler for better performance
+  const throttle = (func, limit) => {
+    let inThrottle;
+    return function() {
+      const args = arguments;
+      const context = this;
+      if (!inThrottle) {
+        func.apply(context, args);
+        inThrottle = true;
+        setTimeout(() => inThrottle = false, limit);
+      }
+    }
+  }
+
+  // Optimized scroll handler
+  window.onscroll = throttle(function () {
+    const backToTop = document.querySelector(".back-to-top");
+    if (!backToTop) return;
+
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    backToTop.style.display = scrollPosition > 200 ? "flex" : "none";
+  }, 100);
+
+  // Mobile menu handler with performance optimization
+  const navbarToggler = document.querySelector(".navbar-toggler");
+  const navbarCollapse = document.querySelector(".navbar-collapse");
+
+  if (navbarToggler && navbarCollapse) {
+    navbarToggler.addEventListener("click", () => {
+      requestAnimationFrame(() => {
+        navbarToggler.classList.toggle("active");
+        navbarCollapse.classList.toggle("show");
+      });
+    });
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', deferNonCriticalOperations);
+  } else {
+    deferNonCriticalOperations();
   }
 })();

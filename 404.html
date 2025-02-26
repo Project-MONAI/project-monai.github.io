@@ -1,68 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QVGBCPFPJ6');
-    </script>
-    <meta charset="utf-8">
-    <title>Page Not Found</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
+<!-- Include Head Component with SEO parameters -->
+<!-- #include file="components/head.html" -->
+<!-- Replace with actual values -->
+<script>
+    document.head.innerHTML = document.head.innerHTML
+        .replace('${title}', '404 - Page Not Found')
+        .replace('${description}', 'The page you were looking for could not be found. Please check the URL or navigate back to the homepage.')
+        .replace('${canonical_url}', 'https://monai.io/404.html');
+</script>
 
-        * {
-            line-height: 1.2;
-            margin: 0;
-        }
+<body class="bg-neutral-lightgray">
+    <!-- Include Header Component -->
+    <!-- #include file="components/header.html" -->
 
-        html {
-            color: #888;
-            display: table;
-            font-family: sans-serif;
-            height: 100%;
-            text-align: center;
-            width: 100%;
-        }
+    <main class="flex-grow">
+        <div class="min-h-[calc(100vh-200px)] flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Page Not Found</h1>
+                <p class="text-gray-600 mb-8">Sorry, but the page you were trying to view does not exist.</p>
+                <a href="index.html" class="brand-btn inline-block">
+                    Return to Homepage
+                </a>
+            </div>
+        </div>
+    </main>
 
-        body {
-            display: table-cell;
-            vertical-align: middle;
-            margin: 2em auto;
-        }
+    <!-- Include Footer Component -->
+    <!-- #include file="components/footer.html" -->
 
-        h1 {
-            color: #555;
-            font-size: 2em;
-            font-weight: 400;
-        }
-
-        p {
-            margin: 0 auto;
-            width: 280px;
-        }
-
-        @media only screen and (max-width: 280px) {
-
-            body, p {
-                width: 95%;
-            }
-
-            h1 {
-                font-size: 1.5em;
-                margin: 0 0 0.3em;
-            }
-
-        }
-
-    </style>
-</head>
-<body>
-    <h1>Page Not Found</h1>
-    <p>Sorry, but the page you were trying to view does not exist.</p>
+    <!-- Include Scripts Component -->
+    <!-- #include file="components/scripts.html" -->
 </body>
 </html>
-<!-- IE needs 512+ bytes: https://blogs.msdn.microsoft.com/ieinternals/2010/08/18/friendly-http-error-pages/ -->

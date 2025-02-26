@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<!-- #include file="components/head.html" -->
+<script>
+    document.head.innerHTML = document.head.innerHTML
+        .replace('${title}', 'MONAI - Deploy Working Group')
+        .replace('${description}', 'Bridging the gap between research and clinical production environments by bringing AI models into medical applications and clinical workflows.')
+        .replace('${canonical_url}', 'https://monai.io/wg_deploy.html');
+</script>
+
+<body class="flex flex-col min-h-screen">
+
+  <!-- #include file="components/header.html" -->
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section id="hero" class="py-24 bg-brand-light relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
+      <div class="container relative">
+        <div class="flex flex-wrap items-center">
+          <div class="w-full max-w-3xl">
+            <h1 class="mb-6 wg-main-heading">
+              Deploy<br>
+              Working Group
+            </h1>
+            <h2 class="text-neutral-darkestblack text-2xl font-bold mb-4">Mission Statement</h2>
+            <p class="text-lg leading-relaxed text-gray-700">This working group aims to define how to close the existing gap from research and development to clinical production environments by bringing AI models into medical applications and clinical workflows with the end goal of helping improve patient care. The focus includes defining the open high-level functional architecture and determining which components and standard APIs are required. By collaborating with the MONAI developers, the group will move from requirements to implemented solutions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Initiatives Section -->
+    <section class="py-24 relative overflow-hidden">
+      <div class="container relative">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Initiatives</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Current Projects</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Development of the MONAI Deploy SDK for model packaging</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Implementation of standardized deployment workflows</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Creation of reference architectures for clinical deployment</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Integration with existing hospital PACS and RIS systems</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Upcoming Focus Areas</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Enhanced security and compliance frameworks</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Performance optimization for edge deployment</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>EHR integration standards and protocols</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Multi-site deployment orchestration</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Group Leads Section -->
+    <section class="py-24 bg-neutral-lightgray relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
+      <div class="container relative">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Group Leads</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <div class="flex flex-col items-center text-center">
+              <img src="assets/img/BarbarosSelnurErdal.jpg" alt="Barbaros Selnur Erdal" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-brand-light">
+              <div>
+                <p class="text-xl font-semibold text-gray-800 mb-2">Barbaros Selnur Erdal</p>
+                <p class="text-base text-gray-600 mb-1">Technical Director, Center for Augmented Intelligence in Imaging</p>
+                <p class="text-sm text-gray-600 mb-1">Mayo Clinic</p>
+                <p class="text-sm font-medium text-brand-primary">Deploy Working Group Chair</p>
+                <div class="flex justify-center text-sm text-brand-primary hover:text-brand-dark mt-2">
+                  <a href="https://www.linkedin.com/in/barbaros-selnur-erdal-1690055/" target="_blank" rel="noopener noreferrer">
+                    <span>View Profile</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <div class="flex flex-col items-center text-center">
+              <img src="assets/img/DavidBericat.jpg" alt="David Bericat" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-brand-light">
+              <div>
+                <p class="text-xl font-semibold text-gray-800 mb-2">David Bericat</p>
+                <p class="text-base text-gray-600 mb-1">Healthcare AI Solutions</p>
+                <p class="text-sm text-gray-600 mb-1">NVIDIA</p>
+                <p class="text-sm font-medium text-brand-primary">Deploy Working Group Chair</p>
+                <div class="flex justify-center text-sm text-brand-primary hover:text-brand-dark mt-2">
+                  <a href="https://www.linkedin.com/in/davidbericat/" target="_blank" rel="noopener noreferrer">
+                    <span>View Profile</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <div class="flex flex-col items-center text-center">
+              <img src="assets/img/HarisShuaib.jpg" alt="Haris Shuaib" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-brand-light">
+              <div>
+                <p class="text-xl font-semibold text-gray-800 mb-2">Haris Shuaib</p>
+                <p class="text-base text-gray-600 mb-1">Chief Executive Officer</p>
+                <p class="text-sm text-gray-600 mb-1">Newton's Tree</p>
+                <p class="text-sm font-medium text-brand-primary">Deploy Working Group Chair</p>
+                <div class="flex justify-center text-sm text-brand-primary hover:text-brand-dark mt-2">
+                  <a href="https://www.linkedin.com/in/haris-shuaib-91519b55/" target="_blank" rel="noopener noreferrer">
+                    <span>View Profile</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meeting Notes and Recordings Section -->
+    <!-- <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Meeting Notes and Recordings</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Google Drive</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://drive.google.com/drive/folders/your-folder-id" class="link-hover">Access all meeting notes and recordings</a></span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Direct Links</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://link-to-meeting-1" class="link-hover">Meeting 1 - Date</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://link-to-meeting-2" class="link-hover">Meeting 2 - Date</a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Resources Section -->
+    <section class="py-24 bg-neutral-lightgray relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
+      <div class="container relative">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Resources</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Development Resources</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://github.com/Project-MONAI/monai-deploy" class="link-hover">MONAI Deploy GitHub Repository</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span><a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/" class="link-hover">MONAI Deploy App SDK Documentation</a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaboration Opportunities Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Collaboration Opportunities</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Development Contributions</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Contribute to the development of deployment solutions through our <a href="https://github.com/Project-MONAI/deploy" class="text-brand-primary hover:text-brand-dark transition-colors duration-300">GitHub repository</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Share your clinical deployment experience and requirements</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Participate in defining standards and best practices</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Research & Standards</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Join our regular working group meetings</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Contribute to deployment best practices</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Help shape the future of medical AI deployment</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- #include file="components/footer.html" -->
+  <!-- #include file="components/scripts.html" -->
+
+</body>
+</html> 
