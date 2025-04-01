@@ -1,18 +1,69 @@
 const { useState, useEffect } = React;
 
 function formatDownloadUrl(model) {
-  // Extract model name and version
+  // If the model has an explicit download_url, use it
+  if (model.download_url) {
+    return model.download_url;
+  }
+  
+  // If the model has a huggingface_url, use that
+  if (model.huggingface_url) {
+    return model.huggingface_url;
+  }
+  
+  // For traditional MONAI models, use the proxy URL format
   const modelName = model.model_name.toLowerCase().replace(/\s+/g, '_');
   const version = model.version;
   
   return `https://proxy.monai.io/proxy/download/${modelName}/versions/${version}/files/${modelName}_v${version}.zip`;
 }
 
+function TagFilter({ tags, activeTag, onTagChange }) {
+  return (
+    <div className="flex flex-wrap gap-3 mb-6">
+      <button
+        onClick={() => onTagChange(null)}
+        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+          activeTag === null
+            ? 'bg-brand-primary text-white'
+            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+        }`}
+      >
+        All Models
+      </button>
+      {tags.map((tag) => (
+        <button
+          key={tag}
+          onClick={() => onTagChange(tag)}
+          className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+            activeTag === tag
+              ? (tag === 'Bundle' ? 'bg-green-600 text-white' : 'bg-blue-600 text-white')
+              : (tag === 'Bundle' 
+                ? 'bg-green-100 text-green-800 hover:bg-green-200' 
+                : 'bg-blue-100 text-blue-800 hover:bg-blue-200')
+          }`}
+        >
+          {tag} Models
+        </button>
+      ))}
+    </div>
+  );
+}
+
 function ModelCard({ model, onViewDetails }) {
+  const isHuggingFaceModel = model.huggingface_url || (model.model_id && model.model_id.startsWith('hf_'));
+  const modelTag = isHuggingFaceModel ? "HF" : "Bundle";
+  const tagColorClass = isHuggingFaceModel 
+    ? "bg-blue-100 text-blue-800" 
+    : "bg-green-100 text-green-800";
+  
   return (
     <div className="p-4 sm:p-6 shadow-lg rounded-lg border-2 border-neutral-lightgray relative transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white">
       <div className="flex flex-col h-full">
         <h3 className="text-lg font-bold text-gray-800 mb-2 break-words">{model.model_name}</h3>
+        <div className="flex items-center gap-2 mb-2">
+          <span className={`px-2 py-1 ${tagColorClass} text-xs font-semibold rounded`}>{modelTag} Model</span>
+        </div>
         <h5 className="text-brand-primary text-sm mb-2 break-words">{model.authors}</h5>
         <p className="text-sm text-gray-600 mb-4 line-clamp-3 break-words">{model.description}</p>
         
@@ -39,11 +90,12 @@ function ModelCard({ model, onViewDetails }) {
             <a
               href={formatDownloadUrl(model)}
               className="brand-btn flex items-center justify-center py-2 px-6 text-sm sm:ml-auto"
-              download
+              target={isHuggingFaceModel ? "_blank" : "_self"}
+              rel={isHuggingFaceModel ? "noopener noreferrer" : ""}
             >
-              <span>Download</span>
+              <span>{isHuggingFaceModel ? "View on HF" : "Download"}</span>
               <svg className="w-4 h-4 ml-1.5 flex-shrink-0 transition-transform group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isHuggingFaceModel ? "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" : "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"} />
               </svg>
             </a>
           </div>
@@ -55,6 +107,12 @@ function ModelCard({ model, onViewDetails }) {
 
 function ModelDetailsModal({ model, onClose }) {
   if (!model) return null;
+
+  const isHuggingFaceModel = model.huggingface_url || (model.model_id && model.model_id.startsWith('hf_'));
+  const modelTag = isHuggingFaceModel ? "HF" : "Bundle";
+  const tagColorClass = isHuggingFaceModel 
+    ? "bg-blue-100 text-blue-800" 
+    : "bg-green-100 text-green-800";
 
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
@@ -90,18 +148,26 @@ function ModelDetailsModal({ model, onClose }) {
         <div className="sticky top-0 z-10 bg-white px-4 sm:px-6 py-4 border-b border-gray-200">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-brand-primary break-words">{model.model_name}</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-brand-primary break-words mb-2">{model.model_name}</h2>
+              <div className="flex items-center gap-3 mb-1">
+                <span className={`px-2 py-1 ${tagColorClass} text-xs font-semibold rounded`}>{modelTag} Model</span>
+              </div>
               <p className="text-sm text-gray-600 mt-1">Version {model.version}</p>
             </div>
             <div className="flex items-center gap-3 -mr-2 sm:mr-0">
               <a
                 href={formatDownloadUrl(model)}
                 className="brand-btn flex-1 sm:flex-initial flex items-center justify-center px-4 py-2 text-sm"
-                download
+                target={isHuggingFaceModel ? "_blank" : "_self"}
+                rel={isHuggingFaceModel ? "noopener noreferrer" : ""}
               >
-                <span>Download</span>
+                <span>{isHuggingFaceModel ? "View on HF" : "Download"}</span>
                 <svg className="w-4 h-4 ml-1.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
+                    d={isHuggingFaceModel ? 
+                      "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" : 
+                      "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"}
+                  />
                 </svg>
               </a>
               <button
@@ -123,6 +189,24 @@ function ModelDetailsModal({ model, onClose }) {
             {/* Overview Section */}
             <div className="mb-8">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">Overview</h3>
+              {isHuggingFaceModel && (
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                  <div className="flex">
+                    <div className="flex-shrink-0">
+                      <svg className="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm text-yellow-700">
+                        <strong>Warning:</strong> This is a Hugging Face model that doesn't follow the standard MONAI Bundle format. 
+                        It cannot be run using standard MONAI Bundle APIs. Please refer to the documentation below or 
+                        visit the <a href={formatDownloadUrl(model)} target="_blank" rel="noopener noreferrer" className="font-medium underline text-yellow-700 hover:text-yellow-600">Hugging Face repository</a> for complete usage instructions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
               <p className="text-gray-600 break-words">{model.description}</p>
             </div>
 
@@ -214,11 +298,20 @@ function ModelDetailsModal({ model, onClose }) {
             <a
               href={formatDownloadUrl(model)}
               className="w-full sm:w-auto brand-btn flex items-center justify-center"
-              download
+              target={isHuggingFaceModel ? "_blank" : "_self"}
+              rel={isHuggingFaceModel ? "noopener noreferrer" : ""}
             >
-              Download Model
+              {isHuggingFaceModel ? "View on Hugging Face" : "Download Model"}
               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth="2" 
+                  d={isHuggingFaceModel ? 
+                    "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" : 
+                    "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  }
+                />
               </svg>
             </a>
           </div>
@@ -231,15 +324,43 @@ function ModelDetailsModal({ model, onClose }) {
 function ModelZoo() {
   const [models, setModels] = useState([]);
   const [selectedModel, setSelectedModel] = useState(null);
+  const [activeTag, setActiveTag] = useState(null);
+  const [modelCount, setModelCount] = useState({ total: 0, bundle: 0, hf: 0 });
 
   useEffect(() => {
     const url = './model_data.json';
     console.log('Fetching data from:', url);
     fetch(url)
       .then(response => response.json())
-      .then(data => setModels(Object.values(data)))
+      .then(data => {
+        const modelList = Object.values(data);
+        setModels(modelList);
+        
+        // Count models by type
+        const bundleCount = modelList.filter(model => 
+          !(model.huggingface_url || (model.model_id && model.model_id.startsWith('hf_')))
+        ).length;
+        
+        const hfCount = modelList.filter(model => 
+          model.huggingface_url || (model.model_id && model.model_id.startsWith('hf_'))
+        ).length;
+        
+        setModelCount({
+          total: modelList.length,
+          bundle: bundleCount,
+          hf: hfCount
+        });
+      })
       .catch(error => console.error('Error fetching data:', error));
   }, []);
+
+  // Filter models based on selected tag
+  const filteredModels = activeTag === null 
+    ? models 
+    : models.filter(model => {
+        const isHF = model.huggingface_url || (model.model_id && model.model_id.startsWith('hf_'));
+        return activeTag === 'HF' ? isHF : !isHF;
+      });
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -305,17 +426,39 @@ function ModelZoo() {
 
       <section className="py-16 bg-brand-dark/15">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">
-            Available Models
-          </h2>
+          <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4 md:mb-0">
+              Available Models
+            </h2>
+            <div className="flex items-center gap-4">
+              <div className="text-sm text-gray-600">
+                <span className="font-medium">{modelCount.total}</span> models available
+                (<span className="text-green-600 font-medium">{modelCount.bundle}</span> Bundle, 
+                <span className="text-blue-600 font-medium"> {modelCount.hf}</span> HF)
+              </div>
+            </div>
+          </div>
+          
+          <TagFilter 
+            tags={['Bundle', 'HF']} 
+            activeTag={activeTag} 
+            onTagChange={setActiveTag} 
+          />
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {models.map((model, index) => (
+            {filteredModels.map((model, index) => (
               <ModelCard
                 key={index}
                 model={model}
                 onViewDetails={setSelectedModel}
               />
             ))}
+            
+            {filteredModels.length === 0 && (
+              <div className="col-span-3 py-16 text-center">
+                <p className="text-lg text-gray-600">No models found matching the selected filter.</p>
+              </div>
+            )}
           </div>
         </div>
       </section>

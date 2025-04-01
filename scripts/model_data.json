@@ -1,0 +1,35 @@
+{
+    "hf_sample_hf_model": {
+        "model_name": "Sample HF Medical Segmentation Model",
+        "description": "This is a sample Hugging Face medical image segmentation model for demonstration purposes.",
+        "authors": "MONAI Team and Contributors",
+        "papers": [
+            "Author A, et al. (2023). Sample Paper Title. Journal of Medical Imaging, 10(2), 123-456.",
+            "Author B, et al. (2022). Another Relevant Paper. Conference on Medical Image Computing."
+        ],
+        "version": "1.0.0",
+        "model_id": "hf_sample_hf_model",
+        "readme": "<h1>Sample HF Medical Segmentation Model</h1>\n<p>This is a sample Hugging Face medical image segmentation model for demonstration purposes.</p>\n<h2>Model Overview</h2>\n<p>This model is designed for segmentation of anatomical structures in medical images. It uses a transformer-based architecture and was trained on a diverse dataset of medical images.</p>\n<h2>Usage</h2>\n<pre><code class=\"language-python\">from transformers import AutoModelForImageSegmentation\nimport torch\n\n# Load the model\nmodel = AutoModelForImageSegmentation.from_pretrained(\"monai/sample-medical-model\")\n\n# Prepare your input (example)\ninput_image = torch.randn(1, 3, 224, 224)\n\n# Run inference\nwith torch.no_grad():\n    outputs = model(input_image)\n\n# Process the segmentation mask\nsegmentation = outputs.logits.argmax(dim=1)\n</code></pre>\n<h2>Performance Metrics</h2>\n<table>\n<thead>\n<tr>\n<th>Metric</th>\n<th>Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Dice Score</td>\n<td>0.92</td>\n</tr>\n<tr>\n<td>Jaccard Index</td>\n<td>0.85</td>\n</tr>\n<tr>\n<td>Hausdorff Distance (95%)</td>\n<td>4.3 mm</td>\n</tr>\n</tbody>\n</table>\n<h2>Limitations</h2>\n<ul>\n<li>This model works best on high-quality images with standard orientation</li>\n<li>Performance may degrade on out-of-distribution data</li>\n<li>Not intended for clinical use without proper validation</li>\n</ul>\n<h2>License</h2>\n<p>This model is shared under the Apache 2.0 license.</p>",
+        "huggingface_url": "https://huggingface.co/monai/sample-medical-model",
+        "changelog": {
+            "1.0.0": "Initial release"
+        }
+    },
+    "hf_brain_tumor_segmentation": {
+        "model_name": "Brain Tumor Segmentation",
+        "description": "A transformer-based model for segmenting brain tumors in MRI images.",
+        "authors": "MONAI Clinical Team",
+        "papers": [
+            "Smith J, et al. (2023). Transformer-Based Segmentation of Brain Tumors. Journal of Neuroimaging, 15(3), 210-225."
+        ],
+        "version": "2.1.0",
+        "model_id": "hf_brain_tumor_segmentation",
+        "readme": "<h1>Brain Tumor Segmentation Model</h1>\n<p>A state-of-the-art transformer-based model for segmenting brain tumors in MRI images.</p>\n<h2>Model Details</h2>\n<p>This model was developed to accurately segment brain tumors from multi-sequence MRI scans. It can identify and differentiate between various tumor regions, including:</p>\n<ul>\n<li>Whole tumor region</li>\n<li>Tumor core</li>\n<li>Enhancing tumor</li>\n</ul>\n<h2>Implementation</h2>\n<p>The model is implemented using the Transformers library and can be used as follows:</p>\n<pre><code class=\"language-python\">from transformers import AutoModelForImageSegmentation\nimport torch\nimport nibabel as nib\nimport numpy as np\n\n# Load the model\nmodel = AutoModelForImageSegmentation.from_pretrained(\"monai/brain-tumor-segmentation\")\n\n# Load and preprocess your MRI data\n# This is a simplified example - actual preprocessing may be more complex\ndef preprocess_mri(nifti_path):\n    # Load NIfTI file\n    img = nib.load(nifti_path)\n    data = img.get_fdata()\n\n    # Normalize and prepare for the model\n    data = (data - data.mean()) / data.std()\n    data = torch.from_numpy(data).float().unsqueeze(0).unsqueeze(0)\n    return data, img.affine\n\n# Example usage\ninput_data, affine = preprocess_mri(\"patient_t1.nii.gz\")\n\n# Run inference\nwith torch.no_grad():\n    outputs = model(input_data)\n\n# Get segmentation mask\nsegmentation = outputs.logits.argmax(dim=1).squeeze().numpy()\n\n# Save the result\nseg_img = nib.Nifti1Image(segmentation, affine)\nnib.save(seg_img, \"tumor_segmentation.nii.gz\")\n</code></pre>\n<h2>Performance</h2>\n<p>This model has been validated on the BraTS 2021 dataset and achieves the following performance metrics:</p>\n<table>\n<thead>\n<tr>\n<th>Region</th>\n<th>Dice Score</th>\n<th>Hausdorff95</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whole Tumor</td>\n<td>0.91</td>\n<td>5.2 mm</td>\n</tr>\n<tr>\n<td>Tumor Core</td>\n<td>0.88</td>\n<td>6.7 mm</td>\n</tr>\n<tr>\n<td>Enhancing Tumor</td>\n<td>0.83</td>\n<td>8.1 mm</td>\n</tr>\n</tbody>\n</table>\n<h2>Clinical Applications</h2>\n<p>This model has potential applications in:</p>\n<ul>\n<li>Pre-surgical planning</li>\n<li>Tumor volume monitoring</li>\n<li>Treatment response assessment</li>\n<li>Research studies</li>\n</ul>\n<h2>Limitations</h2>\n<ul>\n<li>Performance may vary across different MRI scanners and protocols</li>\n<li>The model requires high-quality MRI inputs with standard preprocessing</li>\n<li>Not FDA approved for clinical decision-making without proper validation</li>\n</ul>\n<h2>License</h2>\n<p>This model is available under the Apache 2.0 license.</p>",
+        "huggingface_url": "https://huggingface.co/monai/brain-tumor-segmentation",
+        "changelog": {
+            "2.1.0": "Improved performance on low-contrast images",
+            "2.0.0": "Added support for multi-sequence MRI",
+            "1.0.0": "Initial release"
+        }
+    }
+}

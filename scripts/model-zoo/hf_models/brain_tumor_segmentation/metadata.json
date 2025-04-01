@@ -1,0 +1,15 @@
+{
+  "name": "Brain Tumor Segmentation",
+  "description": "A transformer-based model for segmenting brain tumors in MRI images.",
+  "authors": "MONAI Clinical Team",
+  "version": "2.1.0",
+  "references": [
+    "Smith J, et al. (2023). Transformer-Based Segmentation of Brain Tumors. Journal of Neuroimaging, 15(3), 210-225."
+  ],
+  "huggingface_url": "https://huggingface.co/monai/brain-tumor-segmentation",
+  "changelog": {
+    "2.1.0": "Improved performance on low-contrast images",
+    "2.0.0": "Added support for multi-sequence MRI",
+    "1.0.0": "Initial release"
+  }
+}
