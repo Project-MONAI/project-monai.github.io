@@ -21,7 +21,7 @@ jobs:
       - name: Checkout Model Zoo
         uses: actions/checkout@v3
         with:
-          repository: zephyrie/model-zoo
+          repository: project-monai/model-zoo
           path: scripts/model-zoo
 
       - name: Setup Python and Node
