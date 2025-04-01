@@ -1,7 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth;">
+<html lang="en" class="scroll-smooth">
+<!-- Page-specific meta tags -->
+<title>MONAI Deploy</title>
+<meta name="description" content="MONAI Deploy is a comprehensive framework for developing, packaging, testing, and deploying medical AI applications in research and development environments. Through its modular arch">
+<meta property="og:title" content="MONAI Deploy">
+<meta property="og:description" content="MONAI Deploy is a comprehensive framework for developing, packaging, testing, and deploying medical AI applications in research and development environments. Through its modular arch">
+<meta property="og:url" content="https://monai.io/deploy.html">
+<meta name="twitter:title" content="MONAI Deploy">
+<meta name="twitter:description" content="MONAI Deploy is a comprehensive framework for developing, packaging, testing, and deploying medical AI applications in research and development environments. Through its modular arch">
+<link rel="canonical" href="https://monai.io/deploy.html">
 
+<!-- Include Head Component -->
 <!-- #include file="components/head.html" -->
+
 <style>
     @keyframes fade-in {
         from {
@@ -158,14 +169,8 @@
         border-color: #059669;
     }
 </style>
-<script>
-    document.head.innerHTML = document.head.innerHTML
-        .replace('${title}', 'MONAI Deploy')
-        .replace('${description}', 'MONAI Deploy is a comprehensive framework for developing, packaging, testing, and deploying medical AI applications in research and development environments. Through its modular architecture and standardized workflows, it enables seamless integration of AI models into existing infrastructures.')
-        .replace('${canonical_url}', 'https://monai.io/deploy.html');
-</script>
 
-<body>
+<body class="flex flex-col min-h-screen">
     <!-- #include file="components/header.html" -->
 
     <main class="flex-grow pt-20">

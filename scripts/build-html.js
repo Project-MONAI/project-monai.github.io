@@ -72,29 +72,9 @@ function replaceIncludes(content, components) {
     return processed;
 }
 
-function extractMetadata(content) {
-    const titleMatch = content.match(/<title>(.*?)<\/title>/);
-    const descriptionMatch = content.match(/<meta name="description" content="(.*?)">/);
-    const canonicalMatch = content.match(/<link rel="canonical" href="(.*?)">/);
-
-    return {
-        title: titleMatch ? titleMatch[1].split('|')[0].trim() : 'MONAI',
-        description: descriptionMatch ? descriptionMatch[1] : '',
-        canonical_url: canonicalMatch ? canonicalMatch[1] : 'https://monai.io'
-    };
-}
-
 function processTemplate(template, components) {
     // First pass: Replace includes
     let processed = replaceIncludes(template, components);
-    
-    // Extract metadata from the processed content
-    const metadata = extractMetadata(processed);
-    
-    // Second pass: Replace template variables
-    processed = processed.replace(/\${title}/g, metadata.title);
-    processed = processed.replace(/\${description}/g, metadata.description);
-    processed = processed.replace(/\${canonical_url}/g, metadata.canonical_url);
     
     return processed;
 }
