@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - master
 
 # Add permissions to allow deployment
 permissions:
@@ -20,7 +21,7 @@ jobs:
       - name: Checkout Model Zoo
         uses: actions/checkout@v3
         with:
-          repository: Project-MONAI/model-zoo
+          repository: project-monai/model-zoo
           path: scripts/model-zoo
 
       - name: Setup Python and Node
@@ -44,8 +45,8 @@ jobs:
           mkdir -p dist
           mkdir -p dist/assets/css
 
-          # Process model data
-          python scripts/fetch.py
+          # Process model data (both model-zoo and HF models)
+          python scripts/process_models.py
 
           # Build files
           npm run build
