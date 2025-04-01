@@ -1,8 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" style="scroll-behavior: smooth">
+
+<!-- Page-specific meta tags -->
+<title>MONAI - Ophthalmology Working Group</title>
+<meta name="description" content="Developing open-source MONAI-based algorithms and tools for ophthalmology image analysis.">
+<meta property="og:title" content="MONAI - Ophthalmology Working Group">
+<meta property="og:description" content="Developing open-source MONAI-based algorithms and tools for ophthalmology image analysis.">
+<meta property="og:url" content="https://monai.io/wg_ophthalmology.html">
+<meta name="twitter:title" content="MONAI - Ophthalmology Working Group">
+<meta name="twitter:description" content="Developing open-source MONAI-based algorithms and tools for ophthalmology image analysis.">
+<link rel="canonical" href="https://monai.io/wg_ophthalmology.html">
 
 <!-- Head Component -->
-<!-- Parameters: title, description, canonical_url -->
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
@@ -18,27 +27,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- SEO Meta Tags -->
-    <title>${title} | MONAI - Medical Open Network for AI</title>
-    <meta name="description" content="${description}">
     <meta name="keywords" content="MONAI, Medical Imaging, AI, Deep Learning, Healthcare, PyTorch, Open Source">
     <meta name="author" content="Project MONAI">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="${title} | MONAI">
-    <meta property="og:description" content="${description}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="${canonical_url}">
     <meta property="og:image" content="https://monai.io/assets/img/MONAI-logo_color.png">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@ProjectMONAI">
-    <meta name="twitter:title" content="${title} | MONAI">
-    <meta name="twitter:description" content="${description}">
     <meta name="twitter:image" content="https://monai.io/assets/img/MONAI-logo_color.png">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="${canonical_url}">
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/png">
@@ -77,12 +76,71 @@
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head> 
-<script>
-    document.head.innerHTML = document.head.innerHTML
-        .replace('${title}', 'MONAI - Ophthalmology Working Group')
-        .replace('${description}', 'Developing open-source MONAI-based algorithms and tools for ophthalmology image analysis.')
-        .replace('${canonical_url}', 'https://monai.io/wg_ophthalmology.html');
-</script>
+<!-- Head Component -->
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QVGBCPFPJ6');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="MONAI, Medical Imaging, AI, Deep Learning, Healthcare, PyTorch, Open Source">
+    <meta name="author" content="Project MONAI">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://monai.io/assets/img/MONAI-logo_color.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ProjectMONAI">
+    <meta name="twitter:image" content="https://monai.io/assets/img/MONAI-logo_color.png">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/img/favicon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/tailwind.css">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Alpine.js x-cloak -->
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MONAI",
+        "url": "https://monai.io",
+        "logo": "https://monai.io/assets/img/MONAI-logo_color.png",
+        "description": "MONAI is a freely available, community-supported, PyTorch-based framework for deep learning in healthcare imaging.",
+        "sameAs": [
+            "https://twitter.com/ProjectMONAI",
+            "https://medium.com/@monai",
+            "https://www.youtube.com/c/Project-MONAI",
+            "https://github.com/Project-MONAI"
+        ]
+    }
+    </script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head> 
 
 <body class="flex flex-col min-h-screen">
 
