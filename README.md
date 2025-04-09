@@ -34,6 +34,11 @@ This repository contains the source code and content for the Project MONAI websi
    npm run dev
    ```
 
+   Alternatively, to build and serve the site simultaneously:
+   ```bash
+   npm run dev:serve
+   ```
+
 The site will be available at `http://localhost:3000` with hot reloading enabled.
 
 ## Project Structure
