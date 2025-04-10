@@ -230,7 +230,6 @@
   <main class="flex-grow">
     <!-- Hero Section -->
     <section id="hero" class="py-24 bg-brand-light relative overflow-hidden">
-      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
       <div class="container relative">
         <div class="flex flex-wrap items-center">
           <div class="w-full max-w-3xl">
@@ -245,51 +244,67 @@
       </div>
     </section>
 
-    <!-- Initiatives Section -->
+    <!-- Highlights Section -->
     <section class="py-24 relative overflow-hidden">
       <div class="container relative">
-        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Initiatives</h2>
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Highlights</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
-            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Best Practices & Infrastructure</h3>
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Recommendations</h3>
             <ul class="space-y-4 text-gray-700">
               <li class="flex items-start">
                 <span class="text-brand-primary mr-3">•</span>
-                <span>Development of algorithm validation standards</span>
+                <a href="https://www.nature.com/articles/s41592-023-02151-z" class="link-hover">
+                  <span>Metrics Reloaded: recommendations for image analysis validation</span>
+                </a>
               </li>
               <li class="flex items-start">
                 <span class="text-brand-primary mr-3">•</span>
-                <span>Implementation of automated evaluation systems</span>
+                <a href="https://www.nature.com/articles/s41592-023-02150-0" class="link-hover">
+                  <span>Understanding metric-related pitfalls in image analysis validation</span>
+                </a>
               </li>
               <li class="flex items-start">
                 <span class="text-brand-primary mr-3">•</span>
-                <span>Creation of benchmark frameworks and protocols</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-primary mr-3">•</span>
-                <span>Establishment of quality control guidelines</span>
+                <a href="https://metrics-reloaded.dkfz.de/" class="link-hover">
+                  <span>Metrics Reloaded Toolkit</span>
+                </a>
               </li>
             </ul>
           </div>
           
           <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
-            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Research & Community Standards</h3>
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Implementation of recommendations</h3>
             <ul class="space-y-4 text-gray-700">
               <li class="flex items-start">
                 <span class="text-brand-primary mr-3">•</span>
-                <span>Development of novel evaluation metrics</span>
+                <a href="https://github.com/Project-MONAI/MetricsReloaded/" class="link-hover">
+                  <span>MONAI Evaluation Metrics</span>
+                </a>
               </li>
               <li class="flex items-start">
                 <span class="text-brand-primary mr-3">•</span>
-                <span>Implementation of performance analysis tools</span>
+                <a href="https://docs.monai.io/en/latest/metrics.html" class="link-hover">
+                  <span>Metrics Documentation</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="md:col-span-2 bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Related resources</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <a href="https://www.dkfz.de/en/imsy/research/biomedical-image-analysis-challenges-bias-initiative" class="link-hover">
+                  <span>Biomedical Image Analysis ChallengeS (BIAS) Initiative</span>
+                </a>
               </li>
               <li class="flex items-start">
                 <span class="text-brand-primary mr-3">•</span>
-                <span>Establishment of data sharing practices</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-primary mr-3">•</span>
-                <span>Creation of reproducibility guidelines</span>
+                <a href="https://www.rankings-reloaded.de/" class="link-hover">
+                  <span>Rankings Reloaded</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -299,7 +314,6 @@
 
     <!-- Group Leads Section -->
     <section class="py-24 bg-neutral-lightgray relative overflow-hidden">
-      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
       <div class="container relative">
         <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Group Leads</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -360,38 +374,55 @@
       </div>
     </section>
 
-    <!-- Resources Section -->
+    <!-- Ongoing Projects Section -->
     <section class="py-24 bg-neutral-lightgray relative overflow-hidden">
-      <div class="absolute inset-0 opacity-[0.10] bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[length:36px_36px]"></div>
       <div class="container relative">
-        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Resources</h2>
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Ongoing Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
-            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Development Resources</h3>
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Reporting Guidelines Taskforce (Lead - Olivier Colliot)</h3>
             <ul class="space-y-4 text-gray-700">
               <li class="flex items-start">
                 <span class="text-brand-primary mr-3">•</span>
-                <a href="https://github.com/Project-MONAI/MetricsReloaded/" class="link-hover">
-                  <span>Metrics Reloaded</span>
-                </a>
+                <span>Surveying current reporting practices and identifying areas for improvement</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Development of guidelines around results reporting with a focus statistical aspects</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Identification of proper calculation and methods for various procedures (e.g., confidence intervals) across different tasks and validation metrics</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Implementation of recommended calculations for MONAI users</span>
               </li>
             </ul>
           </div>
           
           <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
-            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Publications</h3>
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Benchmarking Datasets Taskforce (Lead - Michela Antonelli)</h3>
             <ul class="space-y-4 text-gray-700">
               <li class="flex items-start">
                 <span class="text-brand-primary mr-3">•</span>
-                <a href="https://www.nature.com/articles/s41592-023-02151-z" class="link-hover">
-                  <span>Metrics Reloaded: Recommendations for image-analysis validation</span>
-                </a>
+                <span>Data quality review for MICCAI 2025 lighthouse challenges</span>
               </li>
               <li class="flex items-start">
                 <span class="text-brand-primary mr-3">•</span>
-                <a href="https://www.nature.com/articles/s41592-023-02150-0" class="link-hover">
-                  <span>Metrics Reloaded: Pitfalls and recommendations for image analysis validation</span>
-                </a>
+                <span>Identification of key characteristics for benchmarking datasets</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Encouragement to develop new datasets according to best practice</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Identification of relevant historical datasets to be used for benchmarking</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Implementation of guidelines for upcoming datasets</span>
               </li>
             </ul>
           </div>
@@ -400,34 +431,20 @@
     </section>
 
     <!-- Collaboration Opportunities Section -->
-    <section class="py-24 bg-white">
-      <div class="container">
+    <section class="py-24 bg-white relative overflow-hidden">
+      <div class="container relative">
         <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Collaboration Opportunities</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
-            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Development Contributions</h3>
-            <ul class="space-y-4 text-gray-700">
-              <li class="flex items-start">
-                <span class="text-brand-primary mr-3">•</span>
-                <span>Contribute to evaluation metrics development</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-primary mr-3">•</span>
-                <span>Help create benchmarking tools</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-primary mr-3">•</span>
-                <span>Develop validation frameworks</span>
-              </li>
-            </ul>
-          </div>
-          
+        <div class="grid grid-cols-1 gap-8 mt-8">
           <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
             <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Community Engagement</h3>
             <ul class="space-y-4 text-gray-700">
               <li class="flex items-start">
                 <span class="text-brand-primary mr-3">•</span>
                 <span>Join our regular surveys</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">•</span>
+                <span>Contribute to evaluation metrics testing</span>
               </li>
               <li class="flex items-start">
                 <span class="text-brand-primary mr-3">•</span>
