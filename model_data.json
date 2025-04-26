@@ -965,6 +965,36 @@
             "1.0.0": "Initial release"
         }
     },
+    "hf_llama3_vila_m3_3b": {
+        "model_name": "VILA_M3_3B",
+        "description": "VILA_M3 is a medical vision language model that enhances VLMs with medical expert knowledge, utilizing domain-expert models to improve precision in medical imaging tasks.",
+        "authors": "Vishwesh Nath, Wenqi Li, Dong Yang, Andriy Myronenko, et al. from NVIDIA, SingHealth, and NIH",
+        "papers": [
+            "Nath, Vishwesh, et al. 'VILA_M3: Enhancing Vision-Language Models with Medical Expert Knowledge', arXiv preprint arXiv:2411.12915 (2025)."
+        ],
+        "version": "1.0.0",
+        "model_id": "hf_llama3_vila_m3_3b",
+        "readme": "<h1>VILA_M3_3B</h1>\n<p>VILA_M3 is a medical vision language model that enhances VLMs with medical expert knowledge, utilizing domain-expert models to improve precision in medical imaging tasks.</p>\n<p>This model is available at: <a href=\"https://huggingface.co/MONAI/Llama3-VILA-M3-3B\">MONAI/Llama3-VILA-M3-3B</a></p>\n<h2>Citation</h2>\n<pre><code>@article{nath2025vila,\n  title={VILA_M3: Enhancing Vision-Language Models with Medical Expert Knowledge},\n  author={Nath, Vishwesh and Li, Wenqi and Yang, Dong and Myronenko, Andriy and Zheng, Mingxin and Lu, Yao and Liu, Zhijian and Yin, Hongxu and Tang, Yucheng and Guo, Pengfei and Zhao, Can and Xu, Ziyue and He, Yufan and Law, Yee Man and Simon, Benjamin and Harmon, Stephanie and Heinrich, Greg and Aylward, Stephen and Edgar, Marc and Zephyr, Michael and Han, Song and Molchanov, Pavlo and Turkbey, Baris and Roth, Holger and Xu, Daguang},\n  journal={arXiv preprint arXiv:2411.12915},\n  year={2025}\n}\n</code></pre>",
+        "huggingface_url": "https://huggingface.co/MONAI/Llama3-VILA-M3-3B",
+        "changelog": {
+            "1.0.0": "initial release of VILA_M3_3B model"
+        }
+    },
+    "hf_llama3_vila_m3_13b": {
+        "model_name": "VILA_M3_13B",
+        "description": "VILA_M3 is a medical vision language model that enhances VLMs with medical expert knowledge, utilizing domain-expert models to improve precision in medical imaging tasks.",
+        "authors": "Vishwesh Nath, Wenqi Li, Dong Yang, Andriy Myronenko, et al. from NVIDIA, SingHealth, and NIH",
+        "papers": [
+            "Nath, Vishwesh, et al. 'VILA_M3: Enhancing Vision-Language Models with Medical Expert Knowledge', arXiv preprint arXiv:2411.12915 (2025)."
+        ],
+        "version": "1.0.0",
+        "model_id": "hf_llama3_vila_m3_13b",
+        "readme": "<h1>VILA_M3_13B</h1>\n<p>VILA_M3 is a medical vision language model that enhances VLMs with medical expert knowledge, utilizing domain-expert models to improve precision in medical imaging tasks.</p>\n<p>This model is available at: <a href=\"https://huggingface.co/MONAI/Llama3-VILA-M3-13B\">MONAI/Llama3-VILA-M3-13B</a></p>\n<h2>Citation</h2>\n<pre><code>@article{nath2025vila,\n  title={VILA_M3: Enhancing Vision-Language Models with Medical Expert Knowledge},\n  author={Nath, Vishwesh and Li, Wenqi and Yang, Dong and Myronenko, Andriy and Zheng, Mingxin and Lu, Yao and Liu, Zhijian and Yin, Hongxu and Tang, Yucheng and Guo, Pengfei and Zhao, Can and Xu, Ziyue and He, Yufan and Law, Yee Man and Simon, Benjamin and Harmon, Stephanie and Heinrich, Greg and Aylward, Stephen and Edgar, Marc and Zephyr, Michael and Han, Song and Molchanov, Pavlo and Turkbey, Baris and Roth, Holger and Xu, Daguang},\n  journal={arXiv preprint arXiv:2411.12915},\n  year={2025}\n}\n</code></pre>",
+        "huggingface_url": "https://huggingface.co/MONAI/Llama3-VILA-M3-13B",
+        "changelog": {
+            "1.0.0": "initial release of VILA_M3_13B model"
+        }
+    },
     "hf_exaonepath": {
         "model_name": "EXAONEPath",
         "description": "EXAONEPath is a patch-level pathology pretrained model with 86 million parameters, pretrained on 285,153,903 patches extracted from 34,795 WSIs.",
@@ -1010,36 +1040,6 @@
         "huggingface_url": "https://huggingface.co/datasets/ibrahimhamamci/CT-RATE",
         "changelog": {
             "1.0.0": "initial release of CT_CHAT model"
-        }
-    },
-    "hf_llama3_vila_m3_3b": {
-        "model_name": "VILA_M3_3B",
-        "description": "VILA_M3 is a medical vision language model that enhances VLMs with medical expert knowledge, utilizing domain-expert models to improve precision in medical imaging tasks.",
-        "authors": "Vishwesh Nath, Wenqi Li, Dong Yang, Andriy Myronenko, et al. from NVIDIA, SingHealth, and NIH",
-        "papers": [
-            "Nath, Vishwesh, et al. 'VILA_M3: Enhancing Vision-Language Models with Medical Expert Knowledge', arXiv preprint arXiv:2411.12915 (2025)."
-        ],
-        "version": "1.0.0",
-        "model_id": "hf_llama3_vila_m3_3b",
-        "readme": "<h1>VILA_M3_3B</h1>\n<p>VILA_M3 is a medical vision language model that enhances VLMs with medical expert knowledge, utilizing domain-expert models to improve precision in medical imaging tasks.</p>\n<p>This model is available at: <a href=\"https://huggingface.co/MONAI/Llama3-VILA-M3-3B\">MONAI/Llama3-VILA-M3-3B</a></p>\n<h2>Citation</h2>\n<pre><code>@article{nath2025vila,\n  title={VILA_M3: Enhancing Vision-Language Models with Medical Expert Knowledge},\n  author={Nath, Vishwesh and Li, Wenqi and Yang, Dong and Myronenko, Andriy and Zheng, Mingxin and Lu, Yao and Liu, Zhijian and Yin, Hongxu and Tang, Yucheng and Guo, Pengfei and Zhao, Can and Xu, Ziyue and He, Yufan and Law, Yee Man and Simon, Benjamin and Harmon, Stephanie and Heinrich, Greg and Aylward, Stephen and Edgar, Marc and Zephyr, Michael and Han, Song and Molchanov, Pavlo and Turkbey, Baris and Roth, Holger and Xu, Daguang},\n  journal={arXiv preprint arXiv:2411.12915},\n  year={2025}\n}\n</code></pre>",
-        "huggingface_url": "https://huggingface.co/MONAI/Llama3-VILA-M3-3B",
-        "changelog": {
-            "1.0.0": "initial release of VILA_M3_3B model"
-        }
-    },
-    "hf_llama3_vila_m3_13b": {
-        "model_name": "VILA_M3_13B",
-        "description": "VILA_M3 is a medical vision language model that enhances VLMs with medical expert knowledge, utilizing domain-expert models to improve precision in medical imaging tasks.",
-        "authors": "Vishwesh Nath, Wenqi Li, Dong Yang, Andriy Myronenko, et al. from NVIDIA, SingHealth, and NIH",
-        "papers": [
-            "Nath, Vishwesh, et al. 'VILA_M3: Enhancing Vision-Language Models with Medical Expert Knowledge', arXiv preprint arXiv:2411.12915 (2025)."
-        ],
-        "version": "1.0.0",
-        "model_id": "hf_llama3_vila_m3_13b",
-        "readme": "<h1>VILA_M3_13B</h1>\n<p>VILA_M3 is a medical vision language model that enhances VLMs with medical expert knowledge, utilizing domain-expert models to improve precision in medical imaging tasks.</p>\n<p>This model is available at: <a href=\"https://huggingface.co/MONAI/Llama3-VILA-M3-13B\">MONAI/Llama3-VILA-M3-13B</a></p>\n<h2>Citation</h2>\n<pre><code>@article{nath2025vila,\n  title={VILA_M3: Enhancing Vision-Language Models with Medical Expert Knowledge},\n  author={Nath, Vishwesh and Li, Wenqi and Yang, Dong and Myronenko, Andriy and Zheng, Mingxin and Lu, Yao and Liu, Zhijian and Yin, Hongxu and Tang, Yucheng and Guo, Pengfei and Zhao, Can and Xu, Ziyue and He, Yufan and Law, Yee Man and Simon, Benjamin and Harmon, Stephanie and Heinrich, Greg and Aylward, Stephen and Edgar, Marc and Zephyr, Michael and Han, Song and Molchanov, Pavlo and Turkbey, Baris and Roth, Holger and Xu, Daguang},\n  journal={arXiv preprint arXiv:2411.12915},\n  year={2025}\n}\n</code></pre>",
-        "huggingface_url": "https://huggingface.co/MONAI/Llama3-VILA-M3-13B",
-        "changelog": {
-            "1.0.0": "initial release of VILA_M3_13B model"
         }
     }
 }
