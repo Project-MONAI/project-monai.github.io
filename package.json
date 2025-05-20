@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "dev": "cross-env NODE_ENV=development npm-run-all clean build:tailwind --parallel watch:*",
+        "dev:serve": "cross-env NODE_ENV=development npm-run-all clean build:tailwind --parallel watch:* serve",
         "serve": "node scripts/dev-server.js",
         "watch:tailwind": "cross-env NODE_ENV=development tailwindcss -i ./assets/css/style.css -o ./dist/assets/css/tailwind.css --watch",
         "watch:html": "node scripts/build-html.js --watch",
