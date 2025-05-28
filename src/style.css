@@ -1,0 +1,540 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  font-family: "Mulish", sans-serif;
+}
+
+p {
+  @apply text-gray-600 leading-loose;
+}
+
+li {
+  @apply py-2 text-gray-600;
+}
+
+li::marker {
+  @apply text-brand text-2xl;
+}
+
+.collapse.show {
+  @apply block;
+}
+
+.toggler-icon {
+  @apply block bg-gray-700 relative duration-300;
+  height: 2px;
+  width: 30px;
+  margin: 6px 0;
+}
+
+.active > .toggler-icon:nth-child(1) {
+  @apply transform rotate-45;
+  top: 7px;
+}
+
+.active > .toggler-icon:nth-child(2) {
+  @apply opacity-0;
+}
+
+.active > .toggler-icon:nth-child(3) {
+  top: -8px;
+  transform: rotate(135deg);
+}
+
+.code {
+  font-family: "Space Mono", monospace;
+}
+
+.container {
+  @apply mx-auto px-4;
+}
+
+.page-scroll {
+  @apply block px-5 py-2 uppercase text-gray-700 duration-300;
+}
+
+.nav-item .active {
+  @apply text-brand-primary;
+}
+
+.section-heading,
+.section-heading-long {
+  @apply text-4xl text-gray-700 font-bold tracking-wide;
+}
+
+.section-heading-white {
+  @apply section-heading;
+  color: white;
+}
+
+.section-heading:after {
+  @apply mb-4;
+  display: block;
+  content: url("../img/title_decoration.png");
+}
+
+@variants responsive {
+  .section-heading-long:after {
+    @apply mb-4;
+    display: block;
+    content: url("../img/title_decoration_long.png");
+  }
+}
+
+.icon {
+  @apply mb-4 text-blue-600;
+}
+
+.feature-title {
+  @apply text-gray-800 font-medium block mb-3;
+}
+
+.social-link {
+  @apply flex justify-center items-center w-10 h-10 bg-blue-600 rounded text-lg text-white duration-300;
+}
+
+.footer-icon {
+  @apply flex justify-center items-center w-8 h-8 bg-white text-sm text-gray-700 duration-300;
+}
+
+.footer-icon:hover {
+  @apply text-white;
+}
+
+.brand-angle-top {
+  @apply h-40;
+  background-image: linear-gradient(
+    178deg,
+    #ffffff calc(50% - 2px),
+    #05789e 50%
+  );
+}
+
+.brand-angle-top-gray {
+  @apply h-40;
+  background-image: linear-gradient(
+    178deg,
+    #f5f5f5 calc(50% - 2px),
+    #05789e 50%
+  );
+}
+
+.brand-angle-top-light {
+  @apply h-40;
+  background-image: linear-gradient(
+    178deg,
+    #f5f5f5 calc(50% - 2px),
+    #e6f3f7 50%
+  );
+}
+
+.brand-angle-bottom {
+  @apply h-40;
+  background-image: linear-gradient(
+    -2deg,
+    #ffffff calc(50% - 2px),
+    #05789e 50%
+  );
+}
+
+.brand-angle-bottom-gray {
+  @apply h-40;
+  background-image: linear-gradient(
+    -2deg,
+    #f5f5f5 calc(50% - 2px),
+    #05789e 50%
+  );
+}
+
+.external-link,
+.anchor-link {
+  @apply text-brand-primary text-base;
+}
+
+.external-link:after {
+  @apply pl-2;
+  content: url("../img/external_link_icon.png");
+}
+
+.anchor-link:after {
+  @apply pl-2;
+  content: url("../img/ic_arrow_down.png");
+}
+
+#hero-area {
+  position: relative;
+}
+
+.hero-image {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 1em;
+  z-index: -2;
+}
+
+.scroll-down {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 1em;
+}
+
+.particles-js-canvas-el {
+  position: absolute;
+  z-index: -5;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+.chevron::before {
+  @apply border-gray-400;
+  border-style: solid;
+  border-width: 0.15em 0.15em 0 0;
+  content: "";
+  display: inline-block;
+  height: 0.55em;
+  left: 0.25em;
+  position: relative;
+  top: 0.3em;
+  transform: rotate(135deg);
+  vertical-align: top;
+  width: 0.55em;
+}
+
+.brand-btn {
+  @apply text-brand-primary hover:text-white font-medium text-sm text-center 
+  border border-brand-primary 
+  hover:bg-brand-primary
+  focus:ring-4 focus:outline-none focus:ring-brand-light 
+  rounded-full
+  px-5 py-2.5 mr-2 mb-2;
+}
+
+.brand-btn-white {
+  @apply text-brand-primary hover:text-white font-medium text-sm text-center 
+  border border-brand-primary 
+  bg-neutral-purewhite hover:bg-brand-primary
+  focus:ring-4 focus:outline-none focus:ring-brand-light 
+  rounded-full
+  px-5 py-2.5 mr-2 mb-2;
+}
+
+
+
+
+.dialog {
+  --tw-bg-opacity: 0.5;
+  background-color: rgba(0,0,0,var(--tw-bg-opacity));
+  cursor: pointer;
+  height: 100%;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 40;
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s
+}
+
+.dialog-content {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  border-radius: 0;
+  cursor: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  z-index: 50
+}
+
+.dialog.dialog-full .dialog-content {
+  border-radius: 0;
+  height: 100vh;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-height: 100vh;
+  width: 100%
+}
+
+.dialog-header {
+  --tw-border-opacity: 1;
+  border-color: rgba(241,245,249,var(--tw-border-opacity));
+  border-bottom-width: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .75rem 1rem
+}
+
+.dialog-body {
+  flex: 1 1 auto;
+  padding: 1rem;
+  position: relative
+}
+
+.prose .dialog-content img {
+  margin-top: 0;
+  margin-bottom: 0
+}
+
+.dialog-footer {
+  --tw-bg-opacity: 1;
+  background-color: rgba(241,245,249,var(--tw-bg-opacity));
+  border-bottom-right-radius: .25rem;
+  border-bottom-left-radius: .25rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: .75rem
+}
+
+.dialog-footer .btn+.btn {
+  margin-left: .25rem
+}
+
+.scrollbar-measure {
+  overflow: scroll;
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px
+}
+
+.dialog.active .drawer-content {
+  --tw-translate-x: 0px!important
+}
+
+.dialog:not(.dialog-right) .drawer-content {
+  margin-right: auto;
+  transform-origin: left;
+  --tw-translate-x: -100%
+}
+
+.dialog-right .drawer-content {
+  margin-left: auto;
+  transform-origin: right;
+  --tw-translate-x: 100%
+}
+
+.drawer-content {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  cursor: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  width: 83.333333%;
+  z-index: 50;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s
+}
+
+.dialog.dialog-full .drawer-content {
+  height: 100vh;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-height: 100vh;
+  width: 100%
+}
+
+@media (min-width: 640px) {
+  .dialog-content {
+      border-radius:.25rem;
+      height: auto;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      width: 83.333333%;
+      max-height: calc(100% - 4rem)
+  }
+}
+
+@media (min-width: 768px) {
+  .dialog-content,.drawer-content {
+      width:80%
+  }
+}
+
+@media (min-width: 1024px) {
+  .dialog-content {
+      width:50%
+  }
+
+  .dialog.dialog-sm .dialog-content {
+      width: 25%
+  }
+
+  .dialog.dialog-lg .dialog-content {
+      width: 80%
+  }
+
+  .drawer-content {
+      width: 25%
+  }
+
+  .dialog.dialog-sm .drawer-content {
+      width: 16.666667%
+  }
+
+  .dialog.dialog-lg .drawer-content {
+      width: 66.666667%
+  }
+}
+
+@supports (-webkit-touch-callout:none) {
+  .drawer-content {
+      max-height: -webkit-fill-available;
+      min-height: -webkit-fill-available
+  }
+
+  .dialog-content,.drawer-content {
+      height: -webkit-fill-available
+  }
+
+  .dialog.dialog-full .dialog-content,.dialog.dialog-full .drawer-content {
+      height: -webkit-fill-available;
+      max-height: -webkit-fill-available
+  }
+}
+
+/* Additional vertical padding used by kbd tag. */
+.py-05 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+
+.markdown {
+  @apply text-gray-900 leading-normal break-words;
+}
+
+.markdown > * + * {
+  @apply mt-0 mb-4;
+}
+
+.markdown li::marker {
+  font-size: 1.25rem;
+}
+
+.markdown li + li {
+  @apply mt-1;
+}
+
+.markdown li > p + p {
+  @apply mt-6;
+}
+
+.markdown strong {
+  @apply font-semibold;
+}
+
+.markdown a {
+  @apply text-blue-600 font-semibold;
+}
+
+.markdown strong a {
+  @apply font-bold;
+}
+
+.markdown h1 {
+  @apply leading-tight border-b text-2xl font-semibold mb-4 mt-6 pb-2;
+}
+
+.markdown h2 {
+  @apply leading-tight border-b text-2xl font-semibold mb-4 mt-6 pb-2;
+}
+
+.markdown h3 {
+  @apply leading-snug text-lg font-semibold mb-4 mt-6;
+}
+
+.markdown h4 {
+  @apply leading-none text-base font-semibold mb-4 mt-6;
+}
+
+.markdown h5 {
+  @apply leading-tight text-sm font-semibold mb-4 mt-6;
+}
+
+.markdown h6 {
+  @apply leading-tight text-sm font-semibold text-gray-600 mb-4 mt-6;
+}
+
+.markdown blockquote {
+  @apply text-base border-l-4 border-gray-300 pl-4 pr-4 text-gray-600;
+}
+
+.markdown code {
+  @apply font-mono text-sm inline bg-gray-200 rounded px-1 py-05;
+}
+
+.markdown pre {
+  @apply bg-gray-100 rounded p-4;
+}
+
+.markdown pre code {
+  @apply block bg-transparent p-0 overflow-visible rounded-none whitespace-pre-wrap;
+}
+
+.markdown ul {
+  @apply text-base pl-8 list-disc;
+}
+
+.markdown ol {
+  @apply text-base pl-8 list-decimal;
+}
+
+.markdown kbd {
+  @apply text-xs inline-block rounded border px-1 py-05 align-middle font-normal font-mono shadow;
+}
+
+.markdown table {
+  @apply text-base border-gray-600;
+}
+
+.markdown th {
+  @apply border py-1 px-3;
+}
+
+.markdown td {
+  @apply border py-1 px-3;
+}
+
+/* Override pygments style background color. */
+.markdown .highlight pre {
+  @apply bg-gray-100 !important;
+}
