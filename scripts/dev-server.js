@@ -71,7 +71,23 @@ const params = {
 // Start server
 liveServer.start(params);
 
-console.log(`Development server running at http://localhost:${params.port}`);
+const os = require('os');
+const networkInterfaces = os.networkInterfaces();
+const addresses = [];
+
+Object.keys(networkInterfaces).forEach((name) => {
+    networkInterfaces[name].forEach((iface) => {
+        if (iface.family === 'IPv4' && !iface.internal) {
+            addresses.push(iface.address);
+        }
+    });
+});
+
+console.log(`Development server running at:`);
+console.log(`  Local:   http://localhost:${params.port}`);
+addresses.forEach(address => {
+    console.log(`  Network: http://${address}:${params.port}`);
+});
 
 // Watch for component changes
 componentsWatcher.on('change', (filepath) => {
