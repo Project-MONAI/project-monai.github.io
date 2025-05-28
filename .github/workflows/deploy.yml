@@ -50,7 +50,8 @@ jobs:
 
           # Build files
           npm run build
-          npx babel src/model-zoo.js --out-file dist/model-zoo.js --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-transform-react-jsx
+          # Copy Vue.js file directly (no babel needed for Vue 3)
+          cp src/model-zoo-vue.js dist/src/model-zoo-vue.js
 
           # Build Tailwind CSS explicitly
           npx tailwindcss -i ./assets/css/style.css -o ./dist/assets/css/tailwind.css --minify

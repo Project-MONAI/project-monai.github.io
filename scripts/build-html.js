@@ -38,7 +38,8 @@ function copyStaticAssets() {
         'assets',
         'images',
         'apps',
-        'research'
+        'research',
+        'src'  // Add src directory for Vue files
     ];
     
     // Copy each directory if it exists
@@ -48,6 +49,12 @@ function copyStaticAssets() {
             console.log(`Copied ${dir} to dist`);
         }
     });
+    
+    // Copy model_data.json if it exists
+    if (fs.existsSync('model_data.json')) {
+        fs.copyFileSync('model_data.json', path.join(DIST_DIR, 'model_data.json'));
+        console.log('Copied model_data.json to dist');
+    }
 }
 
 function replaceIncludes(content, components) {
