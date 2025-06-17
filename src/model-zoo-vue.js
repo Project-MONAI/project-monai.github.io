@@ -15,7 +15,7 @@ const TagFilter = {
           'flex-1 px-6 py-3 font-medium rounded-l-lg border-2 transition-all duration-300',
           activeTag === 'all' 
             ? 'bg-brand-primary text-white border-brand-primary' 
-            : 'bg-white text-brand-primary border-brand-primary hover:bg-brand-light'
+            : 'bg-white text-brand-primary border-brand-primary hover:bg-brand-primary hover:text-white'
         ]"
       >
         All Models ({{ modelCounts.total }})
@@ -27,7 +27,7 @@ const TagFilter = {
           'flex-1 px-6 py-3 font-medium border-t-2 border-b-2 -mx-px transition-all duration-300',
           activeTag === 'bundle' 
             ? 'bg-brand-primary text-white border-brand-primary' 
-            : 'bg-white text-brand-primary border-brand-primary hover:bg-brand-light'
+            : 'bg-white text-brand-primary border-brand-primary hover:bg-brand-primary hover:text-white'
         ]"
       >
         MONAI Bundles ({{ modelCounts.bundle }})
@@ -39,7 +39,7 @@ const TagFilter = {
           'flex-1 px-6 py-3 font-medium rounded-r-lg border-2 transition-all duration-300',
           activeTag === 'hf' 
             ? 'bg-brand-primary text-white border-brand-primary' 
-            : 'bg-white text-brand-primary border-brand-primary hover:bg-brand-light'
+            : 'bg-white text-brand-primary border-brand-primary hover:bg-brand-primary hover:text-white'
         ]"
       >
         HuggingFace ({{ modelCounts.hf }})
@@ -62,7 +62,7 @@ const ModelCard = {
   template: `
     <div class="bg-white border border-gray-200 rounded-lg p-6 h-full flex flex-col hover:border-brand-primary hover:shadow-md transition-all duration-200 group">
       <div class="flex items-start justify-between mb-3 gap-2">
-        <h3 class="text-xl font-semibold text-gray-800 group-hover:text-brand-primary transition-colors truncate flex-1" :title="model.model_name">{{ model.model_name }}</h3>
+        <h3 class="text-base font-semibold text-gray-800 group-hover:text-brand-primary transition-colors truncate flex-1" :title="model.model_name">{{ model.model_name }}</h3>
         <span v-if="model.version" class="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded flex-shrink-0">v{{ model.version }}</span>
       </div>
       
@@ -185,20 +185,20 @@ const ModelListView = {
         <div class="container mx-auto px-4">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div class="pr-8">
-              <h1 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
+              <h1 class="text-3xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
                 MONAI Model Zoo
                 <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
               </h1>
               <div class="prose max-w-none">
-                <p class="text-lg leading-relaxed text-gray-700">
+                <p class="text-base leading-relaxed text-gray-600">
                   Discover and download state-of-the-art medical imaging models in the MONAI Bundle format.
                 </p>
-                <p class="text-lg leading-relaxed text-gray-700">
+                <p class="text-base leading-relaxed text-gray-600">
                   The MONAI Model Zoo is a collection of pre-trained medical imaging models, ready for research and clinical deployment. Each model is packaged in the
                   <a class="text-brand-primary hover:text-brand-dark transition-colors mx-1" href="https://docs.monai.io/en/latest/bundle_intro.html" target="_blank" rel="noopener noreferrer">MONAI Bundle</a>
                   format, ensuring reproducibility and ease of use.
                 </p>
-                <p class="text-lg leading-relaxed text-gray-700">
+                <p class="text-base leading-relaxed text-gray-600">
                   Our models cover a wide range of medical imaging tasks, from segmentation to classification, and are validated through rigorous testing and real-world applications. Whether you're a researcher, clinician, or developer, you'll find models that can accelerate your medical AI journey.
                 </p>
               </div>
@@ -209,7 +209,7 @@ const ModelListView = {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                   </svg>
                 </a>
-                <a href="https://docs.monai.io/en/latest/bundle_intro.html" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                <a href="https://docs.monai.io/en/latest/bundle_intro.html" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-colors inline-flex items-center gap-2 group">
                   <span>Learn More</span>
                   <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -228,12 +228,12 @@ const ModelListView = {
 
       <div v-if="loading" class="text-center py-24">
         <div class="inline-block animate-spin rounded-full h-16 w-16 border-4 border-brand-primary border-t-transparent"></div>
-        <p class="mt-6 text-gray-600 text-lg">Loading models...</p>
+        <p class="mt-6 text-gray-600 text-base">Loading models...</p>
       </div>
 
       <div v-else-if="error" class="text-center py-24">
         <div class="bg-red-50 rounded-lg p-8 inline-block">
-          <p class="text-red-600 text-lg">Error loading models: {{ error }}</p>
+          <p class="text-red-600 text-base">Error loading models: {{ error }}</p>
         </div>
       </div>
 
@@ -242,7 +242,7 @@ const ModelListView = {
         <section class="py-12 bg-gray-50">
           <div class="container mx-auto px-4">
             <div class="text-center">
-              <h2 class="text-2xl font-bold text-gray-800 mb-2">Browse Models</h2>
+              <h2 class="text-lg font-bold text-gray-800 mb-2">Browse Models</h2>
               <p class="text-gray-600 mb-8">Search and filter to find the models you need</p>
               
               <!-- Search and Filter Container -->
@@ -287,7 +287,7 @@ const ModelListView = {
               <svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
-              <p class="text-xl text-gray-600 mb-2">No models found</p>
+              <p class="text-base text-gray-600 mb-2">No models found</p>
               <p class="text-gray-500">Try adjusting your search or filter criteria</p>
             </div>
             <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -374,7 +374,7 @@ const ModelDetailView = {
         <div class="container mx-auto px-4 py-4">
           <button 
             @click="goBack"
-            class="group inline-flex items-center px-4 py-2 rounded-lg bg-white border border-gray-300 hover:border-brand-primary hover:bg-brand-light text-gray-700 hover:text-brand-dark font-medium transition-all duration-200 shadow-sm"
+            class="group inline-flex items-center px-4 py-2 rounded-lg bg-white border border-gray-300 hover:border-brand-primary hover:bg-brand-primary hover:text-white text-gray-700 hover:text-brand-dark font-medium transition-all duration-200 shadow-sm"
           >
             <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -386,12 +386,12 @@ const ModelDetailView = {
 
       <div v-if="loading" class="text-center py-24">
         <div class="inline-block animate-spin rounded-full h-16 w-16 border-4 border-brand-primary border-t-transparent"></div>
-        <p class="mt-6 text-gray-600 text-lg">Loading model details...</p>
+        <p class="mt-6 text-gray-600 text-base">Loading model details...</p>
       </div>
 
       <div v-else-if="error" class="text-center py-24">
         <div class="bg-red-50 rounded-lg p-8 inline-block">
-          <p class="text-red-600 text-lg">{{ error }}</p>
+          <p class="text-red-600 text-base">{{ error }}</p>
         </div>
       </div>
 
@@ -399,8 +399,8 @@ const ModelDetailView = {
         <div class="max-w-7xl mx-auto">
           <!-- Model Header -->
           <div class="mb-8">
-            <h1 class="text-4xl font-bold text-gray-800 mb-4">{{ model.model_name }}</h1>
-            <p class="text-xl text-gray-700 leading-relaxed">{{ model.description }}</p>
+            <h1 class="text-2xl font-bold text-gray-800 mb-4">{{ model.model_name }}</h1>
+            <p class="text-base text-gray-700 leading-relaxed">{{ model.description }}</p>
           </div>
 
           <!-- Two Column Layout -->
@@ -410,7 +410,7 @@ const ModelDetailView = {
               <div class="lg:sticky lg:top-24 space-y-6">
                 <!-- Model Info Card -->
                 <div class="bg-white border border-gray-200 rounded-lg p-6">
-                  <h3 class="text-lg font-semibold text-gray-800 mb-4">Model Information</h3>
+                  <h3 class="text-base font-semibold text-gray-800 mb-4">Model Information</h3>
                   
                   <div class="space-y-4">
                     <div v-if="model.authors">
@@ -449,7 +449,7 @@ const ModelDetailView = {
 
                 <!-- References -->
                 <div v-if="model.papers && model.papers.length > 0" class="bg-white border border-gray-200 rounded-lg p-6">
-                  <h3 class="text-lg font-semibold text-gray-800 mb-4">References</h3>
+                  <h3 class="text-base font-semibold text-gray-800 mb-4">References</h3>
                   <ul class="space-y-2">
                     <li v-for="(paper, index) in model.papers" :key="index" class="text-sm text-gray-700 leading-relaxed">
                       <span class="text-brand-primary mr-2">•</span>{{ paper }}
@@ -459,7 +459,7 @@ const ModelDetailView = {
 
                 <!-- Version History -->
                 <div v-if="model.changelog && Object.keys(model.changelog).length > 0" class="bg-white border border-gray-200 rounded-lg p-6">
-                  <h3 class="text-lg font-semibold text-gray-800 mb-4">Version History</h3>
+                  <h3 class="text-base font-semibold text-gray-800 mb-4">Version History</h3>
                   <div class="max-h-64 overflow-y-auto space-y-3">
                     <div v-for="(changes, version) in model.changelog" :key="version" class="border-l-2 border-gray-200 pl-4">
                       <h4 class="font-medium text-gray-800">v{{ version }}</h4>
@@ -473,7 +473,7 @@ const ModelDetailView = {
             <!-- Right Content - Documentation -->
             <div class="lg:col-span-8">
               <div v-if="model.readme" class="bg-white border border-gray-200 rounded-lg p-8">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6">Documentation</h2>
+                <h2 class="text-lg font-bold text-gray-800 mb-6">Documentation</h2>
                 <div class="prose prose-lg max-w-none prose-headings:text-gray-800 prose-a:text-brand-primary prose-a:no-underline hover:prose-a:underline prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded" v-html="model.readme"></div>
               </div>
             </div>

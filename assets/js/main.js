@@ -3,15 +3,6 @@
 
   // Performance optimization: Defer non-critical operations
   function deferNonCriticalOperations() {
-    // Initialize WOW.js after initial paint
-    requestIdleCallback(() => {
-      const wow = new WOW({
-        mobile: false,
-        offset: 50
-      });
-      wow.init();
-    });
-
     // Initialize particles.js after initial paint
     const heroArea = document.getElementById("hero-area");
     if (heroArea) {
