@@ -151,7 +151,7 @@
     <div class="container">
       <nav class="navbar flex justify-between items-center relative duration-300 h-16" x-data="{ isOpen: false, frameworksOpen: false, communityOpen: false }">
         <a class="navbar-brand" href="index.html">
-          <img class="h-12 w-auto" src="assets/img/MONAI-logo_color.png" alt="Logo">
+          <img class="h-12 w-auto" src="assets/img/MONAI-logo_color_full.png" alt="Logo">
         </a>
         <button class="navbar-toggler focus:outline-none block lg:hidden p-2" type="button" @click="isOpen = !isOpen">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -229,25 +229,22 @@
 
   <main class="flex-grow pt-20">
     <!-- Hero Section -->
-    <section class="py-24 bg-white relative overflow-hidden">
+    <section class="py-24 bg-white ">
       <div class="container">
         <div class="flex flex-wrap items-center">
           <div class="w-full lg:w-1/2">
-            <h1 class="text-4xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
-              Working Groups
-              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
-            </h1>
-            <div class="prose max-w-none">
-              <p class="text-lg leading-relaxed text-gray-700">
+            <h1 class="text-4xl font-bold text-gray-800 mb-8">Working Groups</h1>
+            <div class="max-w-none">
+              <p class="text-lg leading-relaxed text-gray-700 mb-4">
                 MONAI Working Groups are specialized teams that drive innovation and progress in specific areas of medical imaging AI. 
                 Each group brings together experts from diverse backgrounds to address key challenges and opportunities in their respective domains.
               </p>
-              <p class="text-lg leading-relaxed text-gray-700">
+              <p class="text-lg leading-relaxed text-gray-700 mb-4">
                 These groups focus on developing solutions, establishing standards, and creating resources that benefit the entire medical 
                 imaging AI community. From technical implementation to clinical applications, our working groups ensure that MONAI remains 
                 at the forefront of healthcare AI innovation.
               </p>
-              <p class="text-lg leading-relaxed text-gray-700">
+              <p class="text-lg leading-relaxed text-gray-700 mb-4">
                 Working group members collaborate regularly through meetings, workshops, and joint projects, fostering knowledge exchange 
                 and driving continuous improvement in their specialized areas.
               </p>
@@ -266,7 +263,7 @@
       </div>
     </section>
 
-    <section class="py-24 bg-brand-light relative overflow-hidden">
+    <section class="py-24 bg-neutral-lightgray ">
         <div class="container">
             <!-- Quick Links -->
             <div class="mb-12">
@@ -289,9 +286,9 @@
               <!-- Deploy Working Group Card -->
               <div id="deploy" class="bg-white rounded-xl shadow-md scroll-mt-24">
                 <div class="border-b border-gray-200 bg-brand-dark">
-                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Deploy Working Group</h3>
+                  <h3 class="text-2xl font-bold text-white p-6 text-center">Deploy Working Group</h3>
                 </div>
-                <div class="p-8">
+                <div class="p-6 md:p-8">
                   <div class="mb-8">
                     <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
                     <p class="text-gray-700">
@@ -350,9 +347,9 @@
               <!-- Developers Committee Card -->
               <div id="developers" class="bg-white rounded-xl shadow-md scroll-mt-24">
                 <div class="border-b border-gray-200 bg-brand-dark">
-                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Developers Committee Working Group</h3>
+                  <h3 class="text-2xl font-bold text-white p-6 text-center">Developers Committee Working Group</h3>
                 </div>
-                <div class="p-8">
+                <div class="p-6 md:p-8">
                   <div class="mb-8">
                     <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
                     <p class="text-gray-700">
@@ -411,9 +408,9 @@
               <!-- Education Working Group Card -->
               <div id="education" class="bg-white rounded-xl shadow-md scroll-mt-24">
                 <div class="border-b border-gray-200 bg-brand-dark">
-                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Education Working Group</h3>
+                  <h3 class="text-2xl font-bold text-white p-6 text-center">Education Working Group</h3>
                 </div>
-                <div class="p-8">
+                <div class="p-6 md:p-8">
                   <div class="mb-8">
                     <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
                     <p class="text-gray-700">
@@ -461,9 +458,9 @@
               <!-- Evaluation Working Group Card -->
               <div id="evaluation" class="bg-white rounded-xl shadow-md scroll-mt-24">
                 <div class="border-b border-gray-200 bg-brand-dark">
-                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Evaluation and Benchmarking Working Group</h3>
+                  <h3 class="text-2xl font-bold text-white p-6 text-center">Evaluation and Benchmarking Working Group</h3>
                 </div>
-                <div class="p-8">
+                <div class="p-6 md:p-8">
                   <div class="mb-8">
                     <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
                     <p class="text-gray-700">The Evaluation and Benchmarking MONAI working group aims at providing guidelines, infrastructure, and practical tools for evaluation and benchmarking of medical image analysis methods. It focuses on leading the community towards the identification and adoption of best practices for evaluation and benchmarking and on identifying practical solutions to improve reproducibility.
@@ -510,9 +507,9 @@
               <!-- Federated Learning Card -->
               <div id="federated" class="bg-white rounded-xl shadow-md scroll-mt-24">
                 <div class="border-b border-gray-200 bg-brand-dark">
-                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Data Quality and Federated Learning Working Group</h3>
+                  <h3 class="text-2xl font-bold text-white p-6 text-center">Data Quality and Federated Learning Working Group</h3>
                 </div>
-                <div class="p-8">
+                <div class="p-6 md:p-8">
                   <div class="mb-8">
                     <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
                     <p class="text-gray-700">
@@ -560,9 +557,9 @@
               <!-- Human-AI Interaction Card -->
               <div id="human-ai" class="bg-white rounded-xl shadow-md scroll-mt-24">
                 <div class="border-b border-gray-200 bg-brand-dark">
-                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Human-AI Interaction Working Group</h3>
+                  <h3 class="text-2xl font-bold text-white p-6 text-center">Human-AI Interaction Working Group</h3>
                 </div>
-                <div class="p-8">
+                <div class="p-6 md:p-8">
                   <div class="mb-8">
                     <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
                     <p class="text-gray-700">
@@ -621,9 +618,9 @@
               <!-- Ophthalmology Card -->
               <div id="ophthalmology" class="bg-white rounded-xl shadow-md scroll-mt-24">
                 <div class="border-b border-gray-200 bg-brand-dark">
-                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Ophthalmology Working Group</h3>
+                  <h3 class="text-2xl font-bold text-white p-6 text-center">Ophthalmology Working Group</h3>
                 </div>
-                <div class="p-8">
+                <div class="p-6 md:p-8">
                   <div class="mb-8">
                     <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
                     <p class="text-gray-700">
@@ -671,9 +668,9 @@
               <!-- Outreach Card -->
               <div id="outreach" class="bg-white rounded-xl shadow-md scroll-mt-24">
                 <div class="border-b border-gray-200 bg-brand-dark">
-                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Outreach and Adoption Working Group</h3>
+                  <h3 class="text-2xl font-bold text-white p-6 text-center">Outreach and Adoption Working Group</h3>
                 </div>
-                <div class="p-8">
+                <div class="p-6 md:p-8">
                   <div class="mb-8">
                     <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
                     <p class="text-gray-700">
@@ -710,9 +707,9 @@
               <!-- Ultrasound Working Group Card -->
               <div id="ultrasound" class="bg-white rounded-xl shadow-md scroll-mt-24">
                 <div class="border-b border-gray-200 bg-brand-dark">
-                  <h3 class="text-xl font-semibold text-white p-8 pb-6 text-center">Ultrasound Working Group</h3>
+                  <h3 class="text-2xl font-bold text-white p-6 text-center">Ultrasound Working Group</h3>
                 </div>
-                <div class="p-8">
+                <div class="p-6 md:p-8">
                   <div class="mb-8">
                     <h4 class="uppercase text-sm font-medium text-gray-600 mb-3">MISSION</h4>
                     <p class="text-gray-700">
