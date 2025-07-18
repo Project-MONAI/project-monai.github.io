@@ -44,7 +44,6 @@
     <link rel="apple-touch-icon" href="./assets/logo/MONAI-logo_favicon.png">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/tailwind.css">
     
     <!-- Alpine.js -->
@@ -109,7 +108,6 @@
     <link rel="apple-touch-icon" href="./assets/logo/MONAI-logo_favicon.png">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/tailwind.css">
     
     <!-- Alpine.js -->
@@ -144,10 +142,133 @@
 
 <body class="flex flex-col min-h-screen">
 
-  <!-- Header Area wrapper Starts -->
+  <!-- Banner System -->
+<div x-data="bannerSystem()" x-init="init()">
+    <!-- Banner Container -->
+    <div x-show="activeBanner" 
+         x-ref="banner"
+         class="fixed top-0 left-0 right-0 text-white py-2 px-4 text-sm z-50"
+         :class="activeBanner ? activeBanner.bgColor : ''"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0">
+        <div class="container flex items-center justify-center gap-2">
+            <svg x-show="activeBanner && activeBanner.icon === 'check'" class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <svg x-show="activeBanner && activeBanner.icon === 'megaphone'" class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+            </svg>
+            <span class="font-medium" x-text="activeBanner ? activeBanner.message : ''"></span>
+            <a x-show="activeBanner && activeBanner.link" 
+               :href="activeBanner ? activeBanner.link : '#'" 
+               target="_blank" 
+               class="underline hover:no-underline ml-1"
+               x-text="activeBanner ? activeBanner.linkText : ''"></a>
+            <button @click="dismissBanner()" 
+                    class="ml-4 hover:opacity-80 transition-opacity" 
+                    aria-label="Dismiss banner">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+function bannerSystem() {
+    return {
+        banners: [
+            {
+                id: 'monai_core_v1.5',
+                message: 'MONAI Core v1.5 is now available!',
+                link: 'https://docs.monai.io/en/stable/whatsnew_1_5.html',
+                linkText: 'See what\'s new →',
+                bgColor: 'bg-brand-primary',
+                icon: 'check',
+                priority: 2
+            },
+            {
+                id: 'community-survey-2025',
+                message: 'Help shape the future of MONAI!',
+                link: 'https://forms.gle/tovHc3ch13FwJEqo6',
+                linkText: 'Take our 5-minute community survey →',
+                bgColor: 'bg-purple-600',
+                icon: 'megaphone',
+                priority: 1
+            }
+        ],
+        activeBanner: null,
+        bannerHeight: 0,
+
+        init() {
+            this.selectActiveBanner();
+            this.$nextTick(() => {
+                if (this.activeBanner && this.$refs.banner) {
+                    this.bannerHeight = this.$refs.banner.offsetHeight;
+                    this.updateBodyPadding();
+                    this.updateNavPosition();
+                }
+            });
+        },
+
+        selectActiveBanner() {
+            // Filter out dismissed banners and sort by priority
+            const availableBanners = this.banners
+                .filter(banner => localStorage.getItem(`hideBanner_${banner.id}`) !== 'true')
+                .sort((a, b) => b.priority - a.priority);
+            
+            this.activeBanner = availableBanners[0] || null;
+            
+            // Dispatch event for header to know if banner is visible
+            window.dispatchEvent(new CustomEvent('banner-visibility-changed', { 
+                detail: { visible: !!this.activeBanner } 
+            }));
+        },
+
+        dismissBanner() {
+            if (this.activeBanner) {
+                localStorage.setItem(`hideBanner_${this.activeBanner.id}`, 'true');
+                this.activeBanner = null;
+                this.bannerHeight = 0;
+                this.updateBodyPadding();
+                this.updateNavPosition();
+                window.dispatchEvent(new CustomEvent('banner-visibility-changed', { 
+                    detail: { visible: false, height: 0 } 
+                }));
+            }
+        },
+
+        updateBodyPadding() {
+            const mainElement = document.querySelector('main');
+            if (mainElement) {
+                if (this.activeBanner) {
+                    mainElement.style.paddingTop = `calc(4rem + ${this.bannerHeight}px)`;
+                } else {
+                    mainElement.style.paddingTop = '4rem';
+                }
+            }
+        },
+
+        updateNavPosition() {
+            const navElement = document.querySelector('.navigation');
+            if (navElement) {
+                if (this.activeBanner && this.bannerHeight) {
+                    navElement.style.top = `${this.bannerHeight}px`;
+                } else {
+                    navElement.style.top = '0';
+                }
+            }
+        }
+    }
+}
+</script>
+
+<!-- Header Area wrapper Starts -->
 <header id="header-wrap" class="relative">
   <!-- Navbar Start -->
-  <div class="navigation fixed top-0 left-0 w-full z-30 duration-300 bg-white border-b border-gray-100">
+  <div class="navigation fixed top-0 left-0 w-full z-40 duration-300 bg-white border-b border-gray-100 transition-all">
     <div class="container">
       <nav class="navbar flex justify-between items-center relative duration-300 h-16" x-data="{ isOpen: false, frameworksOpen: false, communityOpen: false }">
         <a class="navbar-brand" href="index.html">
@@ -204,9 +325,9 @@
                    x-transition:enter-end="opacity-100 translate-y-0"
                    x-cloak>
                 <div class="flex flex-col space-y-2">
+                  <a href="about.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">About Us</a>
                   <a href="https://github.com/Project-MONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">GitHub</a>
                   <a href="https://join.slack.com/t/projectmonai/shared_invite/zt-2t7z8e9tu-xE5SPw0TC8LUxyPVpl2WVQ" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Join Slack</a>
-                  <a href="about.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">About Us</a>
                   <div class="border-t border-gray-100 mt-2 pt-2">
                     <div class="grid grid-cols-2 gap-1">
                       <a href="https://twitter.com/ProjectMONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Twitter</a>
@@ -226,6 +347,7 @@
   <!-- Navbar End -->
 </header>
 <!-- Header Area wrapper End --> 
+
 
   <main class="flex-grow">
     <!-- Hero Section -->
@@ -538,15 +660,9 @@
 </footer>
   <!-- Scripts Component -->
 <!-- Common JavaScript Files -->
-<script src="./assets/js/wow.js"></script>
 <script src="./assets/js/particles.min.js"></script>
 <script src="./assets/js/countUp.min.js"></script>
 <script src="./assets/js/main.js"></script>
-
-<!-- Initialize WOW.js -->
-<script>
-    new WOW().init();
-</script>
 
 <!-- Performance Optimizations -->
 <script>
@@ -575,8 +691,7 @@
     // Preload critical resources
     const preloadLinks = [
         './assets/css/tailwind.css',
-        './assets/css/animate.css',
-        './assets/img/MONAI-logo_color.png'
+        './assets/img/MONAI-logo_color_full.png'
     ];
 
     preloadLinks.forEach(link => {
