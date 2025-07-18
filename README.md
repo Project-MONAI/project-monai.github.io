@@ -102,6 +102,66 @@ The project uses Tailwind CSS with a custom configuration:
    - Configure Tailwind in `tailwind.config.js`
    - Custom classes can be added to `assets/css/`
 
+### Banner System
+
+The website includes a flexible banner system for announcements and surveys. The banner system is integrated into the header component (`components/header.html`) and automatically appears on all pages.
+
+#### Adding a New Banner
+
+1. Edit `components/header.html` and add your banner to the `banners` array in the `bannerSystem()` function:
+   ```javascript
+   {
+       id: 'unique-banner-id',          // Unique identifier for localStorage
+       message: 'Your announcement',     // Main banner text
+       link: 'https://example.com',     // Optional link URL
+       linkText: 'Learn more →',        // Link text
+       bgColor: 'bg-brand-primary',     // Tailwind background class
+       icon: 'check',                   // Icon type: 'check' or 'megaphone'
+       priority: 1                      // Higher priority shows first
+   }
+   ```
+
+2. Available background colors:
+   - `bg-brand-primary` - Teal (default MONAI color)
+   - `bg-purple-600` - Purple (for surveys/feedback)
+   - `bg-blue-600` - Blue
+   - `bg-green-600` - Green
+   - `bg-red-600` - Red (for urgent announcements)
+
+3. Banner features:
+   - Only one banner displays at a time (highest priority non-dismissed)
+   - Users can dismiss banners (stored in localStorage)
+   - Header automatically adjusts position when banner is visible
+   - Smooth transitions on dismiss
+
+#### Example Banners
+
+Version announcement:
+```javascript
+{
+    id: 'monai-1-6',
+    message: 'MONAI Core v1.6 is now available!',
+    link: 'https://docs.monai.io/en/stable/whatsnew_1_6.html',
+    linkText: 'See what\'s new →',
+    bgColor: 'bg-brand-primary',
+    icon: 'check',
+    priority: 2
+}
+```
+
+Survey/Feedback request:
+```javascript
+{
+    id: 'community-survey-2024',
+    message: 'Help shape the future of MONAI!',
+    link: 'https://survey-link.com',
+    linkText: 'Take our 5-minute survey →',
+    bgColor: 'bg-purple-600',
+    icon: 'megaphone',
+    priority: 1
+}
+```
+
 ## Building for Production
 
 1. Build the site:
