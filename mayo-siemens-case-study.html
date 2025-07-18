@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth">
+
+<!-- Page-specific meta tags -->
+<title>MONAI - Mayo Clinic & Siemens Digital Marketplace Case Study</title>
+<meta name="description" content="From Institutional Development to Scalable Deployment: How Mayo Clinic's AI application was made available to researchers at over 10,000 institutions via Siemens Healthineers Digital Marketplace">
+<meta property="og:title" content="MONAI - Mayo Clinic & Siemens Digital Marketplace Case Study">
+<meta property="og:description" content="From Institutional Development to Scalable Deployment: How Mayo Clinic's AI application was made available to researchers at over 10,000 institutions via Siemens Healthineers Digital Marketplace">
+<meta property="og:url" content="https://monai.io/mayo-siemens-case-study.html">
+<meta name="twitter:title" content="MONAI - Mayo Clinic & Siemens Digital Marketplace Case Study">
+<meta name="twitter:description" content="From Institutional Development to Scalable Deployment: How Mayo Clinic's AI application was made available to researchers at over 10,000 institutions via Siemens Healthineers Digital Marketplace">
+<link rel="canonical" href="https://monai.io/mayo-siemens-case-study.html">
+
+<!-- Head Component -->
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QVGBCPFPJ6');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="MONAI, Medical Imaging, AI, Deep Learning, Healthcare, PyTorch, Open Source">
+    <meta name="author" content="Project MONAI">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://monai.io/assets/img/MONAI-logo_color.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ProjectMONAI">
+    <meta name="twitter:image" content="https://monai.io/assets/img/MONAI-logo_color.png">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/logo/MONAI-logo_favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/logo/MONAI-logo_favicon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/tailwind.css">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Alpine.js x-cloak -->
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MONAI",
+        "url": "https://monai.io",
+        "logo": "https://monai.io/assets/img/MONAI-logo_color.png",
+        "description": "MONAI is a freely available, community-supported, PyTorch-based framework for deep learning in healthcare imaging.",
+        "sameAs": [
+            "https://twitter.com/ProjectMONAI",
+            "https://medium.com/@monai",
+            "https://www.youtube.com/c/Project-MONAI",
+            "https://github.com/Project-MONAI"
+        ]
+    }
+    </script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head> 
+<!-- Head Component -->
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QVGBCPFPJ6');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="MONAI, Medical Imaging, AI, Deep Learning, Healthcare, PyTorch, Open Source">
+    <meta name="author" content="Project MONAI">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://monai.io/assets/img/MONAI-logo_color.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ProjectMONAI">
+    <meta name="twitter:image" content="https://monai.io/assets/img/MONAI-logo_color.png">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/logo/MONAI-logo_favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/logo/MONAI-logo_favicon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/tailwind.css">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Alpine.js x-cloak -->
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MONAI",
+        "url": "https://monai.io",
+        "logo": "https://monai.io/assets/img/MONAI-logo_color.png",
+        "description": "MONAI is a freely available, community-supported, PyTorch-based framework for deep learning in healthcare imaging.",
+        "sameAs": [
+            "https://twitter.com/ProjectMONAI",
+            "https://medium.com/@monai",
+            "https://www.youtube.com/c/Project-MONAI",
+            "https://github.com/Project-MONAI"
+        ]
+    }
+    </script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head> 
+
+<body class="flex flex-col min-h-screen">
+
+  <!-- Header Area wrapper Starts -->
+<header id="header-wrap" class="relative">
+  <!-- Navbar Start -->
+  <div class="navigation fixed top-0 left-0 w-full z-30 duration-300 bg-white border-b border-gray-100">
+    <div class="container">
+      <nav class="navbar flex justify-between items-center relative duration-300 h-16" x-data="{ isOpen: false, frameworksOpen: false, communityOpen: false }">
+        <a class="navbar-brand" href="index.html">
+          <img class="h-12 w-auto" src="assets/img/MONAI-logo_color_full.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler focus:outline-none block lg:hidden p-2" type="button" @click="isOpen = !isOpen">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path x-show="!isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path x-show="isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <div class="navbar-collapse lg:flex flex-grow items-center absolute lg:static top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent lg:shadow-none" 
+             :class="{'hidden': !isOpen, 'block shadow-lg': isOpen}">
+          <ul class="navbar-nav flex flex-col lg:flex-row lg:items-center lg:ml-auto py-4 lg:py-0 px-6 lg:px-0 space-y-2 lg:space-y-0 lg:space-x-8">
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="index.html">Home</a>
+            </li>
+            <li class="nav-item relative" @click.away="frameworksOpen = false">
+              <button class="page-scroll flex items-center justify-between w-full lg:inline-flex lg:w-auto py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" 
+                      @click="frameworksOpen = !frameworksOpen; communityOpen = false">
+                <span>Frameworks</span>
+                <span class="chevron ml-2 transform transition-transform duration-200" :class="{'rotate-180': frameworksOpen}"></span>
+              </button>
+              <div class="lg:absolute w-full lg:w-52 lg:top-[calc(100%+0.5rem)] left-0 lg:left-1/2 lg:-translate-x-1/2 z-50 p-2 text-gray-800 bg-white rounded-lg shadow-lg" 
+                   x-show="frameworksOpen" 
+                   x-transition:enter="transition ease-out duration-200"
+                   x-transition:enter-start="opacity-0 translate-y-1"
+                   x-transition:enter-end="opacity-100 translate-y-0"
+                   x-cloak>
+                <div class="flex flex-col space-y-1">
+                  <a href="core.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Core</a>
+                  <a href="label.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Label</a>
+                  <a href="deploy.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Deploy</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="model-zoo.html">Model Zoo</a>
+            </li>
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="working-groups.html">Working Groups</a>
+            </li>
+            <li class="nav-item relative" @click.away="communityOpen = false">
+              <button class="page-scroll flex items-center justify-between w-full lg:inline-flex lg:w-auto py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" 
+                      @click="communityOpen = !communityOpen; frameworksOpen = false">
+                <span>Community</span>
+                <span class="chevron ml-2 transform transition-transform duration-200" :class="{'rotate-180': communityOpen}"></span>
+              </button>
+              <div class="lg:absolute w-full lg:w-64 lg:top-[calc(100%+0.5rem)] left-0 lg:left-1/2 lg:-translate-x-1/2 z-50 p-2 text-gray-800 bg-white rounded-lg shadow-lg"
+                   x-show="communityOpen"
+                   x-transition:enter="transition ease-out duration-200"
+                   x-transition:enter-start="opacity-0 translate-y-1"
+                   x-transition:enter-end="opacity-100 translate-y-0"
+                   x-cloak>
+                <div class="flex flex-col space-y-2">
+                  <a href="https://github.com/Project-MONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">GitHub</a>
+                  <a href="https://join.slack.com/t/projectmonai/shared_invite/zt-2t7z8e9tu-xE5SPw0TC8LUxyPVpl2WVQ" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Join Slack</a>
+                  <a href="about.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">About Us</a>
+                  <div class="border-t border-gray-100 mt-2 pt-2">
+                    <div class="grid grid-cols-2 gap-1">
+                      <a href="https://twitter.com/ProjectMONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Twitter</a>
+                      <a href="https://linkedin.com/company/projectmonai" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">LinkedIn</a>
+                      <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Blog</a>
+                      <a href="https://www.youtube.com/c/Project-MONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">YouTube</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Navbar End -->
+</header>
+<!-- Header Area wrapper End --> 
+
+  <main class="flex-grow pt-16">
+    <!-- Hero Section -->
+    <section class="relative py-32 bg-gradient-to-br from-brand-light/20 via-white to-brand-primary/5 overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-[0.02]">
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23000000" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+      </div>
+      
+      <div class="container relative z-10">
+        <div class="max-w-5xl mx-auto text-center">
+          <div class="flex items-center justify-center gap-4 mb-8">
+            <img src="assets/img/mayo_clinic_logo_hq.png" alt="Mayo Clinic" class="h-16 object-contain">
+            <div class="h-16 w-px bg-gray-300"></div>
+            <img src="assets/img/siemens_logo.png" alt="Siemens Healthineers" class="h-14 object-contain">
+          </div>
+          <h1 class="text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+            From Institutional Development to Scalable Deployment
+          </h1>
+          <p class="text-2xl text-gray-600 mb-4">Center for Augmented Intelligence in Imaging (CAII), Mayo Clinic Florida</p>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Leveraging MONAI Deploy and Siemens Digital Marketplace for Global Research Access
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Metrics -->
+    <section class="py-16 bg-white border-b border-gray-200">
+      <div class="container">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="text-4xl font-bold text-brand-primary mb-2">10,000+</div>
+              <div class="text-gray-600">Institutions with Access</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-brand-primary mb-2">1 Hour</div>
+              <div class="text-gray-600">Installation Time</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-brand-primary mb-2">Zero-Code</div>
+              <div class="text-gray-600">Deployment</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-brand-primary mb-2">On-Premise</div>
+              <div class="text-gray-600">Data Processing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20 bg-gray-50">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <!-- Introduction -->
+          <div class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 relative inline-block pb-2">
+              Introduction
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+            </h2>
+            <p class="text-gray-600 mb-8">
+              At the Mayo Clinic's Center for Augmented Intelligence in Imaging (CAII), we develop AI applications to address unmet needs in imaging research. While internal development and deployment offer opportunities to validate and refine these tools, bringing them to external research environments remains a critical barrier.
+            </p>
+            <p class="text-gray-600">
+              This case study outlines how an AI application developed at Mayo Clinic for research purposes—using MONAI Core and MONAI Deploy—was made available to researchers at over 10,000 institutions via the Siemens Healthineers Digital Marketplace. By combining open-source tooling with scalable distribution infrastructure, this approach provides a blueprint for both developers and institutions seeking to build and access imaging AI research tools.
+            </p>
+          </div>
+
+          <!-- From Local Pipelines to Global Access -->
+          <div class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 relative inline-block pb-2">
+              From Local Pipelines to Global Access
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+            </h2>
+            <p class="text-gray-600 mb-8">
+              Internally, our team built and validated the AI application using MONAI for model implementation, data preprocessing, and output standardization. We relied on container-based orchestration and DICOMweb compatible CAII Viewer for integration into our clinical workflows.
+            </p>
+            <p class="text-gray-600">
+              However, this technical stack—while effective in-house—could not be assumed to operate at other sites. Our challenge was to preserve model reproducibility while eliminating deployment overhead for external users. We needed a delivery mechanism that allowed other institutions to run the tool locally, without requiring development experience, custom infrastructure, or vendor intervention.
+            </p>
+          </div>
+
+          <!-- The Siemens Healthineers Digital Marketplace -->
+          <div class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 relative inline-block pb-2">
+              The Siemens Healthineers Digital Marketplace
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+            </h2>
+            <p class="text-gray-600 mb-8">
+              To address this challenge, we collaborated with Siemens Healthineers to publish the application through their Digital Marketplace—a platform designed to distribute containerized research applications for use within institutional imaging environments.
+            </p>
+            <p class="text-gray-600 mb-4">
+              By wrapping the application in a Marketplace-compatible container and leveraging the platform's built-in rule configuration and DICOM-native integration, we enabled:
+            </p>
+            <ul class="space-y-3 mb-8 text-gray-600">
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-sm flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                <span>Local execution at each site, preserving data governance</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-sm flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                <span>Zero-code installation and configuration, via GUI-based tools</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-sm flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                <span>DICOM-native input/output, supporting PACS integration and traceability</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-sm flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                <span>Reusability across research applications, regardless of modality or model specifics</span>
+              </li>
+            </ul>
+            <p class="text-gray-600">
+              All application logic, preprocessing, visualization, and data export are bundled and versioned. The application is clearly labeled for research use only.
+            </p>
+          </div>
+
+          <!-- Developer Workflow -->
+          <div class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 relative inline-block pb-2">
+              Developer Workflow
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+            </h2>
+            <p class="text-gray-600 mb-8">
+              To assist developers aiming to bring their applications to the Digital Marketplace, Siemens Healthineers provides technical guidelines covering containerization, interface integration, and DICOM conformance. Developers are encouraged to align with MONAI Deploy App SDK structure and compatibility standards. While source code remains institutionally governed, the externalization process emphasizes modularity, traceability, and platform readiness.
+            </p>
+            
+            <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
+              <p class="text-gray-600 mb-4">Further developer resources and templates can be found at:</p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-3">
+                  <svg class="w-5 h-5 text-brand-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                  </svg>
+                  <a href="https://github.com/Project-MONAI/monai-deploy-app-sdk" target="_blank" rel="noopener noreferrer" 
+                     class="text-brand-primary hover:text-brand-dark underline transition-colors">
+                    github.com/Project-MONAI/monai-deploy-app-sdk
+                  </a>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg class="w-5 h-5 text-brand-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                  </svg>
+                  <a href="https://monai.io" target="_blank" rel="noopener noreferrer" 
+                     class="text-brand-primary hover:text-brand-dark underline transition-colors">
+                    monai.io
+                  </a>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg class="w-5 h-5 text-brand-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                  </svg>
+                  <a href="https://forum.siemens-healthineers.com/#/group-feeds/syngoViaFrontierDeveloperCommunity?name=Research%20Frontier%20Developer%20Community" 
+                     target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:text-brand-dark underline transition-colors break-all">
+                    forum.siemens-healthineers.com/#/group-feeds/syngoViaFrontierDeveloperCommunity
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <p class="text-gray-600 mb-4">The developer workflow for externalization follows a clear path:</p>
+            <ol class="space-y-3 mb-8 text-gray-600">
+              <li class="flex gap-3">
+                <span class="flex-none font-medium text-brand-primary">1.</span>
+                <span>Model development and validation using MONAI Core (e.g., training, evaluation, DICOM output preparation)</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="flex-none font-medium text-brand-primary">2.</span>
+                <span>Application packaging via MONAI Deploy App SDK</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="flex-none font-medium text-brand-primary">3.</span>
+                <span>Containerization and alignment with Siemens Digital Marketplace standards</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="flex-none font-medium text-brand-primary">4.</span>
+                <span>Integration of viewer and rule logic, using DICOMweb compatible or web-native tools</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="flex-none font-medium text-brand-primary">5.</span>
+                <span>Submission and publication, including metadata, version control, and usage restrictions</span>
+              </li>
+            </ol>
+            <p class="text-gray-600">
+              Once published, the application becomes discoverable to registered institutions and can be deployed without code modifications or site-specific engineering.
+            </p>
+          </div>
+
+          <!-- User Workflow and Data Flow -->
+          <div class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 relative inline-block pb-2">
+              User Workflow and Data Flow
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+            </h2>
+            <p class="text-gray-600 mb-4">For research users, the process is equally streamlined:</p>
+            <ol class="space-y-3 mb-8 text-gray-600">
+              <li class="flex gap-3">
+                <span class="flex-none font-medium text-brand-primary">1.</span>
+                <span>Discover the application in the Siemens Healthineers Digital Marketplace</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="flex-none font-medium text-brand-primary">2.</span>
+                <span>Install via the syngo.via OpenApps interface or equivalent local platform</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="flex-none font-medium text-brand-primary">3.</span>
+                <span>Configure rules (e.g., trigger by modality or study type)</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="flex-none font-medium text-brand-primary">4.</span>
+                <span>Execute the application automatically or manually from the viewer interface</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="flex-none font-medium text-brand-primary">5.</span>
+                <span>View and export results (e.g., segmentations, reports) within their institutional PACS</span>
+              </li>
+            </ol>
+            <p class="text-gray-600">
+              All processing remains on-premise. No data is transmitted externally. Application versioning and logs ensure traceability.
+            </p>
+          </div>
+
+          <!-- Marketplace Figure -->
+          <figure class="bg-white p-8 md:p-12 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 mb-16">
+            <a href="assets/img/mayo-siemens-marketplace.jpg" target="_blank" rel="noopener noreferrer" class="block group">
+              <img class="w-full h-auto rounded-lg transform transition-transform duration-300 group-hover:scale-[1.02]" 
+                   src="assets/img/mayo-siemens-marketplace.jpg" 
+                   alt="Siemens Digital Marketplace interface showing application deployment workflow">
+            </a>
+            <figcaption class="mt-6 text-sm text-gray-600 text-center max-w-4xl mx-auto">
+              <span class="font-semibold text-gray-700">Figure:</span> Siemens Healthineers Digital Marketplace showing the Mayo Clinic CAII Viewer demonstrating model deployment within the viewer.
+            </figcaption>
+          </figure>
+
+          <!-- Outcomes and Blueprint Implications -->
+          <div class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 relative inline-block pb-2">
+              Outcomes and Blueprint Implications
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+            </h2>
+            <p class="text-gray-600 mb-8">
+              Lessons learned from deployment included the importance of early alignment with DICOM IOD standards and close coordination during UI integration. During the containerization phase, we encountered minor adjustments to viewer interactivity and study selection workflows. These were resolved in collaboration with platform engineers to ensure consistency across installations.
+            </p>
+            <p class="text-gray-600 mb-8">
+              Over 10,000 institutions have access to this application since its publication. Most installations complete in under one hour, with no scripting or infrastructure changes required. Feedback highlights ease of configuration, integration into existing workflows, and the ability to conduct reproducible research at scale.
+            </p>
+            <p class="text-gray-600">
+              For developers, this case provides a pathway for externalizing research tools using open-source AI frameworks and enterprise-grade delivery platforms. For research users, it offers an opportunity to access robust, validated AI applications with minimal IT overhead.
+            </p>
+          </div>
+
+          <!-- Looking Ahead -->
+          <div class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 relative inline-block pb-2">
+              Looking Ahead
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
+            </h2>
+            <p class="text-gray-600">
+              Ongoing efforts include evaluating the deployed tool in multicenter research collaborations. Preliminary integration into broader research networks is underway, and future versions may support federated learning feedback, provided governance conditions allow.
+            </p>
+          </div>
+
+          <!-- Call to Action -->
+          <div class="bg-brand-primary text-white p-8 md:p-12 rounded-lg">
+            <div class="max-w-3xl mx-auto text-center">
+              <h3 class="text-3xl font-bold mb-4">Interested in Deploying Your AI Research?</h3>
+              <p class="text-xl mb-8 text-white/90">
+                Learn more about how MONAI Deploy can help scale your medical imaging AI applications across institutions worldwide.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://github.com/Project-MONAI/monai-deploy-app-sdk" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center px-6 py-3 bg-white text-brand-primary rounded-lg hover:bg-gray-100 font-semibold">
+                  <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  Explore MONAI Deploy SDK
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Component -->
+<footer id="footer" class="py-2 border-t border-neutral-light_gray">
+  <div class="container">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <!-- Logo Section -->
+      <div class="w-auto flex-shrink-0">
+        <div class="mx-3">
+          <div class="footer-logo">
+            <a href="index.html"><img src="./assets/img/MONAI-logo_color.png" alt="MONAI Logo"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Links - Hidden on mobile, flex on larger screens -->
+      <div class="hidden lg:block flex-grow">
+        <div class="mx-3 text-black">
+          <ul class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+            <li>
+              <a href="core.html" class="footer-links whitespace-nowrap">MONAI Core</a>
+            </li>
+            <li>
+              <a href="label.html" class="footer-links whitespace-nowrap">MONAI Label</a>
+            </li>
+            <li>
+              <a href="deploy.html" class="footer-links whitespace-nowrap">MONAI Deploy</a>
+            </li>
+            <li>
+              <a href="model-zoo.html" class="footer-links whitespace-nowrap">Model Zoo</a>
+            </li>
+            <li>
+              <a href="working-groups.html" class="footer-links whitespace-nowrap">Working Groups</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Social Icons - Always visible, right-aligned -->
+      <div class="w-auto flex-shrink-0">
+        <div class="mx-3">
+          <ul class="social-icons flex items-center gap-4">
+            <li>
+              <a href="https://twitter.com/ProjectMONAI" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/company/projectmonai" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://medium.com/@monai" aria-label="Medium">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M9.025 8c0 2.485-2.02 4.5-4.513 4.5A4.506 4.506 0 0 1 0 8c0-2.486 2.02-4.5 4.512-4.5A4.506 4.506 0 0 1 9.025 8m4.95 0c0 2.34-1.01 4.236-2.256 4.236S9.463 10.339 9.463 8c0-2.34 1.01-4.236 2.256-4.236S13.975 5.661 13.975 8M16 8c0 2.096-.355 3.795-.794 3.795-.438 0-.793-1.7-.793-3.795 0-2.096.355-3.795.794-3.795.438 0 .793 1.699.793 3.795"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/c/Project-MONAI" aria-label="YouTube">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- Scripts Component -->
+<!-- Common JavaScript Files -->
+<script src="./assets/js/wow.js"></script>
+<script src="./assets/js/particles.min.js"></script>
+<script src="./assets/js/countUp.min.js"></script>
+<script src="./assets/js/main.js"></script>
+
+<!-- Initialize WOW.js -->
+<script>
+    new WOW().init();
+</script>
+
+<!-- Performance Optimizations -->
+<script>
+    // Defer non-critical images
+    document.addEventListener('DOMContentLoaded', function() {
+        var lazyImages = [].slice.call(document.querySelectorAll('img[data-src]'));
+        
+        if ('IntersectionObserver' in window) {
+            let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        let lazyImage = entry.target;
+                        lazyImage.src = lazyImage.dataset.src;
+                        lazyImage.removeAttribute('data-src');
+                        lazyImageObserver.unobserve(lazyImage);
+                    }
+                });
+            });
+
+            lazyImages.forEach(function(lazyImage) {
+                lazyImageObserver.observe(lazyImage);
+            });
+        }
+    });
+
+    // Preload critical resources
+    const preloadLinks = [
+        './assets/css/tailwind.css',
+        './assets/css/animate.css',
+        './assets/img/MONAI-logo_color.png'
+    ];
+
+    preloadLinks.forEach(link => {
+        const preloadLink = document.createElement('link');
+        preloadLink.href = link;
+        preloadLink.rel = 'preload';
+        preloadLink.as = link.endsWith('.css') ? 'style' : 'image';
+        document.head.appendChild(preloadLink);
+    });
+</script>
+
+<!-- Common Scripts -->
+<script src="assets/js/copy-buttons.js"></script> 
+
+</body>
+</html>

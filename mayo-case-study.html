@@ -227,84 +227,145 @@
 </header>
 <!-- Header Area wrapper End --> 
 
-  <main class="flex-grow">
-    <section class="py-24 bg-white">
-      <div class="container">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-brand-primary/10 text-brand-primary mb-6">
-              Real-world Case Study
-            </div>
-            <h1 class="text-4xl font-bold text-gray-800 mb-8">
-              Center for Augmented Intelligence in Imaging Mayo Clinic Florida
-            </h1>
-            <p class="text-lg text-gray-600 leading-relaxed mb-8">
-              Integrating and Deploying AI Models within Clinical-Imaging Workflows
-            </p>
+  <main class="flex-grow pt-16">
+    <!-- Hero Section -->
+    <section class="relative py-32 bg-gradient-to-br from-brand-light/20 via-white to-brand-primary/5 overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-[0.02]">
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23000000" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+      </div>
+      
+      <div class="container relative z-10">
+        <div class="max-w-5xl mx-auto text-center">
+          <div class="flex items-center justify-center gap-4 mb-8">
+            <img src="assets/img/mayo_clinic_logo_hq.png" alt="Mayo Clinic" class="h-16 object-contain">
+            <div class="h-16 w-px bg-gray-300"></div>
+            <span class="text-lg font-semibold text-gray-600">MONAI Case Study</span>
           </div>
-          <div class="hidden lg:flex lg:justify-center">
-            <div class="relative w-full max-w-[200px] transform hover:scale-105 transition-transform duration-300">
-              <img class="w-auto h-auto" src="assets/img/mayo_clinic_logo_hq.png" alt="Mayo Clinic Logo">
+          <h1 class="text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+            Center for Augmented Intelligence in Imaging
+          </h1>
+          <p class="text-2xl text-gray-600 mb-4">Mayo Clinic Florida</p>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Integrating and Deploying AI Models within Clinical-Imaging Workflows
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Metrics -->
+    <section class="py-16 bg-white border-b border-gray-200">
+      <div class="container">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="text-4xl font-bold text-brand-primary mb-2">10+</div>
+              <div class="text-gray-600">AI Capabilities Developed</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-brand-primary mb-2">Seamless</div>
+              <div class="text-gray-600">Clinical Integration</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-brand-primary mb-2">Multi-Site</div>
+              <div class="text-gray-600">Deployment Ready</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-brand-primary mb-2">Real-Time</div>
+              <div class="text-gray-600">AI Analysis</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-24 bg-neutral-lightgray ">
+    <!-- Main Content -->
+    <section class="py-20 bg-gray-50">
       <div class="container">
-        <div class="prose max-w-none">
+        <div class="max-w-4xl mx-auto">
           <p class="text-gray-600 mb-8">
-            Effective integrations of imaging-related (pixel- and nonpixel-based) Artificial Intelligence (AI) models into existing clinical Radiology workflows is critical since such additions can greatly impact (either positively or negatively) operational efficiencies or downstream decision making (e.g., surgery, pathology, interventions, and drug precautions) [1]. In order to facilitate seamless integrations of imaging-AI capabilities, with minimal negative influence on existing Radiology workflows (Figure 1), the Center for Augmented Intelligence in Imaging (CAII) in Mayo Clinic Florida has developed infrastructure and modular software packages functionally compatible with MONAI [2] software packages (e.g., "MONAI Core" and "MONAI Deploy").             
+            Effective integration of imaging-related (pixel- and nonpixel-based) Artificial Intelligence (AI) models into existing clinical Radiology workflows is critical since such additions can greatly impact (either positively or negatively) operational efficiencies or downstream decision making (e.g., surgery, pathology, interventions, and drug precautions) [1]. In order to facilitate seamless integration of imaging-AI capabilities, with minimal negative influence on existing Radiology workflows (Figure 1), the Center for Augmented Intelligence in Imaging (CAII) at Mayo Clinic Florida has developed infrastructure and modular software packages functionally compatible with MONAI [2] software packages (e.g., "MONAI Core" and "MONAI Deploy").
           </p>
 
-          <figure class="bg-white p-8 md:p-12 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 mb-16">
+        </div>
+      </div>
+    </section>
+
+    <!-- Figure 1 - Full Width -->
+    <section class="py-16 bg-white">
+      <div class="container">
+        <div class="max-w-6xl mx-auto">
+          <figure>
             <a href="assets/img/mayo-case-study-figure-1A.png" target="_blank" rel="noopener noreferrer" class="block group">
-              <img class="w-full h-auto rounded-lg transform transition-transform duration-300 group-hover:scale-[1.02]" src="assets/img/mayo-case-study-figure-1A.png" alt="Clinical workflow diagram">
+              <img class="w-full h-auto border border-gray-200 rounded-lg transform transition-transform duration-300 group-hover:scale-[1.01]" src="assets/img/mayo-case-study-figure-1A.png" alt="Clinical workflow diagram">
             </a>
-            <figcaption class="mt-6 text-sm text-gray-600 italic text-center max-w-3xl mx-auto">
-              Figure 1: A representative workflow (modeled after IHE Scheduled Workflow) shows an examination order being generated, image data being acquired during patient scanning, produced images being evaluated by a radiologist, and a report being generated by the image interpreter and then forwarded to the referring clinician for review. Clinician reviews leading to ordered biopsies or surgical interventions, may result in associated digital pathology on excised tissue samples.
+            <figcaption class="mt-6 text-sm text-gray-600 text-center max-w-4xl mx-auto">
+              <span class="font-semibold text-gray-700">Figure 1:</span> A representative workflow (modeled after IHE Scheduled Workflow) shows an examination order being generated, image data being acquired during patient scanning, produced images being evaluated by a radiologist, and a report being generated by the image interpreter and then forwarded to the referring clinician for review. Clinician reviews leading to ordered biopsies or surgical interventions, may result in associated digital pathology on excised tissue samples.
             </figcaption>
           </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Continued -->
+    <section class="py-20 bg-gray-50">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
 
           <p class="text-gray-600 mb-8">
             AI-based infrastructure should be both indistinguishable from the existing IT environment and require, at most, minimal training of Radiology users (e.g., radiologists and technologists). Nevertheless, the introduction of such tools requires the fostering of trust among the users as well as beneficiaries (e.g., patients and referring clinicians).                     
           </p>
 
           <p class="text-gray-600 mb-8">
-            As the leading discipline in utilizing AI in medicine, Radiology has already recognized the need for greater efficiencies in all aspects of imaging-AI application, including AI-model: development, deployment, and adaptation to real-world encounters. Unfortunately, these processes remain prohibitively time-consuming, laborious, and costly, often resulting in significant limitations to meaningful imaging-AI use (Figure 2).
+            As the leading discipline in utilizing AI in medicine, Radiology has already recognized the need for greater efficiencies in all aspects of imaging-AI application, including AI-model development, deployment, and adaptation to real-world encounters. Unfortunately, these processes remain prohibitively time-consuming, laborious, and costly, often resulting in significant limitations to meaningful imaging-AI use (Figure 2).
           </p>
 
-          <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
-            <figure class="bg-white p-8 md:p-12 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300">
+        </div>
+      </div>
+    </section>
+
+    <!-- Figures 2 & 3 - Side by Side -->
+    <section class="py-16 bg-white">
+      <div class="container">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-12">
+            <figure>
               <a href="assets/img/mayo-case-study-figure-2.png" target="_blank" rel="noopener noreferrer" class="block group">
-                <img class="w-full h-auto rounded-lg transform transition-transform duration-300 group-hover:scale-[1.02]" src="assets/img/mayo-case-study-figure-2.png" alt="AI project development timeline">
+                <img class="w-full h-auto border border-gray-200 rounded-lg transform transition-transform duration-300 group-hover:scale-[1.01]" src="assets/img/mayo-case-study-figure-2.png" alt="AI project development timeline">
               </a>
-              <figcaption class="mt-6 text-sm text-gray-600 italic text-center">
-                Figure 2: Typical AI project development and time commitments
+              <figcaption class="mt-4 text-sm text-gray-600 text-center">
+                <span class="font-semibold text-gray-700">Figure 2:</span> Typical AI project development and time commitments
               </figcaption>
             </figure>
-            <figure class="bg-white p-8 md:p-12 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300">
+            <figure>
               <a href="assets/img/mayo-case-study-figure-3.png" target="_blank" rel="noopener noreferrer" class="block group">
-                <img class="w-full h-auto rounded-lg transform transition-transform duration-300 group-hover:scale-[1.02]" src="assets/img/mayo-case-study-figure-3.png" alt="Example use cases">
+                <img class="w-full h-auto border border-gray-200 rounded-lg transform transition-transform duration-300 group-hover:scale-[1.01]" src="assets/img/mayo-case-study-figure-3.png" alt="Example use cases">
               </a>
-              <figcaption class="mt-6 text-sm text-gray-600 italic text-center">
-                Figure 3: Example use-cases: (a) MRI-unsafe device detection on chest x-ray, (b) Breast-density classification on mammography, (c) White matter disease segmentation on MRI, (d) Segmental coronary artery stenosis detection vs. exclusion on coronary CTA
+              <figcaption class="mt-4 text-sm text-gray-600 text-center">
+                <span class="font-semibold text-gray-700">Figure 3:</span> Example use-cases: (a) MRI-unsafe device detection on chest x-ray, (b) Breast-density classification on mammography, (c) White matter disease segmentation on MRI, (d) Segmental coronary artery stenosis detection vs. exclusion on coronary CTA
               </figcaption>
-            </figure>   
+            </figure>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Continued -->
+    <section class="py-20 bg-gray-50">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
 
           <figure class="bg-white p-8 md:p-12 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 mb-16">
             <a href="assets/img/mayo-case-study-figure-4.png" target="_blank" rel="noopener noreferrer" class="block group">
               <img class="w-full h-auto rounded-lg transform transition-transform duration-300 group-hover:scale-[1.02]" src="assets/img/mayo-case-study-figure-4.png" alt="CAII infrastructure diagram">
             </a>
-            <figcaption class="mt-6 text-sm text-gray-600 italic text-center max-w-3xl mx-auto">
-              Figure 4: CAII infrastructure and software packages
+            <figcaption class="mt-6 text-sm text-gray-600 text-center max-w-4xl mx-auto">
+              <span class="font-semibold text-gray-700">Figure 4:</span> CAII infrastructure and software packages demonstrating flexible deployment options for on-premise, cloud, and hybrid environments
             </figcaption>
           </figure>
 
           <p class="text-gray-600 mb-8">
-            Engineers, imaging scientists, and physicians working in the CAII have developed infrastructure and containerized software packages, enabling imaging-AI models to be seamlessly integrated into the existing IT environment of a busy Department of Radiology [3-9]. The necessary interfaces and packages (Figure 3) can be deployed on-prem, in-cloud, or in hybrid settings (Figure 4). The goal is to require minimal user training and IT support and foster confidence in users and beneficiaries.
+            Engineers, imaging scientists, and physicians working in the CAII have developed infrastructure and containerized software packages, enabling imaging-AI models to be seamlessly integrated into the existing IT environment of a busy Department of Radiology [3-9]. The necessary interfaces and packages can be deployed on-premise, in-cloud, or in hybrid settings (Figure 4). The goal is to require minimal user training and IT support while fostering confidence in users and beneficiaries.
           </p>        
 
           <p class="text-gray-600 mb-4">
@@ -394,8 +455,9 @@
           </ul>
 
           <div class="bg-white p-8 rounded-lg shadow-sm mb-12">
-            <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 relative inline-block pb-2">
               References
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
             </h2>
             <ol class="space-y-4 text-gray-600">
               <li class="flex gap-4">
@@ -416,7 +478,7 @@
               </li>
               <li class="flex gap-4">
                 <span class="flex-none font-medium">5.</span>
-                <span>Gupta V, Demirer M, Maxwell RW, White RD, Erdal BS "A multi-reconstruction study of breast density estimation using Deep Learning." arXiv preprint arXiv:2202.08238 (2022).</span>
+                <span>Gupta V, Demirer M, Maxwell RW, White RD, Erdal BS. "A multi-reconstruction study of breast density estimation using Deep Learning." arXiv preprint arXiv:2202.08238 (2022).</span>
               </li>
               <li class="flex gap-4">
                 <span class="flex-none font-medium">6.</span>
@@ -437,30 +499,96 @@
             </ol>
           </div>
 
-          <div class="bg-white p-8 rounded-lg shadow-sm">
-            <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">
+          <div class="bg-white p-8 mb-8 rounded-lg shadow-sm">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 relative inline-block pb-2">
               Talks
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
             </h2>
-            <ul class="space-y-4">
-              <li class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-brand-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                <a href="https://www.youtube.com/watch?v=mpVEiNW9qtw&t=1950s" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:text-brand-dark transition-colors">MONAI Bootcamp 2023</a>
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-brand-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                <a href="https://www.youtube.com/watch?v=pS68i8ShoOk" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:text-brand-dark transition-colors">MONAI Bootcamp 2021</a>
-              </li>
-            </ul>
+            <div class="grid md:grid-cols-2 gap-6">
+              <a href="https://www.youtube.com/watch?v=mpVEiNW9qtw&t=1950s" target="_blank" rel="noopener noreferrer" 
+                 class="group relative overflow-hidden">
+                <div class="bg-white p-6 rounded-lg border border-gray-200 hover:border-brand-primary transition-all duration-300 h-full">
+                  <div class="flex items-start gap-4">
+                    <div class="relative">
+                      <div class="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.74,18.94 13.76,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.26,5.06 10.24,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/>
+                        </svg>
+                      </div>
+                      <div class="absolute -bottom-1 -right-1 bg-brand-primary text-white text-xs px-2 py-1 rounded-md font-semibold">
+                        2023
+                      </div>
+                    </div>
+                    <div class="flex-grow">
+                      <h4 class="font-semibold text-gray-800 mb-2 group-hover:text-brand-primary transition-colors">MONAI Bootcamp 2023</h4>
+                      <p class="text-sm text-gray-600 mb-3">Mayo Clinic's MONAI implementation showcase</p>
+                      <div class="flex items-center gap-2 text-xs text-gray-500">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>32:30 - Mayo Clinic case study presentation</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute inset-0 bg-gradient-to-r from-brand-primary/0 to-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=pS68i8ShoOk" target="_blank" rel="noopener noreferrer" 
+                 class="group relative overflow-hidden">
+                <div class="bg-white p-6 rounded-lg border border-gray-200 hover:border-brand-primary transition-all duration-300 h-full">
+                  <div class="flex items-start gap-4">
+                    <div class="relative">
+                      <div class="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.74,18.94 13.76,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.26,5.06 10.24,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/>
+                        </svg>
+                      </div>
+                      <div class="absolute -bottom-1 -right-1 bg-brand-primary text-white text-xs px-2 py-1 rounded-md font-semibold">
+                        2021
+                      </div>
+                    </div>
+                    <div class="flex-grow">
+                      <h4 class="font-semibold text-gray-800 mb-2 group-hover:text-brand-primary transition-colors">MONAI Bootcamp 2021</h4>
+                      <p class="text-sm text-gray-600 mb-3">Introduction to MONAI Deploy in clinical settings</p>
+                      <div class="flex items-center gap-2 text-xs text-gray-500">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>Full presentation</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute inset-0 bg-gradient-to-r from-brand-primary/0 to-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                </div>
+              </a>
+            </div>
           </div>
+
+          <!-- Call to Action -->
+          <div class="bg-brand-primary text-white p-8 md:p-12 rounded-lg">
+            <div class="max-w-3xl mx-auto text-center">
+              <h3 class="text-3xl font-bold mb-4">Interested in Deploying Your AI Research?</h3>
+              <p class="text-xl mb-8 text-white/90">
+                Learn more about how MONAI Deploy can help scale your medical imaging AI applications across institutions worldwide.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://github.com/Project-MONAI/monai-deploy-app-sdk" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center px-6 py-3 bg-white text-brand-primary rounded-lg hover:bg-gray-100 font-semibold">
+                  <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  Explore MONAI Deploy SDK
+                </a>
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- Footer Component -->
