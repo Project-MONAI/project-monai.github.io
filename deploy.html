@@ -10,6 +10,7 @@
 <meta name="twitter:description" content="MONAI Deploy is a comprehensive framework for developing, packaging, testing, and deploying medical AI applications in research and development environments. Through its modular arch">
 <link rel="canonical" href="https://monai.io/deploy.html">
 
+<!-- Include Head Component -->
 <!-- #include file="components/head.html" -->
 
 <style>
@@ -172,16 +173,17 @@
 <body class="flex flex-col min-h-screen">
     <!-- #include file="components/header.html" -->
 
-    <main class="flex-grow pt-20">
+    <main class="flex-grow pt-16">
         <!-- Overview Section -->
         <section id="overview" class="py-24 bg-white">
             <div class="container">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div class="max-w-xl">
-                        <h1 class="text-4xl font-bold text-gray-800 mb-8">
+                        <h1 class="text-3xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
                             MONAI Deploy
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
                         </h1>
-                        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                        <p class="text-base text-gray-600 leading-relaxed mb-8">
                             MONAI Deploy provides a standardized framework that simplifies deployment while ensuring reliability, performance, and seamless integration with existing healthcare infrastructure.
                         </p>
                         <div class="flex flex-wrap gap-4 mb-8">
@@ -191,13 +193,13 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                 </svg>
                             </a>
-                            <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/stable/" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                            <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/stable/" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2 group font-semibold">
                                 Documentation
                                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                 </svg>
                             </a>
-                            <a href="wg_deploy.html" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                            <a href="wg_deploy.html" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2 group font-semibold">
                                 Get Involved
                                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -213,13 +215,14 @@
         </section>
 
         <!-- Why MONAI Deploy Section -->
-        <section class="py-24 bg-brand-light">
+        <section class="py-24 bg-brand-dark/15">
             <div class="container px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-4xl mx-auto mb-16">
-                    <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
                         Why MONAI Deploy?
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
                     </h2>
-                    <p class="text-xl text-gray-600">
+                    <p class="text-base text-gray-600">
                         Accelerate your journey from research to clinical deployment with a framework designed specifically for healthcare AI, offering unique advantages over traditional deployment approaches.
                     </p>
                 </div>
@@ -232,7 +235,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Standardized Packaging</h3>
+                        <h3 class="text-base font-bold text-gray-800 mb-4">Standardized Packaging</h3>
                         <div class="space-y-4">
                             <div class="flex items-start gap-3">
                                     <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center">
@@ -268,7 +271,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Healthcare-Native</h3>
+                        <h3 class="text-base font-bold text-gray-800 mb-4">Healthcare-Native</h3>
                         <div class="space-y-4">
                             <div class="flex items-start gap-3">
                                     <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center">
@@ -304,7 +307,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Scalable Architecture</h3>
+                        <h3 class="text-base font-bold text-gray-800 mb-4">Scalable Architecture</h3>
                         <div class="space-y-4">
                             <div class="flex items-start gap-3">
                                     <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center">
@@ -337,13 +340,14 @@
         </section>
 
         <!-- Features Section -->
-        <section class="py-24 bg-neutral-lightgray">
+        <section class="py-24 bg-white">
             <div class="container px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-4xl mx-auto mb-16">
-                    <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
                         Enterprise Deployment Features
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
                     </h2>
-                    <p class="text-xl text-gray-600">
+                    <p class="text-base text-gray-600">
                         MONAI Deploy provides a comprehensive platform for deploying AI models in clinical environments. Discover the key features that make enterprise deployment seamless and secure.
                     </p>
                 </div>
@@ -353,7 +357,7 @@
                     <div class="hidden lg:block">
                         <!-- Researcher and Developers Section -->
                         <div class="mb-12 opacity-0 animate-fade-in animation-delay-300">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Researcher and Developers</h3>
+                            <h3 class="text-base font-bold text-gray-800 mb-8 text-center">Researcher and Developers</h3>
                             <div class="bg-pattern p-8 rounded-2xl">
                                 <div class="flex items-center justify-center gap-12">
                                     <!-- 1. Trained Model -->
@@ -371,7 +375,7 @@
                                             </div>
                                         </div>
                                         <p class="mt-3 font-medium text-gray-700">
-                                            <span class="text-lg text-brand-primary font-bold">1.</span> Trained<br>Model
+                                            <span class="text-base text-brand-primary font-bold">1.</span> Trained<br>Model
                                         </p>
                                     </div>
                                     <!-- Single Direction Arrow -->
@@ -395,7 +399,7 @@
                                             </div>
                                         </div>
                                         <p class="mt-3 font-medium text-gray-700">
-                                            <span class="text-lg text-sky-400 font-bold">2.</span> MONAI Deploy<br>App SDK
+                                            <span class="text-base text-sky-400 font-bold">2.</span> MONAI Deploy<br>App SDK
                                         </p>
                                     </div>
                                     <!-- Single Direction Arrow -->
@@ -419,7 +423,7 @@
                                             </div>
                                         </div>
                                         <p class="mt-3 font-medium text-gray-700">
-                                            <span class="text-lg text-brand-primary font-bold">3.</span> MONAI App<br>Package (MAP)
+                                            <span class="text-base text-brand-primary font-bold">3.</span> MONAI App<br>Package (MAP)
                                         </p>
                                     </div>
                                 </div>
@@ -433,7 +437,7 @@
 
                         <!-- Hospital Operations Section -->
                         <div class="opacity-0 animate-fade-in animation-delay-700" style="position: relative; z-index: 1;">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Hospital Operations</h3>
+                            <h3 class="text-base font-bold text-gray-800 mb-8 text-center">Hospital Operations</h3>
                             <div class="bg-pattern p-8 rounded-2xl">
                                 <div class="flex items-center justify-center gap-8">
                                     <!-- 4. Inference Engine -->
@@ -450,7 +454,7 @@
                                             <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-4 h-4 bg-white border-r border-b border-gray-200"></div>
                                         </div>
                                         <p class="mt-3 font-medium text-gray-700">
-                                            <span class="text-lg text-red-500 font-bold">4.</span> Inference<br>Engine
+                                            <span class="text-base text-red-500 font-bold">4.</span> Inference<br>Engine
                                         </p>
                                     </div>
                                     <!-- Bidirectional Arrow -->
@@ -472,7 +476,7 @@
                                             <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-4 h-4 bg-white border-r border-b border-gray-200"></div>
                                         </div>
                                         <p class="mt-3 font-medium text-gray-700">
-                                            <span class="text-lg text-sky-400 font-bold">5.</span> MONAI Deploy<br>Workflow Manager
+                                            <span class="text-base text-sky-400 font-bold">5.</span> MONAI Deploy<br>Workflow Manager
                                         </p>
                                     </div>
                                     <!-- Bidirectional Arrow -->
@@ -494,7 +498,7 @@
                                             <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-4 h-4 bg-white border-r border-b border-gray-200"></div>
                                         </div>
                                         <p class="mt-3 font-medium text-gray-700">
-                                            <span class="text-lg text-sky-400 font-bold">6.</span> MONAI Deploy<br>Informatics Gateway
+                                            <span class="text-base text-sky-400 font-bold">6.</span> MONAI Deploy<br>Informatics Gateway
                                         </p>
                                     </div>
                                     <!-- Bidirectional Arrow -->
@@ -516,7 +520,7 @@
                                             <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-4 h-4 bg-white border-r border-b border-gray-200"></div>
                                         </div>
                                         <p class="mt-3 font-medium text-gray-700">
-                                            <span class="text-lg text-red-500 font-bold">7.</span> PACS<br>&nbsp;
+                                            <span class="text-base text-red-500 font-bold">7.</span> PACS<br>&nbsp;
                                         </p>
                                     </div>
                                 </div>
@@ -543,7 +547,7 @@
                     <!-- Mobile View - Simplified Stacked Layout -->
                     <div class="block lg:hidden space-y-8">
                         <div class="text-center mb-8">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Development Pipeline</h3>
+                            <h3 class="text-base font-bold text-gray-800 mb-4">Development Pipeline</h3>
                             <!-- Development Steps -->
                             <div class="space-y-4">
                                 <!-- Step Cards -->
@@ -599,7 +603,7 @@
                                     </div>
                                 </div>
 
-                                <h3 class="text-2xl font-bold text-gray-800 mb-4 pt-12">Hospital Operations</h3>
+                                <h3 class="text-base font-bold text-gray-800 mb-4 pt-12">Hospital Operations</h3>
 
                                 <!-- Step 4 -->
                                 <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
@@ -713,7 +717,7 @@
             <!-- Technical Details Section -->
             <div>
                 <div class="max-w-4xl mx-auto border-t border-gray-300 pt-16">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-12 text-center opacity-0 animate-fade-in animation-delay-900">
+                    <h3 class="text-base font-bold text-gray-800 mb-12 text-center opacity-0 animate-fade-in animation-delay-900">
                         Technical Components
                     </h3>
                 </div>
@@ -729,12 +733,12 @@
                             </svg>
                         </div>
                         <div class="flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">App Development</h3>
-                            <h4 class="text-lg font-semibold text-brand-primary mb-4">MONAI Application Package</h4>
+                            <h3 class="text-base font-bold text-gray-800 mb-2">App Development</h3>
+                            <h4 class="text-base font-semibold text-brand-primary mb-4">MONAI Application Package</h4>
                             <p class="text-gray-600">A Pythonic SDK to build deploy-ready AI Apps in Healthcare. Create standardized, portable applications ready for deployment.</p>
                         </div>
                         <div class="mt-6">
-                            <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/stable/index.html" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                            <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/stable/index.html" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2 group font-semibold">
                                 Learn More
                                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -751,12 +755,12 @@
                             </svg>
                         </div>
                         <div class="flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Workflow Manager</h3>
-                            <h4 class="text-lg font-semibold text-brand-primary mb-4">Orchestration Hub</h4>
+                            <h3 class="text-base font-bold text-gray-800 mb-2">Workflow Manager</h3>
+                            <h4 class="text-base font-semibold text-brand-primary mb-4">Orchestration Hub</h4>
                             <p class="text-gray-600">Central orchestration system for the MONAI Deploy Platform. Manage complex workflows and coordinate between different components seamlessly.</p>
                         </div>
                         <div class="mt-6">
-                            <a href="https://github.com/Project-MONAI/monai-deploy-workflow-manager" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                            <a href="https://github.com/Project-MONAI/monai-deploy-workflow-manager" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2 group font-semibold">
                                 Learn More
                                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -773,12 +777,12 @@
                             </svg>
                         </div>
                         <div class="flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Informatics Gateway</h3>
-                            <h4 class="text-lg font-semibold text-brand-primary mb-4">Data Integration</h4>
+                            <h3 class="text-base font-bold text-gray-800 mb-2">Informatics Gateway</h3>
+                            <h4 class="text-base font-semibold text-brand-primary mb-4">Data Integration</h4>
                             <p class="text-gray-600">Facilitates seamless I/O for DICOM and FHIR data. Connect AI Applications to Healthcare Information Systems with standardized protocols.</p>
                         </div>
                         <div class="mt-6">
-                            <a href="https://github.com/Project-MONAI/monai-deploy-informatics-gateway" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                            <a href="https://github.com/Project-MONAI/monai-deploy-informatics-gateway" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2 group font-semibold">
                                 Learn More
                                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -792,13 +796,14 @@
     </section>
 
     <!-- Getting Started Guide -->
-    <section id="getting-started" class="py-24 bg-brand-light">
+    <section id="getting-started" class="py-24 bg-brand-dark/15">
         <div class="container px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-4xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
                     Getting Started with MONAI Deploy App SDK
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
                 </h2>
-                <p class="text-xl text-gray-600">
+                <p class="text-base text-gray-600">
                     Follow these steps to begin deploying your AI models using MONAI Deploy.
                 </p>
             </div>
@@ -808,9 +813,9 @@
                     <!-- Step 1: Environment Setup -->
                     <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300">
                         <div class="flex items-start gap-4">
-                            <div class="flex-shrink-0 text-3xl font-bold text-brand-primary">1</div>
+                            <div class="flex-shrink-0 text-2xl font-bold text-brand-primary">1</div>
                             <div class="flex-grow">
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Environment Setup</h3>
+                                <h3 class="text-base font-bold text-gray-800 mb-2">Environment Setup</h3>
                                 <p class="text-gray-600 mb-6">Install MONAI Deploy SDK and set up your development environment using our comprehensive setup guide.</p>
                             </div>
                         </div>
@@ -842,9 +847,9 @@
                     <!-- Step 2: Application Development -->
                     <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300">
                         <div class="flex items-start gap-4">
-                            <div class="flex-shrink-0 text-3xl font-bold text-brand-primary">2</div>
+                            <div class="flex-shrink-0 text-2xl font-bold text-brand-primary">2</div>
                             <div class="flex-grow">
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Application Development</h3>
+                                <h3 class="text-base font-bold text-gray-800 mb-2">Application Development</h3>
                                 <p class="text-gray-600 mb-6">Run your first MONAI Deploy application using our simple imaging example.</p>
                             </div>
                         </div>
@@ -872,9 +877,9 @@
                     <!-- Step 3: Package Creation -->
                     <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300">
                         <div class="flex items-start gap-4">
-                            <div class="flex-shrink-0 text-3xl font-bold text-brand-primary">3</div>
+                            <div class="flex-shrink-0 text-2xl font-bold text-brand-primary">3</div>
                             <div class="flex-grow">
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Package Creation</h3>
+                                <h3 class="text-base font-bold text-gray-800 mb-2">Package Creation</h3>
                                 <p class="text-gray-600 mb-6">Create a MONAI Application Package (MAP) to ensure consistent deployment across different environments.</p>
                             </div>
                         </div>
@@ -906,8 +911,8 @@
                     <!-- Step 4: Deployment -->
                     <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300">
                         <div class="flex items-center gap-4 mb-4">
-                            <span class="text-4xl font-bold text-brand-primary">4</span>
-                            <h3 class="text-2xl font-bold text-gray-800">Deployment</h3>
+                            <span class="text-2xl font-bold text-brand-primary">4</span>
+                            <h3 class="text-base font-bold text-gray-800">Deployment</h3>
                         </div>
                         <p class="text-base text-gray-600 mb-4">Deploy your packaged application to your clinical environment with our deployment guide.</p>
                         <div class="mt-4 relative w-full mb-6">
@@ -940,7 +945,7 @@
 
                 <!-- Resources Section -->
                 <div class="mt-16 text-center">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Additional Resources</h3>
+                    <h3 class="text-base font-bold text-gray-800 mb-6">Additional Resources</h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/stable/examples/index.html" target="_blank" rel="noopener noreferrer" class="group">
                             <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300">
@@ -984,28 +989,41 @@
         <section class="py-24 bg-white">
             <div class="container px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-4xl mx-auto mb-16">
-                    <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
                         Real-World Applications
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
                     </h2>
-                    <p class="text-xl text-gray-600">
+                    <p class="text-base text-gray-600">
                         Discover how leading healthcare organizations are leveraging MONAI Deploy to transform patient care through AI-powered medical imaging.
                     </p>
                 </div>
 
                 <!-- Featured Case Studies -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                     <!-- Siemens Case Study -->
-                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col">
-                        <div class="relative h-32 overflow-hidden flex items-center justify-center">
-                            <img src="assets/img/siemens_logo.png" alt="Siemens Healthineers - Enterprise AI Integration Partner" class="w-3/4 h-full object-contain p-6">
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col pt-0">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Siemens Healthineers</h3>
-                            <span class="px-3 py-1 bg-brand-primary text-white text-sm rounded-full w-fit mb-3">Enterprise Integration</span>
-                            <p class="text-gray-600 text-sm">Siemens Healthineers has integrated MONAI Deploy into their AI-Rad Companion platform, enabling seamless deployment of AI models across their extensive healthcare network. This integration has significantly reduced deployment time and improved model performance monitoring.</p>
-                            <div class="mt-auto pt-4">
-                                <a href="#" class="px-4 py-2 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group text-sm">
-                                    Learn More
+                    <div class="group">
+                        <div class="bg-white p-8 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                            <div class="flex items-center justify-between mb-6">
+                                <img src="assets/img/siemens_logo.png" alt="Siemens Healthineers" class="h-12 object-contain">
+                                <div class="text-brand-primary">
+                                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-base font-bold text-gray-800 mb-2">Siemens Healthineers</h3>
+                                <p class="text-brand-primary font-semibold mb-4">Enterprise AI Integration</p>
+                                <p class="text-gray-600 mb-6">Siemens Healthineers has integrated MONAI Deploy into their AI-Rad Companion platform, enabling seamless deployment of AI models across their extensive healthcare network. This integration has significantly reduced deployment time and improved model performance monitoring.</p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Enterprise Scale</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">AI Platform</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Clinical Integration</span>
+                                </div>
+                            </div>
+                            <div class="pt-6 border-t border-gray-100">
+                                <a href="https://blogs.nvidia.com/blog/rsna-siemens-healthineers-monai-medical-imaging-ai/" target="_blank" class="w-full px-6 py-3 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2 group font-semibold">
+                                    Read Blog
                                     <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                     </svg>
@@ -1015,17 +1033,29 @@
                     </div>
 
                     <!-- Mayo Clinic Case Study -->
-                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col">
-                        <div class="relative h-32 overflow-hidden flex items-center justify-center">
-                            <img src="assets/img/mayo_clinic_logo_hq.png" alt="Mayo Clinic - Healthcare Innovation Partner" class="w-3/4 h-full object-contain p-6">
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col pt-0">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Mayo Clinic</h3>
-                            <span class="px-3 py-1 bg-brand-primary text-white text-sm rounded-full w-fit mb-3">Healthcare Innovation</span>
-                            <p class="text-gray-600 text-sm">The Center for Augmented Intelligence in Imaging at Mayo Clinic Florida has developed infrastructure for seamless integration of imaging AI models using MONAI.</p>
-                            <div class="mt-auto pt-4">
-                                <a href="mayo-case-study.html" class="px-4 py-2 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group text-sm">
-                                    Learn More
+                    <div class="group">
+                        <div class="bg-white p-8 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                            <div class="flex items-center justify-between mb-6">
+                                <img src="assets/img/mayo_clinic_logo_hq.png" alt="Mayo Clinic" class="h-12 object-contain">
+                                <div class="text-brand-primary">
+                                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-base font-bold text-gray-800 mb-2">Mayo Clinic</h3>
+                                <p class="text-brand-primary font-semibold mb-4">Clinical AI Integration</p>
+                                <p class="text-gray-600 mb-6">The Center for Augmented Intelligence in Imaging at Mayo Clinic Florida has developed infrastructure for seamless integration of imaging AI models using MONAI.</p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Clinical Research</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">AI Infrastructure</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Imaging</span>
+                                </div>
+                            </div>
+                            <div class="pt-6 border-t border-gray-100">
+                                <a href="mayo-case-study.html" class="w-full px-6 py-3 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2 group font-semibold">
+                                    Read Case Study
                                     <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                     </svg>
@@ -1035,16 +1065,28 @@
                     </div>
 
                     <!-- AI Centre AIDE Card -->
-                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col">
-                        <div class="relative h-32 overflow-hidden flex items-center justify-center">
-                            <img src="assets/img/aicenter_large.jpg" alt="AI Centre for Value Based Healthcare - Research Platform Partner" class="w-3/4 h-full object-contain p-6">
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col pt-0">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">AI Centre for Value Based Healthcare</h3>
-                            <span class="px-3 py-1 bg-brand-primary text-white text-sm rounded-full w-fit mb-3">Research Platform</span>
-                            <p class="text-gray-600 text-sm">AIDE, the AI Deployment Engine, enables safe and efficient deployment of AI models by seamlessly integrating them into research workflows.</p>
-                            <div class="mt-auto pt-4">
-                                <a href="https://aicentre.co.uk/platforms#view1" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group text-sm">
+                    <div class="group">
+                        <div class="bg-white p-8 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                            <div class="flex items-center justify-between mb-6">
+                                <img src="assets/img/aicenter_large.jpg" alt="AI Centre for Value Based Healthcare" class="h-12 object-contain">
+                                <div class="text-brand-primary">
+                                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-base font-bold text-gray-800 mb-2">AI Centre for Value Based Healthcare</h3>
+                                <p class="text-brand-primary font-semibold mb-4">Research Platform</p>
+                                <p class="text-gray-600 mb-6">AIDE, the AI Deployment Engine, enables safe and efficient deployment of AI models by seamlessly integrating them into research workflows.</p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Research</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Deployment Engine</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">AI Safety</span>
+                                </div>
+                            </div>
+                            <div class="pt-6 border-t border-gray-100">
+                                <a href="https://www.aicentre.co.uk/our-platforms#tab-1" target="_blank" rel="noopener noreferrer" class="w-full px-6 py-3 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2 group font-semibold">
                                     Learn More
                                     <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -1055,17 +1097,65 @@
                     </div>
 
                     <!-- mercure Card -->
-                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col">
-                        <div class="relative h-32 overflow-hidden flex items-center justify-center">
-                            <img src="assets/img/mercure_logo.png" alt="mercure - Open Source DICOM Orchestrator" class="w-3/4 h-full object-contain p-6">
+                    <div class="group">
+                        <div class="bg-white p-8 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                            <div class="flex items-center justify-between mb-6">
+                                <img src="assets/img/mercure_logo.png" alt="Mercure" class="h-12 object-contain">
+                                <div class="text-brand-primary">
+                                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-base font-bold text-gray-800 mb-2">Mercure</h3>
+                                <p class="text-brand-primary font-semibold mb-4">DICOM Orchestration Platform</p>
+                                <p class="text-gray-600 mb-6">An open-source DICOM orchestrator that seamlessly integrates MONAI Application Packages (MAPs), streamlining the deployment of AI models for research.</p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Open Source</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">DICOM</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">MAP Integration</span>
+                                </div>
+                            </div>
+                            <div class="pt-6 border-t border-gray-100">
+                                <a href="https://monai.medium.com/fe7cfd77acce?source=friends_link&sk=894711683f40c61b1116fc5097a24b0a" target="_blank" rel="noopener noreferrer" class="w-full px-6 py-3 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2 group font-semibold">
+                                    Read Blog
+                                    <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col pt-0">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">mercure</h3>
-                            <span class="px-3 py-1 bg-brand-primary text-white text-sm rounded-full w-fit mb-3">Open Source</span>
-                            <p class="text-gray-600 text-sm">An open-source DICOM orchestrator that seamlessly integrates MONAI Application Packages (MAPs), streamlining the deployment of AI models for research.</p>
-                            <div class="mt-auto pt-4">
-                                <a href="https://monai.medium.com/fe7cfd77acce?source=friends_link&sk=894711683f40c61b1116fc5097a24b0a" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group text-sm">
-                                    Learn More
+                    </div>
+
+                    <!-- Mayo & Siemens Digital Marketplace Card -->
+                    <div class="group">
+                        <div class="bg-white p-8 border border-gray-200 hover:border-brand-primary shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-2">
+                                    <img src="assets/img/mayo_clinic_logo_hq.png" alt="Mayo Clinic" class="h-10 object-contain">
+                                    <span class="text-gray-400">×</span>
+                                    <img src="assets/img/siemens_logo.png" alt="Siemens Healthineers" class="h-9 object-contain">
+                                </div>
+                                <div class="text-brand-primary">
+                                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-base font-bold text-gray-800 mb-2">Mayo Clinic & Siemens Digital Marketplace</h3>
+                                <p class="text-brand-primary font-semibold mb-4">Scalable Research Deployment</p>
+                                <p class="text-gray-600 mb-6">Mayo Clinic's AI applications are now accessible to over 10,000 institutions through Siemens Digital Marketplace, demonstrating how MONAI-powered solutions can scale globally with zero-code deployment.</p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Global Scale</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Zero-Code</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Research</span>
+                                </div>
+                            </div>
+                            <div class="pt-6 border-t border-gray-100">
+                                <a href="mayo-siemens-case-study.html" class="w-full px-6 py-3 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2 group font-semibold">
+                                    Read Case Study
                                     <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                     </svg>
@@ -1080,11 +1170,12 @@
         </section>
 
         <!-- Citation Section -->
-        <section class="py-24 bg-brand-light">
+        <section class="py-24 bg-brand-dark/15">
             <div class="container">
                 <div class="text-center max-w-4xl mx-auto">
-                    <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
                         How to Cite MONAI Deploy
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
                     </h2>
                     <p class="text-xl text-gray-600 mb-12">
                         If you use MONAI Deploy in your research, please cite our paper:
@@ -1111,7 +1202,7 @@
                         </div>
 
                         <div class="flex flex-wrap gap-4 mt-6">
-                            <a href="https://doi.org/10.2196/55833" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                            <a href="https://doi.org/10.2196/55833" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2 group font-semibold">
                                 DOI
                                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -1124,13 +1215,14 @@
         </section>
 
         <!-- Integrations & Ecosystem -->
-        <section class="py-24 bg-neutral-lightgray">
+        <section class="py-24 bg-white">
             <div class="container">
                 <div class="text-center max-w-4xl mx-auto mb-16">
-                    <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 relative inline-block pb-2">
                         Get Involved in the Community
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span>
                     </h2>
-                    <p class="text-xl text-gray-600">
+                    <p class="text-base text-gray-600">
                         Join our growing community of researchers, developers, and healthcare professionals. Get help, share your work, and contribute to advancing medical AI deployment.
                     </p>
                 </div>
@@ -1144,11 +1236,11 @@
                             </svg>
                         </div>
                         <div class="flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 mb-4">Documentation</h3>
+                            <h3 class="text-base font-bold text-gray-800 mb-4">Documentation</h3>
                             <p class="text-gray-600">Access comprehensive documentation covering everything from basic concepts to advanced deployment strategies.</p>
                         </div>
                         <div class="mt-6">
-                            <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                            <a href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/latest/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2 group font-semibold">
                                 Deep Dive
                                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -1165,11 +1257,11 @@
                             </svg>
                         </div>
                         <div class="flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 mb-4">GitHub Repository</h3>
+                            <h3 class="text-base font-bold text-gray-800 mb-4">GitHub Repository</h3>
                             <p class="text-gray-600">Explore the source code, contribute to development, and stay up to date with the latest features and improvements.</p>
                         </div>
                         <div class="mt-6">
-                            <a href="https://github.com/Project-MONAI/monai-deploy" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                            <a href="https://github.com/Project-MONAI/monai-deploy" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2 group font-semibold">
                                 View Code
                                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -1186,11 +1278,11 @@
                             </svg>
                         </div>
                         <div class="flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 mb-4">Join the Discussion</h3>
+                            <h3 class="text-base font-bold text-gray-800 mb-4">Join the Discussion</h3>
                             <p class="text-gray-600">Connect with the MONAI community on Slack. Get help, share ideas, and collaborate with other developers.</p>
                         </div>
                         <div class="mt-6">
-                            <a href="https://join.slack.com/t/projectmonai/shared_invite/zt-2t7z8e9tu-xE5SPw0TC8LUxyPVpl2WVQ" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                            <a href="https://join.slack.com/t/projectmonai/shared_invite/zt-2t7z8e9tu-xE5SPw0TC8LUxyPVpl2WVQ" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2 group font-semibold">
                                 Join Slack
                                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -1207,11 +1299,11 @@
                             </svg>
                         </div>
                         <div class="flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 mb-4">Sample Applications</h3>
+                            <h3 class="text-base font-bold text-gray-800 mb-4">Sample Applications</h3>
                             <p class="text-gray-600">Explore example applications and learn from real-world deployment scenarios.</p>
                         </div>
                         <div class="mt-6">
-                            <a href="https://github.com/Project-MONAI/monai-deploy-app-sdk/tree/main/examples" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                            <a href="https://github.com/Project-MONAI/monai-deploy-app-sdk/tree/main/examples" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2 group font-semibold">
                                 View Examples
                                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
