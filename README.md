@@ -1,6 +1,6 @@
 # Project MONAI Website
 
-This repository contains the source code and content for the Project MONAI website found at [monai.io](https://monai.io/). For more information about MONAI, visit the [Project-MONAI GitHub](https://github.com/Project-MONAI).
+This repository contains the source code and content for the Project MONAI website found at [project-monai.github.io](https://project-monai.github.io/). For more information about MONAI, visit the [Project-MONAI GitHub](https://github.com/Project-MONAI).
 
 ## Features
 
@@ -76,7 +76,7 @@ The website uses a component-based architecture. Common elements like headers, f
        document.head.innerHTML = document.head.innerHTML
            .replace('${title}', 'Your Page Title')
            .replace('${description}', 'Your page description')
-           .replace('${canonical_url}', 'https://monai.io/your-page.html');
+           .replace('${canonical_url}', 'https://project-monai.github.io/your-page.html');
    </script>
    ```
 
@@ -141,7 +141,7 @@ Version announcement:
 {
     id: 'monai-1-6',
     message: 'MONAI Core v1.6 is now available!',
-    link: 'https://docs.monai.io/en/stable/whatsnew_1_6.html',
+    link: 'https://monai.readthedocs.io/en/stable/whatsnew_1_6.html',
     linkText: 'See what\'s new →',
     bgColor: 'bg-brand-primary',
     icon: 'check',
