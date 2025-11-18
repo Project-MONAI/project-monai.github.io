@@ -195,7 +195,7 @@ const ModelListView = {
                 </p>
                 <p class="text-lg leading-relaxed text-gray-700">
                   The MONAI Model Zoo is a collection of pre-trained medical imaging models, ready for research and clinical deployment. Each model is packaged in the
-                  <a class="text-brand-primary hover:text-brand-dark transition-colors mx-1" href="https://docs.monai.io/en/latest/bundle_intro.html" target="_blank" rel="noopener noreferrer">MONAI Bundle</a>
+                  <a class="text-brand-primary hover:text-brand-dark transition-colors mx-1" href="https://monai.readthedocs.io/en/latest/bundle_intro.html" target="_blank" rel="noopener noreferrer">MONAI Bundle</a>
                   format, ensuring reproducibility and ease of use.
                 </p>
                 <p class="text-lg leading-relaxed text-gray-700">
@@ -209,7 +209,7 @@ const ModelListView = {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                   </svg>
                 </a>
-                <a href="https://docs.monai.io/en/latest/bundle_intro.html" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
+                <a href="https://monai.readthedocs.io/en/latest/bundle_intro.html" target="_blank" class="px-6 py-2.5 rounded-lg bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light transition-colors inline-flex items-center gap-2 group">
                   <span>Learn More</span>
                   <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
