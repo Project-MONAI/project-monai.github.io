@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth">
+
+<!-- Page-specific meta tags -->
+<title>MONAI - HAI Working Group: How We Work</title>
+<meta name="description" content="Practical operations guide for the MONAI Human-AI Interaction Working Group - principles, processes, and collaboration guidelines.">
+<meta property="og:title" content="MONAI - HAI Working Group: How We Work">
+<meta property="og:description" content="Practical operations guide for the MONAI Human-AI Interaction Working Group - principles, processes, and collaboration guidelines.">
+<meta property="og:url" content="https://project-monai.github.io/wg_hai_how_we_work.html">
+<meta name="twitter:title" content="MONAI - HAI Working Group: How We Work">
+<meta name="twitter:description" content="Practical operations guide for the MONAI Human-AI Interaction Working Group.">
+<link rel="canonical" href="https://project-monai.github.io/wg_hai_how_we_work.html">
+
+<!-- #include file="components/head.html" -->
+
+<body class="flex flex-col min-h-screen">
+
+  <!-- #include file="components/header.html" -->
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section id="hero" class="py-24 bg-brand-light">
+      <div class="container">
+        <div class="flex flex-wrap items-center">
+          <div class="w-full max-w-3xl">
+            <p class="text-brand-primary font-semibold mb-2">
+              <a href="wg_human_ai_interaction.html" class="hover:underline">&larr; Back to HAI Working Group</a>
+            </p>
+            <h1 class="text-4xl font-bold text-gray-800 mb-8">
+              How We Work
+            </h1>
+            <p class="text-lg leading-relaxed text-gray-700">This document describes the practical operation of the MONAI Human-AI Interaction Working Group (WG).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guiding Principles Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Guiding Principles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Issue-driven</h3>
+            <p class="text-gray-700">GitHub issues are our system of record</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Async-first</h3>
+            <p class="text-gray-700">Work happens primarily between meetings</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Low barrier</h3>
+            <p class="text-gray-700">Early and imperfect ideas are welcome</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Transparent</h3>
+            <p class="text-gray-700">Priorities, discussions, and agendas are public</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Community-led</h3>
+            <p class="text-gray-700">Anyone can contribute or claim work</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The HAI Way Section -->
+    <section class="py-24 bg-neutral-lightgray">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-4">The HAI Way</h2>
+        <p class="text-lg text-gray-600 mb-8 italic">Principles for productive collaboration, inspired by those who came before us:</p>
+        <div class="bg-white p-8 rounded-lg border border-neutral-200">
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Joining a ticket is better than starting a new one.</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Starting a new one is better than staying silent.</strong> <em>(When in doubt, create it.)</em></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Decisions live in issues, not in meetings.</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Meeting notes capture "what happened," issues capture "what we decided."</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Progress happens asynchronously; meetings exist to unblock.</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Imperfect contributions beat perfect silence.</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>If it's important enough to discuss, it's important enough to document.</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Transparent is better than efficient.</strong> <em>(When forced to choose.)</em></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Anyone can contribute. Everyone can claim work.</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Subscribe before you criticize</strong> - context helps.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>If something blocks you, speak up.</strong> We're here to unblock each other.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Before it's lost in Slack/Mailinglist, capture it in GitHub.</strong></span>
+            </li>
+          </ul>
+          <p class="text-gray-600 italic mt-6 pt-4 border-t border-neutral-200">These aren't rules - they're agreements on how we work best together.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coordination Hub Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Our Coordination Hub</h2>
+        <p class="text-lg text-gray-700 mb-8">All technical discussions, proposals, and decisions are documented in <strong>GitHub issues</strong>.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">WG Project Board</h3>
+            <p class="text-gray-700 mb-4">Central coordination space for all WG activities</p>
+            <a href="https://github.com/orgs/Project-MONAI/projects/28" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium">
+              <span>View Project Board</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">MONAI Label Milestones</h3>
+            <p class="text-gray-700 mb-4">Focus areas and medium-term direction (not strict deadlines)</p>
+            <a href="https://github.com/Project-MONAI/MONAILabel/milestones" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium">
+              <span>View Milestones</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Belongs in an Issue Section -->
+    <section class="py-24 bg-neutral-lightgray">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">What Belongs in an Issue?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Issues can represent:</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Feature ideas or enhancement proposals</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Bugs or technical problems</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Discussion topics or open questions</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Workflow improvements</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Research or UX questions</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Presentation proposals for WG meetings</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Anything else relevant to human-AI interaction in medical imaging</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white p-8 rounded-lg border border-neutral-200">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Important Notes</h3>
+            <div class="space-y-4 text-gray-700">
+              <p><strong>Issues don't need to be perfect.</strong> A short description is enough to start the conversation.</p>
+              <p><strong>Before creating a new issue:</strong> Check if a similar one already exists. If you're unsure, create it anyway - we'd rather have duplicates than miss your input.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Work Gets Done Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">How Work Gets Done</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div class="bg-brand-light p-6 rounded-lg text-center">
+            <div class="text-3xl font-bold text-brand-primary mb-2">1</div>
+            <h3 class="font-semibold text-gray-800 mb-2">Claim an Issue</h3>
+            <p class="text-sm text-gray-600">Assign yourself and indicate you'll work on it</p>
+          </div>
+          <div class="bg-brand-light p-6 rounded-lg text-center">
+            <div class="text-3xl font-bold text-brand-primary mb-2">2</div>
+            <h3 class="font-semibold text-gray-800 mb-2">Work Async</h3>
+            <p class="text-sm text-gray-600">Progress through comments, commits, and collaboration</p>
+          </div>
+          <div class="bg-brand-light p-6 rounded-lg text-center">
+            <div class="text-3xl font-bold text-brand-primary mb-2">3</div>
+            <h3 class="font-semibold text-gray-800 mb-2">Others Join</h3>
+            <p class="text-sm text-gray-600">By subscribing, commenting, or co-developing</p>
+          </div>
+          <div class="bg-brand-light p-6 rounded-lg text-center">
+            <div class="text-3xl font-bold text-brand-primary mb-2">4</div>
+            <h3 class="font-semibold text-gray-800 mb-2">Share Updates</h3>
+            <p class="text-sm text-gray-600">Directly in the issue thread</p>
+          </div>
+        </div>
+        <div class="bg-neutral-lightgray p-6 rounded-lg border-l-4 border-brand-primary">
+          <p class="text-gray-700"><strong>The WG meeting is not where implementation happens.</strong> It's where we unblock, align, and connect.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- When to Request WG Discussion Section -->
+    <section class="py-24 bg-neutral-lightgray">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">When to Request WG Discussion</h2>
+        <p class="text-lg text-gray-700 mb-6">If you're working on an issue and need broader input:</p>
+        <div class="bg-white p-8 rounded-lg border border-neutral-200">
+          <ol class="space-y-4 text-gray-700">
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">1</span>
+              <span>Move it to or label it <strong>"Needs Discussion"</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">2</span>
+              <span>A coordinator will schedule it for the next WG meeting</span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">3</span>
+              <span>It appears in the <strong>"Next WG Meeting"</strong> column</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- WG Meeting Structure Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">WG Meeting Structure</h2>
+        <p class="text-lg text-gray-700 mb-8">Meetings serve four purposes:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Community touchpoint</h3>
+            <p class="text-gray-700">Staying connected as a group</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Unblocking discussions</h3>
+            <p class="text-gray-700">Addressing issues that need WG-level input</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Issue grooming</h3>
+            <p class="text-gray-700">Reviewing new issues, identifying duplicates, assigning milestones</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Knowledge sharing</h3>
+            <p class="text-gray-700">Short presentations on relevant topics (when proposed)</p>
+          </div>
+        </div>
+        <div class="bg-brand-light p-6 rounded-lg border-l-4 border-brand-primary">
+          <p class="text-gray-700"><strong>The "Next WG Meeting" column is the agenda.</strong> It's frozen ~1 week before each meeting so you can decide if attendance is valuable for you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meeting Documentation Section -->
+    <section class="py-24 bg-neutral-lightgray">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Meeting Documentation</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">Meeting notes capture:</h3>
+            <p class="text-gray-700 mb-4"><strong>Organizational information only</strong></p>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Scheduling updates</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Process changes</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Announcements</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white p-8 rounded-lg border border-neutral-200">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">Why this approach?</h3>
+            <p class="text-gray-700 mb-4"><strong>All technical discussions and decisions are documented in the issues themselves</strong>, not in meeting minutes. This ensures:</p>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Contributors who can't attend aren't disadvantaged</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Discussions remain searchable and accessible</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Participation works across time zones</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Context is preserved where it belongs</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Issue Grooming Process Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Issue Grooming Process</h2>
+        <p class="text-lg text-gray-700 mb-6">At each meeting, we review:</p>
+        <div class="bg-white p-8 rounded-lg border border-neutral-200 mb-6">
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>New issues created since the last meeting</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>Issues without milestone assignments</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>Potential duplicates</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>Unclear problem statements</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-neutral-lightgray p-6 rounded-lg border-l-4 border-brand-primary">
+          <p class="text-gray-700">The goal is to keep the backlog organized and actionable.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who Coordinates the WG Section -->
+    <section class="py-24 bg-neutral-lightgray">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Who Coordinates the WG?</h2>
+        <p class="text-lg text-gray-700 mb-6">The WG is led by coordinators listed on the <a href="wg_human_ai_interaction.html" class="text-brand-primary hover:text-brand-dark font-medium">WG homepage</a>.</p>
+        <div class="bg-white p-8 rounded-lg border border-neutral-200">
+          <h3 class="text-xl font-semibold text-brand-primary mb-4">Coordinators are responsible for:</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>Scheduling and facilitating WG meetings</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>Managing the "Next WG Meeting" agenda</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>Issue grooming and milestone assignment</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>Ensuring the process remains accessible and transparent</span>
+            </li>
+          </ul>
+          <p class="text-gray-700 mt-6 pt-4 border-t border-neutral-200">Reach out to current coordinators if you'd like to help.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Communication Channels Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Communication Channels</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">Issue-specific discussions</h3>
+            <p class="text-gray-700">Use the GitHub issue itself (preferred)</p>
+          </div>
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">Quick questions & chat</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span><strong>Mailing list:</strong> <a href="https://groups.google.com/g/monai-wg-hai" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:text-brand-dark">monai-wg-hai Google Group</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span><strong>Slack:</strong> <a href="https://projectmonai.slack.com/archives/C0A9334ETNK" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:text-brand-dark">#human-ai-interaction</a></span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">Join the WG</h3>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsgt8arOOle203KJyPvkjr3VQTyvrzzazrJumgQgdZ7voH8Q/viewform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-dark transition-colors duration-300 shadow-md">
+              <span>Fill out the participation form</span>
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="mt-8 bg-neutral-lightgray p-6 rounded-lg border-l-4 border-brand-primary">
+          <p class="text-gray-700"><strong>GitHub is the source of truth for decisions.</strong> Discussions on Slack or the mailing list should be summarized back into relevant issues.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conflict Resolution Section -->
+    <section class="py-24 bg-neutral-lightgray">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Conflict Resolution</h2>
+        <p class="text-lg text-gray-700 mb-6">When contributors disagree on an approach or decision:</p>
+        <div class="bg-white p-8 rounded-lg border border-neutral-200 mb-8">
+          <ol class="space-y-4 text-gray-700">
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">1</span>
+              <span><strong>Start with discussion</strong> in the issue - most conflicts resolve through clarification</span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">2</span>
+              <span><strong>Request coordinator input</strong> if the discussion stalls</span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">3</span>
+              <span><strong>Bring to WG meeting</strong> by moving to "Needs Discussion" if broader input would help</span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">4</span>
+              <span><strong>Community vote</strong> as a last resort (voting mechanism: TBD based on need)</span>
+            </li>
+          </ol>
+        </div>
+        <div class="bg-brand-light p-6 rounded-lg border-l-4 border-brand-primary">
+          <p class="text-gray-700">The goal is <strong>consensus where possible, clarity always</strong>. We value diverse perspectives and aim for solutions that serve the broadest community needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why This Approach Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Why This Approach?</h2>
+        <p class="text-lg text-gray-700 mb-8">This structure ensures:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Async participation works</h3>
+            <p class="text-gray-700">You don't need to attend meetings to contribute</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Decisions are documented</h3>
+            <p class="text-gray-700">Everything is searchable and traceable</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Global inclusion</h3>
+            <p class="text-gray-700">Contributors from all time zones can participate fully</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Scalability</h3>
+            <p class="text-gray-700">The WG can grow without bottlenecking on synchronous meetings</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section class="py-24 bg-brand-light">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Getting Started</h2>
+        <div class="bg-white p-8 rounded-lg border border-neutral-200 mb-8">
+          <ol class="space-y-4 text-gray-700">
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">1</span>
+              <span>Browse the <a href="https://github.com/orgs/Project-MONAI/projects/28" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:text-brand-dark font-medium">WG Project Board</a></span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">2</span>
+              <span>Look for issues that interest you</span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">3</span>
+              <span>Comment, subscribe, or claim issues you want to work on</span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">4</span>
+              <span>Create new issues for ideas not yet captured</span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">5</span>
+              <span>Join WG meetings when topics relevant to you are scheduled</span>
+            </li>
+          </ol>
+        </div>
+        <div class="bg-white p-6 rounded-lg border border-neutral-200">
+          <p class="text-gray-700"><strong>Questions?</strong> Open an issue on the project board or reach out to the <a href="wg_human_ai_interaction.html" class="text-brand-primary hover:text-brand-dark font-medium">WG coordinators</a>.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- #include file="components/footer.html" -->
+  <!-- #include file="components/scripts.html" -->
+
+</body>
+</html>
