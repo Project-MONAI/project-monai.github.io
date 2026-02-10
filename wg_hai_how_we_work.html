@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth">
+
+<!-- Page-specific meta tags -->
+<title>MONAI - HAI Working Group: How We Work</title>
+<meta name="description" content="Practical operations guide for the MONAI Human-AI Interaction Working Group - principles, processes, and collaboration guidelines.">
+<meta property="og:title" content="MONAI - HAI Working Group: How We Work">
+<meta property="og:description" content="Practical operations guide for the MONAI Human-AI Interaction Working Group - principles, processes, and collaboration guidelines.">
+<meta property="og:url" content="https://project-monai.github.io/wg_hai_how_we_work.html">
+<meta name="twitter:title" content="MONAI - HAI Working Group: How We Work">
+<meta name="twitter:description" content="Practical operations guide for the MONAI Human-AI Interaction Working Group.">
+<link rel="canonical" href="https://project-monai.github.io/wg_hai_how_we_work.html">
+
+<!-- Head Component -->
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QVGBCPFPJ6');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="MONAI, Medical Imaging, AI, Deep Learning, Healthcare, PyTorch, Open Source">
+    <meta name="author" content="Project MONAI">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://project-monai.github.io/assets/img/MONAI-logo_color.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ProjectMONAI">
+    <meta name="twitter:image" content="https://project-monai.github.io/assets/img/MONAI-logo_color.png">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/logo/MONAI-logo_favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/logo/MONAI-logo_favicon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/tailwind.css">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Alpine.js x-cloak -->
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MONAI",
+        "url": "https://project-monai.github.io",
+        "logo": "https://project-monai.github.io/assets/img/MONAI-logo_color.png",
+        "description": "MONAI is a freely available, community-supported, PyTorch-based framework for deep learning in healthcare imaging.",
+        "sameAs": [
+            "https://twitter.com/ProjectMONAI",
+            "https://medium.com/@monai",
+            "https://www.youtube.com/c/Project-MONAI",
+            "https://github.com/Project-MONAI"
+        ]
+    }
+    </script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head> 
+
+<body class="flex flex-col min-h-screen">
+
+  <!-- Banner System -->
+<div x-data="bannerSystem()" x-init="init()">
+    <!-- Banner Container -->
+    <div x-show="activeBanner" 
+         x-ref="banner"
+         class="fixed top-0 left-0 right-0 text-white py-2 px-4 text-sm z-50"
+         :class="activeBanner ? activeBanner.bgColor : ''"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0">
+        <div class="container flex items-center justify-center gap-2">
+            <svg x-show="activeBanner && activeBanner.icon === 'check'" class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <svg x-show="activeBanner && activeBanner.icon === 'megaphone'" class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+            </svg>
+            <span class="font-medium" x-text="activeBanner ? activeBanner.message : ''"></span>
+            <a x-show="activeBanner && activeBanner.link" 
+               :href="activeBanner ? activeBanner.link : '#'" 
+               target="_blank" 
+               class="underline hover:no-underline ml-1"
+               x-text="activeBanner ? activeBanner.linkText : ''"></a>
+            <button @click="dismissBanner()" 
+                    class="ml-4 hover:opacity-80 transition-opacity" 
+                    aria-label="Dismiss banner">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+function bannerSystem() {
+    return {
+        banners: [
+            {
+                id: 'monai_core_v1.5.1',
+                message: 'MONAI Core v1.5.1 is now available!',
+                link: 'https://monai.readthedocs.io/en/stable/whatsnew_1_5_1.html',
+                linkText: 'See what\'s new →',
+                bgColor: 'bg-brand-primary',
+                icon: 'check',
+                priority: 1
+            }
+        ],
+        activeBanner: null,
+        bannerHeight: 0,
+
+        init() {
+            this.selectActiveBanner();
+            this.$nextTick(() => {
+                if (this.activeBanner && this.$refs.banner) {
+                    this.bannerHeight = this.$refs.banner.offsetHeight;
+                    this.updateBodyPadding();
+                    this.updateNavPosition();
+                }
+            });
+        },
+
+        selectActiveBanner() {
+            // Filter out dismissed banners and sort by priority
+            const availableBanners = this.banners
+                .filter(banner => localStorage.getItem(`hideBanner_${banner.id}`) !== 'true')
+                .sort((a, b) => b.priority - a.priority);
+            
+            this.activeBanner = availableBanners[0] || null;
+            
+            // Dispatch event for header to know if banner is visible
+            window.dispatchEvent(new CustomEvent('banner-visibility-changed', { 
+                detail: { visible: !!this.activeBanner } 
+            }));
+        },
+
+        dismissBanner() {
+            if (this.activeBanner) {
+                localStorage.setItem(`hideBanner_${this.activeBanner.id}`, 'true');
+                this.activeBanner = null;
+                this.bannerHeight = 0;
+                this.updateBodyPadding();
+                this.updateNavPosition();
+                window.dispatchEvent(new CustomEvent('banner-visibility-changed', { 
+                    detail: { visible: false, height: 0 } 
+                }));
+            }
+        },
+
+        updateBodyPadding() {
+            const mainElement = document.querySelector('main');
+            if (mainElement) {
+                if (this.activeBanner) {
+                    mainElement.style.paddingTop = `calc(4rem + ${this.bannerHeight}px)`;
+                } else {
+                    mainElement.style.paddingTop = '4rem';
+                }
+            }
+        },
+
+        updateNavPosition() {
+            const navElement = document.querySelector('.navigation');
+            if (navElement) {
+                if (this.activeBanner && this.bannerHeight) {
+                    navElement.style.top = `${this.bannerHeight}px`;
+                } else {
+                    navElement.style.top = '0';
+                }
+            }
+        }
+    }
+}
+</script>
+
+<!-- Header Area wrapper Starts -->
+<header id="header-wrap" class="relative">
+  <!-- Navbar Start -->
+  <div class="navigation fixed top-0 left-0 w-full z-40 duration-300 bg-white border-b border-gray-100 transition-all">
+    <div class="container">
+      <nav class="navbar flex justify-between items-center relative duration-300 h-16" x-data="{ isOpen: false, frameworksOpen: false, communityOpen: false }">
+        <a class="navbar-brand" href="index.html">
+          <img class="h-12 w-auto" src="assets/img/MONAI-logo_color_full.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler focus:outline-none block lg:hidden p-2" type="button" @click="isOpen = !isOpen">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path x-show="!isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path x-show="isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <div class="navbar-collapse lg:flex flex-grow items-center absolute lg:static top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent lg:shadow-none" 
+             :class="{'hidden': !isOpen, 'block shadow-lg': isOpen}">
+          <ul class="navbar-nav flex flex-col lg:flex-row lg:items-center lg:ml-auto py-4 lg:py-0 px-6 lg:px-0 space-y-2 lg:space-y-0 lg:space-x-8">
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="index.html">Home</a>
+            </li>
+            <li class="nav-item relative" @click.away="frameworksOpen = false">
+              <button class="page-scroll flex items-center justify-between w-full lg:inline-flex lg:w-auto py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" 
+                      @click="frameworksOpen = !frameworksOpen; communityOpen = false">
+                <span>Frameworks</span>
+                <span class="chevron ml-2 transform transition-transform duration-200" :class="{'rotate-180': frameworksOpen}"></span>
+              </button>
+              <div class="lg:absolute w-full lg:w-52 lg:top-[calc(100%+0.5rem)] left-0 lg:left-1/2 lg:-translate-x-1/2 z-50 p-2 text-gray-800 bg-white rounded-lg shadow-lg" 
+                   x-show="frameworksOpen" 
+                   x-transition:enter="transition ease-out duration-200"
+                   x-transition:enter-start="opacity-0 translate-y-1"
+                   x-transition:enter-end="opacity-100 translate-y-0"
+                   x-cloak>
+                <div class="flex flex-col space-y-1">
+                  <a href="core.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Core</a>
+                  <a href="label.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Label</a>
+                  <a href="deploy.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">MONAI Deploy</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="model-zoo.html">Model Zoo</a>
+            </li>
+            <li class="nav-item">
+              <a class="page-scroll block py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" href="working-groups.html">Working Groups</a>
+            </li>
+            <li class="nav-item relative" @click.away="communityOpen = false">
+              <button class="page-scroll flex items-center justify-between w-full lg:inline-flex lg:w-auto py-2 text-gray-700 hover:text-brand-primary transition-colors duration-200" 
+                      @click="communityOpen = !communityOpen; frameworksOpen = false">
+                <span>Community</span>
+                <span class="chevron ml-2 transform transition-transform duration-200" :class="{'rotate-180': communityOpen}"></span>
+              </button>
+              <div class="lg:absolute w-full lg:w-64 lg:top-[calc(100%+0.5rem)] left-0 lg:left-1/2 lg:-translate-x-1/2 z-50 p-2 text-gray-800 bg-white rounded-lg shadow-lg"
+                   x-show="communityOpen"
+                   x-transition:enter="transition ease-out duration-200"
+                   x-transition:enter-start="opacity-0 translate-y-1"
+                   x-transition:enter-end="opacity-100 translate-y-0"
+                   x-cloak>
+                <div class="flex flex-col space-y-2">
+                  <a href="about.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">About Us</a>
+                  <a href="successstories.html" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Success Stories</a>
+                  <a href="https://github.com/Project-MONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">GitHub</a>
+                  <a href="https://join.slack.com/t/projectmonai/shared_invite/zt-3hucgm02q-i8Bn9XofDZs2UGOH4jUl4w" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Join Slack</a>
+                  <div class="border-t border-gray-100 mt-2 pt-2">
+                    <div class="grid grid-cols-2 gap-1">
+                      <a href="https://twitter.com/ProjectMONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Twitter</a>
+                      <a href="https://linkedin.com/company/projectmonai" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">LinkedIn</a>
+                      <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">Blog</a>
+                      <a href="https://www.youtube.com/c/Project-MONAI" target="_blank" class="px-3 py-2 rounded-md transition-colors hover:bg-gray-50 hover:text-brand-primary">YouTube</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Navbar End -->
+</header>
+<!-- Header Area wrapper End --> 
+
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section id="hero" class="py-24 bg-brand-light">
+      <div class="container">
+        <div class="flex flex-wrap items-center">
+          <div class="w-full max-w-3xl">
+            <p class="text-brand-primary font-semibold mb-2">
+              <a href="wg_human_ai_interaction.html" class="hover:underline">&larr; Back to HAI Working Group</a>
+            </p>
+            <h1 class="text-4xl font-bold text-gray-800 mb-8">
+              How We Work
+            </h1>
+            <p class="text-lg leading-relaxed text-gray-700">This document describes the practical operation of the MONAI Human-AI Interaction Working Group (WG).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guiding Principles Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Guiding Principles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Issue-driven</h3>
+            <p class="text-gray-700">GitHub issues are our system of record</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Async-first</h3>
+            <p class="text-gray-700">Work happens primarily between meetings</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Low barrier</h3>
+            <p class="text-gray-700">Early and imperfect ideas are welcome</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Transparent</h3>
+            <p class="text-gray-700">Priorities, discussions, and agendas are public</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Community-led</h3>
+            <p class="text-gray-700">Anyone can contribute or claim work</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The HAI Way Section -->
+    <section class="py-24 bg-neutral-lightgray">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-4">The HAI Way</h2>
+        <p class="text-lg text-gray-600 mb-8 italic">Principles for productive collaboration, inspired by those who came before us:</p>
+        <div class="bg-white p-8 rounded-lg border border-neutral-200">
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Joining a ticket is better than starting a new one.</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Starting a new one is better than staying silent.</strong> <em>(When in doubt, create it.)</em></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Decisions live in issues, not in meetings.</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Meeting notes capture "what happened," issues capture "what we decided."</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Progress happens asynchronously; meetings exist to unblock.</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Imperfect contributions beat perfect silence.</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>If it's important enough to discuss, it's important enough to document.</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Transparent is better than efficient.</strong> <em>(When forced to choose.)</em></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Anyone can contribute. Everyone can claim work.</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Subscribe before you criticize</strong> - context helps.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>If something blocks you, speak up.</strong> We're here to unblock each other.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3 font-bold">&bull;</span>
+              <span><strong>Before it's lost in Slack/Mailinglist, capture it in GitHub.</strong></span>
+            </li>
+          </ul>
+          <p class="text-gray-600 italic mt-6 pt-4 border-t border-neutral-200">These aren't rules - they're agreements on how we work best together.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coordination Hub Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Our Coordination Hub</h2>
+        <p class="text-lg text-gray-700 mb-8">All technical discussions, proposals, and decisions are documented in <strong>GitHub issues</strong>.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">WG Project Board</h3>
+            <p class="text-gray-700 mb-4">Central coordination space for all WG activities</p>
+            <a href="https://github.com/orgs/Project-MONAI/projects/28" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium">
+              <span>View Project Board</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">MONAI Label Milestones</h3>
+            <p class="text-gray-700 mb-4">Focus areas and medium-term direction (not strict deadlines)</p>
+            <a href="https://github.com/Project-MONAI/MONAILabel/milestones" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium">
+              <span>View Milestones</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Belongs in an Issue Section -->
+    <section class="py-24 bg-neutral-lightgray">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">What Belongs in an Issue?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Issues can represent:</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Feature ideas or enhancement proposals</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Bugs or technical problems</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Discussion topics or open questions</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Workflow improvements</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Research or UX questions</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Presentation proposals for WG meetings</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Anything else relevant to human-AI interaction in medical imaging</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white p-8 rounded-lg border border-neutral-200">
+            <h3 class="text-xl font-semibold text-brand-primary mb-6 pb-2 border-b border-neutral-200">Important Notes</h3>
+            <div class="space-y-4 text-gray-700">
+              <p><strong>Issues don't need to be perfect.</strong> A short description is enough to start the conversation.</p>
+              <p><strong>Before creating a new issue:</strong> Check if a similar one already exists. If you're unsure, create it anyway - we'd rather have duplicates than miss your input.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Work Gets Done Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">How Work Gets Done</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div class="bg-brand-light p-6 rounded-lg text-center">
+            <div class="text-3xl font-bold text-brand-primary mb-2">1</div>
+            <h3 class="font-semibold text-gray-800 mb-2">Claim an Issue</h3>
+            <p class="text-sm text-gray-600">Assign yourself and indicate you'll work on it</p>
+          </div>
+          <div class="bg-brand-light p-6 rounded-lg text-center">
+            <div class="text-3xl font-bold text-brand-primary mb-2">2</div>
+            <h3 class="font-semibold text-gray-800 mb-2">Work Async</h3>
+            <p class="text-sm text-gray-600">Progress through comments, commits, and collaboration</p>
+          </div>
+          <div class="bg-brand-light p-6 rounded-lg text-center">
+            <div class="text-3xl font-bold text-brand-primary mb-2">3</div>
+            <h3 class="font-semibold text-gray-800 mb-2">Others Join</h3>
+            <p class="text-sm text-gray-600">By subscribing, commenting, or co-developing</p>
+          </div>
+          <div class="bg-brand-light p-6 rounded-lg text-center">
+            <div class="text-3xl font-bold text-brand-primary mb-2">4</div>
+            <h3 class="font-semibold text-gray-800 mb-2">Share Updates</h3>
+            <p class="text-sm text-gray-600">Directly in the issue thread</p>
+          </div>
+        </div>
+        <div class="bg-neutral-lightgray p-6 rounded-lg border-l-4 border-brand-primary">
+          <p class="text-gray-700"><strong>The WG meeting is not where implementation happens.</strong> It's where we unblock, align, and connect.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- When to Request WG Discussion Section -->
+    <section class="py-24 bg-neutral-lightgray">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">When to Request WG Discussion</h2>
+        <p class="text-lg text-gray-700 mb-6">If you're working on an issue and need broader input:</p>
+        <div class="bg-white p-8 rounded-lg border border-neutral-200">
+          <ol class="space-y-4 text-gray-700">
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">1</span>
+              <span>Move it to or label it <strong>"Needs Discussion"</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">2</span>
+              <span>A coordinator will schedule it for the next WG meeting</span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">3</span>
+              <span>It appears in the <strong>"Next WG Meeting"</strong> column</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- WG Meeting Structure Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">WG Meeting Structure</h2>
+        <p class="text-lg text-gray-700 mb-8">Meetings serve four purposes:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Community touchpoint</h3>
+            <p class="text-gray-700">Staying connected as a group</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Unblocking discussions</h3>
+            <p class="text-gray-700">Addressing issues that need WG-level input</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Issue grooming</h3>
+            <p class="text-gray-700">Reviewing new issues, identifying duplicates, assigning milestones</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Knowledge sharing</h3>
+            <p class="text-gray-700">Short presentations on relevant topics (when proposed)</p>
+          </div>
+        </div>
+        <div class="bg-brand-light p-6 rounded-lg border-l-4 border-brand-primary">
+          <p class="text-gray-700"><strong>The "Next WG Meeting" column is the agenda.</strong> It's frozen ~1 week before each meeting so you can decide if attendance is valuable for you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meeting Documentation Section -->
+    <section class="py-24 bg-neutral-lightgray">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Meeting Documentation</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">Meeting notes capture:</h3>
+            <p class="text-gray-700 mb-4"><strong>Organizational information only</strong></p>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Scheduling updates</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Process changes</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Announcements</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white p-8 rounded-lg border border-neutral-200">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">Why this approach?</h3>
+            <p class="text-gray-700 mb-4"><strong>All technical discussions and decisions are documented in the issues themselves</strong>, not in meeting minutes. This ensures:</p>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Contributors who can't attend aren't disadvantaged</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Discussions remain searchable and accessible</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Participation works across time zones</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span>Context is preserved where it belongs</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Issue Grooming Process Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Issue Grooming Process</h2>
+        <p class="text-lg text-gray-700 mb-6">At each meeting, we review:</p>
+        <div class="bg-white p-8 rounded-lg border border-neutral-200 mb-6">
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>New issues created since the last meeting</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>Issues without milestone assignments</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>Potential duplicates</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>Unclear problem statements</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-neutral-lightgray p-6 rounded-lg border-l-4 border-brand-primary">
+          <p class="text-gray-700">The goal is to keep the backlog organized and actionable.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who Coordinates the WG Section -->
+    <section class="py-24 bg-neutral-lightgray">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Who Coordinates the WG?</h2>
+        <p class="text-lg text-gray-700 mb-6">The WG is led by coordinators listed on the <a href="wg_human_ai_interaction.html" class="text-brand-primary hover:text-brand-dark font-medium">WG homepage</a>.</p>
+        <div class="bg-white p-8 rounded-lg border border-neutral-200">
+          <h3 class="text-xl font-semibold text-brand-primary mb-4">Coordinators are responsible for:</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>Scheduling and facilitating WG meetings</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>Managing the "Next WG Meeting" agenda</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>Issue grooming and milestone assignment</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-primary mr-3">&bull;</span>
+              <span>Ensuring the process remains accessible and transparent</span>
+            </li>
+          </ul>
+          <p class="text-gray-700 mt-6 pt-4 border-t border-neutral-200">Reach out to current coordinators if you'd like to help.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Communication Channels Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Communication Channels</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">Issue-specific discussions</h3>
+            <p class="text-gray-700">Use the GitHub issue itself (preferred)</p>
+          </div>
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">Quick questions & chat</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span><strong>Mailing list:</strong> <a href="https://groups.google.com/g/monai-wg-hai" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:text-brand-dark">monai-wg-hai Google Group</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-primary mr-3">&bull;</span>
+                <span><strong>Slack:</strong> <a href="https://projectmonai.slack.com/archives/C0A9334ETNK" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:text-brand-dark">#human-ai-interaction</a></span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">Join the WG</h3>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsgt8arOOle203KJyPvkjr3VQTyvrzzazrJumgQgdZ7voH8Q/viewform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-dark transition-colors duration-300 shadow-md">
+              <span>Fill out the participation form</span>
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="mt-8 bg-neutral-lightgray p-6 rounded-lg border-l-4 border-brand-primary">
+          <p class="text-gray-700"><strong>GitHub is the source of truth for decisions.</strong> Discussions on Slack or the mailing list should be summarized back into relevant issues.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conflict Resolution Section -->
+    <section class="py-24 bg-neutral-lightgray">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Conflict Resolution</h2>
+        <p class="text-lg text-gray-700 mb-6">When contributors disagree on an approach or decision:</p>
+        <div class="bg-white p-8 rounded-lg border border-neutral-200 mb-8">
+          <ol class="space-y-4 text-gray-700">
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">1</span>
+              <span><strong>Start with discussion</strong> in the issue - most conflicts resolve through clarification</span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">2</span>
+              <span><strong>Request coordinator input</strong> if the discussion stalls</span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">3</span>
+              <span><strong>Bring to WG meeting</strong> by moving to "Needs Discussion" if broader input would help</span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">4</span>
+              <span><strong>Community vote</strong> as a last resort (voting mechanism: TBD based on need)</span>
+            </li>
+          </ol>
+        </div>
+        <div class="bg-brand-light p-6 rounded-lg border-l-4 border-brand-primary">
+          <p class="text-gray-700">The goal is <strong>consensus where possible, clarity always</strong>. We value diverse perspectives and aim for solutions that serve the broadest community needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why This Approach Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Why This Approach?</h2>
+        <p class="text-lg text-gray-700 mb-8">This structure ensures:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Async participation works</h3>
+            <p class="text-gray-700">You don't need to attend meetings to contribute</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Decisions are documented</h3>
+            <p class="text-gray-700">Everything is searchable and traceable</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Global inclusion</h3>
+            <p class="text-gray-700">Contributors from all time zones can participate fully</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-primary hover:shadow-md transition-all duration-300">
+            <h3 class="text-lg font-semibold text-brand-primary mb-2">Scalability</h3>
+            <p class="text-gray-700">The WG can grow without bottlenecking on synchronous meetings</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section class="py-24 bg-brand-light">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-neutral-darkestblack mb-8">Getting Started</h2>
+        <div class="bg-white p-8 rounded-lg border border-neutral-200 mb-8">
+          <ol class="space-y-4 text-gray-700">
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">1</span>
+              <span>Browse the <a href="https://github.com/orgs/Project-MONAI/projects/28" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:text-brand-dark font-medium">WG Project Board</a></span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">2</span>
+              <span>Look for issues that interest you</span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">3</span>
+              <span>Comment, subscribe, or claim issues you want to work on</span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">4</span>
+              <span>Create new issues for ideas not yet captured</span>
+            </li>
+            <li class="flex items-start">
+              <span class="bg-brand-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">5</span>
+              <span>Join WG meetings when topics relevant to you are scheduled</span>
+            </li>
+          </ol>
+        </div>
+        <div class="bg-white p-6 rounded-lg border border-neutral-200">
+          <p class="text-gray-700"><strong>Questions?</strong> Open an issue on the project board or reach out to the <a href="wg_human_ai_interaction.html" class="text-brand-primary hover:text-brand-dark font-medium">WG coordinators</a>.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Component -->
+<footer id="footer" class="py-2 border-t border-neutral-light_gray">
+  <div class="container">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <!-- Logo Section -->
+      <div class="w-auto flex-shrink-0">
+        <div class="mx-3">
+          <div class="footer-logo">
+            <a href="index.html"><img src="./assets/img/MONAI-logo_color.png" alt="MONAI Logo"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Links - Hidden on mobile, flex on larger screens -->
+      <div class="hidden lg:block flex-grow">
+        <div class="mx-3 text-black">
+          <ul class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+            <li>
+              <a href="core.html" class="footer-links whitespace-nowrap">MONAI Core</a>
+            </li>
+            <li>
+              <a href="label.html" class="footer-links whitespace-nowrap">MONAI Label</a>
+            </li>
+            <li>
+              <a href="deploy.html" class="footer-links whitespace-nowrap">MONAI Deploy</a>
+            </li>
+            <li>
+              <a href="model-zoo.html" class="footer-links whitespace-nowrap">Model Zoo</a>
+            </li>
+            <li>
+              <a href="working-groups.html" class="footer-links whitespace-nowrap">Working Groups</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Social Icons - Always visible, right-aligned -->
+      <div class="w-auto flex-shrink-0">
+        <div class="mx-3">
+          <ul class="social-icons flex items-center gap-4">
+            <li>
+              <a href="https://twitter.com/ProjectMONAI" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/company/projectmonai" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://medium.com/@monai" aria-label="Medium">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M9.025 8c0 2.485-2.02 4.5-4.513 4.5A4.506 4.506 0 0 1 0 8c0-2.486 2.02-4.5 4.512-4.5A4.506 4.506 0 0 1 9.025 8m4.95 0c0 2.34-1.01 4.236-2.256 4.236S9.463 10.339 9.463 8c0-2.34 1.01-4.236 2.256-4.236S13.975 5.661 13.975 8M16 8c0 2.096-.355 3.795-.794 3.795-.438 0-.793-1.7-.793-3.795 0-2.096.355-3.795.794-3.795.438 0 .793 1.699.793 3.795"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/c/Project-MONAI" aria-label="YouTube">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- Scripts Component -->
+<!-- Common JavaScript Files -->
+<script src="./assets/js/particles.min.js"></script>
+<script src="./assets/js/countUp.min.js"></script>
+<script src="./assets/js/main.js"></script>
+
+<!-- Performance Optimizations -->
+<script>
+    // Defer non-critical images
+    document.addEventListener('DOMContentLoaded', function() {
+        var lazyImages = [].slice.call(document.querySelectorAll('img[data-src]'));
+        
+        if ('IntersectionObserver' in window) {
+            let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        let lazyImage = entry.target;
+                        lazyImage.src = lazyImage.dataset.src;
+                        lazyImage.removeAttribute('data-src');
+                        lazyImageObserver.unobserve(lazyImage);
+                    }
+                });
+            });
+
+            lazyImages.forEach(function(lazyImage) {
+                lazyImageObserver.observe(lazyImage);
+            });
+        }
+    });
+
+    // Preload critical resources
+    const preloadLinks = [
+        './assets/css/tailwind.css',
+        './assets/img/MONAI-logo_color_full.png'
+    ];
+
+    preloadLinks.forEach(link => {
+        const preloadLink = document.createElement('link');
+        preloadLink.href = link;
+        preloadLink.rel = 'preload';
+        preloadLink.as = link.endsWith('.css') ? 'style' : 'image';
+        document.head.appendChild(preloadLink);
+    });
+</script>
+
+<!-- Common Scripts -->
+<script src="assets/js/copy-buttons.js"></script> 
+
+</body>
+</html>
