@@ -24,7 +24,7 @@ module.exports = {
                 neutral: {
                     purewhite: '#ffffff',
                     darkestblack: '#1a1a1a',
-                    light_gray: '#E5E7EB'
+                    lightgray: '#F3F4F6'
                 }
             },
             spacing: {
