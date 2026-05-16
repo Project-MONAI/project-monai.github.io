@@ -132,7 +132,7 @@
             "type": "string"
         },
         "numpy_version": {
-            "description": "Version of NumPy the bundlewas generated with.",
+            "description": "Version of NumPy the bundle was generated with.",
             "type": "string"
         },
         "required_packages_version": {
