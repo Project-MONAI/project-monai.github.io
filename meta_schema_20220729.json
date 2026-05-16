@@ -165,7 +165,7 @@
                                 "value_range"
                             ]
                         },
-						"latent": {
+                        "latent": {
                             "type": "object",
                             "properties": {
                                 "type": {
@@ -250,7 +250,7 @@
                                 "value_range"
                             ]
                         },
-						"latent": {
+                        "latent": {
                             "type": "object",
                             "properties": {
                                 "type": {
