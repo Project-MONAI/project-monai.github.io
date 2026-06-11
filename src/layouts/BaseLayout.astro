@@ -65,7 +65,7 @@ if (mdAlternate === '/' || mdAlternate === '') mdAlternate = '/index.md';
         navLinks.forEach(function (link) {
           var href = link.getAttribute('href');
           if (!href) return;
-          if (href === path) link.classList.add('active');
+          if (href.replace(/^\//, '') === path) link.classList.add('active');
         });
         var frameworkPages = ['core.html', 'label.html', 'deploy.html'];
         var communityPages = ['about.html', 'successstories.html'];
@@ -73,7 +73,7 @@ if (mdAlternate === '/' || mdAlternate === '') mdAlternate = '/index.md';
           communityPages.push(path);
         }
         if (path.startsWith('wg_')) {
-          var wgLink = document.querySelector('.nav-item > a[href="working-groups.html"]');
+          var wgLink = document.querySelector('.nav-item > a[href="/working-groups.html"]');
           if (wgLink) wgLink.classList.add('active');
         }
         if (frameworkPages.indexOf(path) !== -1) {

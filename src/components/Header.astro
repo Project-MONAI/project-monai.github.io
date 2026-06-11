@@ -121,8 +121,8 @@ function bannerSystem() {
   <div class="navigation fixed top-0 left-0 w-full z-40 duration-300 bg-white/95 backdrop-blur-lg border-b border-gray-100/80 transition-all">
     <div class="container">
       <nav class="navbar flex justify-between items-center relative duration-300 h-16" x-data="{ isOpen: false, frameworksOpen: false, docsOpen: false, communityOpen: false }" aria-label="Primary">
-        <a class="navbar-brand flex items-center gap-2" href="index.html" aria-label="MONAI — home">
-          <img fetchpriority="high" class="h-10 w-auto" src="assets/logo/MONAI-logo_color_full.png" alt="MONAI">
+        <a class="navbar-brand flex items-center gap-2" href="/index.html" aria-label="MONAI — home">
+          <img fetchpriority="high" class="h-10 w-auto" src="/assets/logo/MONAI-logo_color_full.png" alt="MONAI">
         </a>
         <button class="navbar-toggler block lg:hidden p-2 rounded-lg hover:bg-gray-50 transition-colors" type="button" @click="isOpen = !isOpen" :aria-expanded="isOpen.toString()" aria-controls="primary-menu" aria-label="Toggle navigation menu">
           <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -135,7 +135,7 @@ function bannerSystem() {
              :class="{'hidden': !isOpen, 'block shadow-xl border-t border-gray-50': isOpen}">
           <ul class="navbar-nav flex flex-col lg:flex-row lg:items-center lg:ml-auto py-4 lg:py-0 px-6 lg:px-0 space-y-1 lg:space-y-0 lg:space-x-1">
             <li class="nav-item">
-              <a class="block px-4 py-2 text-[0.9rem] font-medium text-gray-600 hover:text-brand-primary rounded-lg hover:bg-gray-50 transition-all duration-200" href="index.html">Home</a>
+              <a class="block px-4 py-2 text-[0.9rem] font-medium text-gray-600 hover:text-brand-primary rounded-lg hover:bg-gray-50 transition-all duration-200" href="/index.html">Home</a>
             </li>
             <li class="nav-item relative" @click.away="frameworksOpen = false" @keydown.escape="frameworksOpen = false">
               <button class="flex items-center justify-between w-full lg:inline-flex lg:w-auto px-4 py-2 text-[0.9rem] font-medium text-gray-600 hover:text-brand-primary rounded-lg hover:bg-gray-50 transition-all duration-200"
@@ -155,7 +155,7 @@ function bannerSystem() {
                    x-transition:enter-end="opacity-100 translate-y-0"
                    x-cloak>
                 <div class="flex flex-col">
-                  <a href="core.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors hover:bg-gray-50 group">
+                  <a href="/core.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors hover:bg-gray-50 group">
                     <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
                       <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
@@ -166,7 +166,7 @@ function bannerSystem() {
                       <div class="text-xs text-gray-500">Training framework</div>
                     </div>
                   </a>
-                  <a href="label.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors hover:bg-gray-50 group">
+                  <a href="/label.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors hover:bg-gray-50 group">
                     <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
                       <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
@@ -177,7 +177,7 @@ function bannerSystem() {
                       <div class="text-xs text-gray-500">Annotation tool</div>
                     </div>
                   </a>
-                  <a href="deploy.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors hover:bg-gray-50 group">
+                  <a href="/deploy.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors hover:bg-gray-50 group">
                     <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
                       <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
@@ -192,7 +192,7 @@ function bannerSystem() {
               </div>
             </li>
             <li class="nav-item">
-              <a class="block px-4 py-2 text-[0.9rem] font-medium text-gray-600 hover:text-brand-primary rounded-lg hover:bg-gray-50 transition-all duration-200" href="model-zoo.html">Model Zoo</a>
+              <a class="block px-4 py-2 text-[0.9rem] font-medium text-gray-600 hover:text-brand-primary rounded-lg hover:bg-gray-50 transition-all duration-200" href="/model-zoo.html">Model Zoo</a>
             </li>
             <li class="nav-item relative" @click.away="docsOpen = false" @keydown.escape="docsOpen = false">
               <button class="flex items-center justify-between w-full lg:inline-flex lg:w-auto px-4 py-2 text-[0.9rem] font-medium text-gray-600 hover:text-brand-primary rounded-lg hover:bg-gray-50 transition-all duration-200"
@@ -249,7 +249,7 @@ function bannerSystem() {
               </div>
             </li>
             <li class="nav-item">
-              <a class="block px-4 py-2 text-[0.9rem] font-medium text-gray-600 hover:text-brand-primary rounded-lg hover:bg-gray-50 transition-all duration-200" href="working-groups.html">Working Groups</a>
+              <a class="block px-4 py-2 text-[0.9rem] font-medium text-gray-600 hover:text-brand-primary rounded-lg hover:bg-gray-50 transition-all duration-200" href="/working-groups.html">Working Groups</a>
             </li>
             <li class="nav-item relative" @click.away="communityOpen = false" @keydown.escape="communityOpen = false">
               <button class="flex items-center justify-between w-full lg:inline-flex lg:w-auto px-4 py-2 text-[0.9rem] font-medium text-gray-600 hover:text-brand-primary rounded-lg hover:bg-gray-50 transition-all duration-200"
@@ -269,7 +269,7 @@ function bannerSystem() {
                    x-transition:enter-end="opacity-100 translate-y-0"
                    x-cloak>
                 <div class="flex flex-col">
-                  <a href="about.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors hover:bg-gray-50 group">
+                  <a href="/about.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors hover:bg-gray-50 group">
                     <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
                       <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -280,7 +280,7 @@ function bannerSystem() {
                       <div class="text-xs text-gray-500">Our mission & leadership</div>
                     </div>
                   </a>
-                  <a href="successstories.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors hover:bg-gray-50 group">
+                  <a href="/successstories.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors hover:bg-gray-50 group">
                     <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
                       <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
