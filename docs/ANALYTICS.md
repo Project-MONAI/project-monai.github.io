@@ -175,11 +175,18 @@ report, import the listed dimensions and metrics in the *Variables* column (the 
 then drag them into the *Settings* column slots as shown. Filters are added at the bottom of
 the Settings column.
 
+**Date ranges:** prefer the *Last 28 days* preset over 30 (exactly four weeks, so the
+weekday mix is constant between reads); the two low-volume reports use 90 days for sample
+size. Custom dimensions never backfill, so data starts at the 2026-06 launch; ignore trend
+reads until a few weeks have accumulated. Explorations are capped by the 14-month retention
+set in §2-B, and very long windows trigger sampling.
+
 ### 4.1 Agent traffic
 
 | Explore field | Set it to |
 |---|---|
 | Name | `Agent traffic` |
+| Date range | Last 28 days |
 | Technique | Free form |
 | Import: dimensions | `agent_class`, `agent_name` |
 | Import: metrics | Event count, Sessions |
@@ -195,6 +202,7 @@ nears ~5% of page views, that's a signal worth acting on (see §6).
 | Explore field | Set it to |
 |---|---|
 | Name | `CTA performance` |
+| Date range | Last 28 days |
 | Technique | Free form |
 | Import: dimensions | `cta_id`, `agent_class`, Page path |
 | Import: metrics | Event count |
@@ -209,6 +217,7 @@ nears ~5% of page views, that's a signal worth acting on (see §6).
 | Explore field | Set it to |
 |---|---|
 | Name | `Framework interest` |
+| Date range | Last 90 days |
 | Technique | Free form |
 | Import: dimensions | `filter_value` |
 | Import: metrics | Event count |
@@ -224,6 +233,7 @@ pursue. The most decision-useful report for roadmap and docs priorities.
 | Explore field | Set it to |
 |---|---|
 | Name | `Model Zoo engagement` |
+| Date range | Last 90 days |
 | Technique | Free form, two tabs |
 | Import: dimensions | `model_id`, `search_term` |
 | Import: metrics | Event count |
@@ -240,6 +250,7 @@ search for, including what they search for and do not find.
 | Explore field | Set it to |
 |---|---|
 | Name | `Outbound destinations` |
+| Date range | Last 28 days |
 | Technique | Free form |
 | Import: dimensions | Link domain |
 | Import: metrics | Event count |
