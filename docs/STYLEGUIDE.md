@@ -103,25 +103,20 @@ Always use this above section titles (`text-brand-teal` on light backgrounds; `t
 ## Layout
 
 ### Page Structure
-```html
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<!-- Page-specific meta tags -->
-<title>MONAI - Page Title</title>
-<meta name="description" content="...">
-<!-- OG tags, twitter tags, canonical -->
-
-<!-- #include file="components/head.html" -->
-
-<body class="flex flex-col min-h-screen bg-white">
-    <!-- #include file="components/header.html" -->
-    <main class="flex-grow pt-16">
-        <!-- Page content sections here -->
-        <!-- #include file="components/footer.html" -->
-    </main>
-    <!-- #include file="components/scripts.html" -->
-</body>
-</html>
+```astro
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const frontmatter = {
+  title: 'MONAI - Page Title',
+  description: '...',
+  canonical: 'https://project-monai.github.io/<name>.html',
+  // optional: audience, schemaType, metaRefresh
+};
+---
+<BaseLayout {...frontmatter}>
+  <!-- Page sections here. BaseLayout provides <head> (SEO, JSON-LD, GA4),
+       Header, Footer, and the shared scripts. -->
+</BaseLayout>
 ```
 
 ### Container
@@ -530,17 +525,13 @@ For displaying code snippets (e.g., install commands, code examples):
 When creating a new page:
 
 1. Use `class="scroll-smooth"` on `<html>` (NOT inline style)
-2. Include all 4 component files via SSI:
-   - `<!-- #include file="components/head.html" -->`
-   - `<!-- #include file="components/header.html" -->`
-   - `<!-- #include file="components/footer.html" -->`
-   - `<!-- #include file="components/scripts.html" -->`
-3. Add complete meta tags: title, description, og:title, og:description, og:url, twitter:title, twitter:description, canonical
+2. Wrap the page in `BaseLayout` (it renders head, Header, Footer, and shared scripts).
+3. Fill the `frontmatter` const: title, description, canonical (BaseHead derives OG/Twitter/canonical/markdown-twin tags from it)
 4. Start with a light hero (`bg-gradient-to-br from-white via-brand-light/40 to-white`, dark text; see DESIGN.md, dark heroes are legacy)
 5. Use `reveal` classes for scroll-reveal animations, sparingly
 6. Alternate `bg-white` and `bg-gray-50` for content sections
 7. Test responsive layout at mobile (375px), tablet (768px), desktop (1280px)
-8. Run `npm run build` to verify SSI includes resolve
+8. Run `npm run build` and `npm test` to verify the page and LLM artifacts generate
 
 ---
 

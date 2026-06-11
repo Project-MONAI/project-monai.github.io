@@ -128,7 +128,8 @@ export default function mdTwins(): AstroIntegration {
             const md = htmlToMarkdownTwin(html, frontmatterFromHtml(html, rel));
             res.setHeader('Content-Type', 'text/markdown; charset=utf-8');
             res.end(md);
-          } catch {
+          } catch (err) {
+            console.error(`[md-twins] dev twin conversion failed for ${url}:`, err);
             next();
           }
         });

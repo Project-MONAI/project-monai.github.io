@@ -67,7 +67,8 @@ export default function llmsTxt(): AstroIntegration {
             res.end(
               `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`,
             );
-          } catch {
+          } catch (err) {
+            console.error(`[llms-txt] dev synthesis failed for ${url}:`, err);
             next();
           }
         });

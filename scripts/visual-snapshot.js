@@ -8,11 +8,32 @@ const ROOT = process.argv[2];
 const OUT  = process.argv[3];
 const PORT = 4321;
 
+if (!ROOT || !OUT) {
+  console.error('Usage: node scripts/visual-snapshot.js <ROOT> <OUT>');
+  console.error('  ROOT: directory of built HTML to serve (e.g. ./dist)');
+  console.error('  OUT:  directory to write screenshots into');
+  process.exit(1);
+}
+
 (async () => {
+  let server;
+  let browser;
+  try {
+    await main();
+  } catch (e) {
+    console.error('visual-snapshot failed:', e.message);
+    console.error(e.stack);
+    process.exitCode = 1;
+  } finally {
+    if (browser) await browser.close().catch(() => {});
+    if (server) server.close();
+  }
+
+  async function main() {
   fs.mkdirSync(OUT, { recursive: true });
-  const server = http.createServer((req, res) => handler(req, res, { public: ROOT }));
+  server = http.createServer((req, res) => handler(req, res, { public: ROOT }));
   await new Promise(r => server.listen(PORT, r));
-  const browser = await puppeteer.launch({
+  browser = await puppeteer.launch({
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
   const page = await browser.newPage();
@@ -39,6 +60,5 @@ const PORT = 4321;
       console.warn(`Skip ${h}: ${e.message}`);
     }
   }
-  await browser.close();
-  server.close();
+  }
 })();
