@@ -2,6 +2,26 @@
 const { createApp, ref, computed, onMounted, watch } = Vue;
 const { createRouter, createWebHashHistory, useRouter, useRoute } = VueRouter;
 
+
+// Sanitize semi-trusted README HTML (from model_data.json) before v-html.
+// DOM-based: removes active elements, event handlers, and script-bearing URIs.
+function sanitizeHtml(html) {
+    const doc = new DOMParser().parseFromString(html || '', 'text/html');
+    doc.querySelectorAll('script, iframe, object, embed, style, link, meta, form, base').forEach((el) => el.remove());
+    doc.querySelectorAll('*').forEach((el) => {
+        for (const attr of Array.from(el.attributes)) {
+            const name = attr.name.toLowerCase();
+            const value = attr.value.trim().toLowerCase().replace(/[\s\u0000-\u001f]+/g, '');
+            if (name.startsWith('on')) el.removeAttribute(attr.name);
+            else if ((name === 'href' || name === 'src' || name === 'xlink:href' || name === 'formaction' || name === 'srcdoc') &&
+                     (value.startsWith('javascript:') || value.startsWith('vbscript:') || value.startsWith('data:text/html'))) {
+                el.removeAttribute(attr.name);
+            }
+        }
+    });
+    return doc.body.innerHTML;
+}
+
 // Shared utility: determine if a model is a MONAI Bundle
 // (from huggingface.co/MONAI but NOT VILA-M3 models)
 function isMonaiBundle(model) {
@@ -540,7 +560,7 @@ const ModelDetailView = {
 
     // Function to clean up HuggingFace model readmes
     const cleanReadme = (readme) => {
-      if (!readme) return readme;
+      if (!readme) return sanitizeHtml(readme);
 
       // Remove YAML frontmatter (everything between --- or between first <hr/> tags with metadata)
       let cleaned = readme;
@@ -551,7 +571,7 @@ const ModelDetailView = {
       // Pattern 2: Remove YAML frontmatter between --- markers
       cleaned = cleaned.replace(/^---[\s\S]*?---\s*/m, '');
 
-      return cleaned.trim();
+      return sanitizeHtml(cleaned.trim());
     };
 
     onMounted(async () => {
