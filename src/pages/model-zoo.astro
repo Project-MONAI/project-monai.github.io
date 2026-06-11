@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import modelData from '../../public/model_data.json';
+
+const frontmatter = {
+  title: 'MONAI Model Zoo - Pre-trained Models for Medical Imaging',
+  description: 'Explore MONAI Model Zoo - a collection of pre-trained models for medical imaging tasks. Find and use state-of-the-art models for your healthcare AI applications.',
+  canonical: 'https://project-monai.github.io/model-zoo.html',
+};
+
+// Static catalog rendered inside #app at build time. The Vue app replaces it
+// on mount, so browser users see the interactive zoo; agents, the .md twin,
+// llms-full.txt, and no-JS readers get the full model index.
+const models = Object.entries(modelData as Record<string, { model_name?: string; description?: string; version?: string }>)
+  .map(([id, m]) => ({
+    id,
+    name: m.model_name || id,
+    description: (m.description || '').trim(),
+    version: m.version || '',
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+---
+<BaseLayout {...frontmatter}>
+  <div id="app">
+    <!-- Pre-mount fallback: replaced by the Vue app when it loads -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Model Zoo</p>
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Pre-trained models for medical AI</h1>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Every model ships as a MONAI Bundle: weights, training config, and inference code in one
+            reproducible unit. The interactive browser needs JavaScript; the full catalog is listed below.
+          </p>
+        </div>
+        <ul class="max-w-4xl mx-auto space-y-6">
+          {models.map((m) => (
+            <li>
+              <h2 class="text-lg font-bold text-gray-900">
+                {m.name}{m.version && <span class="font-normal text-gray-500"> (v{m.version})</span>}
+              </h2>
+              <p class="text-sm text-gray-600 leading-relaxed">{m.description}</p>
+              <p class="text-xs text-gray-500 font-mono">{m.id}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- Vue 3 and Vue Router (UMD globals consumed by /src/model-zoo-vue.js) -->
+  <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.prod.js" is:inline></script>
+  <script src="https://unpkg.com/vue-router@4.5.0/dist/vue-router.global.prod.js" is:inline></script>
+  <script src="/src/model-zoo-vue.js" is:inline></script>
+</BaseLayout>

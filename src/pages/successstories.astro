@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const frontmatter = {
+  title: 'MONAI - Success Stories',
+  description: 'How healthcare institutions and industry partners run MONAI in production. Read real-world case studies and success stories.',
+  canonical: 'https://project-monai.github.io/successstories.html',
+};
+---
+<BaseLayout {...frontmatter}>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-white via-brand-light/40 to-white py-24 lg:py-32">
+
+
+            <div class="container relative z-10">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h1 class="font-display text-5xl lg:text-7xl font-bold tracking-tight mb-6">
+                        <span class="text-gray-900">Success </span><span class="text-brand-accent">Stories</span>
+                    </h1>
+                    <p class="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                        Production deployments of MONAI across three continents: Mayo Clinic Florida integrating AI into clinical radiology, Siemens Healthineers distributing models through its Digital Marketplace, CAI<sup>2</sup>R adding MAP support to the mercure orchestrator, and NHS trusts deploying at scale with AIDE. Each story covers the integration pattern, what it took to ship, and what changed in the clinic.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Success Stories -->
+        <section class="py-24 bg-white">
+            <div class="container">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Case Studies</p>
+                    <h2 class="font-display text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight">How Institutions Use MONAI</h2>
+                </div>
+
+                <!-- Featured: Mayo Clinic CAII -->
+                <div class="mb-8 reveal">
+                    <div class="group bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
+                        <div class="grid lg:grid-cols-2 gap-0">
+                            <div class="p-10 lg:p-12 flex flex-col justify-center">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <img loading="lazy" src="assets/img/logos/mayo-clinic.png" alt="Mayo Clinic" class="h-10 object-contain">
+                                    <span class="text-xs font-semibold text-brand-teal bg-brand-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">Featured</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-3">Pioneering Clinical AI Integration</h3>
+                                <p class="text-gray-600 mb-6 leading-relaxed">
+                                    Mayo Clinic Florida's Center for Augmented Intelligence in Imaging integrates MONAI-compatible AI models into clinical radiology workflows. Their infrastructure lets healthcare teams deploy imaging AI with minimal disruption to existing processes.
+                                </p>
+                                <div class="mb-8">
+                                    <div class="text-brand-teal uppercase tracking-widest text-xs font-semibold mb-1">Key Achievement</div>
+                                    <div class="text-lg font-bold text-gray-900">Integrated with existing IT infrastructure</div>
+                                </div>
+                                <a href="mayo-case-study.html" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors" data-track="cta_click" data-track-cta-id="stories_featured_mayo" data-track-cta-dest="mayo-case-study.html">
+                                    Read Case Study
+                                    <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                                </a>
+                            </div>
+                            <a href="mayo-case-study.html" class="relative block overflow-hidden bg-gray-900 min-h-[280px] group/media" aria-label="Read the Mayo Clinic case study">
+                                <img loading="lazy" width="1000" height="652" src="assets/img/figures/mayo-case-study-figure-3-thumb.jpg" alt="MONAI models running in the CAII clinical viewer at Mayo Clinic" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover/media:scale-[1.03]">
+                                <span class="absolute bottom-3 left-3 text-[11px] font-medium text-white bg-black/50 backdrop-blur px-2.5 py-1 rounded-md">Mayo Clinic Florida &middot; CAII viewer</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-stagger">
+                    <a href="mayo-siemens-case-study.html" class="group block bg-white rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 p-8 reveal">
+                        <div class="flex items-center gap-3 mb-6">
+                            <img loading="lazy" src="assets/img/logos/mayo-clinic.png" alt="Mayo Clinic" class="h-8 object-contain">
+                            <span class="text-gray-300 text-xs">&times;</span>
+                            <img loading="lazy" src="assets/img/logos/siemens.png" alt="Siemens Healthineers" class="h-7 object-contain">
+                            <span class="ml-auto px-2.5 py-0.5 bg-gray-100 text-gray-600 rounded-full text-xs">Scalable Deployment</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-teal transition-colors">Mayo Clinic AI, Available to 10,000+ Institutions</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-5">MONAI-based tools built at one institution, distributed worldwide through the Siemens Healthineers Digital Marketplace. Researchers install them without writing code.</p>
+                        <div class="text-xs text-brand-teal uppercase tracking-widest font-semibold mb-1">Key Achievement</div>
+                        <div class="text-sm font-bold text-gray-900">10,000+ institutions enabled with 1-hour deployment</div>
+                    </a>
+                    <a href="https://blogs.nvidia.com/blog/rsna-siemens-healthineers-monai-medical-imaging-ai/" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 p-8 reveal">
+                        <div class="flex items-center gap-3 mb-6">
+                            <img loading="lazy" src="assets/img/logos/siemens.png" alt="Siemens Healthineers" class="h-8 object-contain">
+                            <span class="ml-auto px-2.5 py-0.5 bg-gray-100 text-gray-600 rounded-full text-xs">Enterprise Integration</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-teal transition-colors">Accelerating AI Integration at Enterprise Scale</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-5">MONAI Deploy integrated into Syngo Carbon and syngo.via. Healthcare providers install trained AI models from the Digital Marketplace in a few clicks.</p>
+                        <div class="text-xs text-brand-teal uppercase tracking-widest font-semibold mb-1">Key Achievement</div>
+                        <div class="text-sm font-bold text-gray-900">Deployment time cut from months to minutes</div>
+                    </a>
+                    <a href="https://monai.medium.com/rapid-deployment-of-monai-application-packages-maps-in-radiology-workflows-using-the-mercure-fe7cfd77acce" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 p-8 reveal">
+                        <div class="flex items-center gap-3 mb-6">
+                            <img loading="lazy" src="assets/img/logos/mercure.png" alt="mercure" class="h-8 object-contain">
+                            <span class="ml-auto px-2.5 py-0.5 bg-gray-100 text-gray-600 rounded-full text-xs">Open Source Platform</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-teal transition-colors">Rapid MAP Deployment with DICOM Orchestration</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-5">CAI<sup>2</sup>R added MONAI Application Package support to the mercure DICOM Orchestrator: web-based configuration, monitoring, and routing for clinical AI.</p>
+                        <div class="text-xs text-brand-teal uppercase tracking-widest font-semibold mb-1">Key Feature</div>
+                        <div class="text-sm font-bold text-gray-900">Open-source DICOM orchestration with MAP support</div>
+                    </a>
+                    <a href="https://www.aicentre.co.uk/our-platforms#tab-1" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 p-8 reveal">
+                        <div class="flex items-center gap-3 mb-6">
+                            <img loading="lazy" src="assets/img/logos/aicentre.jpg" alt="AI Centre for Value Based Healthcare" class="h-8 object-contain">
+                            <span class="ml-auto px-2.5 py-0.5 bg-gray-100 text-gray-600 rounded-full text-xs">Clinical Platform</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-teal transition-colors">Deploying AI Across the NHS with AIDE</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-5">The AI Centre's AIDE platform lets NHS trusts deploy AI models at scale: connected to patient records, with results delivered into clinical systems.</p>
+                        <div class="text-xs text-brand-teal uppercase tracking-widest font-semibold mb-1">Key Innovation</div>
+                        <div class="text-sm font-bold text-gray-900">Real-time AI analysis integrated with EPR systems</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 bg-gray-50 relative overflow-hidden">
+
+
+            <div class="container relative z-10">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-brand-teal uppercase tracking-widest text-sm font-semibold">Get Involved</span>
+                    <h2 class="font-display text-2xl lg:text-3xl font-bold text-gray-900 tracking-tight mt-4 mb-4">Share Your Success Story</h2>
+                    <p class="text-base lg:text-lg text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+                        Are you running MONAI in production? We'd love to feature your implementation
+                        and share it with the community.
+                    </p>
+                    <a rel="noopener noreferrer" href="https://github.com/Project-MONAI/project-monai.github.io/issues" target="_blank"
+                       class="inline-flex items-center gap-2 px-7 py-3 bg-brand-primary text-gray-900 rounded-lg hover:bg-brand-accent transition-all duration-300 group font-semibold text-base shadow-lg shadow-brand-primary/20">
+                        Share Your Story
+                        <svg class="w-5 h-5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </BaseLayout>

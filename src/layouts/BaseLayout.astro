@@ -1,0 +1,96 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  metaRefresh?: string;
+  audience?: string[];
+  schemaType?: 'SoftwareApplication' | 'Course' | 'Article' | 'WebPage';
+}
+const { title, description, canonical, metaRefresh, audience, schemaType } = Astro.props;
+let mdAlternate = canonical
+  .replace(/^https?:\/\/[^/]+/, '')   // strip origin
+  .replace(/\.html$/, '.md');         // .html → .md
+if (mdAlternate === '/' || mdAlternate === '') mdAlternate = '/index.md';
+---
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <BaseHead
+    title={title}
+    description={description}
+    canonical={canonical}
+    metaRefresh={metaRefresh}
+    audience={audience}
+    schemaType={schemaType}
+    mdAlternate={mdAlternate}
+  />
+  <body class="flex flex-col min-h-screen bg-white">
+    <Header />
+    <main id="main" class="flex-grow pt-16" tabindex="-1">
+      <slot />
+      <Footer mdAlternate={mdAlternate} />
+    </main>
+
+    <!-- Common Scripts (translated from components/scripts.html) -->
+    <script src="/assets/js/main.js" is:inline></script>
+    <script src="/assets/js/track.js" is:inline></script>
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function () {
+        const reveals = document.querySelectorAll('.reveal');
+        if (reveals.length && 'IntersectionObserver' in window) {
+          const observer = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('revealed');
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+          );
+          reveals.forEach(function (el) { observer.observe(el); });
+        }
+      });
+    </script>
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function () {
+        var path = window.location.pathname.split('/').pop() || 'index.html';
+        var navLinks = document.querySelectorAll('.nav-item > a, .nav-item > button');
+        navLinks.forEach(function (link) {
+          var href = link.getAttribute('href');
+          if (!href) return;
+          if (href === path) link.classList.add('active');
+        });
+        var frameworkPages = ['core.html', 'label.html', 'deploy.html'];
+        var communityPages = ['about.html', 'successstories.html'];
+        if (path === 'mayo-case-study.html' || path === 'mayo-siemens-case-study.html') {
+          communityPages.push(path);
+        }
+        if (path.startsWith('wg_')) {
+          var wgLink = document.querySelector('.nav-item > a[href="working-groups.html"]');
+          if (wgLink) wgLink.classList.add('active');
+        }
+        if (frameworkPages.indexOf(path) !== -1) {
+          var frameworkBtn = document.querySelector('.nav-item button');
+          if (frameworkBtn && frameworkBtn.textContent.trim().includes('Frameworks')) {
+            frameworkBtn.classList.add('active');
+          }
+        }
+        if (communityPages.indexOf(path) !== -1) {
+          var buttons = document.querySelectorAll('.nav-item button');
+          buttons.forEach(function (btn) {
+            if (btn.textContent.trim().includes('Community')) {
+              btn.classList.add('active');
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

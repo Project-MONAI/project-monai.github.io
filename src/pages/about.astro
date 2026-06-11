@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const frontmatter = {
+  title: 'MONAI - About Us',
+  description: "Project MONAI was started by NVIDIA and King's College London to build an inclusive community of AI researchers developing and exchanging best practices for AI in healthcare imaging.",
+  canonical: 'https://project-monai.github.io/about.html',
+};
+
+const boardMembers = [
+  { img: 'lee-aaron.png', name: 'Aaron Lee', role: 'Ophthalmology Working Group Chair' },
+  { img: 'annika-reinke.jpg', name: 'Annika Reinke', role: 'Benchmark Working Group Chair' },
+  { img: 'ben-murray.png', name: 'Ben Murray', role: 'Thought Leader' },
+  { img: 'bruce-hashemian.jpeg', name: 'Bruce Hashemian', role: 'AI-Human Interaction Chair & Thought Leader' },
+  { img: 'carole-sudre.jpg', name: 'Carole Sudre', role: 'Benchmark Working Group Chair' },
+  { img: 'david-bericat.jpg', name: 'David Bericat', role: 'Deploy Working Group Chair' },
+  { img: 'eric-kerfoot.png', name: 'Eric Kerfoot', role: 'Core Developers & Education Chair' },
+  { img: 'haris-shuaib.jpg', name: 'Haris Shuaib', role: 'Deploy Working Group Chair' },
+  { img: 'holger-roth.jpg', name: 'Holger Roth', role: 'Federated Learning Chair' },
+  { img: 'jayashree-kalpathy-cramer.jpg', name: 'Jayashree Kalpathy-Cramer', role: 'Ophthalmology Working Group Chair' },
+  { img: 'jorge-cardoso.jpg', name: 'Jorge Cardoso', role: 'Arbitration Board Chair & Thought Leader' },
+  { img: 'justin-kirby.png', name: 'Justin Kirby', role: 'Thought Leader' },
+  { img: 'lena-maier-hein.jpg', name: 'Lena Maier-Hein', role: 'Thought Leader' },
+  { img: 'mahdi-azizian.jpg', name: 'Mahdi Azizian', role: 'Arbitration Board Chair & Thought Leader' },
+  { img: 'marc-modat.jpg', name: 'Marc Modat', role: 'Education Working Group Chair' },
+  { img: 'michael-baumgartner.jpg', name: 'Michael Baumgartner', role: 'Thought Leader' },
+  { img: 'michael-zephyr.jpg', name: 'Michael Zephyr', role: 'Outreach Working Group Chair' },
+  { img: 'nic-ma.jpg', name: 'Nic Ma', role: 'Core Developers Chair' },
+  { img: 'prerna-dogra.png', name: 'Prerna Dogra', role: 'Thought Leader' },
+  { img: 'ralf-floca.png', name: 'Ralf Floca', role: 'AI-Human Interaction Chair & Arbitration Board' },
+  { img: 'saad-nadeem.png', name: 'Saad Nadeem', role: 'AI-Human Interaction Chair' },
+  { img: 'sai-praneeth-karimireddy.jpg', name: 'Sai Praneeth Karimireddy', role: 'Federated Learning Chair' },
+  { img: 'sebastien-ourselin.png', name: 'Sebastien Ourselin', role: 'Thought Leader' },
+  { img: 'barbaros-selnur-erdal.jpg', name: 'Barbaros Selnur Erdal', role: 'Deploy Working Group Chair' },
+  { img: 'stephen-aylward.png', name: 'Stephen Aylward', role: 'Chair of the Advisory Board' },
+  { img: 'yun-liu.jpeg', name: 'Yun Liu', role: 'Core Developers Chair' },
+];
+
+const emeritusMembers = [
+  { img: 'daniel-rubin.png', name: 'Daniel Rubin' },
+  { img: 'keyvan-farahani.jpg', name: 'Keyvan Farahani' },
+  { img: 'klaus-maier-hein.jpg', name: 'Klaus Maier-Hein' },
+  { img: 'nassir-navab.png', name: 'Nassir Navab' },
+  { img: 'nasir-rajpoot.png', name: 'Nasir Rajpoot' },
+  { img: 'kevin-zhou.png', name: 'S. Kevin Zhou' },
+  { img: 'andy-feng.jpeg', name: 'Andy Feng' },
+  { img: 'wenqi-li.jpg', name: 'Wenqi Li' },
+];
+---
+<BaseLayout {...frontmatter}>
+  <!-- Hero Section (light) -->
+  <section id="about" class="relative overflow-hidden bg-gradient-to-br from-white via-brand-light/40 to-white">
+    <div class="container relative z-10">
+      <div class="py-20 md:py-24 lg:py-28">
+        <div class="max-w-3xl mx-auto text-center">
+          <div>
+            <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">About</p>
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight leading-[1.08] mb-8">
+              The community behind
+              <br>
+              <span class="text-brand-accent">medical imaging AI</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 leading-relaxed mb-6">
+              Project MONAI brings together researchers, clinicians, and industry engineers to advance medical-imaging AI. Started by NVIDIA and King's College London, it has grown into a community of 30+ institutions developing and sharing best practices, tools, and frameworks across academia and enterprise.
+            </p>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Our mission is wider adoption of AI in healthcare imaging through validated, open tools. Building on the foundations of NVIDIA Clara Train, NiftyNet, DLTK, and DeepNeuro, MONAI Core is now the community's flagship framework, and every contribution is reviewed and merged in the open.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advisory Board Section -->
+  <section id="advisory-board" class="py-24 bg-white scroll-mt-24 relative">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-primary/30 to-transparent"></div>
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Leadership</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Advisory Board</h2>
+        <div class="reveal">
+          <p class="text-lg leading-relaxed text-gray-600 mb-4">
+            The Advisory Board sets MONAI's strategic direction. Its members, leaders from academia, healthcare, and industry, provide oversight across technical development, clinical validation, education, and community engagement, and keep the project aligned with what researchers and clinicians actually need.
+          </p>
+          <p class="text-lg leading-relaxed text-gray-600">
+            Our <a href="working-groups.html" class="font-semibold text-brand-teal hover:text-brand-dark underline underline-offset-2 transition-colors">Working Groups</a> are driven at the Advisory Board level: each working-group lead sits on the board. These teams focus on core development, deployment, education, benchmarking, federated learning, AI-human interaction, outreach, and clinical applications such as ophthalmology and ultrasound.
+          </p>
+        </div>
+      </div>
+
+      <!-- Active Members -->
+      <div id="active-members" class="scroll-mt-24">
+        <h3 class="text-xl font-bold text-gray-900 mb-8 text-center">Advisory Board Members</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 reveal-stagger">
+          {boardMembers.map((member) => (
+            <div class="flex flex-col items-center text-center bg-white rounded-xl border border-gray-200 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 p-6 reveal">
+              <div class="w-24 h-24 mb-4 rounded-full border-4 border-brand-light overflow-hidden">
+                <img loading="lazy" src={`assets/img/people/${member.img}`} alt={member.name} class="w-full h-full object-cover">
+              </div>
+              <h4 class="font-semibold text-gray-800">{member.name}</h4>
+              <p class="text-sm font-medium text-brand-teal leading-snug mt-1">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emeritus Members Section -->
+  <section id="emeritus" class="py-24 bg-gray-50 scroll-mt-24">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Founders</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Emeritus Founding Members</h2>
+        <p class="text-lg text-gray-600 leading-relaxed reveal">
+          MONAI exists because these founding members shaped its earliest direction. We recognize their lasting contributions to the project and to the field.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 reveal-stagger">
+        {emeritusMembers.map((member) => (
+          <div class="flex flex-col items-center text-center bg-white rounded-xl border border-gray-200 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 p-6 reveal">
+            <div class="w-24 h-24 mb-4 rounded-full border-4 border-brand-light overflow-hidden">
+              <img loading="lazy" src={`assets/img/people/${member.img}`} alt={member.name} class="w-full h-full object-cover">
+            </div>
+            <h4 class="font-semibold text-gray-800">{member.name}</h4>
+            <p class="text-sm font-medium text-brand-teal leading-snug mt-1">Founding Member</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Involved CTA Section -->
+  <section class="py-24 bg-white relative">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-primary/30 to-transparent"></div>
+    <div class="container relative z-10">
+      <div class="text-center max-w-3xl mx-auto reveal">
+        <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Get Involved</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Help shape what MONAI becomes next</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-10">
+          MONAI is built in the open: code, governance, and roadmap. Join a working group, contribute a pull request, or bring a clinical use case to the community.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://github.com/Project-MONAI/MONAI/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="px-7 py-3 rounded-lg bg-brand-primary text-gray-900 font-semibold hover:bg-brand-accent transition-all duration-200 flex items-center gap-2 group shadow-lg shadow-brand-primary/20" data-track="cta_click" data-track-cta-id="about_join_community" data-track-cta-dest="https://github.com/Project-MONAI/MONAI/blob/master/CONTRIBUTING.md">
+            Join the Community
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a href="working-groups.html" class="px-7 py-3 rounded-lg bg-white text-gray-700 font-semibold border border-gray-200 hover:border-brand-primary/40 hover:text-brand-teal shadow-sm transition-all duration-200 flex items-center gap-2 group" data-track="cta_click" data-track-cta-id="about_working_groups" data-track-cta-dest="working-groups.html">
+            Explore Working Groups
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
