@@ -170,22 +170,85 @@ whether the LLM sitemap is being crawled.
 
 ## 4. Build these Explorations (saved reports)
 
-**Path for each:** Explore (left nav) → **Blank** → name it → in *Variables* click **+** next to
-DIMENSIONS/METRICS to import fields → drag into *Settings*.
+Create each one at **Explore (left nav) → Blank**. Workflow is the same every time: name the
+report, import the listed dimensions and metrics in the *Variables* column (the **+** buttons),
+then drag them into the *Settings* column slots as shown. Filters are added at the bottom of
+the Settings column.
 
-1. **Agent traffic.** Dimensions: `agent_class`, `agent_name`; Metrics: Event count, Sessions.
-   Rows: agent_class, agent_name. How much traffic is AI agents, and which ones. When the
-   non-human share approaches ~5% of page views, that's a signal worth acting on (see §6).
-2. **CTA performance.** Dimensions: `cta_id`, `agent_class`, Page path; Metric: Event count.
-   Filter: Event name = `cta_click` AND `agent_class` = `human`. Rows: cta_id.
-3. **Framework interest.** Dimension: `filter_value`; Metric: Event count. Filter: Event name
-   matches regex `filter_use|zoo_filter`. Rows: filter_value. Which of Core/Label/Deploy (and
-   which Zoo tasks) people actually pursue.
-4. **Model Zoo engagement.** Dimensions: `model_id`, `search_term`; Metric: Event count.
-   Tab 1 rows: model_id (Event name = `zoo_model_view` or `zoo_outbound`) → which models matter.
-   Tab 2 rows: search_term (Event name = `zoo_search`) → what people look for.
-5. **Outbound destinations.** Dimension: Link domain; Metric: Event count. Filter: Event name =
-   `click`, `outbound = true`. Where you send people (GitHub vs docs vs Slack vs YouTube).
+### 4.1 Agent traffic
+
+| Explore field | Set it to |
+|---|---|
+| Name | `Agent traffic` |
+| Technique | Free form |
+| Import: dimensions | `agent_class`, `agent_name` |
+| Import: metrics | Event count, Sessions |
+| Rows | `agent_class`, then `agent_name` |
+| Values | Event count, Sessions |
+| Filters | none |
+
+**What it answers:** how much traffic is AI agents, and which ones. When the non-human share
+nears ~5% of page views, that's a signal worth acting on (see §6).
+
+### 4.2 CTA performance
+
+| Explore field | Set it to |
+|---|---|
+| Name | `CTA performance` |
+| Technique | Free form |
+| Import: dimensions | `cta_id`, `agent_class`, Page path |
+| Import: metrics | Event count |
+| Rows | `cta_id` (add Page path as a second row to see where clicks happen) |
+| Values | Event count |
+| Filters | Event name *exactly matches* `cta_click` AND `agent_class` *exactly matches* `human` |
+
+**What it answers:** which calls to action earn clicks from real people, hero vs deep-page.
+
+### 4.3 Framework interest
+
+| Explore field | Set it to |
+|---|---|
+| Name | `Framework interest` |
+| Technique | Free form |
+| Import: dimensions | `filter_value` |
+| Import: metrics | Event count |
+| Rows | `filter_value` |
+| Values | Event count |
+| Filters | Event name *matches regex* `filter_use|zoo_filter` |
+
+**What it answers:** which of Core / Label / Deploy (and which Zoo tasks) people actually
+pursue. The most decision-useful report for roadmap and docs priorities.
+
+### 4.4 Model Zoo engagement
+
+| Explore field | Set it to |
+|---|---|
+| Name | `Model Zoo engagement` |
+| Technique | Free form, two tabs |
+| Import: dimensions | `model_id`, `search_term` |
+| Import: metrics | Event count |
+| Tab 1 rows | `model_id` |
+| Tab 1 filter | Event name *matches regex* `zoo_model_view|zoo_outbound` |
+| Tab 2 rows | `search_term` |
+| Tab 2 filter | Event name *exactly matches* `zoo_search` |
+
+**What it answers:** Tab 1: which models matter (views and download intent). Tab 2: what people
+search for, including what they search for and do not find.
+
+### 4.5 Outbound destinations
+
+| Explore field | Set it to |
+|---|---|
+| Name | `Outbound destinations` |
+| Technique | Free form |
+| Import: dimensions | Link domain |
+| Import: metrics | Event count |
+| Rows | Link domain |
+| Values | Event count |
+| Filters | Event name *exactly matches* `click` AND Outbound *exactly matches* `true` |
+
+**What it answers:** where the site sends people (GitHub vs docs vs Slack vs YouTube). Requires
+the Enhanced Measurement outbound toggle from §2-C.
 
 ## 5. Annotate launches
 
