@@ -1,0 +1,353 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const frontmatter = {
+  title: 'MONAI - Mayo Clinic & Siemens Digital Marketplace Case Study',
+  description: 'From Institutional Development to Scalable Deployment: How Mayo Clinic\'s AI application was made available to researchers at over 10,000 institutions via Siemens Healthineers Digital Marketplace',
+  canonical: 'https://project-monai.github.io/mayo-siemens-case-study.html',
+  audience: ['clinician', 'engineer'],
+  schemaType: 'Article' as const,
+};
+---
+<BaseLayout {...frontmatter}>
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-white via-brand-light/40 to-white">
+
+
+      <div class="container relative z-10">
+        <div class="py-24 md:py-32">
+          <div class="max-w-5xl mx-auto text-center">
+            <div class="flex items-center justify-center gap-4 mb-8">
+              <img loading="lazy" src="/assets/img/logos/mayo-clinic.png" alt="Mayo Clinic" class="h-16 object-contain">
+              <div class="h-16 w-px bg-gray-200"></div>
+              <img loading="lazy" src="/assets/img/logos/siemens.png" alt="Siemens Healthineers" class="h-14 object-contain">
+            </div>
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08] mb-6">
+              <span class="text-gray-900">From Institutional Development to Scalable Deployment</span>
+            </h1>
+            <p class="text-2xl text-gray-900 mb-4">Center for Augmented Intelligence in Imaging (CAII), Mayo Clinic Florida</p>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Global Research Access with MONAI Deploy and the Siemens Digital Marketplace
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- At a glance -->
+    <section class="relative py-16 bg-white">
+      <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-primary/30 to-transparent"></div>
+      <div class="container">
+        <div class="max-w-6xl mx-auto">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-10 text-center">At a glance</p>
+          <dl class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10 text-center">
+            <div>
+              <dt class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Partners</dt>
+              <dd class="text-sm text-gray-900 font-semibold leading-relaxed">Mayo Clinic Florida<br><span class="font-normal text-gray-600">with Siemens Healthineers</span></dd>
+            </div>
+            <div>
+              <dt class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Distribution</dt>
+              <dd class="text-sm text-gray-600 leading-relaxed">Siemens Healthineers Digital Marketplace, via syngo.via OpenApps</dd>
+            </div>
+            <div>
+              <dt class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">MONAI components</dt>
+              <dd class="flex flex-wrap gap-2 justify-center">
+                <a href="core.html" class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-secondary/10 text-brand-secondary border border-brand-secondary/20 hover:bg-brand-secondary/20 transition-colors">MONAI Core</a>
+                <a href="deploy.html" class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-dark/10 text-brand-dark border border-brand-dark/20 hover:bg-brand-dark/20 transition-colors">MONAI Deploy</a>
+              </dd>
+            </div>
+            <div>
+              <dt class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Scale</dt>
+              <dd class="text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-900">10,000+ institutions</span> with access; zero-code install in about an hour</dd>
+            </div>
+            <div>
+              <dt class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Data handling</dt>
+              <dd class="text-sm text-gray-600 leading-relaxed">All processing on-premise; no data transmitted externally</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="py-24 bg-gray-50">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4 text-center">Background</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6 text-center">Introduction</h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-8">
+            At the Mayo Clinic's Center for Augmented Intelligence in Imaging (CAII), we develop AI applications to address unmet needs in imaging research. While internal development and deployment offer opportunities to validate and refine these tools, bringing them to external research environments remains a critical barrier.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            This case study outlines how an AI application developed at Mayo Clinic for research purposes (using MONAI Core and MONAI Deploy) was made available to researchers at over 10,000 institutions via the Siemens Healthineers Digital Marketplace. By combining open-source tooling with scalable distribution infrastructure, this approach provides a blueprint for both developers and institutions seeking to build and access imaging AI research tools.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- From Local Pipelines to Global Access -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4 text-center">Challenge</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6 text-center">From Local Pipelines to Global Access</h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-8">
+            Internally, our team built and validated the AI application using MONAI for model implementation, data preprocessing, and output standardization. We relied on container-based orchestration and DICOMweb compatible CAII Viewer for integration into our clinical workflows.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            However, this technical stack, while effective in-house, could not be assumed to operate at other sites. Our challenge was to preserve model reproducibility while eliminating deployment overhead for external users. We needed a delivery mechanism that allowed other institutions to run the tool locally, without requiring development experience, custom infrastructure, or vendor intervention.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Siemens Healthineers Digital Marketplace -->
+    <section class="py-24 bg-gray-50">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4 text-center">Solution</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6 text-center">The Siemens Healthineers Digital Marketplace</h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-8">
+            To address this challenge, we collaborated with Siemens Healthineers to publish the application through their Digital Marketplace, a platform that distributes containerized research applications for use within institutional imaging environments.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed mb-4">
+            By wrapping the application in a Marketplace-compatible container and using the platform's built-in rule configuration and DICOM-native integration, we enabled:
+          </p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 text-sm text-gray-600">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0"></span>
+              Local execution at each site, preserving data governance
+            </li>
+            <li class="flex items-center gap-3 text-sm text-gray-600">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0"></span>
+              Zero-code installation and configuration, via GUI-based tools
+            </li>
+            <li class="flex items-center gap-3 text-sm text-gray-600">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0"></span>
+              DICOM-native input/output, supporting PACS integration and traceability
+            </li>
+            <li class="flex items-center gap-3 text-sm text-gray-600">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0"></span>
+              Reusability across research applications, regardless of modality or model specifics
+            </li>
+          </ul>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            All application logic, preprocessing, visualization, and data export are bundled and versioned. The application is clearly labeled for research use only.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Developer Workflow -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4 text-center">For Developers</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6 text-center">Developer Workflow</h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-8">
+            To assist developers aiming to bring their applications to the Digital Marketplace, Siemens Healthineers provides technical guidelines covering containerization, interface integration, and DICOM conformance. Developers are encouraged to align with MONAI Deploy App SDK structure and compatibility standards. While source code remains institutionally governed, the externalization process emphasizes modularity, traceability, and platform readiness.
+          </p>
+
+          <div class="p-8 rounded-xl border border-gray-100 mb-8">
+            <p class="text-lg text-gray-600 leading-relaxed mb-4">Further developer resources and templates can be found at:</p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                </svg>
+                <a href="https://github.com/Project-MONAI/monai-deploy-app-sdk" target="_blank" rel="noopener noreferrer"
+                   class="text-brand-teal hover:text-brand-dark transition-colors duration-300">
+                  github.com/Project-MONAI/monai-deploy-app-sdk
+                </a>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                </svg>
+                <a href="https://project-monai.github.io" target="_blank" rel="noopener noreferrer"
+                   class="text-brand-teal hover:text-brand-dark transition-colors duration-300">
+                  project-monai.github.io
+                </a>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                </svg>
+                <a href="https://forum.siemens-healthineers.com/#/group-feeds/syngoViaFrontierDeveloperCommunity?name=Research%20Frontier%20Developer%20Community"
+                   target="_blank" rel="noopener noreferrer" class="text-brand-teal hover:text-brand-dark transition-colors duration-300 break-all">
+                  forum.siemens-healthineers.com/#/group-feeds/syngoViaFrontierDeveloperCommunity
+                </a>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                </svg>
+                <a href="https://marketplace.teamplay.siemens-healthineers.com/app/detail/Frontier-BreastDensity"
+                   target="_blank" rel="noopener noreferrer" class="text-brand-teal hover:text-brand-dark transition-colors duration-300 break-all">
+                  marketplace.teamplay.siemens-healthineers.com/app/detail/Frontier-BreastDensity
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <p class="text-lg text-gray-600 leading-relaxed mb-4">The developer workflow for externalization follows a clear path:</p>
+          <ol class="space-y-3 mb-8">
+            <li class="flex gap-3 text-sm text-gray-600">
+              <span class="flex-none font-medium text-brand-teal">1.</span>
+              <span>Model development and validation using MONAI Core (e.g., training, evaluation, DICOM output preparation)</span>
+            </li>
+            <li class="flex gap-3 text-sm text-gray-600">
+              <span class="flex-none font-medium text-brand-teal">2.</span>
+              <span>Application packaging via MONAI Deploy App SDK</span>
+            </li>
+            <li class="flex gap-3 text-sm text-gray-600">
+              <span class="flex-none font-medium text-brand-teal">3.</span>
+              <span>Containerization and alignment with Siemens Digital Marketplace standards</span>
+            </li>
+            <li class="flex gap-3 text-sm text-gray-600">
+              <span class="flex-none font-medium text-brand-teal">4.</span>
+              <span>Integration of viewer and rule logic, using DICOMweb compatible or web-native tools</span>
+            </li>
+            <li class="flex gap-3 text-sm text-gray-600">
+              <span class="flex-none font-medium text-brand-teal">5.</span>
+              <span>Submission and publication, including metadata, version control, and usage restrictions</span>
+            </li>
+          </ol>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Once published, the application becomes discoverable to registered institutions and can be deployed without code modifications or site-specific engineering.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- User Workflow and Data Flow -->
+    <section class="py-24 bg-gray-50">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4 text-center">For Research Users</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6 text-center">User Workflow and Data Flow</h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-4">For research users, the process is just as short:</p>
+          <ol class="space-y-3 mb-8">
+            <li class="flex gap-3 text-sm text-gray-600">
+              <span class="flex-none font-medium text-brand-teal">1.</span>
+              <span>Discover the application in the Siemens Healthineers Digital Marketplace</span>
+            </li>
+            <li class="flex gap-3 text-sm text-gray-600">
+              <span class="flex-none font-medium text-brand-teal">2.</span>
+              <span>Install via the syngo.via OpenApps interface or equivalent local platform</span>
+            </li>
+            <li class="flex gap-3 text-sm text-gray-600">
+              <span class="flex-none font-medium text-brand-teal">3.</span>
+              <span>Configure rules (e.g., trigger by modality or study type)</span>
+            </li>
+            <li class="flex gap-3 text-sm text-gray-600">
+              <span class="flex-none font-medium text-brand-teal">4.</span>
+              <span>Execute the application automatically or manually from the viewer interface</span>
+            </li>
+            <li class="flex gap-3 text-sm text-gray-600">
+              <span class="flex-none font-medium text-brand-teal">5.</span>
+              <span>View and export results (e.g., segmentations, reports) within their institutional PACS</span>
+            </li>
+          </ol>
+          <p class="text-lg text-gray-600 leading-relaxed mb-10">
+            All processing remains on-premise. No data is transmitted externally. Application versioning and logs ensure traceability.
+          </p>
+          <figure class="bg-white p-8 md:p-12 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300">
+            <a href="/assets/img/figures/mayo-siemens-marketplace.jpg" target="_blank" rel="noopener noreferrer" class="block group">
+              <img loading="lazy" class="w-full h-auto rounded-xl transform transition-transform duration-300 group-hover:scale-[1.02]"
+                   src="/assets/img/figures/mayo-siemens-marketplace.jpg"
+                   alt="Siemens Digital Marketplace interface showing application deployment workflow">
+            </a>
+            <figcaption class="mt-6 text-sm text-gray-500 text-center max-w-4xl mx-auto leading-relaxed">
+              <span class="font-semibold text-gray-700">Figure:</span> Siemens Healthineers Digital Marketplace showing the Mayo Clinic CAII Viewer demonstrating model deployment within the viewer.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outcomes and Blueprint Implications -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4 text-center">Results</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6 text-center">Outcomes and Blueprint Implications</h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-8">
+            Lessons learned from deployment included the importance of early alignment with DICOM IOD standards and close coordination during UI integration. During the containerization phase, we encountered minor adjustments to viewer interactivity and study selection workflows. These were resolved in collaboration with platform engineers to ensure consistency across installations.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed mb-8">
+            Over 10,000 institutions have had access to this application since its publication. Most installations complete in under one hour, with no scripting or infrastructure changes required. Feedback highlights ease of configuration, integration into existing workflows, and the ability to conduct reproducible research at scale.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            For developers, this case provides a pathway for externalizing research tools using open-source AI frameworks and enterprise-grade delivery platforms. For research users, it offers access to validated AI applications with minimal IT overhead.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Looking Ahead -->
+    <section class="py-24 bg-gray-50">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4 text-center">Future</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6 text-center">Looking Ahead</h2>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Ongoing efforts include evaluating the deployed tool in multicenter research collaborations. Preliminary integration into broader research networks is underway, and future versions may support federated learning feedback, provided governance conditions allow.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="relative bg-gray-50 overflow-hidden">
+
+
+      <div class="container relative z-10">
+        <div class="py-24 md:py-32">
+          <div class="max-w-3xl mx-auto text-center">
+            <h3 class="font-display text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Interested in Deploying Your AI Research?</h3>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-12">
+              Learn more about how MONAI Deploy can help scale your medical imaging AI applications across institutions worldwide.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://github.com/Project-MONAI/monai-deploy-app-sdk" target="_blank" rel="noopener noreferrer"
+                 class="px-7 py-3 rounded-lg bg-brand-primary text-gray-900 font-semibold hover:bg-brand-accent transition-all duration-200 inline-flex items-center justify-center gap-2 group shadow-lg shadow-brand-primary/20">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                Explore MONAI Deploy SDK
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- More success stories -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Keep Reading</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">More success stories</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-stagger">
+          <a href="mayo-case-study.html" class="group block bg-white rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 p-8 reveal">
+            <img loading="lazy" src="/assets/img/logos/mayo-clinic.png" alt="Mayo Clinic" class="h-7 object-contain mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-teal transition-colors">Clinical AI Integration at Mayo Clinic</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">How the CAII built the applications behind this story: infrastructure, MAP containerization, and in-workflow deployment.</p>
+          </a>
+          <a href="successstories.html" class="group block bg-white rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 p-8 reveal">
+            <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-teal transition-colors">All success stories</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-6">Siemens Healthineers, the NHS AIDE platform, mercure, and more institutions running MONAI in production.</p>
+            <span class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal group-hover:text-brand-dark transition-colors">
+              Browse stories
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </BaseLayout>

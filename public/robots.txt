@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Explicitly welcome major LLM crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: https://project-monai.github.io/sitemap-index.xml
+Sitemap: https://project-monai.github.io/sitemap-llms.xml

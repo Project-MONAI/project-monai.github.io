@@ -1,73 +1,44 @@
-name: Build and Deploy
+name: Deploy to GitHub Pages
 
 on:
-  workflow_dispatch:  # Allows manual trigger from GitHub UI
   push:
-    branches:
-      - main
-      - master
+    branches: [master, main]
+  workflow_dispatch:
 
-# Add permissions to allow deployment
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Website
-        uses: actions/checkout@v3
-
-      - name: Checkout Model Zoo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-          repository: project-monai/model-zoo
-          path: scripts/model-zoo
-
-      - name: Setup Python and Node
-        uses: actions/setup-python@v4
+          persist-credentials: false
+      - uses: actions/setup-node@v4
         with:
-          python-version: '3.x'
-      - uses: actions/setup-node@v3
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
         with:
-          node-version: '18'
-          cache: 'npm'
+          path: ./dist
 
-      - name: Install Dependencies
-        run: |
-          pip install requests beautifulsoup4 markdown
-          npm install
-
-      - name: Build Site
-        run: |
-          # Clean dist directory
-          rm -rf dist
-          mkdir -p dist
-          mkdir -p dist/assets/css
-
-          # Process model data (both model-zoo and HF models)
-          python scripts/process_models.py
-
-          # Build files
-          npm run build
-          # Copy Vue.js file directly (no babel needed for Vue 3)
-          cp src/model-zoo-vue.js dist/src/model-zoo-vue.js
-
-          # Build Tailwind CSS explicitly
-          npx tailwindcss -i ./assets/css/style.css -o ./dist/assets/css/tailwind.css --minify
-
-          # Copy necessary files
-          cp scripts/model_data.json dist/
-
-          # Debug Tailwind CSS
-          echo "Checking tailwind.css:"
-          ls -la dist/assets/css/tailwind.css || true
-          echo "Contents of dist/assets/css:"
-          ls -la dist/assets/css || true
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist
-          branch: gh-pages
-          clean: true # Automatically remove deleted files from the deployment 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

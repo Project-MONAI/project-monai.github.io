@@ -1,0 +1,82 @@
+{
+  "maisi_ct_generative": {
+    "model_name": "MAISI - Medical AI for Synthetic Imaging",
+    "description": "A generative AI model for creating high-resolution 3D CT images with controllable body region, spacing, and anatomical annotations. Uses latent diffusion models to generate synthetic medical imaging data for training and research.",
+    "version": "1.0.0",
+    "download_url": "https://huggingface.co/MONAI/maisi_ct_generative",
+    "authors": "MONAI Consortium",
+    "papers": ["Generative AI for Medical Imaging: MAISI enables high-fidelity 3D CT synthesis"],
+    "readme": "<h2>MAISI - Medical AI for Synthetic Imaging</h2><p>MAISI is a generative AI model that creates high-resolution 3D CT images with controllable body region, spacing, and anatomical annotations.</p><h3>Key Features</h3><ul><li>High-resolution 3D CT image generation</li><li>Controllable body region and spacing</li><li>Anatomical annotation generation</li><li>Based on latent diffusion models</li></ul>",
+    "changelog": {"1.0.0": "Initial release with support for CT generation"}
+  },
+  "vista3d": {
+    "model_name": "VISTA-3D",
+    "description": "Versatile Imaging SegmenTation and Annotation model for interactive 3D medical image segmentation. Supports automatic, point-prompt, and class-based segmentation modes with 127 anatomical classes.",
+    "version": "1.0.0",
+    "download_url": "https://huggingface.co/MONAI/vista3d",
+    "authors": "MONAI Consortium",
+    "papers": ["VISTA-3D: Versatile Imaging SegmenTation and Annotation for 3D medical images"],
+    "readme": "<h2>VISTA-3D</h2><p>Interactive 3D medical image segmentation model supporting multiple segmentation modes.</p><h3>Capabilities</h3><ul><li>Zero-shot segmentation</li><li>Interactive point prompts</li><li>127 anatomical classes</li><li>Automatic and semi-automatic modes</li></ul>",
+    "changelog": {"1.0.0": "Initial release"}
+  },
+  "swin_unetr_btcv_segmentation": {
+    "model_name": "SwinUNETR BTCV Segmentation",
+    "description": "Swin Transformer-based architecture for multi-organ segmentation on the BTCV (Beyond the Cranial Vault) challenge dataset. Achieves state-of-the-art results using self-supervised pre-training.",
+    "version": "0.5.9",
+    "download_url": "https://huggingface.co/MONAI/swin_unetr_btcv_segmentation",
+    "authors": "Ali Hatamizadeh, et al.",
+    "papers": ["Swin UNETR: Swin Transformers for Semantic Segmentation of Brain Tumors in MRI Images", "Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis"],
+    "readme": "<h2>SwinUNETR BTCV Multi-Organ Segmentation</h2><p>State-of-the-art multi-organ segmentation model using Swin Transformers.</p><h3>Performance</h3><ul><li>13-organ segmentation on BTCV dataset</li><li>Self-supervised pre-training on 5050 CT scans</li><li>Top results on multiple benchmarks</li></ul>",
+    "changelog": {"0.5.9": "Updated model weights", "0.3.0": "Added self-supervised pre-training", "0.1.0": "Initial release"}
+  },
+  "spleen_ct_segmentation": {
+    "model_name": "Spleen CT Segmentation",
+    "description": "A UNet-based model for automated spleen segmentation from CT scans. Trained on the Medical Segmentation Decathlon dataset with high accuracy.",
+    "version": "0.5.9",
+    "download_url": "https://huggingface.co/MONAI/spleen_ct_segmentation",
+    "authors": "MONAI Consortium",
+    "papers": [],
+    "readme": "<h2>Spleen CT Segmentation</h2><p>Automated spleen segmentation from CT scans using a 3D UNet architecture.</p><h3>Details</h3><ul><li>Trained on Medical Segmentation Decathlon</li><li>3D UNet architecture</li><li>Dice score > 0.96</li></ul>",
+    "changelog": {"0.5.9": "Updated to MONAI 1.3", "0.1.0": "Initial release"}
+  },
+  "pancreas_ct_dints_segmentation": {
+    "model_name": "Pancreas CT DiNTS Segmentation",
+    "description": "Neural architecture search-based model for pancreas and tumor segmentation from CT scans using the DiNTS (Differentiable Neural Architecture Search) framework.",
+    "version": "0.5.9",
+    "download_url": "https://huggingface.co/MONAI/pancreas_ct_dints_segmentation",
+    "authors": "MONAI Consortium",
+    "papers": ["DiNTS: Differentiable Neural Network Topology Search for 3D Medical Image Segmentation"],
+    "readme": "<h2>Pancreas CT Segmentation with DiNTS</h2><p>Automated pancreas and tumor segmentation using neural architecture search.</p>",
+    "changelog": {"0.5.9": "Updated model weights"}
+  },
+  "wholebody_ct_segmentation": {
+    "model_name": "Whole Body CT Segmentation",
+    "description": "Comprehensive whole-body CT segmentation model capable of identifying and delineating 104 anatomical structures from CT volumes.",
+    "version": "0.3.0",
+    "download_url": "https://huggingface.co/MONAI/wholebody_ct_segmentation",
+    "authors": "MONAI Consortium",
+    "papers": [],
+    "readme": "<h2>Whole Body CT Segmentation</h2><p>Segment 104 anatomical structures from CT volumes.</p>",
+    "changelog": {"0.3.0": "Added support for 104 classes"}
+  },
+  "lung_nodule_ct_detection": {
+    "model_name": "Lung Nodule CT Detection",
+    "description": "A detection model for identifying lung nodules in CT scans. Uses anchor-free detection with a 3D feature pyramid network for accurate nodule localization.",
+    "version": "0.5.9",
+    "download_url": "https://huggingface.co/MONAI/lung_nodule_ct_detection",
+    "authors": "MONAI Consortium",
+    "papers": [],
+    "readme": "<h2>Lung Nodule Detection</h2><p>Automatic lung nodule detection from CT scans.</p>",
+    "changelog": {"0.5.9": "Updated detection pipeline"}
+  },
+  "vila_m3_medical_vlm": {
+    "model_name": "VILA-M3 Medical VLM",
+    "description": "A vision-language model fine-tuned for medical imaging tasks. Combines visual understanding with natural language processing for medical image interpretation and report generation.",
+    "version": "1.0.0",
+    "download_url": "https://huggingface.co/microsoft/VILA-M3",
+    "authors": "Microsoft Research",
+    "papers": ["VILA-M3: Enhancing Vision-Language Models for Medical Imaging"],
+    "readme": "<h2>VILA-M3 Medical VLM</h2><p>Vision-language model for medical image understanding and report generation.</p>",
+    "changelog": {"1.0.0": "Initial release"}
+  }
+}

@@ -1,0 +1,254 @@
+/* Fonts loaded via <link> in components/head.html to avoid render-blocking @import. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* Visible focus for keyboard users, hidden for mouse */
+  :focus-visible {
+    outline: 2px solid theme('colors.brand.primary');
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+  }
+}
+
+/* Skip link: outside @layer base so :focus wins against utilities. */
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.75rem 1rem;
+  background: #00C0B5;
+  color: white;
+  font-weight: 600;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  z-index: 100;
+}
+.skip-link:focus {
+  transform: translateY(0);
+  outline: none;
+}
+
+/* Respect prefers-reduced-motion. Applies across the whole site. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Make scroll-reveal items visible immediately, no animation */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Utility: number display with figures aligned to the grid. */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ========================================
+   Scroll Reveal Animations
+   ======================================== */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll-reveal starts hidden only when JS is available. Without JS */
+/* (or before our observer script runs), content renders normally. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+.js .reveal.revealed {
+  animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Staggered children */
+.reveal-stagger > .reveal:nth-child(1) { animation-delay: 0s; }
+.reveal-stagger > .reveal:nth-child(2) { animation-delay: 0.08s; }
+.reveal-stagger > .reveal:nth-child(3) { animation-delay: 0.16s; }
+.reveal-stagger > .reveal:nth-child(4) { animation-delay: 0.24s; }
+.reveal-stagger > .reveal:nth-child(5) { animation-delay: 0.32s; }
+.reveal-stagger > .reveal:nth-child(6) { animation-delay: 0.4s; }
+.reveal-stagger > .reveal:nth-child(7) { animation-delay: 0.48s; }
+.reveal-stagger > .reveal:nth-child(8) { animation-delay: 0.56s; }
+.reveal-stagger > .reveal:nth-child(9) { animation-delay: 0.64s; }
+
+.collapse.show {
+  @apply block;
+}
+
+/* Link hover underline animation.
+   text-brand-teal, not brand-primary: bright teal fails AA as small text on light. */
+.link-hover {
+  @apply text-brand-teal relative;
+}
+.link-hover::after {
+  @apply absolute left-0 bottom-0 w-full h-0.5 bg-brand-primary transform scale-x-0 transition-transform duration-300 origin-right;
+  content: '';
+}
+.link-hover:hover::after {
+  @apply transform scale-x-100 origin-left;
+}
+.link-hover:hover {
+  @apply text-brand-dark transition-colors duration-300;
+}
+
+.container {
+  @apply mx-auto px-4;
+}
+
+.nav-item .active {
+  @apply text-brand-primary;
+}
+
+.particles-js-canvas-el {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+/* ========================================
+   Deploy Page Animations
+   ======================================== */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-500 { animation-delay: 500ms; }
+.animation-delay-700 { animation-delay: 700ms; }
+.animation-delay-900 { animation-delay: 900ms; }
+.animation-delay-1000 { animation-delay: 1000ms; }
+.animation-delay-1100 { animation-delay: 1100ms; }
+.animation-delay-1200 { animation-delay: 1200ms; }
+.animation-delay-1300 { animation-delay: 1300ms; }
+
+.bg-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 128, 128, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+@keyframes tooltip-fade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.tooltip-animation {
+  animation: tooltip-fade 0.2s ease-out forwards;
+}
+
+/* ========================================
+   Prose code blocks (Model Zoo READMEs, md content)
+   The inline-code pill styling (prose-code:bg-gray-100) must not leak into
+   fenced <pre> blocks: light pills on a dark pre are unreadable.
+   ======================================== */
+.prose pre {
+  background-color: #0B1120; /* surface-dark, matches the terminal-card recipe */
+  border-radius: 0.75rem;
+}
+.prose pre code {
+  background-color: transparent !important;
+  padding: 0 !important;
+  color: #e5e7eb; /* gray-200 on surface-dark */
+  font-weight: 400;
+}
+
+/* ========================================
+   Deploy Page Code Block
+   ======================================== */
+.code-block {
+  position: relative;
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.code-block pre {
+  padding: 1rem;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #000000;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.code-block .comment {
+  color: #0066cc;
+  font-style: italic;
+}
+
+.copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.5rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copy-button:hover {
+  color: #0066cc;
+  border-color: #0066cc;
+}
+
+.copy-button.copied {
+  color: #059669;
+  border-color: #059669;
+}

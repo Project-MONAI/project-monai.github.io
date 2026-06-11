@@ -4,17 +4,17 @@ This repository contains the source code and content for the Project MONAI websi
 
 ## Features
 
-- Modern, responsive design using Tailwind CSS
-- Component-based architecture for better maintainability
-- Optimized build process for production
-- Development server with hot reloading
-- SEO optimizations and meta tag management
-- Automated asset optimization
+- Astro 5 static-site build (one `.html` per route) with Tailwind CSS
+- Model Zoo as a self-contained Vue 3 SPA (`public/src/model-zoo-vue.js`)
+- LLM enablement: `.md` twin per page, `llms.txt` / `llms-full.txt`, `sitemap-llms.xml`,
+  agent-aware GA4 analytics (see `docs/ANALYTICS.md`)
+- Generated sitemaps and crawler-friendly `robots.txt`
+- LAN-accessible dev server with HMR
 
 ## Prerequisites
 
-- Node.js (v14 or higher)
-- npm (v6 or higher)
+- Node.js (v20 or higher)
+- npm (v10 or higher)
 
 ## Getting Started
 
@@ -29,86 +29,76 @@ This repository contains the source code and content for the Project MONAI websi
    npm install
    ```
 
-3. Start the development server:
+3. Start the dev server (LAN-accessible on port 3000):
    ```bash
    npm run dev
    ```
 
-   Alternatively, to build and serve the site simultaneously:
-   ```bash
-   npm run dev:serve
-   ```
-
-The site will be available at `http://localhost:3000` with hot reloading enabled.
+   The site will be available at `http://localhost:3000` and on your LAN IP.
 
 ## Project Structure
 
 ```
 project-monai.github.io/
-├── components/          # Reusable HTML components
-├── assets/             # Static assets (images, CSS, JS)
-├── scripts/           # Build and optimization scripts
-├── src/               # Source files
-└── dist/              # Production build output
-```
-
-## Components
-
-The website uses a component-based architecture. Common elements like headers, footers, and navigation are stored in the `components/` directory and included in pages using the include syntax:
-
-```html
-<!-- #include file="components/head.html" -->
-<!-- #include file="components/header.html" -->
-<!-- #include file="components/footer.html" -->
-<!-- #include file="components/scripts.html" -->
+├── astro.config.mjs        # Astro config (Tailwind, MDX, sitemap, md-twins, llms-txt)
+├── public/                 # Static assets served as-is
+│   └── src/                # Vue UMD app (model-zoo)
+├── src/
+│   ├── pages/              # Routes (.astro files emit *.html)
+│   ├── layouts/            # BaseLayout.astro
+│   ├── components/         # Header, Footer, BaseHead
+│   ├── integrations/       # md-twins + llms-txt build hooks
+│   └── styles/global.css   # Tailwind entry
+├── scripts/                # Visual snapshot/diff tooling, model-data generator
+└── docs/                   # Design, architecture, and analytics reference docs
 ```
 
 ## Development
 
 ### Adding New Pages
 
-1. Create a new HTML file in the root directory
-2. Use the component includes for common elements
-3. Add your page-specific content
-4. Update meta tags using the head component variables:
-   ```html
-   <script>
-       document.head.innerHTML = document.head.innerHTML
-           .replace('${title}', 'Your Page Title')
-           .replace('${description}', 'Your page description')
-           .replace('${canonical_url}', 'https://project-monai.github.io/your-page.html');
-   </script>
+1. Create a new file in `src/pages/<name>.astro` (or under a subdirectory).
+2. Use the BaseLayout pattern:
+   ```astro
+   ---
+   import BaseLayout from '../layouts/BaseLayout.astro';
+   const frontmatter = {
+     title: 'Page Title | MONAI',
+     description: 'Page description',
+     canonical: 'https://project-monai.github.io/<name>.html',
+   };
+   ---
+   <BaseLayout {...frontmatter}>
+     <!-- Page content -->
+   </BaseLayout>
    ```
+3. Follow `docs/DESIGN.md` (direction, alignment and color rules) and `docs/STYLEGUIDE.md` (component recipes); see `AGENTS.md` for repo conventions and load-bearing invariants.
 
-### Modifying Components
+### Model Zoo Development
 
-Components are located in the `components/` directory. When modifying a component:
-1. The change will automatically affect all pages using that component
-2. Test the changes across multiple pages to ensure consistency
-3. Run the development server to see changes in real-time
+The Model Zoo page requires model data to display. During CI/CD, this data is generated from the [model-zoo repository](https://github.com/Project-MONAI/model-zoo). For local development:
 
-### CSS Development
-
-The project uses Tailwind CSS with a custom configuration:
-
-1. Development:
+1. Fetch model data:
    ```bash
-   npm run watch
+   npm run fetch-models
    ```
-   This will watch for changes and rebuild the CSS automatically.
+   This downloads the latest model data from production, or falls back to sample data if unavailable.
 
-2. Adding new styles:
-   - Add custom styles in `src/css/`
-   - Configure Tailwind in `tailwind.config.js`
-   - Custom classes can be added to `assets/css/`
+2. The sample data file `model_data.sample.json` provides a small set of representative models for development.
+
+3. For full model data generation (optional):
+   ```bash
+   pip install requests beautifulsoup4 markdown
+   python scripts/process_models.py
+   ```
 
 ### Banner System
 
-The website includes a flexible banner system for announcements and surveys. The banner system is integrated into the header component (`components/header.html`) and automatically appears on all pages.
+The website includes a flexible banner system for announcements and surveys. The banner system lives in the Astro `Header` component (`src/components/Header.astro`) and automatically appears on all pages.
 
 #### Adding a New Banner
 
-1. Edit `components/header.html` and add your banner to the `banners` array in the `bannerSystem()` function:
+1. Edit `src/components/Header.astro` and add your banner to the `banners` array in the `bannerSystem()` function:
    ```javascript
    {
        id: 'unique-banner-id',          // Unique identifier for localStorage
@@ -169,15 +159,11 @@ Survey/Feedback request:
    npm run build
    ```
 
-This will:
-- Process and include all components
-- Optimize images and assets
-- Minify CSS and JavaScript
-- Generate the production build in `dist/`
+   This runs `npm run fetch-models` (to populate `public/model_data.json`) and then `astro build`, producing the production output in `dist/`.
 
 ## Deployment
 
-The site is automatically deployed to GitHub Pages when changes are pushed to the main branch.
+The site is automatically deployed to GitHub Pages via the `.github/workflows/deploy.yml` workflow when changes are pushed to `master` or `main`. The workflow runs `npm ci && npm run build` and uploads `dist/` as the GitHub Pages artifact.
 
 ## Contributing
 

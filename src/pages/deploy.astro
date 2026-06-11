@@ -1,0 +1,801 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const frontmatter = {
+  title: 'MONAI Deploy',
+  description: 'MONAI Deploy is a framework for developing, packaging, testing, and deploying medical AI applications in clinical and research environments. Its modular architecture covers the App SDK, Workflow Manager, and Informatics Gateway.',
+  canonical: 'https://project-monai.github.io/deploy.html',
+};
+const bibtex = `@article{gupta2024monai,
+    title={Current State of Community-Driven Radiological AI Deployment in Medical Imaging},
+    author={Gupta, Vikash and Erdal, Barbaros and Ramirez, Carolina and Floca, Ralf and Genereaux, Bradley and Bryson, Sidney and Bridge, Christopher and Kleesiek, Jens and Nensa, Felix and Braren, Rickmer and Younis, Khaled and Penzkofer, Tobias and Bucher, Andreas Michael and Qin, Ming Melvin and Bae, Gigon and Lee, Hyeonhoon and Cardoso, M Jorge and Ourselin, Sebastien and Kerfoot, Eric and Choudhury, Rahul and White, Richard D and Cook, Tessa and Bericat, David and Lungren, Matthew and Haukioja, Risto and Shuaib, Haris},
+    journal={JMIR AI},
+    volume={3},
+    pages={e55833},
+    year={2024},
+    doi={10.2196/55833}
+}`;
+---
+<BaseLayout {...frontmatter}>
+  <!-- Hero -->
+  <section id="overview" class="relative overflow-hidden bg-gradient-to-br from-white via-brand-light/40 to-white">
+    <div class="container relative z-10">
+      <div class="py-20 md:py-24 lg:py-28">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,30rem)] gap-12 lg:gap-16 items-center">
+          <div class="max-w-3xl">
+            <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4 opacity-0 animate-slide-up" style="animation-delay: 0s; animation-fill-mode: forwards;">MONAI Deploy &middot; Run</p>
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight leading-[1.08] mb-8 opacity-0 animate-slide-up" style="animation-delay: 0.1s; animation-fill-mode: forwards;">
+              Your model,
+              <br>
+              <span class="text-brand-accent">packaged for the clinic</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed mb-10 opacity-0 animate-slide-up" style="animation-delay: 0.2s; animation-fill-mode: forwards;">
+              Wrap a trained model as a MONAI Application Package (MAP): a container that consumes DICOM, runs inference, and emits DICOM results. One artifact runs on a workstation, Holoscan, or Kubernetes.
+            </p>
+            <div class="flex flex-wrap gap-4 opacity-0 animate-slide-up" style="animation-delay: 0.3s; animation-fill-mode: forwards;">
+              <a href="#quick-start" class="px-7 py-3 rounded-lg bg-brand-primary text-gray-900 font-semibold hover:bg-brand-accent transition-all duration-200 flex items-center gap-2 group shadow-lg shadow-brand-primary/20" data-track="cta_click" data-track-cta-id="deploy_hero_get_started" data-track-cta-dest="#quick-start">
+                Get Started
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </a>
+              <a href="https://monai.readthedocs.io/projects/monai-deploy-app-sdk/en/stable/" target="_blank" rel="noopener noreferrer" class="px-7 py-3 rounded-lg bg-white text-gray-700 font-semibold border border-gray-200 hover:border-brand-primary/40 hover:text-brand-teal shadow-sm transition-all duration-200 flex items-center gap-2 group" data-track="cta_click" data-track-cta-id="deploy_docs" data-track-cta-dest="https://monai.readthedocs.io/projects/monai-deploy-app-sdk/en/stable/">
+                Documentation
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </a>
+              <a href="https://github.com/Project-MONAI/monai-deploy-app-sdk" target="_blank" rel="noopener noreferrer" class="px-7 py-3 rounded-lg bg-white text-gray-700 font-semibold border border-gray-200 hover:border-brand-primary/40 hover:text-brand-teal shadow-sm transition-all duration-200 flex items-center gap-2 group" data-track="cta_click" data-track-cta-id="deploy_github" data-track-cta-dest="https://github.com/Project-MONAI/monai-deploy-app-sdk">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick-start code card (desktop) -->
+          <aside class="hidden lg:block opacity-0 animate-slide-up" style="animation-delay: 0.25s; animation-fill-mode: forwards;" aria-label="Quick start: package and run a MONAI Application Package">
+            <div class="rounded-2xl bg-surface-dark border border-white/10 shadow-2xl shadow-brand-primary/10 overflow-hidden">
+              <div class="flex items-center gap-3 px-5 py-3 border-b border-white/10">
+                <div class="flex items-center gap-1.5" aria-hidden="true">
+                  <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+                </div>
+                <span class="text-xs font-mono text-gray-400">package &amp; run a MAP</span>
+              </div>
+              <div class="px-5 py-5 font-mono text-sm leading-relaxed overflow-x-auto">
+                <p class="m-0"><span class="text-gray-500 select-none">$ </span><span class="text-white">pip install monai-deploy-app-sdk</span></p>
+                <pre class="m-0 mt-4 whitespace-pre"><code><span class="text-gray-500 select-none">$ </span><span class="text-gray-200">monai-deploy package my_app <span class="text-white">\</span></span>
+<span class="text-gray-200">    -c app.yaml -t </span><span class="text-teal-300">my_app:latest</span><span class="text-gray-200"> <span class="text-white">\</span></span>
+<span class="text-gray-200">    --platform x64-workstation</span>
+
+<span class="text-gray-500 select-none">$ </span><span class="text-gray-200">monai-deploy run </span><span class="text-teal-300">my_app:latest</span><span class="text-gray-200"> <span class="text-white">\</span></span>
+<span class="text-gray-200">    -i input/ -o output/</span></code></pre>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why MONAI Deploy -->
+  <section class="py-24 bg-gray-50 relative">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-primary/30 to-transparent"></div>
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Why MONAI Deploy</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">
+          Deployment built for healthcare, not retrofitted to it
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Generic MLOps stacks stop at the model server. MONAI Deploy speaks DICOM and FHIR, packages reproducibly, and scales from a research workstation to a hospital fleet.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 reveal">
+          <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Standardized Packaging</h3>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-relaxed">One MAP container format for every target environment</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-relaxed">Reproducible multi-site deployments: same artifact, same behavior</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-relaxed">Dependencies pinned and bundled at package time</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 reveal">
+          <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Healthcare-Native I/O</h3>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-relaxed">DICOM in, DICOM/FHIR out, with PACS integration via the Informatics Gateway</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-relaxed">Built-in operators for series selection, segmentation writing, and reports</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-relaxed">Designed for clinical-workflow and compliance requirements</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 reveal">
+          <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Scalable Architecture</h3>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-relaxed">Horizontal scaling on Kubernetes or single-node workstations</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-relaxed">Workflow Manager orchestrates pipelines and monitors execution</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-relaxed">Load balancing and failover for production reliability</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform pipeline -->
+  <section class="py-24 bg-white">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Platform</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">
+          From trained model to PACS
+        </h2>
+        <!-- Legend: color marks who owns each station -->
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-3">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-brand-primary ring-4 ring-brand-primary/20"></span>
+            <span class="text-sm font-medium text-gray-700">MONAI artifacts</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-brand-secondary ring-4 ring-brand-secondary/20"></span>
+            <span class="text-sm font-medium text-gray-700">MONAI Deploy subsystems</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-gray-400 ring-4 ring-gray-300/40"></span>
+            <span class="text-sm font-medium text-gray-700">Third-party systems</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Build side -->
+        <div class="reveal">
+          <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4 text-center">Researchers &amp; developers build</h3>
+          <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 md:gap-2 items-stretch">
+            <div class="bg-white rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <div class="h-1 bg-brand-primary"></div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-9 h-9 rounded-lg bg-brand-primary flex items-center justify-center flex-shrink-0">
+                    <span class="text-sm font-bold text-gray-900">1</span>
+                  </div>
+                  <h4 class="font-bold text-gray-900">Trained Model</h4>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">From MONAI Core, MONAI Label, or any PyTorch checkpoint you can wrap in an operator.</p>
+              </div>
+            </div>
+            <div class="hidden md:flex items-center justify-center" aria-hidden="true">
+              <svg class="w-6 h-6 text-brand-accent/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </div>
+            <div class="bg-white rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <div class="h-1 bg-brand-secondary"></div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-9 h-9 rounded-lg bg-brand-secondary flex items-center justify-center flex-shrink-0">
+                    <span class="text-sm font-bold text-white">2</span>
+                  </div>
+                  <h4 class="font-bold text-gray-900">App SDK</h4>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">A Pythonic SDK to compose, test, and package inference apps from reusable operators.</p>
+              </div>
+            </div>
+            <div class="hidden md:flex items-center justify-center" aria-hidden="true">
+              <svg class="w-6 h-6 text-brand-accent/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </div>
+            <div class="bg-white rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <div class="h-1 bg-brand-primary"></div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-9 h-9 rounded-lg bg-brand-primary flex items-center justify-center flex-shrink-0">
+                    <span class="text-sm font-bold text-gray-900">3</span>
+                  </div>
+                  <h4 class="font-bold text-gray-900">MAP Container</h4>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">Model, pre/post-processing, and dependencies in one portable, deployment-ready image.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The MAP is what crosses from developers to the hospital -->
+        <div class="flex flex-col items-center gap-1" aria-label="The MAP container is handed off from developers to hospital operations">
+          <svg class="w-6 h-6 text-brand-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+          <span class="text-xs font-semibold text-gray-500 uppercase tracking-widest">MAP handoff</span>
+        </div>
+
+        <!-- Run side -->
+        <div class="reveal">
+          <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4 text-center">Hospital operations run</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] gap-4 lg:gap-2 items-stretch">
+            <div class="bg-white rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <div class="h-1 bg-gray-400"></div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-9 h-9 rounded-lg bg-gray-500 flex items-center justify-center flex-shrink-0">
+                    <span class="text-sm font-bold text-white">4</span>
+                  </div>
+                  <h4 class="font-bold text-gray-900">Inference Engine</h4>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">Executes MAPs efficiently: local runner, Holoscan, or cluster runtimes.</p>
+              </div>
+            </div>
+            <div class="hidden lg:flex items-center justify-center" aria-hidden="true">
+              <svg class="w-6 h-6 text-brand-accent/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </div>
+<div class="bg-white rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <div class="h-1 bg-brand-secondary"></div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-9 h-9 rounded-lg bg-brand-secondary flex items-center justify-center flex-shrink-0">
+                    <span class="text-sm font-bold text-white">5</span>
+                  </div>
+                  <h4 class="font-bold text-gray-900">Workflow Manager</h4>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">Routes studies to the right MAP and orchestrates multi-step pipelines.</p>
+              </div>
+            </div>
+            <div class="hidden lg:flex items-center justify-center" aria-hidden="true">
+              <svg class="w-6 h-6 text-brand-accent/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </div>
+<div class="bg-white rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <div class="h-1 bg-brand-secondary"></div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-9 h-9 rounded-lg bg-brand-secondary flex items-center justify-center flex-shrink-0">
+                    <span class="text-sm font-bold text-white">6</span>
+                  </div>
+                  <h4 class="font-bold text-gray-900">Informatics Gateway</h4>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">Secure DICOM and FHIR exchange with hospital information systems.</p>
+              </div>
+            </div>
+            <div class="hidden lg:flex items-center justify-center" aria-hidden="true">
+              <svg class="w-6 h-6 text-brand-accent/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </div>
+<div class="bg-white rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <div class="h-1 bg-gray-400"></div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-9 h-9 rounded-lg bg-gray-500 flex items-center justify-center flex-shrink-0">
+                    <span class="text-sm font-bold text-white">7</span>
+                  </div>
+                  <h4 class="font-bold text-gray-900">PACS</h4>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">Results land back in the archive radiologists already use (third-party system).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical components -->
+      <div class="mt-20">
+        <h3 class="text-2xl font-bold text-gray-900 tracking-tight mb-8 reveal text-center">The three subsystems, in depth</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
+          <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 flex flex-col reveal">
+            <div class="w-12 h-12 rounded-xl bg-brand-secondary/10 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-brand-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <div class="flex-grow">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">App SDK</h3>
+              <p class="text-sm font-semibold text-brand-teal mb-4">Build &amp; package</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Compose apps from operators like <code class="font-mono text-[0.9em] bg-gray-100 rounded px-1">DICOMSeriesToVolumeOperator</code> and <code class="font-mono text-[0.9em] bg-gray-100 rounded px-1">MonaiSegInferenceOperator</code>, then package them into MAPs with the <code class="font-mono text-[0.9em] bg-gray-100 rounded px-1">monai-deploy</code> CLI.</p>
+            </div>
+            <div class="mt-6">
+              <a href="https://monai.readthedocs.io/projects/monai-deploy-app-sdk/en/stable/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+                SDK Documentation
+                <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 flex flex-col reveal">
+            <div class="w-12 h-12 rounded-xl bg-brand-secondary/10 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-brand-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+              </svg>
+            </div>
+            <div class="flex-grow">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">Workflow Manager</h3>
+              <p class="text-sm font-semibold text-brand-teal mb-4">Orchestrate</p>
+              <p class="text-gray-600 text-sm leading-relaxed">The central orchestration service: routes incoming studies, triggers the right MAPs, tracks task state, and coordinates clinical pipelines end to end.</p>
+            </div>
+            <div class="mt-6">
+              <a href="https://github.com/Project-MONAI/monai-deploy-workflow-manager" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+                View Repository
+                <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 flex flex-col reveal">
+            <div class="w-12 h-12 rounded-xl bg-brand-secondary/10 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-brand-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+              </svg>
+            </div>
+            <div class="flex-grow">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">Informatics Gateway</h3>
+              <p class="text-sm font-semibold text-brand-teal mb-4">Connect</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Standards-based DICOM and FHIR I/O between AI applications and hospital systems: the bridge to PACS, RIS, and EHR.</p>
+            </div>
+            <div class="mt-6">
+              <a href="https://github.com/Project-MONAI/monai-deploy-informatics-gateway" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+                View Repository
+                <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick start -->
+  <section id="quick-start" class="py-24 bg-gray-50">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Quick Start</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">
+          Install, run, package, deploy
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Four steps take the bundled simple-imaging example from source to a runnable MAP container on your workstation.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-6">
+        <!-- Step 1 -->
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 reveal">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center">
+              <span class="text-xl font-bold text-brand-teal">1</span>
+            </div>
+            <div class="flex-grow min-w-0">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">Set up the environment</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">Install the App SDK and clone the repository for the example apps.</p>
+              <div class="rounded-xl bg-surface-dark border border-white/10 px-5 py-4 font-mono text-sm leading-relaxed overflow-x-auto">
+                <pre class="m-0 whitespace-pre"><code><span class="text-gray-500 select-none">$ </span><span class="text-white">pip install monai-deploy-app-sdk</span>
+<span class="text-gray-500 select-none">$ </span><span class="text-gray-200">git clone https://github.com/Project-MONAI/monai-deploy-app-sdk.git</span>
+<span class="text-gray-500 select-none">$ </span><span class="text-gray-200">cd monai-deploy-app-sdk</span>
+<span class="text-gray-500 select-none">$ </span><span class="text-gray-200">pip install matplotlib Pillow scikit-image</span></code></pre>
+              </div>
+              <a href="https://monai.readthedocs.io/projects/monai-deploy-app-sdk/en/stable/getting_started/installing_app_sdk.html" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+                Setup guide
+                <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 reveal">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center">
+              <span class="text-xl font-bold text-brand-teal">2</span>
+            </div>
+            <div class="flex-grow min-w-0">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">Run the app locally</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">Execute the simple imaging example straight from Python, no container yet.</p>
+              <div class="rounded-xl bg-surface-dark border border-white/10 px-5 py-4 font-mono text-sm leading-relaxed overflow-x-auto">
+                <pre class="m-0 whitespace-pre"><code><span class="text-gray-500 select-none">$ </span><span class="text-gray-200">python examples/apps/simple_imaging_app/app.py <span class="text-white">\</span></span>
+<span class="text-gray-200">    -i examples/apps/simple_imaging_app/brain_mr_input.jpg <span class="text-white">\</span></span>
+<span class="text-gray-200">    -o output</span></code></pre>
+              </div>
+              <a href="https://monai.readthedocs.io/projects/monai-deploy-app-sdk/en/stable/getting_started/tutorials/simple_app.html" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+                App tutorial
+                <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 reveal">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center">
+              <span class="text-xl font-bold text-brand-teal">3</span>
+            </div>
+            <div class="flex-grow min-w-0">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">Package it as a MAP</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">Build the Docker image that runs identically in any environment.</p>
+              <div class="rounded-xl bg-surface-dark border border-white/10 px-5 py-4 font-mono text-sm leading-relaxed overflow-x-auto">
+                <pre class="m-0 whitespace-pre"><code><span class="text-gray-500 select-none">$ </span><span class="text-gray-200">monai-deploy package examples/apps/simple_imaging_app <span class="text-white">\</span></span>
+<span class="text-gray-200">    -c simple_imaging_app/app.yaml <span class="text-white">\</span></span>
+<span class="text-gray-200">    -t </span><span class="text-teal-300">simple_app:latest</span><span class="text-gray-200"> <span class="text-white">\</span></span>
+<span class="text-gray-200">    --platform x64-workstation</span></code></pre>
+              </div>
+              <a href="https://monai.readthedocs.io/projects/monai-deploy-app-sdk/en/stable/developing_with_sdk/packaging_app.html" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+                Packaging guide
+                <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 reveal">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center">
+              <span class="text-xl font-bold text-brand-teal">4</span>
+            </div>
+            <div class="flex-grow min-w-0">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">Run the packaged container</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">Same inputs, same outputs, now from the deployable artifact.</p>
+              <div class="rounded-xl bg-surface-dark border border-white/10 px-5 py-4 font-mono text-sm leading-relaxed overflow-x-auto">
+                <pre class="m-0 whitespace-pre"><code><span class="text-gray-500 select-none">$ </span><span class="text-gray-200">mkdir -p input &amp;&amp; cp examples/apps/simple_imaging_app/brain_mr_input.jpg input/</span>
+<span class="text-gray-500 select-none">$ </span><span class="text-gray-200">monai-deploy run </span><span class="text-teal-300">simple_app-x64-workstation-dgpu-linux-amd64:latest</span><span class="text-gray-200"> <span class="text-white">\</span></span>
+<span class="text-gray-200">    -i input -o output</span></code></pre>
+              </div>
+              <a href="https://monai.readthedocs.io/projects/monai-deploy-app-sdk/en/stable/developing_with_sdk/executing_packaged_app_locally.html" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+                Deployment guide
+                <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional resources -->
+      <div class="mt-16 max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-stagger">
+          <a href="https://github.com/Project-MONAI/monai-deploy-app-sdk/tree/main/examples" target="_blank" rel="noopener noreferrer" class="group block h-full reveal">
+            <div class="bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 h-full">
+              <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-teal transition-colors">Example Applications</h4>
+              <p class="text-gray-600 text-sm leading-relaxed">Segmentation, classification, and DICOM-pipeline examples to copy from.</p>
+            </div>
+          </a>
+          <a href="https://monai.readthedocs.io/projects/monai-deploy-app-sdk/en/latest/modules/index.html" target="_blank" rel="noopener noreferrer" class="group block h-full reveal">
+            <div class="bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 h-full">
+              <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-teal transition-colors">API Reference</h4>
+              <p class="text-gray-600 text-sm leading-relaxed">Operators, application classes, and packaging modules in detail.</p>
+            </div>
+          </a>
+          <a href="https://github.com/Project-MONAI/monai-deploy/discussions" target="_blank" rel="noopener noreferrer" class="group block h-full reveal">
+            <div class="bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 h-full">
+              <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-teal transition-colors">Community Support</h4>
+              <p class="text-gray-600 text-sm leading-relaxed">GitHub Discussions for deployment questions and architecture advice.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real-world applications -->
+  <section class="py-24 bg-white">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Case Studies</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">
+          Running in production today
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          The same MAP format scales from a single research PACS to a marketplace reaching 10,000+ institutions.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 reveal-stagger">
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 h-full flex flex-col reveal">
+          <div class="flex items-center justify-between mb-6">
+            <img loading="lazy" src="/assets/img/logos/siemens.png" alt="Siemens Healthineers" class="h-12 object-contain">
+            <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center">
+              <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="flex-grow">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Siemens Healthineers</h3>
+            <p class="text-sm font-semibold text-brand-teal mb-4">Enterprise AI Integration</p>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">MONAI Deploy is integrated into the AI-Rad Companion platform, cutting model deployment time across Siemens' global healthcare network and improving performance monitoring.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Enterprise Scale</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">AI Platform</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Clinical Integration</span>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-gray-100">
+            <a href="https://blogs.nvidia.com/blog/rsna-siemens-healthineers-monai-medical-imaging-ai/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+              Read Blog
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 h-full flex flex-col reveal">
+          <div class="flex items-center justify-between mb-6">
+            <img loading="lazy" src="/assets/img/logos/mayo-clinic.png" alt="Mayo Clinic" class="h-12 object-contain">
+            <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center">
+              <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="flex-grow">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Mayo Clinic</h3>
+            <p class="text-sm font-semibold text-brand-teal mb-4">Clinical AI Integration</p>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">The Center for Augmented Intelligence in Imaging at Mayo Clinic Florida runs MONAI-packaged models inside its clinical Radiology pipeline. The case study documents the pattern.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Clinical Research</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">AI Infrastructure</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Imaging</span>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-gray-100">
+            <a href="mayo-case-study.html" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+              Read Case Study
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 h-full flex flex-col reveal">
+          <div class="flex items-center justify-between mb-6">
+            <img loading="lazy" src="/assets/img/logos/aicentre.jpg" alt="AI Centre for Value Based Healthcare" class="h-12 object-contain">
+            <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center">
+              <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="flex-grow">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">AI Centre for Value Based Healthcare</h3>
+            <p class="text-sm font-semibold text-brand-teal mb-4">Research Platform</p>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">AIDE, the AI Deployment Engine, safely deploys AI models into research workflows across the UK's AI Centre hospital network.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Research</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Deployment Engine</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">AI Safety</span>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-gray-100">
+            <a href="https://www.aicentre.co.uk/our-platforms#tab-1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+              Learn More
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 h-full flex flex-col reveal">
+          <div class="flex items-center justify-between mb-6">
+            <img loading="lazy" src="/assets/img/logos/mercure.png" alt="Mercure" class="h-12 object-contain">
+            <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center">
+              <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="flex-grow">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Mercure</h3>
+            <p class="text-sm font-semibold text-brand-teal mb-4">DICOM Orchestration Platform</p>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">An open-source DICOM orchestrator with native MAP support: drop a MONAI Application Package into a radiology research workflow without custom glue code.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Open Source</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">DICOM</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">MAP Integration</span>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-gray-100">
+            <a href="https://monai.medium.com/fe7cfd77acce?source=friends_link&sk=894711683f40c61b1116fc5097a24b0a" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+              Read Blog
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="group lg:col-span-2 bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 h-full flex flex-col reveal">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-2">
+              <img loading="lazy" src="/assets/img/logos/mayo-clinic.png" alt="Mayo Clinic" class="h-10 object-contain">
+              <span class="text-gray-400 mx-2">&times;</span>
+              <img loading="lazy" src="/assets/img/logos/siemens.png" alt="Siemens Healthineers" class="h-9 object-contain">
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center">
+              <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="flex-grow">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Mayo Clinic &amp; Siemens Digital Marketplace</h3>
+            <p class="text-sm font-semibold text-brand-teal mb-4">Scalable Research Deployment</p>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">Mayo Clinic AI applications built with MONAI are available to over 10,000 institutions through the Siemens Digital Marketplace: zero-code, globally scaled deployment of MONAI-powered solutions.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Global Scale</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Zero-Code</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Research</span>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-gray-100">
+            <a href="mayo-siemens-case-study.html" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+              Read Case Study
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Citation -->
+  <section class="py-24 bg-gray-50">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Reference</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">
+          How to cite MONAI Deploy
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          If MONAI Deploy supports your research, please cite the JMIR AI paper:
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white p-8 rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300">
+          <div class="relative">
+            <pre class="bg-gray-50 rounded-lg p-4 font-mono text-sm text-gray-700 whitespace-pre-wrap">{bibtex}</pre>
+          </div>
+          <div class="flex flex-wrap gap-4 mt-6 justify-center">
+            <a href="https://doi.org/10.2196/55833" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-gray-200 text-sm font-semibold text-gray-700 hover:text-brand-teal hover:border-brand-primary/40 shadow-sm transition-all duration-200 group">
+              View on DOI
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section class="py-24 bg-white">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Connect</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">
+          Deploy with the community
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          The Deploy Working Group meets in the open. Bring your integration questions, hospital constraints, and deployment war stories.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 reveal-stagger">
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 flex flex-col reveal">
+          <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <div class="flex-grow">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">Documentation</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Concepts, tutorials, and deployment strategies for the full Deploy stack.</p>
+          </div>
+          <div class="mt-6">
+            <a href="https://monai.readthedocs.io/projects/monai-deploy-app-sdk/en/latest/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+              Read the Docs
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 flex flex-col reveal">
+          <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+          </div>
+          <div class="flex-grow">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">Deploy Working Group</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">The group steering the MAP spec, subsystems, and clinical-integration patterns.</p>
+          </div>
+          <div class="mt-6">
+            <a href="wg_deploy.html" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+              Join the Group
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 flex flex-col reveal">
+          <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+            </svg>
+          </div>
+          <div class="flex-grow">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">GitHub Repository</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Source for the App SDK, Workflow Manager, and Informatics Gateway.</p>
+          </div>
+          <div class="mt-6">
+            <a href="https://github.com/Project-MONAI/monai-deploy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+              View Code
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 flex flex-col reveal">
+          <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+            </svg>
+          </div>
+          <div class="flex-grow">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">Slack Community</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Real-time help from maintainers and other teams deploying to the clinic.</p>
+          </div>
+          <div class="mt-6">
+            <a href="https://join.slack.com/t/projectmonai/shared_invite/zt-3hucgm02q-i8Bn9XofDZs2UGOH4jUl4w" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+              Join Slack
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

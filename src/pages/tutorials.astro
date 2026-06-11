@@ -1,0 +1,592 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const frontmatter = {
+  title: 'Tutorials & Learning Resources | MONAI',
+  description: 'Hands-on tutorials, notebooks, and learning resources for MONAI medical imaging AI framework.',
+  canonical: 'https://project-monai.github.io/tutorials.html',
+  audience: ['researcher', 'engineer', 'newcomer'],
+  schemaType: 'Course' as const,
+};
+---
+<BaseLayout {...frontmatter}>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-white via-brand-light/40 to-white">
+
+
+            <div class="container relative z-10">
+                <div class="py-24 md:py-32 max-w-3xl mx-auto text-center">
+                    <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Learn</p>
+                    <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight leading-[1.08] mb-8">
+                        <span class="text-brand-accent">Tutorials & Learning</span>
+                        <br>
+                        <span class="text-gray-900">Resources</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-12">
+                        Hands-on guides to help you master medical AI with MONAI.
+                    </p>
+                    <a href="#tutorials" class="px-7 py-3 rounded-lg bg-brand-primary text-gray-900 font-semibold hover:bg-brand-accent transition-all duration-200 inline-flex items-center gap-2 group shadow-lg shadow-brand-primary/20">
+                        Browse Tutorials
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter + Tutorials Wrapper (Alpine.js scope) -->
+        <div x-data="{ activeFilter: 'all', activeLevel: 'all' }">
+
+            <!-- Filter Bar Section -->
+            <section id="tutorials" class="py-12 bg-gray-50 relative border-b border-gray-200">
+                <!-- Subtle top border accent -->
+                <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-primary/30 to-transparent"></div>
+
+                <div class="container">
+                    <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
+                        <!-- Framework Filter -->
+                        <div class="flex flex-col gap-2">
+                            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Framework</span>
+                            <div class="flex flex-wrap gap-2">
+                                <button @click="activeFilter = 'all'" data-track="filter_use" data-track-filter-type="framework" data-track-filter-value="all" :class="activeFilter === 'all' ? 'bg-brand-primary text-gray-900 shadow-sm' : 'bg-white text-gray-700 border border-gray-200 hover:text-brand-teal hover:border-brand-primary/30'" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200">All</button>
+                                <button @click="activeFilter = 'core'" data-track="filter_use" data-track-filter-type="framework" data-track-filter-value="core" :class="activeFilter === 'core' ? 'bg-brand-primary text-gray-900 shadow-sm' : 'bg-white text-gray-700 border border-gray-200 hover:text-brand-teal hover:border-brand-primary/30'" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200">Core</button>
+                                <button @click="activeFilter = 'label'" data-track="filter_use" data-track-filter-type="framework" data-track-filter-value="label" :class="activeFilter === 'label' ? 'bg-brand-primary text-gray-900 shadow-sm' : 'bg-white text-gray-700 border border-gray-200 hover:text-brand-teal hover:border-brand-primary/30'" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200">Label</button>
+                                <button @click="activeFilter = 'deploy'" data-track="filter_use" data-track-filter-type="framework" data-track-filter-value="deploy" :class="activeFilter === 'deploy' ? 'bg-brand-primary text-gray-900 shadow-sm' : 'bg-white text-gray-700 border border-gray-200 hover:text-brand-teal hover:border-brand-primary/30'" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200">Deploy</button>
+                            </div>
+                        </div>
+
+                        <!-- Level Filter -->
+                        <div class="flex flex-col gap-2">
+                            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Level</span>
+                            <div class="flex flex-wrap gap-2">
+                                <button @click="activeLevel = 'all'" data-track="filter_use" data-track-filter-type="level" data-track-filter-value="all" :class="activeLevel === 'all' ? 'bg-brand-primary text-gray-900 shadow-sm' : 'bg-white text-gray-700 border border-gray-200 hover:text-brand-teal hover:border-brand-primary/30'" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200">All</button>
+                                <button @click="activeLevel = 'beginner'" data-track="filter_use" data-track-filter-type="level" data-track-filter-value="beginner" :class="activeLevel === 'beginner' ? 'bg-brand-primary text-gray-900 shadow-sm' : 'bg-white text-gray-700 border border-gray-200 hover:text-brand-teal hover:border-brand-primary/30'" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200">Beginner</button>
+                                <button @click="activeLevel = 'intermediate'" data-track="filter_use" data-track-filter-type="level" data-track-filter-value="intermediate" :class="activeLevel === 'intermediate' ? 'bg-brand-primary text-gray-900 shadow-sm' : 'bg-white text-gray-700 border border-gray-200 hover:text-brand-teal hover:border-brand-primary/30'" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200">Intermediate</button>
+                                <button @click="activeLevel = 'advanced'" data-track="filter_use" data-track-filter-type="level" data-track-filter-value="advanced" :class="activeLevel === 'advanced' ? 'bg-brand-primary text-gray-900 shadow-sm' : 'bg-white text-gray-700 border border-gray-200 hover:text-brand-teal hover:border-brand-primary/30'" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200">Advanced</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tutorial Cards Grid -->
+            <section class="py-24 bg-white">
+                <div class="container">
+                    <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                        <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Tutorials</p>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Hands-On Learning</h2>
+                        <p class="text-lg text-gray-600 leading-relaxed">Curated notebooks, documentation, and video resources for learning MONAI.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto reveal-stagger">
+
+                        <!-- ==================== -->
+                        <!-- MONAI Core: Beginner -->
+                        <!-- ==================== -->
+
+                        <!-- Getting Started with MONAI -->
+                        <a rel="noopener noreferrer" href="https://github.com/Project-MONAI/tutorials/blob/main/2d_classification/mednist_tutorial.ipynb" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'core') && (activeLevel === 'all' || activeLevel === 'beginner')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-semibold">Core</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Beginner</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">Getting Started with MONAI</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Introduction to MONAI Core concepts and basic operations.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <!-- Notebook icon -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Notebook</span>
+                            </div>
+                        </a>
+
+                        <!-- Spleen 3D Segmentation -->
+                        <a rel="noopener noreferrer" href="https://github.com/Project-MONAI/tutorials/blob/main/3d_segmentation/spleen_segmentation_3d.ipynb" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'core') && (activeLevel === 'all' || activeLevel === 'beginner')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-semibold">Core</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Beginner</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">Spleen 3D Segmentation</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">End-to-end 3D medical image segmentation tutorial.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Notebook</span>
+                            </div>
+                        </a>
+
+                        <!-- Transforms and Datasets -->
+                        <a rel="noopener noreferrer" href="https://github.com/Project-MONAI/tutorials/blob/main/modules/transforms_demo_and_double.ipynb" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'core') && (activeLevel === 'all' || activeLevel === 'beginner')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-semibold">Core</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Beginner</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">Transforms and Datasets</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Learn MONAI's data loading and transform pipeline.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Notebook</span>
+                            </div>
+                        </a>
+
+                        <!-- ========================= -->
+                        <!-- MONAI Core: Intermediate  -->
+                        <!-- ========================= -->
+
+                        <!-- Auto3DSeg Tutorial -->
+                        <a rel="noopener noreferrer" href="https://github.com/Project-MONAI/tutorials/tree/main/auto3dseg" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'core') && (activeLevel === 'all' || activeLevel === 'intermediate')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-semibold">Core</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Intermediate</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">Auto3DSeg Tutorial</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Automated 3D segmentation pipeline with algorithm selection.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Notebook</span>
+                            </div>
+                        </a>
+
+                        <!-- SwinUNETR for BTCV Multi-Organ Segmentation -->
+                        <a rel="noopener noreferrer" href="https://github.com/Project-MONAI/tutorials/blob/main/3d_segmentation/swin_unetr_btcv_segmentation_3d.ipynb" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'core') && (activeLevel === 'all' || activeLevel === 'intermediate')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-semibold">Core</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Intermediate</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">SwinUNETR Segmentation</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Swin Transformer-based multi-organ segmentation on BTCV.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Notebook</span>
+                            </div>
+                        </a>
+
+                        <!-- Custom Transforms -->
+                        <a rel="noopener noreferrer" href="https://github.com/Project-MONAI/tutorials/blob/main/modules/custom_transforms.ipynb" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'core') && (activeLevel === 'all' || activeLevel === 'intermediate')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-semibold">Core</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Intermediate</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">Custom Transforms</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Creating your own MONAI transforms.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Notebook</span>
+                            </div>
+                        </a>
+
+                        <!-- ===================== -->
+                        <!-- MONAI Core: Advanced  -->
+                        <!-- ===================== -->
+
+                        <!-- MAISI -->
+                        <a rel="noopener noreferrer" href="https://github.com/Project-MONAI/tutorials/tree/main/generation/maisi" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'core') && (activeLevel === 'all' || activeLevel === 'advanced')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-semibold">Core</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Advanced</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">MAISI - Medical Image Synthesis</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Generate synthetic 3D CT images with latent diffusion.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Notebook</span>
+                            </div>
+                        </a>
+
+                        <!-- VISTA-3D -->
+                        <a rel="noopener noreferrer" href="https://github.com/Project-MONAI/tutorials/tree/main/vista3d" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'core') && (activeLevel === 'all' || activeLevel === 'advanced')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-semibold">Core</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Advanced</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">VISTA-3D Interactive Segmentation</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Interactive 3D segmentation with point prompts.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Notebook</span>
+                            </div>
+                        </a>
+
+                        <!-- Federated Learning -->
+                        <a rel="noopener noreferrer" href="https://github.com/Project-MONAI/tutorials/tree/main/federated_learning" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'core') && (activeLevel === 'all' || activeLevel === 'advanced')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-semibold">Core</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Advanced</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">Federated Learning</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Privacy-preserving distributed training with MONAI.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Notebook</span>
+                            </div>
+                        </a>
+
+                        <!-- ====================== -->
+                        <!-- MONAI Label: Beginner  -->
+                        <!-- ====================== -->
+
+                        <!-- Getting Started with MONAI Label -->
+                        <a rel="noopener noreferrer" href="https://docs.monai.io/projects/label/en/latest/quickstart.html" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'label') && (activeLevel === 'all' || activeLevel === 'beginner')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-semibold">Label</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Beginner</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">Getting Started with MONAI Label</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Setup and first annotation session.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <!-- Docs icon -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                <span>Docs</span>
+                            </div>
+                        </a>
+
+                        <!-- 3D Slicer Integration -->
+                        <a rel="noopener noreferrer" href="https://docs.monai.io/projects/label/en/latest/installation.html" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'label') && (activeLevel === 'all' || activeLevel === 'beginner')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-semibold">Label</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Beginner</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">3D Slicer Integration</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Connect MONAI Label with 3D Slicer.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                <span>Docs</span>
+                            </div>
+                        </a>
+
+                        <!-- ============================ -->
+                        <!-- MONAI Label: Intermediate    -->
+                        <!-- ============================ -->
+
+                        <!-- Active Learning Strategies -->
+                        <a rel="noopener noreferrer" href="https://github.com/Project-MONAI/tutorials/tree/main/monailabel" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'label') && (activeLevel === 'all' || activeLevel === 'intermediate')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-semibold">Label</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Intermediate</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">Active Learning Strategies</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Implement active learning for efficient annotation.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Notebook</span>
+                            </div>
+                        </a>
+
+                        <!-- Custom MONAI Label App -->
+                        <a rel="noopener noreferrer" href="https://docs.monai.io/projects/label/en/latest/appdeployment.html" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'label') && (activeLevel === 'all' || activeLevel === 'intermediate')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-semibold">Label</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Intermediate</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">Custom MONAI Label App</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Build your own annotation application.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                <span>Docs</span>
+                            </div>
+                        </a>
+
+                        <!-- ======================= -->
+                        <!-- MONAI Deploy: Beginner  -->
+                        <!-- ======================= -->
+
+                        <!-- Creating Your First MAP -->
+                        <a rel="noopener noreferrer" href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/stable/getting_started/index.html" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'deploy') && (activeLevel === 'all' || activeLevel === 'beginner')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-purple-50 text-purple-600 rounded-full text-xs font-semibold">Deploy</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Beginner</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">Creating Your First MAP</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Package a model as a MONAI Application Package.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                <span>Docs</span>
+                            </div>
+                        </a>
+
+                        <!-- DICOM Data Processing -->
+                        <a rel="noopener noreferrer" href="https://docs.monai.io/projects/monai-deploy-app-sdk/en/stable/" target="_blank"
+                           x-show="(activeFilter === 'all' || activeFilter === 'deploy') && (activeLevel === 'all' || activeLevel === 'beginner')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-purple-50 text-purple-600 rounded-full text-xs font-semibold">Deploy</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Beginner</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">DICOM Data Processing</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Process DICOM data in deployment pipelines.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                <span>Docs</span>
+                            </div>
+                        </a>
+
+                        <!-- ================= -->
+                        <!-- Video Tutorials   -->
+                        <!-- ================= -->
+
+                        <!-- MONAI Bootcamp 2023 -->
+                        <a rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLtoSVSQ2XzyD4zuSmTtgIciF0ZjzIDr7Y" target="_blank"
+                           x-show="(activeFilter === 'all') && (activeLevel === 'all' || activeLevel === 'beginner')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-red-50 text-red-600 rounded-full text-xs font-semibold">All Frameworks</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Beginner</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">MONAI Bootcamp 2023</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Comprehensive workshop series covering Core, Label, and Deploy.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <!-- Video icon -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Video</span>
+                            </div>
+                        </a>
+
+                        <!-- MONAI at MICCAI -->
+                        <a rel="noopener noreferrer" href="https://www.youtube.com/c/Project-MONAI" target="_blank"
+                           x-show="(activeFilter === 'all') && (activeLevel === 'all' || activeLevel === 'intermediate')"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="px-3 py-1 bg-red-50 text-red-600 rounded-full text-xs font-semibold">All Frameworks</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Intermediate</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">MONAI at MICCAI</h3>
+                                <svg class="w-5 h-5 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Conference workshops and presentations.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Video</span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- External Resources Section -->
+        <section class="py-24 bg-gray-50">
+            <div class="container">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Resources</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Explore More</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">Dive deeper with the full range of MONAI learning materials.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto reveal-stagger">
+                    <!-- Full Tutorials Repository -->
+                    <a href="https://github.com/Project-MONAI/tutorials" target="_blank" class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block" rel="noopener noreferrer">
+                        <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary/15 transition-colors">
+                            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-teal transition-colors">Tutorials Repository</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Full collection of Jupyter notebooks on GitHub.</p>
+                    </a>
+
+                    <!-- Official Documentation -->
+                    <a href="https://monai.readthedocs.io/en/stable/" target="_blank" class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block" rel="noopener noreferrer">
+                        <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary/15 transition-colors">
+                            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-teal transition-colors">Official Documentation</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Comprehensive API reference and guides.</p>
+                    </a>
+
+                    <!-- YouTube Channel -->
+                    <a href="https://www.youtube.com/c/Project-MONAI" target="_blank" class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block" rel="noopener noreferrer">
+                        <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary/15 transition-colors">
+                            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-teal transition-colors">YouTube Channel</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Video tutorials, bootcamps, and talks.</p>
+                    </a>
+
+                    <!-- Bootcamp Materials -->
+                    <a href="https://www.youtube.com/playlist?list=PLtoSVSQ2XzyD4zuSmTtgIciF0ZjzIDr7Y" target="_blank" class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block" rel="noopener noreferrer">
+                        <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary/15 transition-colors">
+                            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-teal transition-colors">Bootcamp Materials</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Complete MONAI Bootcamp workshop series.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 bg-white relative overflow-hidden">
+
+            <div class="container relative z-10">
+                <div class="text-center max-w-3xl mx-auto reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Start Building with MONAI</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-10">Ready to build your first medical AI application? Get started with installation and explore pre-trained models.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="core.html#quick-start" class="px-7 py-3 rounded-lg bg-brand-primary text-gray-900 font-semibold hover:bg-brand-accent transition-all duration-200 inline-flex items-center gap-2 group shadow-lg shadow-brand-primary/20">
+                            Get Started
+                            <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                        <a href="model-zoo.html" class="px-7 py-3 rounded-lg bg-white text-gray-700 font-semibold border border-gray-200 hover:border-brand-primary/40 hover:text-brand-teal shadow-sm transition-all duration-200 inline-flex items-center gap-2 group">
+                            Browse Model Zoo
+                            <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </BaseLayout>

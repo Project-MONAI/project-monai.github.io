@@ -1,0 +1,16 @@
+{
+    "include": [
+        "index",
+        "core",
+        "label",
+        "deploy",
+        "model-zoo",
+        "tutorials",
+        "about",
+        "working-groups",
+        "successstories",
+        "mayo-case-study",
+        "mayo-siemens-case-study",
+        "cite"
+    ]
+}

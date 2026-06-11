@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const frontmatter = {
+  title: '404 - Page Not Found | MONAI',
+  description: 'The page you were looking for could not be found. Please check the URL or navigate back to the homepage.',
+  canonical: 'https://project-monai.github.io/404.html',
+};
+---
+<BaseLayout {...frontmatter}>
+        <!-- Full-page light 404 section -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-white via-brand-light/40 to-white min-h-[calc(100vh-4rem)]">
+
+
+            <div class="container relative z-10">
+                <div class="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center text-center py-24">
+                    <!-- Large 404 number -->
+                    <h1 class="font-display text-8xl sm:text-9xl md:text-[12rem] font-bold tracking-tight leading-none mb-8">
+                        <span class="text-brand-accent">404</span>
+                    </h1>
+
+                    <!-- Message -->
+                    <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Page Not Found</h2>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed mb-12">
+                        Sorry, the page you were looking for does not exist or has been moved. Let's get you back on track.
+                    </p>
+
+                    <!-- Go Home CTA -->
+                    <a class="px-7 py-3 rounded-lg bg-brand-primary text-gray-900 font-semibold hover:bg-brand-accent transition-all duration-200 flex items-center gap-2 group shadow-lg shadow-brand-primary/20" href="index.html" data-track="cta_click" data-track-cta-id="404_go_home" data-track-cta-dest="index.html">
+                        Go Home
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+</BaseLayout>

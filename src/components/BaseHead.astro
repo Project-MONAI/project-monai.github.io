@@ -1,0 +1,182 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  metaRefresh?: string;
+  audience?: string[];
+  schemaType?: 'SoftwareApplication' | 'Course' | 'Article' | 'WebPage';
+  mdAlternate?: string;
+}
+const {
+  title,
+  description,
+  canonical,
+  ogImage = 'https://project-monai.github.io/assets/logo/MONAI-logo_color-large.png',
+  metaRefresh,
+  audience,
+  schemaType,
+  mdAlternate,
+} = Astro.props;
+---
+<head>
+  {metaRefresh && <meta http-equiv="refresh" content={metaRefresh} />}
+  <script is:inline>document.documentElement.classList.add('js');</script>
+
+  <!-- Agent detection. Mirrors src/scripts/agent-detect.ts (which has unit tests). -->
+  <!-- Inlined as plain JS because it must run before gtag and we want zero bundling overhead. -->
+  <script is:inline>
+    (function () {
+      var ua = (navigator.userAgent || '').toLowerCase();
+      var bots = [
+        ['claudebot', /claudebot|claude-web|anthropic/],
+        ['gptbot', /gptbot/],
+        ['chatgpt-user', /chatgpt-user/],
+        ['perplexity', /perplexity/],
+        ['ccbot', /ccbot/],
+        ['google-extended', /google-extended/],
+        ['bytespider', /bytespider/],
+        ['cohere', /cohere-ai/],
+        ['cursor', /cursor/],
+      ];
+      var name = 'unknown';
+      var cls = 'human';
+      var inBrowser = true;
+
+      for (var i = 0; i < bots.length; i++) {
+        if (bots[i][1].test(ua)) {
+          name = bots[i][0];
+          cls = 'known_bot';
+          break;
+        }
+      }
+
+      var headlessRe = /headlesschrome|phantomjs|puppeteer|playwright|selenium/;
+      if (cls === 'human' && (headlessRe.test(ua) || navigator.webdriver === true)) {
+        cls = 'headless';
+        var m = headlessRe.exec(ua);
+        name = m ? m[0] : 'webdriver';
+        inBrowser = false;
+      }
+
+      window.__agent = { agent_class: cls, agent_name: name, agent_in_browser: inBrowser };
+      document.documentElement.setAttribute('data-agent-class', cls);
+    })();
+  </script>
+
+  <!-- Google Analytics with agent enrichment -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVGBCPFPJ6"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    var agent = window.__agent || { agent_class: 'human', agent_name: 'unknown', agent_in_browser: true };
+    gtag('set', 'user_properties', { agent_class: agent.agent_class });
+    gtag('config', 'G-QVGBCPFPJ6', {
+      agent_class: agent.agent_class,
+      agent_name: agent.agent_name,
+      agent_in_browser: agent.agent_in_browser,
+    });
+    if (agent.agent_class !== 'human') {
+      gtag('event', 'agent_visit', {
+        agent_class: agent.agent_class,
+        agent_name: agent.agent_name,
+        agent_in_browser: agent.agent_in_browser,
+        page_path: location.pathname,
+      });
+    }
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <meta name="keywords" content="MONAI, Medical Imaging, AI, Deep Learning, Healthcare, PyTorch, Open Source" />
+  <meta name="author" content="Project MONAI" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@ProjectMONAI" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  {audience && audience.length > 0 && (
+    <meta name="audience" content={audience.join(',')} />
+  )}
+  {mdAlternate && (
+    <link rel="alternate" type="text/markdown" href={mdAlternate} />
+  )}
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/logo/MONAI-logo_favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;700&display=swap"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'MONAI',
+    url: 'https://project-monai.github.io',
+    logo: 'https://project-monai.github.io/assets/logo/MONAI-logo_color-large.png',
+    description:
+      'MONAI is a freely available, community-supported, PyTorch-based framework for deep learning in healthcare imaging.',
+    sameAs: [
+      'https://twitter.com/ProjectMONAI',
+      'https://medium.com/@monai',
+      'https://www.youtube.com/c/Project-MONAI',
+      'https://github.com/Project-MONAI',
+    ],
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'MONAI',
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'Linux, macOS, Windows',
+    softwareRequirements: 'Python 3.9+, PyTorch 1.13+',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    license: 'https://github.com/Project-MONAI/MONAI/blob/dev/LICENSE',
+    downloadUrl: 'https://pypi.org/project/monai/',
+    codeRepository: 'https://github.com/Project-MONAI/MONAI',
+    description: 'Open-source PyTorch framework for medical imaging AI.',
+  })} />
+
+  {schemaType === 'Course' && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      name: title,
+      description,
+      provider: { '@type': 'Organization', name: 'MONAI' },
+    })} />
+  )}
+  {schemaType === 'Article' && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      description,
+      author: { '@type': 'Organization', name: 'MONAI' },
+      publisher: { '@type': 'Organization', name: 'MONAI' },
+    })} />
+  )}
+
+  <script defer src="https://unpkg.com/alpinejs@3.14.8/dist/cdn.min.js"></script>
+</head>

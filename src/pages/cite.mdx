@@ -1,0 +1,64 @@
+---
+title: "How to Cite MONAI"
+description: "Canonical BibTeX entries for MONAI papers."
+canonical: "https://project-monai.github.io/cite.html"
+audience: [researcher]
+last_updated: 2026-05-01
+schema_type: WebPage
+---
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description} canonical={frontmatter.canonical} audience={frontmatter.audience} schemaType={frontmatter.schema_type}>
+
+<div class="container py-16 prose prose-lg max-w-3xl">
+
+# How to Cite MONAI
+
+If you use MONAI in your work, please cite the framework paper:
+
+```bibtex
+@article{cardoso2022monai,
+  title   = {MONAI: An open-source framework for deep learning in healthcare},
+  author  = {Cardoso, M. Jorge and Li, Wenqi and Brown, Richard and Ma, Nic and Kerfoot, Eric and Wang, Yiheng and Murrey, Benjamin and Myronenko, Andriy and Zhao, Can and Yang, Dong and others},
+  journal = {arXiv preprint arXiv:2211.02701},
+  year    = {2022}
+}
+```
+
+## MAISI
+
+```bibtex
+@inproceedings{guo2024maisi,
+  title     = {MAISI: Medical AI for Synthetic Imaging},
+  author    = {Guo, Pengfei and others},
+  booktitle = {Proceedings of MICCAI},
+  year      = {2024}
+}
+```
+
+## MONAI Bundle
+
+```bibtex
+@misc{monaibundle,
+  title  = {MONAI Bundle Specification},
+  author = {{Project MONAI}},
+  year   = {2023},
+  url    = {https://github.com/Project-MONAI/MONAI/blob/dev/monai/bundle/README.md}
+}
+```
+
+## MONAI Label
+
+```bibtex
+@article{diaz2022monailabel,
+  title   = {MONAI Label: A framework for AI-assisted interactive labeling of 3D medical images},
+  author  = {Diaz-Pinto, Andres and Alle, Sachidanand and Nath, Vishwesh and Tang, Yucheng and Ihsani, Alvin and Asad, Muhammad and others},
+  journal = {arXiv preprint arXiv:2203.12362},
+  year    = {2022}
+}
+```
+
+</div>
+
+</BaseLayout>

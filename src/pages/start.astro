@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const frontmatter = {
+  title: 'Get Started | MONAI',
+  description: 'Get started with MONAI - the freely available, community-supported, PyTorch-based framework for deep learning in healthcare imaging.',
+  canonical: 'https://project-monai.github.io/',
+  metaRefresh: "0; url=https://project-monai.github.io/",
+};
+---
+<BaseLayout {...frontmatter}>
+        <!-- Redirect page (light) -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-white via-brand-light/40 to-white min-h-[calc(100vh-4rem)]">
+
+
+            <div class="container relative z-10">
+                <div class="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center text-center py-24">
+                    <!-- Title -->
+                    <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8">
+                        <span class="text-brand-accent">Get Started</span>
+                        <br>
+                        <span class="text-gray-900">with MONAI</span>
+                    </h1>
+
+                    <!-- Message -->
+                    <p class="text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed mb-12">
+                        This page has moved. We are redirecting you to the MONAI homepage. If you are not redirected automatically, use the link below.
+                    </p>
+
+                    <!-- CTA -->
+                    <a class="px-7 py-3 rounded-lg bg-brand-primary text-gray-900 font-semibold hover:bg-brand-accent transition-all duration-200 flex items-center gap-2 group shadow-lg shadow-brand-primary/20" href="index.html" data-track="cta_click" data-track-cta-id="start_go_home" data-track-cta-dest="index.html">
+                        Go to the Homepage
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+</BaseLayout>

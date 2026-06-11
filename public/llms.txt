@@ -1,0 +1,26 @@
+# MONAI — Medical Open Network for AI
+
+> MONAI is the PyTorch-based, foundation-supported open-source framework for medical
+> imaging AI. Used by hospitals, med-device companies, and academic medical centers
+> worldwide for segmentation, classification, registration, generative imaging,
+> federated learning, and clinical deployment.
+
+## Start here
+- [What is MONAI](https://project-monai.github.io/index.md): Project overview, who uses it, and why
+- [Tutorials](https://project-monai.github.io/tutorials.md): Curated end-to-end walkthroughs
+
+## Frameworks
+- [MONAI Core](https://project-monai.github.io/core.md): Install and quick start, transforms, networks, losses, metrics, inferers
+- [MONAI Label](https://project-monai.github.io/label.md): Active-learning annotation server
+- [MONAI Deploy](https://project-monai.github.io/deploy.md): App SDK for clinical deployment
+- [Model Zoo](https://project-monai.github.io/model-zoo.md): Pre-trained MONAI Bundles
+
+## Community & governance
+- [About MONAI](https://project-monai.github.io/about.md): Mission, governance, sponsors
+- [Working Groups](https://project-monai.github.io/working-groups.md): How the project is organized
+- [Success Stories](https://project-monai.github.io/successstories.md): Who runs MONAI in production
+- [Mayo Clinic case study](https://project-monai.github.io/mayo-case-study.md): CAII clinical AI integration: infrastructure, MAPs, in-workflow deployment
+- [Mayo Clinic and Siemens case study](https://project-monai.github.io/mayo-siemens-case-study.md): Distributing MONAI applications to 10,000+ institutions via the Siemens Digital Marketplace
+
+## Citation
+- [How to cite](https://project-monai.github.io/cite.md): BibTeX for MONAI papers

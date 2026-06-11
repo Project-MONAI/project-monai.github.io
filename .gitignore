@@ -2,4 +2,8 @@ node_modules/
 .ipynb_checkpoints
 dist/
 .claude/
-.DS_Store
+.agent-team/
+visual-baseline/
+visual-current/
+visual-diff/
+.astro/
