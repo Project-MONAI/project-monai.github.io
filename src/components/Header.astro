@@ -5,7 +5,7 @@
     <!-- Banner Container -->
     <div x-show="activeBanner"
          x-ref="banner"
-         class="fixed top-0 left-0 right-0 text-white py-2.5 px-4 text-sm z-50 backdrop-blur-sm"
+         class="fixed top-0 left-0 right-0 text-gray-900 py-2.5 px-4 text-sm z-50 backdrop-blur-sm"
          :class="activeBanner ? activeBanner.bgColor : ''"
          x-transition:leave="transition ease-in duration-200"
          x-transition:leave-start="opacity-100"
@@ -39,9 +39,9 @@ function bannerSystem() {
     return {
         banners: [
             {
-                id: 'monai_core_v1.5.1',
-                message: 'MONAI Core v1.5.1 is now available!',
-                link: 'https://monai.readthedocs.io/en/stable/whatsnew_1_5_1.html',
+                id: 'monai_core_v1.6.0',
+                message: 'MONAI Core v1.6.0 is now available!',
+                link: 'https://monai.readthedocs.io/en/stable/whatsnew_1_6.html',
                 linkText: 'See what\'s new →',
                 bgColor: 'bg-brand-primary',
                 icon: 'check',
