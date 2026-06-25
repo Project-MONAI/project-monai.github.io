@@ -26,24 +26,28 @@ const boardMembers = [
   { img: 'michael-zephyr.jpg', name: 'Michael Zephyr', role: 'Outreach Working Group Chair' },
   { img: 'nic-ma.jpg', name: 'Nic Ma', role: 'Core Developers Chair' },
   { img: 'prerna-dogra.png', name: 'Prerna Dogra', role: 'Thought Leader' },
+  { img: 'rafael-garcia-dias.jpg', name: 'Rafael Garcia-Dias', role: 'Federated Learning Chair' },
   { img: 'ralf-floca.png', name: 'Ralf Floca', role: 'AI-Human Interaction Chair & Arbitration Board' },
   { img: 'saad-nadeem.png', name: 'Saad Nadeem', role: 'AI-Human Interaction Chair' },
-  { img: 'sai-praneeth-karimireddy.jpg', name: 'Sai Praneeth Karimireddy', role: 'Federated Learning Chair' },
   { img: 'sebastien-ourselin.png', name: 'Sebastien Ourselin', role: 'Thought Leader' },
   { img: 'barbaros-selnur-erdal.jpg', name: 'Barbaros Selnur Erdal', role: 'Deploy Working Group Chair' },
   { img: 'stephen-aylward.png', name: 'Stephen Aylward', role: 'Chair of the Advisory Board' },
   { img: 'yun-liu.jpeg', name: 'Yun Liu', role: 'Core Developers Chair' },
 ];
 
+// Emeritus = board or working-group members who have stepped back. The role
+// subtext distinguishes true founding members from the current model where
+// every working-group lead is also a board member.
 const emeritusMembers = [
-  { img: 'daniel-rubin.png', name: 'Daniel Rubin' },
-  { img: 'keyvan-farahani.jpg', name: 'Keyvan Farahani' },
-  { img: 'klaus-maier-hein.jpg', name: 'Klaus Maier-Hein' },
-  { img: 'nassir-navab.png', name: 'Nassir Navab' },
-  { img: 'nasir-rajpoot.png', name: 'Nasir Rajpoot' },
-  { img: 'kevin-zhou.png', name: 'S. Kevin Zhou' },
-  { img: 'andy-feng.jpeg', name: 'Andy Feng' },
-  { img: 'wenqi-li.jpg', name: 'Wenqi Li' },
+  { img: 'daniel-rubin.png', name: 'Daniel Rubin', role: 'Founding Member' },
+  { img: 'keyvan-farahani.jpg', name: 'Keyvan Farahani', role: 'Founding Member' },
+  { img: 'klaus-maier-hein.jpg', name: 'Klaus Maier-Hein', role: 'Founding Member' },
+  { img: 'nassir-navab.png', name: 'Nassir Navab', role: 'Founding Member' },
+  { img: 'nasir-rajpoot.png', name: 'Nasir Rajpoot', role: 'Founding Member' },
+  { img: 'kevin-zhou.png', name: 'S. Kevin Zhou', role: 'Founding Member' },
+  { img: 'andy-feng.jpeg', name: 'Andy Feng', role: 'Founding Member' },
+  { img: 'wenqi-li.jpg', name: 'Wenqi Li', role: 'Founding Member' },
+  { img: 'sai-praneeth-karimireddy.jpg', name: 'Sai Praneeth Karimireddy', role: 'Federated Learning Chair' },
 ];
 ---
 <BaseLayout {...frontmatter}>
@@ -110,10 +114,10 @@ const emeritusMembers = [
   <section id="emeritus" class="py-24 bg-gray-50 scroll-mt-24">
     <div class="container">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Founders</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Emeritus Founding Members</h2>
+        <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Alumni</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Emeritus Members</h2>
         <p class="text-lg text-gray-600 leading-relaxed reveal">
-          MONAI exists because these founding members shaped its earliest direction. We recognize their lasting contributions to the project and to the field.
+          We recognize the founding members who shaped MONAI's earliest direction, along with the board and working-group leads who have since stepped back. Their work continues to shape the project and the field.
         </p>
       </div>
 
@@ -124,7 +128,7 @@ const emeritusMembers = [
               <img loading="lazy" src={`/assets/img/people/${member.img}`} alt={member.name} class="w-full h-full object-cover">
             </div>
             <h4 class="font-semibold text-gray-800">{member.name}</h4>
-            <p class="text-sm font-medium text-brand-teal leading-snug mt-1">Founding Member</p>
+            <p class="text-sm font-medium text-brand-teal leading-snug mt-1">{member.role}</p>
           </div>
         ))}
       </div>
