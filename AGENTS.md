@@ -66,6 +66,11 @@ npm test             # vitest unit tests
   branches of `:class` ternaries as complete literal class strings (Tailwind scans literals).
 - `npm run build` first curls `model_data.json` from the live site (fallback:
   `model_data.sample.json`); keep that fallback file.
+- `public/schema/*.json` are MONAI bundle metadata schemas served at permanent
+  URLs (`https://project-monai.github.io/schema/<file>`). Live bundle
+  `metadata.json` files reference them by exact path, so never rename, move,
+  edit, or delete an existing file there. Add new versions as new dated files
+  only. See `public/schema/README.md`.
 
 ## Build expectations
 
