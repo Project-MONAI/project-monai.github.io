@@ -1,0 +1,326 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const frontmatter = {
+  title: 'MONAI - Medical AI Skills',
+  description: 'Verified, agent-callable skills for medical imaging: DICOM utilities, segmentation, generation, and reasoning built on MONAI workflows and NVIDIA MedTech models.',
+  canonical: 'https://project-monai.github.io/skills.html',
+  audience: ['engineer', 'researcher'],
+  schemaType: 'WebPage' as const,
+};
+
+const repoUrl = 'https://github.com/NVIDIA-Medtech/medical-AI-skills';
+
+const categoryStyles: Record<string, string> = {
+  'DICOM': 'bg-sky-50 text-sky-700',
+  'Segmentation': 'bg-emerald-50 text-emerald-600',
+  'Generation': 'bg-violet-50 text-violet-600',
+  'Reasoning': 'bg-amber-50 text-amber-700',
+};
+
+const skills = [
+  {
+    name: 'dicom-series-preflight',
+    category: 'DICOM',
+    compute: 'CPU',
+    description: 'GPU-free preflight of a DICOM series folder: corruption, orientation, PHI-tag presence, and series consistency checks before conversion or inference.',
+  },
+  {
+    name: 'dicom-metadata-extract',
+    category: 'DICOM',
+    compute: 'CPU',
+    description: 'Extract selected metadata from a DICOM file and flag standard-tag PHI presence.',
+  },
+  {
+    name: 'dicom-series-to-volume',
+    category: 'DICOM',
+    compute: 'CPU',
+    description: 'Convert a CT DICOM series folder to an HU-calibrated NIfTI volume with affine evidence.',
+  },
+  {
+    name: 'nv-segment-ct',
+    category: 'Segmentation',
+    compute: 'GPU',
+    description: 'Run NV-Segment-CT (VISTA3D) whole-body segmentation on CT NIfTI volumes with label-map evidence.',
+  },
+  {
+    name: 'nv-segment-ctmr',
+    category: 'Segmentation',
+    compute: 'GPU',
+    description: 'Run NV-Segment-CTMR segmentation on CT or MRI NIfTI volumes with label-map evidence.',
+  },
+  {
+    name: 'nv-segment-ct-finetune',
+    category: 'Segmentation',
+    compute: 'GPU',
+    description: 'Auto-configuring VISTA3D continual-learning finetune on CT NIfTI labels via monai.bundle run.',
+  },
+  {
+    name: 'nv-generate-ct-rflow',
+    category: 'Generation',
+    compute: 'GPU',
+    description: 'Generate synthetic CT volumes with paired 132-class masks using NV-Generate-CTMR rectified-flow synthesis.',
+  },
+  {
+    name: 'nv-generate-mr',
+    category: 'Generation',
+    compute: 'GPU',
+    description: 'Generate synthetic body MRI volumes with NV-Generate-CTMR rflow-mr.',
+  },
+  {
+    name: 'nv-generate-mr-brain',
+    category: 'Generation',
+    compute: 'GPU',
+    description: 'Generate synthetic brain MRI volumes with NV-Generate-CTMR rflow-mr-brain.',
+  },
+  {
+    name: 'nv-generate-mr-brain-finetune',
+    category: 'Generation',
+    compute: 'GPU',
+    description: 'Finetune the NV-Generate-CTMR MR-brain diffusion UNet from a NIfTI datalist.',
+  },
+  {
+    name: 'nv-generate-vae-finetune',
+    category: 'Generation',
+    compute: 'GPU',
+    description: 'Finetune the NV-Generate-CTMR MAISI VAE from CT or MRI NIfTI datalists.',
+  },
+  {
+    name: 'nv-reason-cxr',
+    category: 'Reasoning',
+    compute: 'GPU',
+    description: 'Chest X-ray reasoning with NV-Reason-CXR-3B on a user-provided PNG or JPEG image.',
+  },
+];
+
+const communityLinks = [
+  {
+    title: 'Contribute a Skill',
+    description: 'Wrap a new tool, add a paired verifier, or extend the harness. Contribution lanes, required proof, and DCO sign-off are all documented.',
+    href: `${repoUrl}/blob/dev/CONTRIBUTING.md`,
+    icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
+  },
+  {
+    title: 'Documentation',
+    description: 'Guides for using and authoring skills, trust and evidence, agent task maps, and skill-vs-readme comparison studies.',
+    href: `${repoUrl}/tree/dev/docs`,
+    icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
+  },
+  {
+    title: 'Eval Engine',
+    description: 'The evidence-pack harness: a 10-step gate ladder, reproducible runs with environment locks, drift comparison, and replay.',
+    href: `${repoUrl}/tree/dev/eval_engine`,
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+  },
+  {
+    title: 'Verifiers & Benchmarks',
+    description: 'Skill-shaped auditors that check domain invariants like anatomy plausibility, geometry, HU ranges, and PHI scope, plus dataset benchmark manifests.',
+    href: `${repoUrl}/tree/dev/verifiers`,
+    icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
+  },
+];
+---
+<BaseLayout {...frontmatter}>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-white via-brand-light/40 to-white">
+            <div class="container relative z-10">
+                <div class="py-24 md:py-32 max-w-3xl mx-auto text-center">
+                    <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Agentic AI</p>
+                    <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight leading-[1.08] mb-8">
+                        <span class="text-brand-accent">Medical AI Skills</span>
+                        <br>
+                        <span class="text-gray-900">for Agentic Workflows</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-12">
+                        A verified catalog of agent-callable skills for medical imaging: DICOM utilities, CT and MR segmentation, synthetic data generation, and image reasoning, all built on MONAI workflows and NVIDIA MedTech models.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                        <a href="#skills" data-track="cta_click" data-track-cta-id="skills_hero_browse" data-track-cta-dest="#skills" class="px-7 py-3 rounded-lg bg-brand-primary text-gray-900 font-semibold hover:bg-brand-accent transition-all duration-200 inline-flex items-center gap-2 group shadow-lg shadow-brand-primary/20">
+                            Browse Skills
+                            <svg class="w-4 h-4 transition-transform group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                            </svg>
+                        </a>
+                        <a href={repoUrl} target="_blank" rel="noopener noreferrer" data-track="cta_click" data-track-cta-id="skills_hero_github" data-track-cta-dest={repoUrl} class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-200 text-sm font-semibold text-gray-700 hover:text-brand-primary hover:border-brand-primary/30 transition-all duration-200 group bg-white/60">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            View on GitHub
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-center gap-3">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">12 Skills</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">9 Paired Verifiers</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Agent Skills Spec</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Apache-2.0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section class="py-24 bg-gray-50 relative">
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-primary/30 to-transparent"></div>
+            <div class="container">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Overview</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Trusted Building Blocks for Medical AI Agents</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Each skill wraps one medical AI tool through its documented entry point, so agents and engineers can discover, invoke, chain, and reproduce it in their own environments. Skills are published only after passing verification and evaluation through a domain-aware evaluation engine.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto reveal-stagger">
+                    <div class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal">
+                        <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary/15 transition-colors">
+                            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Agent-Callable</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Every skill ships a <code class="font-mono text-xs">SKILL.md</code> following the open Agent Skills specification, a machine-readable manifest, and scripts that emit structured JSON, ready for Claude Code and other agents.</p>
+                    </div>
+                    <div class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal">
+                        <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary/15 transition-colors">
+                            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Verified &amp; Evidenced</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">A skill can exit successfully and still produce output you cannot trust. Manifests encode medtech invariants, every run yields a reproducible evidence pack, and paired verifiers audit domain quality.</p>
+                    </div>
+                    <div class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal">
+                        <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary/15 transition-colors">
+                            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Ecosystem-Native</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Skills wrap MONAI-based workflows, MONAI bundles, DICOM utilities, and NVIDIA MedTech models, bringing the medical imaging ecosystem you already use into agentic pipelines.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Get Started Section -->
+        <section class="py-24 bg-white">
+            <div class="container">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
+                    <div class="reveal">
+                        <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Get Started</p>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Add a Skill to Your Agent</h2>
+                        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                            Install any skill straight from the catalog with a single command; the CLI copies the skill into your agent's expected location. For the full trust harness with evidence packs, paired verifiers, and the gate ladder, clone the repository and use the Makefile targets.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3 text-sm text-gray-600">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0"></span>
+                                Pick a skill and target agent interactively, or pass flags for CI
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0"></span>
+                                Your agent reads <span class="font-mono text-xs">SKILL.md</span> to learn when and how to run the tool
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brand-primary flex-shrink-0"></span>
+                                Skills emit structured JSON, so outputs chain cleanly into the next step
+                            </li>
+                        </ul>
+                        <a href={`${repoUrl}/blob/dev/docs/using-skills.md`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-brand-dark group/link transition-colors">
+                            Read the usage guide
+                            <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="reveal">
+                        <div class="bg-surface-dark rounded-xl p-6 overflow-x-auto shadow-lg">
+                            <pre class="font-mono text-sm leading-relaxed"><code><span class="text-gray-500"># Interactive: pick a skill, pick an agent</span>
+<span class="text-brand-primary">npx</span> <span class="text-white">skills add NVIDIA-Medtech/medical-AI-skills</span>
+
+<span class="text-gray-500"># Non-interactive, e.g. for Claude Code</span>
+<span class="text-brand-primary">npx</span> <span class="text-white">skills add NVIDIA-Medtech/medical-AI-skills \</span>
+<span class="text-white">  --skill</span> <span class="text-teal-300">nv-segment-ct</span> <span class="text-white">\</span>
+<span class="text-white">  --agent</span> <span class="text-teal-300">claude-code</span> <span class="text-white">--yes</span>
+
+<span class="text-gray-500"># Full trust harness: clone and run with evidence</span>
+<span class="text-brand-primary">git</span> <span class="text-white">clone {repoUrl}</span>
+<span class="text-brand-primary">make</span> <span class="text-white">run-skill SKILL=nv-segment-ct</span></code></pre>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-4">Skills follow the open <a href="https://agentskills.io/specification" target="_blank" rel="noopener noreferrer" class="text-brand-teal hover:text-brand-dark transition-colors duration-300">agentskills.io specification</a>, so they work with any compliant agent, not just one vendor's.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Available Skills Section -->
+        <section id="skills" class="py-24 bg-gray-50">
+            <div class="container">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Catalog</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Available Skills</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        From GPU-free DICOM preflight to whole-body segmentation and synthetic data generation. Each card links to the skill's folder with its <span class="font-mono text-base">SKILL.md</span>, manifest, and fixtures.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto reveal-stagger">
+                    {skills.map((skill) => (
+                        <a rel="noopener noreferrer" href={`${repoUrl}/tree/dev/skills/${skill.name}`} target="_blank"
+                           class="group p-6 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class={`px-3 py-1 rounded-full text-xs font-semibold ${categoryStyles[skill.category]}`}>{skill.category}</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">{skill.compute}</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-base font-bold font-mono text-gray-900 group-hover:text-brand-teal transition-colors">{skill.name}</h3>
+                                <svg class="w-4 h-4 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed">{skill.description}</p>
+                        </a>
+                    ))}
+                </div>
+                <div class="text-center mt-12 reveal">
+                    <a href={`${repoUrl}/blob/dev/SKILL_INDEX.md`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-200 bg-white text-sm font-semibold text-gray-700 hover:text-brand-primary hover:border-brand-primary/30 transition-all duration-200 group">
+                        View the Full Skill Index
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section class="py-24 bg-white">
+            <div class="container">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <p class="text-sm font-semibold text-brand-teal uppercase tracking-widest mb-4">Community</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">Get Involved</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        The catalog is Apache-2.0 and open to contributions from across the MONAI ecosystem: wrap a tool you rely on, improve the docs, or strengthen the evaluation harness. Because skills follow an open specification, you can also publish your own skill catalogs for the community.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-6xl mx-auto reveal-stagger">
+                    {communityLinks.map((link) => (
+                        <a rel="noopener noreferrer" href={link.href} target="_blank"
+                           class="group p-8 rounded-xl border border-gray-100 hover:border-brand-primary/30 bg-white hover:shadow-lg hover:shadow-brand-primary/5 transition-all duration-300 reveal block">
+                            <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary/15 transition-colors">
+                                <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={link.icon}></path>
+                                </svg>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-teal transition-colors">{link.title}</h3>
+                                <svg class="w-4 h-4 text-gray-300 group-hover:text-brand-teal transition-all group-hover:translate-x-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed">{link.description}</p>
+                        </a>
+                    ))}
+                </div>
+                <p class="text-center text-xs text-gray-500 max-w-3xl mx-auto mt-16">
+                    Medical AI Skills is maintained by the NVIDIA MedTech team under the Apache-2.0 license. It is a tools catalog for engineering use, not a clinical, diagnostic, or regulatory tool, and generated outputs are engineering artifacts, not clinical endorsements. Downloaded model weights carry their own licenses.
+                </p>
+            </div>
+        </section>
+</BaseLayout>
