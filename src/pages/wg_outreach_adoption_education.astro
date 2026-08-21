@@ -1,0 +1,248 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const frontmatter = {
+  title: 'MONAI - Outreach, Adoption, and Education Working Group',
+  description: 'The MONAI working group for onboarding paths, tutorials, lecture material, documentation structure, and community engagement.',
+  canonical: 'https://project-monai.github.io/wg_outreach_adoption_education.html',
+};
+---
+<BaseLayout {...frontmatter}>
+    <!-- Hero Section -->
+    <section id="hero" class="relative overflow-hidden py-24 bg-gradient-to-br from-white via-brand-light/40 to-white">
+      <div class="container">
+        <div class="flex flex-wrap items-center">
+          <div class="w-full max-w-3xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+              <span class="text-brand-accent">Outreach, Adoption, and Education</span><br>
+              <span class="text-gray-900">Working Group</span>
+            </h1>
+            <p class="text-brand-teal uppercase tracking-widest text-sm font-semibold mb-4">Mission Statement</p>
+            <p class="text-lg leading-relaxed text-gray-600">This working group formed by merging the former Outreach and Adoption Working Group with the former Education Working Group. It covers both sides of that merge: the learning materials that get people started with MONAI, and the community work that brings them in. Much of the material already exists, so most of the effort goes into reorganizing and maintaining it rather than writing from scratch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Initiatives Section -->
+    <section class="py-24 bg-gray-50">
+      <div class="container">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-8 text-center max-w-3xl mx-auto">Initiatives</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Learning Materials</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span>A revamp of the tutorials repository into clear learning paths</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span>An introductory series pairing short theory with runnable notebooks</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span>Reusable lecture decks in executive and technical versions</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span>Existing documentation reorganized for clarity</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Community and Adoption</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span>Announcements through the website, LinkedIn, and mailing lists</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span>MONAI and MedTech Days, bootcamps, workshops, and MICCAI</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span>Success stories from people building on MONAI</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span>Recruiting educators and contributors into the group</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Group Leads Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-8 text-center max-w-3xl mx-auto">Group Leads</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
+            <div class="flex flex-col items-center text-center">
+              <img loading="lazy" src="/assets/img/people/michael-zephyr.jpg" alt="Michael Zephyr" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-brand-light">
+              <div>
+                <p class="text-xl font-semibold text-gray-800 mb-2">Michael Zephyr</p>
+                <p class="text-base text-gray-600 mb-1">Technical Marketing Engineering Manager</p>
+                <p class="text-sm text-gray-600 mb-1">NVIDIA</p>
+                <p class="text-sm font-medium text-brand-teal">Outreach, Adoption, and Education Working Group Chair</p>
+                <a href="https://www.linkedin.com/in/michael-zephyr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-brand-teal hover:text-brand-dark mt-2">
+                  <span>View Profile</span>
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
+            <div class="flex flex-col items-center text-center">
+              <img loading="lazy" src="/assets/img/people/supriya-thathachary.jpg" alt="Supriya Thathachary" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-brand-light">
+              <div>
+                <p class="text-xl font-semibold text-gray-800 mb-2">Supriya Thathachary</p>
+                <p class="text-base text-gray-600 mb-1">Product Manager, Medical AI</p>
+                <p class="text-sm text-gray-600 mb-1">NVIDIA</p>
+                <p class="text-sm font-medium text-brand-teal">Outreach, Adoption, and Education Working Group Chair</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
+            <div class="flex flex-col items-center text-center">
+              <img loading="lazy" src="/assets/img/people/eric-kerfoot.png" alt="Eric Kerfoot" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-brand-light">
+              <div>
+                <p class="text-xl font-semibold text-gray-800 mb-2">Eric Kerfoot</p>
+                <p class="text-base text-gray-600 mb-1">Software Architect in Medical Engineering</p>
+                <p class="text-sm text-gray-600 mb-1">King's College London</p>
+                <p class="text-sm font-medium text-brand-teal">Outreach, Adoption, and Education Working Group Chair</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meeting Notes and Recordings Section -->
+    <!-- <section class="py-24 bg-gray-50">
+      <div class="container">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-8 text-center max-w-3xl mx-auto">Meeting Notes and Recordings</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Google Drive</h3>
+            <ul class="space-y-4 text-gray-700">
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Direct Links</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span><a href="https://link-to-meeting-1" class="link-hover">Meeting 1 - Date</a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Resources Section -->
+    <section class="py-24 bg-gray-50">
+      <div class="container">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-8 text-center max-w-3xl mx-auto">Resources</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Learning Resources</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span><a href="https://github.com/Project-MONAI/tutorials" target="_blank" rel="noopener noreferrer" class="link-hover">MONAI Tutorials Repository</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span><a href="tutorials.html" class="link-hover">Tutorials and Bootcamp Materials</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span><a href="https://monai.readthedocs.io/en/stable/" target="_blank" rel="noopener noreferrer" class="link-hover">Documentation</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span><a href="https://www.youtube.com/c/Project-MONAI" target="_blank" rel="noopener noreferrer" class="link-hover">MONAI on YouTube</a></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Community Resources</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span><a href="https://monai.medium.com/" target="_blank" rel="noopener noreferrer" class="link-hover">MONAI Blog</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span><a href="https://github.com/Project-MONAI/MONAI/discussions" target="_blank" rel="noopener noreferrer" class="link-hover">GitHub Discussions</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span><a href="https://join.slack.com/t/projectmonai/shared_invite/zt-3hucgm02q-i8Bn9XofDZs2UGOH4jUl4w" target="_blank" rel="noopener noreferrer" class="link-hover">MONAI Slack</a></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span><a href="successstories.html" class="link-hover">Success Stories</a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaboration Opportunities Section -->
+    <section class="py-24 bg-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-8 text-center max-w-3xl mx-auto">Collaboration Opportunities</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Content Contribution</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span>Write or review a tutorial notebook</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span>Contribute slides you already teach with</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span>Fix or reorganize a documentation page</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
+            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Community Engagement</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span>Join our regular working group meetings</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span>Run a session at a workshop or bootcamp</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-teal mr-3">•</span>
+                <span>Tell us where MONAI is in use at your company or center</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </BaseLayout>

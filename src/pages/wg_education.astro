@@ -2,199 +2,36 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const frontmatter = {
   title: 'MONAI - Education Working Group',
-  description: 'Accelerating the adoption of AI in medical imaging through comprehensive educational resources and training materials.',
-  canonical: 'https://project-monai.github.io/wg_education.html',
+  description: 'The Education Working Group has merged into the MONAI Outreach, Adoption, and Education Working Group.',
+  canonical: 'https://project-monai.github.io/wg_outreach_adoption_education.html',
+  metaRefresh: '0; url=wg_outreach_adoption_education.html',
 };
 ---
 <BaseLayout {...frontmatter}>
-    <!-- Hero Section -->
-    <section id="hero" class="relative overflow-hidden py-24 bg-gradient-to-br from-white via-brand-light/40 to-white">
-      <div class="container">
-        <div class="flex flex-wrap items-center">
-          <div class="w-full max-w-3xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">
-              <span class="text-brand-accent">Education</span><br>
-              <span class="text-gray-900">Working Group</span>
-            </h1>
-            <p class="text-brand-teal uppercase tracking-widest text-sm font-semibold mb-4">Mission Statement</p>
-            <p class="text-lg leading-relaxed text-gray-600">This working group aims to accelerate the adoption of AI in medical imaging through comprehensive educational resources and training materials. The focus includes developing structured learning paths, hands-on tutorials, and practical exercises with the end goal of enabling researchers and clinicians to effectively utilize MONAI in their work. By creating accessible content for various skill levels, the group helps bridge the knowledge gap in medical imaging AI.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- Redirect page (light) -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-white via-brand-light/40 to-white min-h-[calc(100vh-4rem)]">
+            <div class="container relative z-10">
+                <div class="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center text-center py-24">
+                    <!-- Title -->
+                    <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8">
+                        <span class="text-brand-accent">Education</span>
+                        <br>
+                        <span class="text-gray-900">Working Group</span>
+                    </h1>
 
-    <!-- Initiatives Section -->
-    <section class="py-24 bg-gray-50">
-      <div class="container">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-8 text-center max-w-3xl mx-auto">Initiatives</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
-            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Educational Content Development</h3>
-            <ul class="space-y-4 text-gray-700">
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span>Creation of comprehensive tutorials and documentation</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span>Development of hands-on training materials</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span>Design of structured learning paths for different skill levels</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span>Integration of real-world medical imaging examples</span>
-              </li>
-            </ul>
-          </div>
+                    <!-- Message -->
+                    <p class="text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed mb-12">
+                        This group has merged with the Outreach and Adoption Working Group. We are redirecting you to the Outreach, Adoption, and Education Working Group page. If you are not redirected automatically, use the link below.
+                    </p>
 
-          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
-            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Community Engagement</h3>
-            <ul class="space-y-4 text-gray-700">
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span>Organization of workshops and training sessions</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span>Collaboration with academic institutions</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span>Development of certification programs</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span>Support for educational research projects</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Group Leads Section -->
-    <section class="py-24 bg-white">
-      <div class="container">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-8 text-center max-w-3xl mx-auto">Group Leads</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
-            <div class="flex flex-col items-center text-center">
-              <img loading="lazy" src="/assets/img/people/eric-kerfoot.png" alt="Eric Kerfoot" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-brand-light">
-              <div>
-                <p class="text-xl font-semibold text-gray-800 mb-2">Eric Kerfoot</p>
-                <p class="text-base text-gray-600 mb-1">Software Architect in Medical Engineering</p>
-                <p class="text-sm text-gray-600 mb-1">King's College London</p>
-                <p class="text-sm font-medium text-brand-teal">Education Working Group Chair</p>
-              </div>
+                    <!-- CTA -->
+                    <a class="px-7 py-3 rounded-lg bg-brand-primary text-gray-900 font-semibold hover:bg-brand-accent transition-all duration-200 flex items-center gap-2 group shadow-lg shadow-brand-primary/20" href="wg_outreach_adoption_education.html" data-track="cta_click" data-track-cta-id="wg_education_go_merged" data-track-cta-dest="wg_outreach_adoption_education.html">
+                        Go to the Working Group
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
             </div>
-          </div>
-
-          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
-            <div class="flex flex-col items-center text-center">
-              <img loading="lazy" src="/assets/img/people/marc-modat.jpg" alt="Marc Modat" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-brand-light">
-              <div>
-                <p class="text-xl font-semibold text-gray-800 mb-2">Marc Modat</p>
-                <p class="text-base text-gray-600 mb-1">Reader in Computational Imaging</p>
-                <p class="text-sm text-gray-600 mb-1">King's College London</p>
-                <p class="text-sm font-medium text-brand-teal">Education Working Group Chair</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Meeting Notes and Recordings Section -->
-    <!-- <section class="py-24 bg-gray-50">
-      <div class="container">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-8 text-center max-w-3xl mx-auto">Meeting Notes and Recordings</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
-            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Google Drive</h3>
-            <ul class="space-y-4 text-gray-700">
-            </ul>
-          </div>
-
-          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
-            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Direct Links</h3>
-            <ul class="space-y-4 text-gray-700">
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span><a href="https://link-to-meeting-1" class="link-hover">Meeting 1 - Date</a></span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span><a href="https://link-to-meeting-2" class="link-hover">Meeting 2 - Date</a></span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- Resources Section -->
-    <section class="py-24 bg-gray-50">
-      <div class="container">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-8 text-center max-w-3xl mx-auto">Resources</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
-            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Educational Resources</h3>
-            <ul class="space-y-4 text-gray-700">
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span><a href="https://github.com/Project-MONAI/tutorials" class="link-hover">MONAI Tutorials Repository</a></span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Collaboration Opportunities Section -->
-    <section class="py-24 bg-white">
-      <div class="container">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-8 text-center max-w-3xl mx-auto">Collaboration Opportunities</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
-            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Content Development</h3>
-            <ul class="space-y-4 text-gray-700">
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span>Contribute to tutorial development through our <a href="https://github.com/Project-MONAI/tutorials" class="text-brand-teal hover:text-brand-dark transition-colors duration-300">GitHub repository</a></span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span>Share your educational materials and case studies</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span>Help develop training workshops and courses</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary hover:shadow-lg transition-all duration-300">
-            <h3 class="text-xl font-semibold text-brand-teal mb-6 pb-2 border-b border-gray-200">Community Engagement</h3>
-            <ul class="space-y-4 text-gray-700">
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span>Join our regular working group meetings</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span>Participate in educational program development</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-brand-teal mr-3">•</span>
-                <span>Help shape the future of medical AI education</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </BaseLayout>
+        </section>
+</BaseLayout>

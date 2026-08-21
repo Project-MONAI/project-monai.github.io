@@ -207,6 +207,23 @@ When converting an interior page (core, label, deploy, tutorials, WGs, …):
 
 ## Decision log
 
+- **2026-07-27:** **Outreach and Adoption + Education working groups merged** into the Outreach,
+  Adoption, and Education Working Group (leads: Michael Zephyr, Supriya Thathachary, Eric Kerfoot).
+  New detail page `wg_outreach_adoption_education.astro`; the two old pages became `metaRefresh`
+  redirect stubs pointing at it, so inbound links keep working. `working-groups.astro` lost the
+  Education quick-link tile and card; the merged card keeps `id="outreach"` so existing `#outreach`
+  anchors still resolve. On `about.astro`, Marc Modat moved to Emeritus and Supriya was added.
+  An **initials-avatar fallback** was added for leads with no headshot: the headshot frame stays
+  unchanged (`w-32 h-32` / `w-24 h-24` / `w-10 h-10`, `rounded-full`, `border-brand-light`) filled
+  with `bg-brand-primary/15` and `text-brand-teal` initials. `brand-primary` stays fill-only and
+  `brand-teal` on that tint holds AA, matching the icon-chip recipe. `about.astro`'s member arrays
+  accept an optional `initials` in place of `img` to trigger it. Supriya's headshot arrived on
+  2026-08-20, so the fallback currently has no user; the `about.astro` branch is kept for the next
+  lead whose photo lags their appointment.
+- **2026-07-27:** **`llms-full.txt` now includes all 9 live `wg_*` detail pages**, reversing the
+  2026-06-11 decision to exclude them. Grew 89KB to 132KB. The two redirect stubs stay excluded
+  (a stub twin is ~650 bytes of redirect prose and carries no page content).
+
 - **2026-06-11:** **Markdown twins hardened**: dev server now converts twins on the fly (same
   converter as the build), so `/core.md` works in `astro dev`; the Model Zoo page renders a
   static 42-model catalog inside `#app` at build time (Vue replaces it on mount), giving its
